@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>豪门盛宴 看我主场</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link href="css/style.css?ver=1.19" rel="stylesheet">
+<link rel="stylesheet" href="css/swiper.min.css">
+</head>
+<body>
+<img src="img/icon.jpg" alt="" class="shareicon">
+<div class="wrapper swiper-container-outer">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide h0">
+      <img src="img/a04.jpg" width="640" height="556" alt="" class="h0-bg" >
+      <form action="" id="orderform" class="subform" onsubmit="return false;">
+        <p><label for="username">姓名</label><input type="text" id="username" value=""></p>
+        <p><label for="mobile">手机号</label><input type="tel" id="mobile" value=""></p>
+        <p>
+          <label for="province">所在省份</label>
+          <select id="province" name="province" class="province"></select>
+        </p>
+        <p>
+          <label for="city">所在城市</label>
+          <select name="city" id="city" class="city"></select>
+        </p>
+        <p><label for="product">预购品类</label>
+          <select name="product" id="product">
+            <option value="">--请选择品类--</option>
+            <option value="电视">电视</option>
+            <option value="冰箱">冰箱</option>
+            <option value="空调">空调</option>
+            <option value="洗衣机">洗衣机</option>
+            <option value="手机">手机</option>
+          </select>
+        </p>
+        <div class="orderbtn">
+          <a href="javascript:void(0);" class="fl" id="orderbtn"><img src="img/a17.png" width="217" height="74" alt=""></a>
+          <a href="javascript:void(0);" class="fr" id="h0-back"><img src="img/a35.png" width="217" height="74" alt=""></a>
+        </div>
+        <div class="uploadtip smting">正在提交...</div>
+      </form>
+      <div class="blankMask suctipbox">
+        <div class="ordersuc">
+          <img src="img/a18.png" width="490" height="472" alt="">
+          <img src="img/a19.png" width="640" height="186" alt="" class="ordersuctop">
+          <p class="yellowtxt">憋捉急！我们已经<br>收到你的预约请求<br>保持手机信号满格<br>等我电话哟！</p>
+          <div class="confrim"><img src="img/a20.png" width="290" height="65" alt=""></div>
+        </div>
+      </div>
+      <img src="img/a01.png" width="143" height="89" alt="" class="p-logo">
+    </div>
+    <div class="swiper-slide h1 swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide p1">
+          <img src="img/a05.png" width="570" height="474" alt="" class="p1-mid">
+          <div class="p1-top">
+            <img src="img/a03.png" width="562" height="320" alt="" class="p1-topm">
+            <img src="img/a02.png" width="298" height="86" alt="" class="p1-topt">
+            <img src="img/a04.png" width="509" height="111" alt="" class="p1-topb">
+          </div>
+          <img src="img/a06.png" width="509" height="90" alt="" class="p1-btm">
+          <div class="p-next">
+            <i class="p-next1"></i><i class="p-next2"></i><i class="p-next3"></i>
+          </div>
+          <img src="img/a01.png" width="143" height="89" alt="" class="p-logo">
+        </div>
+        <div class="swiper-slide p2">
+          <div class="p2-box">
+            <div class="p2-b1">
+              <img src="img/a07.png" width="435" height="379" alt="" class="p2-b1bg">
+              <h2 class="p2-btit">【决赛门票免费送】</h2>
+              <p class="p2-ptxt">购海信欧洲杯豪华版套餐<br>赠2016年法国欧洲杯<br>决赛门票，全国限量36席<br>先抢先得！</p>
+              <img src="img/a08.png" width="171" height="150" alt="" class="p2-img1">
+            </div>
+            <div class="p2-b2">
+              <img src="img/a09.png" width="449" height="391" alt="" class="p2-b2bg">
+              <h2 class="p2-btit">【逛店寻宝有惊喜】</h2>
+              <p class="p2-ptxt">4.14-4.19至海信专柜集齐八款<br>欧洲杯纪念礼品或购买海信<br>非特价机即可参与线上晒图<em class="p2-txtcj">抽奖</em><br>欧洲杯官方指定足球<br>60席赛事门票<br>等你来抢</p>
+              <img src="img/a10.png" width="118" height="181" alt="" class="p2-img2">
+            </div>
+            <div class="p2-b3">
+              <img src="img/a11.png" width="396" height="344" alt="" class="p2-b3bg">
+              <h2 class="p2-btit">【欧战特权限时享】</h2>
+              <p class="p2-ptxt">选购欧洲杯限时促销款产品<br>即<em class="p2-txtcj p2-txtcj2">享超值低价</em><br>心动“价”期<br>举世狂欢</p>
+              <img src="img/a12.png" width="143" height="143" alt="" class="p2-img3">
+            </div>
+            <div class="p2-b4">
+              <img src="img/a14.png" width="181" height="157" alt="">
+              <div class="p2-b4arrow"></div>
+            </div>
+            <p class="p2-tip">详询海信各大专柜</p>
+          </div>
+          <div class="p2-btmcontainer">
+            <div class="p2-btm">
+              <img src="img/a15.png" width="553" height="59" alt="" class="p2-btmbg">
+              <div class="p2-btmbtn1"></div><div class="p2-btmbtn2"></div>
+            </div>
+          </div>
+          <img src="img/a01.png" width="143" height="89" alt="" class="p-logo">
+          <div class="blankMask before414">
+            <div class="ordersuc">
+              <img src="img/a18.png" width="490" height="472" alt="">
+              <img src="img/a36.png" width="640" height="186" alt="" class="ordersuctop">
+              <div class="yellowtxt">
+                <!-- <p>憋捉急！<br>晒图入口将于4月14-19号开启<br>点击右上角收藏网站，<br>14号再来晒图抽奖哦！</p> -->
+                <p>本次活动已经结束，感谢您的参与<br>已有75万用户参与活动<br>下次活动敬请期待！</p>
+              </div>
+              <div class="confrim back"><img src="img/a31.png" width="290" height="65" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide p3 swiper-container-inner">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide inner1">
+              <img src="img/a02.jpg?ver=1" width="640" height="912" alt=""> 
+            </div>
+            <div class="swiper-slide inner2">
+              <img src="img/a03.jpg" width="640" height="1057" alt="">
+              <div class="p3-btn">
+                <img src="img/a16.png" width="279" height="74" alt="">
+              </div>
+              <div class="p3-back">
+                <img src="img/a31.png" width="279" height="74" alt="">
+              </div>
+            </div>
+            <div class="swiper-slide inner3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-slide h2">
+      <img src="img/a21.png" width="640" height="1136" alt="" class="h2-cont">
+      <img src="img/a01.png" width="143" height="89" alt="" class="p-logo">
+      <div class="h2-nextbtn">
+        <a href="javascript:void(0);" class="fl" id="h2-nextbtn"><img src="img/a22.png" width="218" height="49" alt=""></a>
+        <a href="javascript:void(0);" class="fr" id="h2-back"><img src="img/a34.png" width="218" height="49" alt=""></a>
+      </div>
+      <p class="h2-btmtip">活动最终解释权归海信集团有限公司</p>
+    </div>
+    <div class="swiper-slide h3">
+      <div class="p1-top h3-top">
+        <img src="img/a03.png" width="562" height="320" alt="" class="p1-topm">
+        <img src="img/a02.png" width="298" height="86" alt="" class="p1-topt">
+        <img src="img/a04.png" width="509" height="111" alt="" class="p1-topb">
+      </div>
+      <div class="h3-mid">
+        <img src="img/a23.png" width="462" height="389" alt="">
+        <div class="cameraarea">
+          <img src="" alt="" class="imgpreview" id="imgpreview">
+          <input type="file" accept="image/*" name="filedata" class="filedata">
+          <div class="processing">处理中...</div>
+        </div>
+      </div>
+      <img src="img/a24.png" width="522" height="102" alt="" class="h3-btmtxt">
+      <div class="h3-confrim">
+        <a href="javascript:void(0);" class="fl" id="h3-confrim"><img src="img/a25.png" width="221" height="74" alt=""></a>
+        <a href="javascript:void(0);" class="fr" id="h3-back"><img src="img/a35.png" width="217" height="74" alt=""></a>
+      </div>
+      <img src="img/a01.png" width="143" height="89" alt="" class="p-logo">
+      <div class="blankMask luckrst">
+        <div class="ordersuc">
+          <img src="img/a18.png" width="490" height="472" alt="">
+          <div class="rst0 rst">
+            <img src="img/a27.png" width="533" height="273" alt="" class="rsttop2">
+            <img src="img/a30.png" alt="" class="football">
+            <img src="img/a28.png" alt="" class="ticket ticket2">
+            <img src="img/a26.png" alt="" class="rsttop">
+            <div class="rsttxt">
+              <p>擦肩而过的不只是真爱，有可能是大奖</p>
+              <h2>很遗憾，您本次未中奖</h2>
+            </div>
+            <div class="h3-back"><img src="img/a31.png" width="290" height="65" alt=""></div>
+          </div>
+          <div class="rst1 rst">
+            <img src="img/a27.png" width="533" height="273" alt="" class="rsttop2">
+            <img src="img/a28.png" width="345" height="188" alt="" class="ticket">
+            <img src="img/a26.png" width="640" height="140" alt="" class="rsttop">
+            <p class="rsttxt">一票难求的<span>欧洲杯门票</span>被您抽中!<br>火速填写个人信息<br>如您上传的图片符合要求<br>工作人员会及时与您联系<br>想要奖品保持手机信号满格哟</p>
+            <div class="h3-next"><img src="img/a29.png" width="290" height="65" alt=""></div>
+          </div>
+          <div class="rst2 rst">
+            <img src="img/a27.png" width="533" height="273" alt="" class="rsttop2">
+            <img src="img/a30.png" width="238" height="237" alt="" class="football">
+            <img src="img/a26.png" width="640" height="140" alt="" class="rsttop">
+            <div class="rsttxt">
+              <h2>恭喜您被<span>“幸运之球”</span>砸中</h2>
+              <p>火速填写个人信息<br>如您上传的图片符合要求<br>工作人员会及时与您联系<br>想要奖品保持手机信号满格哟</p>
+            </div>
+            <div class="h3-next"><img src="img/a29.png" width="290" height="65" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-slide h4">
+      <img src="img/a04.jpg" width="640" height="556" alt="" class="h0-bg h4-bg" >
+      <img src="img/a01.png" width="143" height="89" alt="" class="p-logo">
+      <form action="" id="luckform" class="subform" onsubmit="return false;">
+        <p><label for="username2">姓名</label><input type="text" id="username2" value=""></p>
+        <p><label for="mobile2">手机号</label><input type="tel" id="mobile2" value=""></p>
+        <p>
+          <label for="province2">所在省份</label>
+          <select id="province2" name="province2" class="province"></select>
+        </p>
+        <p>
+          <label for="city2">所在城市</label>
+          <select name="city2" id="city2" class="city"></select>
+        </p>
+        <div class="orderbtn submsgholder">
+          <a href="javascript:void(0);" class="submsg" id="submsg"><img src="img/a17.png" width="217" height="74" alt=""></a>
+          <!-- <a href="javascript:void(0);" class="fr" id="h4-back"><img src="img/a35.png" width="217" height="74" alt=""></a> -->
+        </div>
+        <div class="uploadtip uploadtip2">正在提交中...</div>
+      </form>
+      <div class="blankMask luckmsgsuc">
+        <div class="ordersuc">
+          <img src="img/a18.png" width="490" height="472" alt="">
+          <img src="img/a33.png" width="640" height="136" alt="" class="ordersuctop">
+          <div class="yellowtxt">
+            <h2>海信工作人员在核对<br>您的中奖信息后<br>会尽快与您联系<br>并将奖品快递给您</h2>
+          </div>
+          <div class="confrim back"><img src="img/a20.png" width="290" height="65" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/PCASClass.js"></script>
+<script src="js/lrz.all.bundle.js"></script>
+<script>
+document.body.addEventListener('touchmove', function(e) {
+  e.preventDefault();
+});
+$.fn.extend({
+  mctap:function(func){
+    var _this=this;
+    this.on('touchstart',function(e){
+      tiptimer=new Date();
+    }).on('touchend',function(e){
+      if(new Date()-tiptimer<150) {func.bind(this,e)();}
+    })
+  }
+})
+var mySwiperOuter,mySwiper,mySwiperInner
+$(function(){
+  var stageH=$(window).height();
+  $(".wrapper").height(stageH);
+
+  mySwiperOuter=new Swiper('.swiper-container-outer', {
+    direction:'horizontal',
+    initialSlide :1,
+    onlyExternal:true
+  })
+  mySwiper=new Swiper('.swiper-container', {
+    direction:'vertical',
+    onSlideChangeEnd:function(swiper){
+      if(swiper.activeIndex==1){
+        swiper.lockSwipeToNext();
+      }else{
+        swiper.unlockSwipeToNext();
+      }
+    }
+  })
+  mySwiperInner=new Swiper('.swiper-container-inner', {
+    direction:'vertical',
+    freeMode:true,
+    slidesPerView:'auto',
+    freeModeMomentumRatio:.2,
+    onInit:function(){
+      $(".wrapper").css({opacity:1});
+    }
+  })
+  $(".p2-b4").mctap(function(){
+    mySwiper.slideNext();
+  })
+  $(".p2-btmbtn1,.p3-btn").mctap(function(){
+    mySwiperOuter.slideTo(0);
+    mySwiperInner.slideTo(0);
+  })
+  $(".p3-back").mctap(function(){
+    mySwiperInner.slideTo(0);
+    mySwiper.slideTo(1);
+  })
+  $(".p2-btmbtn2").mctap(function(){
+    var before414=false;  //若是414前 true为显示弹窗 false为去掉弹窗
+    if(before414){
+      $(".before414").show();
+    }else{
+      mySwiperOuter.slideTo(2);
+    }
+  })
+  $("#h0-back,#h2-back,#h3-back,#h4-back").mctap(function(){
+    mySwiperOuter.slideTo(1);
+    mySwiper.slideTo(1);
+    $(".filedata").show();
+  })
+  $(".h2-cont").css({"margin-top":(stageH-1136)/2});
+  $(".h2-nextbtn").css({"top":920+(stageH-1136)/2});
+  new PCAS("province","city");
+  new PCAS("province2","city2");
+  $("#orderbtn").mctap(function(){
+    var numreg=/\D/g;
+    var _username=$("#username").val(),
+    _mobile=$("#mobile").val(),
+    _province=$("#province").val(),
+    _city=$("#city").val(),
+    _product=$("#product").val();
+    if(_username.replace(/\s+/,"")==""){
+      alert("请输入姓名");
+    }else if(numreg.test(_mobile)||_mobile==""){
+      alert("请输入正确的手机号");
+    }else if(_province==""){
+      alert("请选择所在省份");
+    }else if(_product==""){
+      alert("请选择预购品类");
+    }else{
+      $("#orderbtn,.p3-btn").hide();
+      $(".smting").show();
+      $(".p3-back").addClass("aligncenter");
+      $(".p2-btmcontainer").addClass("isordered");
+      $("#username,#mobile,#province,#city,#product").blur();
+      $.post('submit_reserve.php',{
+        username:$("#username").val(),
+        mobile:$("#mobile").val(),
+        province:$("#province").val(),
+        city:$("#city").val(),
+        product:$("#product").val()
+      },function(data){
+        $(".smting,#h0-back").hide();
+        $(".suctipbox").show();
+        console.log(JSON.stringify(data));
+      },'json');
+    }
+  })
+  $(".confrim,.back,.h3-back").click(function(){
+    mySwiperOuter.slideTo(1);
+    mySwiper.slideTo(0);
+    $(".blankMask,.rst").hide();
+  })
+  var rst=0;
+  $("#h2-nextbtn").mctap(function(){
+    $.post("search_award.php",null,function (data){
+      rst=data.result;
+      mySwiperOuter.slideTo(3);
+    },'json');
+  })
+  var $preview = $('#imgpreview');
+  var formData = null;
+  var isuploadover=false;
+  $(".filedata").on('change',function (src){
+    $(".processing").show();
+    lrz(this.files[0], {
+      width: 1200,
+      fieldName: 'photo'
+    }).then(function (rst) {
+      isuploadover=true;
+      $("#h3-confrim").addClass("enabled");
+      $(".processing").hide();
+      $preview.attr('src', rst.base64).addClass("show");
+      if($preview[0].height==0){
+        $(".imgpreview").addClass("vertical");
+      }else{
+        if($preview[0].width/$preview[0].height>452/380){
+          $(".imgpreview").removeClass("vertical");
+        }else{
+          $(".imgpreview").addClass("vertical");
+        }
+      }
+      $(".cameraarea").addClass("hasimg");
+      //根据需要增加一些信息
+      rst.formData.append('fileLen', rst.fileLen);
+      //压缩后的图片暂存在变量formData中
+      formData = rst.formData;
+    });
+  })
+
+  $("#h3-confrim").mctap(function(){
+    if(!isuploadover) return;
+    switch(rst){
+      case "0":
+      $(".luckrst .rst0").show();
+      break;
+      case "1":
+      $(".luckrst .rst1").show();
+      break;
+      case "2":
+      $(".luckrst .rst2").show();
+      break;
+      default:
+      break;
+    }
+    $(".luckrst").show();
+    $(".filedata").hide();
+  })
+  $(".h3-next").mctap(function(){
+    mySwiperOuter.slideTo(4);
+    $(".blankMask,.rst").hide();
+  })
+  $("#orderform input,#orderform select").focus(function(){
+    $("#orderform").addClass("upup");
+  }).blur(function(){
+    $("#orderform").removeClass("upup");
+  })
+  $("#submsg").mctap(function(){
+    var numreg=/\D/g;
+    var _username=$("#username2").val(),
+    _mobile=$("#mobile2").val(),
+    _province=$("#province2").val(),
+    _city=$("#city2").val();
+    if(_username.replace(/\s+/,"")==""){
+      alert("请输入姓名");
+    }else if(numreg.test(_mobile)||_mobile==""){
+      alert("请输入正确的手机号");
+    }else if(_province==""){
+      alert("请选择所在省份");
+    }else{
+      $("#submsg").hide();
+      $(".uploadtip2").show();
+      formData.append("username",_username);
+      formData.append("mobile",_mobile);
+      formData.append("province",_province);
+      formData.append("city",_city);
+      $.ajax({
+        type:"POST",
+        url:"submit_award.php",
+        dataType: 'json',
+        processData: false,
+        contentType: false,  
+        cache: false,
+        data: formData,
+        success:function(data){
+          switch(data.result){
+            case "1":
+            $(".luckmsgsuc").show();
+            break;
+            case "0":
+            alert("上传失败");
+            break;
+            case "-1":
+            alert("该手机号已中奖");
+            break;
+            default:
+            break;
+          }
+        },
+        error:function(xhr, errorType, error){
+          alert("responseText: "+xhr.responseText);
+          alert("errorType: "+errorType);
+        }
+      })
+      $("#username2,#mobile2,#province2,#city2").blur();
+    }
+  })
+})
+</script>
+
+<!--Mock start-->
+<script src="../../../libs/mock.js"></script>
+<script>
+  Mock.mock('search_award.php', {
+    result: '1'
+  })
+  Mock.mock('submit_award.php', {
+    result: '1'
+  })
+  Mock.mock('submit_reserve.php', {
+    result: 'success'
+  })
+</script>
+<!--Mock end-->
+</body>
+</html>

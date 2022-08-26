@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>旋瀑洗波轮洗衣机</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+      var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<!-- <link href="css/swiper.min.css" rel="stylesheet"> -->
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body class="subbody">
+<div id="loading">
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+  <p>loading...</p>
+</div>
+
+<div id="wrap" class="wrap">
+   <section class="p41" style="display:block">
+    <h1 class="p41-title pptitle">
+      <img src="img/pdt4/d01.png">
+      <i></i>
+    </h1>
+    <!-- <i class="i-tip"></i> -->
+    <p class="p41-sub">海信旋瀑洗波轮洗衣机</p>
+    <img src="img/pdt1/a03.png" class="p41-tip"> 
+    <img src="img/pdt4/d02.png" class="p41-pic"> 
+  </section>
+  <section class="p42">
+    <h1 class="p42-title  pptitle p42-ttt1">
+      <img src="img/pdt4/d03.png?ver=0">
+      <i></i>
+    </h1>
+    <p class="p42-sub p42-subb">洗衣全程配合强劲瀑布水流冲洗，告别普通洗衣机进水时才能喷淋的弊端，衣物洁净更彻底
+   </p>
+    <div class="picholder_42">
+      <img src="img/pdt4/d04.png" class="p42-pic">
+      <img src="img/pdt4/d05.png" class="p42-pic-1">
+    </div>
+  </section>
+
+  <section class="p43">
+    <h1 class="p42-title p43-title pptitle p43-ttt1">
+      <img src="img/pdt4/d06.png">
+      <i></i>
+    </h1>  
+   <p class="p42-sub p43-sub p43-subb">搭载先进的DD变频电机，在同等容量下降低电耗，带来出色的节能降噪效果
+  </p>
+
+    <div class="picholder_42">
+      <!-- <img src="img/pdt4/d04.png" class="p43-pic"> -->
+      <img src="img/pdt4/d07.png" class="p43-pic-1">
+    </div>
+  </section>
+
+  <section class="p44">
+    <h1 class="p44-title pptitle">
+      <img src="img/pdt4/d08.png" class="p44-title-p1">
+      <img src="img/pdt4/d09.png" class="p44-title-p2">
+    </h1>
+    <p class="p44-sub p44-sub-1">星钻内桶设计，采用镜面不锈钢材质、双重抛光、微孔设计，洗衣更充分，避免衣物磨损 
+    </p>
+    <p class="p44-sub p44-sub-2">PCM彩板箱体,不生锈抗腐蚀，<br/>色泽长期新颖.采用高端汽车使<br />
+用的TOX铆接工艺,无焊点更环保 
+    </p>
+    <div class="picholder_44">
+      <img src="img/pdt4/d10.png" class="p44-pic">
+      <img src="img/pdt4/d11.png" class="p44-pic-1">
+      <img src="img/pdt4/d12.png" class="p44-pic-2">
+    </div>
+  </section>
+  
+</div> 
+<script src="js/zepto.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/easing/EasePack.min.js"></script> 
+<!-- <script src="js/swiper.min.js"></script>  -->
+<script>
+  $(function(){
+
+    var stageH=$(window).height();
+    var resourceDir="img/pdt4/";
+    var loadingImages=[];
+    $("#wrap,section").height(stageH);
+    for(var i=1;i<=10;i++){
+      loadingImages.push("d"+(i<10?"0"+i:i)+".png");
+    }
+    var mc=new Hammer(document.body,{
+      touchAction: 'pan-x pan-y',
+      recognizers: [
+        [Hammer.Tap],
+        [Hammer.Pan]
+      ]
+    })
+    loadResources(loadingImages,function (n, i, img) {
+      $("#loading p").html("loading&nbsp;" + Math.round(i * 100 / n) + "%");
+      if (n != i) return;
+      $("#loading").remove();
+      $("#wrap").show();
+      init();
+      setTimeout(function(){
+        $("#wrap").css("visibility","visible");
+      },100)
+    })
+    var tl=new TimelineMax();
+    function init(){
+      tl.delay(.3)
+      .from(".p41-pic",1,{y:"+=80"})
+      .from(".p41-title",1,{alpha:0,y:"+=30"},"-=.4")
+      .from(".p41-title i",.3,{scaleX:0},"-=.1")
+      .from(".p41-sub",.6,{alpha:0})
+      .from(".p41-tip",.4,{alpha:0,y:"-=15"})
+      .addPause()
+
+      .to(".p41-tip",.2,{alpha:0,y:"+=15"})
+      .to(".p41-title",.3,{alpha:0,y:"-=15"})
+      .to(".p41-sub",.3,{alpha:0,y:"-=10"},"-=.1")
+      .to(".p41-pic",.8,{y:150,alpha:0})
+      .from(".p42-ttt1",.8,{alpha:0,y:"+=30"})
+      .from(".p42-pic",1.5,{y:"+=150",alpha:0})
+      .addPause()
+
+      .from(".p42-ttt1 i",.3,{scaleX:0})
+      .to(".p42-pic",.4,{alpha:.1},"-=.15")
+      .from(".p42-subb",.3,{alpha:0,y:"+=20"})
+      .from(".p42-pic-1",.5,{alpha:0,y:"+=30"},"-=.2")
+      .addPause()
+
+      .to(".p42-ttt1",.3,{alpha:0,y:"-=10"})
+      .to(".p42-subb",.3,{alpha:0,y:"-=10"},"-=.1")
+      //.fromTo(".p43-pic",.2,{alpha:0},{alpha:.1},"-=.1")
+      .to(".p42-pic-1",.5,{alpha:0,y:"+=30"},"-=.2")
+      .from(".p43-pic-1",.6,{alpha:0,y:"+=40"},"-=.2")
+      .from(".p43-ttt1",.3,{alpha:0,y:"+=15"})
+      .from(".p43-subb",.3,{alpha:0,y:"+=15"},"-=.1")
+      .addPause()
+      
+      .call(function(){
+        $(window.parent.document).find(".nexttip").removeClass("show");
+      })
+      .to(".p43-ttt1",.3,{alpha:0,y:"-=15"})
+      .to(".p43-subb",.3,{alpha:0,y:"-=15"},"-=.1")
+      .to(".p43-pic-1",.3,{alpha:0,y:"+=15"})
+      .to(".p42-pic",.1,{alpha:0},"-=.15")
+      .fromTo(".p44-pic",.3,{alpha:0,y:"-=15"},{alpha:.25,y:0},"-=.05")
+      .from(".p44-pic-1",.5,{alpha:0,x:"+=30"})
+      .from(".p44-pic-2",.5,{alpha:0,x:"-=30"},"-=.45")
+      .from(".p44-title",.3,{alpha:0})
+      .from(".p44-sub-1",.5,{alpha:0,y:10})
+      .from(".p44-sub-2",.5,{alpha:0,y:10},"-=.5")
+      .call(function(){
+        $(window.parent.document).find(".menu-switch-on").addClass("pulse");
+      })
+
+    }
+    mc.on("pan",function(){
+      tl.play();
+    })
+    function loadResources(urls, progress) {
+      var loadedCount = 0;
+      var loaded = function () {
+        ++loadedCount;
+        if (progress) progress(urls.length, loadedCount, this);
+      };
+      for (var i = 0; i < urls.length; ++i) {
+        if (!urls[i]) {
+          loaded();
+          return;
+        }
+        var img = new Image();
+        img.onload = loaded;
+        img.onabort = loaded;
+        img.onerror = loaded;
+        img.src = resourceDir + urls[i];//+ "?ver=" + j_version;
+      }
+    }
+  })
+</script>
+</body>
+</html>

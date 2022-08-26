@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Pandora占星小巫揭秘2015星座运势！</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/idangerous.swiper.css" rel="stylesheet">
+<script>
+window.onload = function(){
+	var _loading = document.getElementById('loading');
+	_loading.style.display = "none";
+};
+document.write('<div id="loading">Loading...</div>');
+
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+	var version = parseFloat(RegExp.$1);
+	if(version>2.3){
+		document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+	}else{
+		document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+	}
+} else {
+	document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+
+<style>
+body,ul,li,p,h1,h2,h3,h4,h5,h6,span{margin: 0;padding: 0; }
+body{background: url(img/a00.jpg) 0 0 repeat-x;}
+ul,li{list-style: none;}
+.clearfix:after { content: "."; visibility: hidden; display: block; clear: both; height: 0; }
+.clearfix { *zoom:1;}
+#loading{ position: absolute; left:50%; margin-left: -50px; top:45%; font-size:25px; color: #fff; }
+.wrap{width:640px; height:1136px; margin: 0 auto;}
+.swiper-container, .swiper-slide {  width: 640px;  height:1136px; overflow: hidden; }
+</style>
+<body>
+<div class="wrap">
+	<div class="swiper-container"> 
+		<div class="swiper-wrapper">
+			<!-- <div class="swiper-slide"></div> -->
+		</div>
+	</div>
+</div>
+<map name="clickmap" id="clickmap">
+</map>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/idangerous.swiper.min.js"></script>
+<script>
+var version=1.0;
+$(function(){
+	var stageW = $(window).width();
+	var stageH = $(window).height();
+	var url=location.href; 
+	var starindex=0;
+	var maphtml=""
+	var lx,ly,rx,ry;
+	var jumpUrl="award.html"
+	var slideindex=0
+	lx=0;
+	ly=stageH-98/960*stageH;
+	rx=stageW;
+	ry=stageH;
+
+	maphtml+='<area shape="rect" coords="'+lx+','+ly+','+rx+','+ry+'" href ='+jumpUrl+'  />';
+	$("#clickmap").html(maphtml);
+	if(url.indexOf("starindex")!=-1){ 
+		starindex=parseInt(url.split("starindex=")[1]); 
+	}
+
+	$(".wrap,.swiper-container,.swiper-slide").height(stageH);
+
+	var newhtml="";
+	var indexarr=[];
+	for(var x=1;x<=12;x++){
+		if(x!=starindex+1)
+		indexarr.push(x)
+	}
+	indexarr.unshift(starindex+1);
+	for(var i=1;i<=12;i++){
+		for(var j=1;j<=3;j++){
+			newhtml+="<div class='swiper-slide'><img src='img/result/m"+indexarr[i-1]+"_"+j+".jpg?ver="+version+"' width='640' height='"+stageH+"'"+(j==3?" useMap='#clickmap'":"")+"></div>"
+		}
+	}
+	$(".swiper-wrapper").html(newhtml);
+	var mySwiper = $('.swiper-container').swiper({
+		mode:'vertical',
+		onSlideChangeEnd : function(){
+			slideindex=$(".swiper-slide-active").index();
+			var thisslideindex=Math.ceil((slideindex+1)/3)-1;
+			$("#clickmap area").attr("href",jumpUrl+"?starindex="+(indexarr[thisslideindex]-1));
+		}
+	});
+
+	if(url.indexOf("back")!=-1){
+		mySwiper.swipeTo(2);
+	}
+	
+})
+</script>
+</body>
+</html>

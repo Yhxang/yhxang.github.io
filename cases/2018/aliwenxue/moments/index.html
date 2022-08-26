@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+<title>朋友圈</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+var isAndroid=/Android (\d+\.\d+)/.test(ua);
+if (isAndroid){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link rel="stylesheet" href="./css/style.css?ver=1.04120015">
+</head>
+<body>
+	<p class="p0-des">书籍能为孩子带来丰富多彩的童年时光，关爱山区儿童阅读，你也来加入吧&nbsp;</p>
+	<canvas id="canvas" width="640" height="1386"></canvas>
+	<div class="p1 section">
+			<div class="p1-hrtbg wh100p">
+				<img src="images/c09.png?v1" alt="" class="p1-hrt4">
+				<img src="images/c08.png?v1" alt="" class="p1-hrt3">
+				<img src="images/c07.png?v1" alt="" class="p1-hrt2">
+				<img src="images/c06.png?v1" alt="" class="p1-hrt1">
+			</div>
+			<img src="images/c01.png?v1" alt="" class="p1-tit lt50p">
+			<div class="p1-bigheart">
+				<div class="p1-bigheartInner">
+					<img src="images/c03.png?v1" alt="" class="p1-hand">
+					<div class="p1-bigheartarea">
+						<img src="images/c02.png?v1" alt="" class="p1-bigheartimg">
+					</div>
+				</div>
+			</div>
+			<div class="p1-counttxt lt50p"></div>
+			<img src="images/c04.png?v1" alt="" class="p1-btn lt50p">
+			<img src="images/c05.png?v1" alt="" class="p1-hrtbg1">
+	</div>
+	<div class="p2 section">
+		<img src="images/c10.png?v1" alt="" class="p2-tit lt50p">
+		<div class="p2-mid lt50p">
+			<img src="images/c12.png?v1" alt="" class="p2-midbg">
+			<div class="p2-midinner">
+				<img src="images/c14.png?v1" alt="" class="p2-heart">
+				<img src="images/c13.png?v1" alt="" class="p2-hand">
+			</div>
+		</div>
+		<div class="p2-btn lt50p">
+			<img src="images/c11.png?v1" alt="" class="p2-btnimg">
+			<input type="file" id="btn_upload" accept="image/*" onchange="selectFileImage(this);">
+		</div>
+	</div>
+	<div id="videoBox">
+		<video id="video" preload="auto" webkit-playsinline="true" x-webkit-airplay="true" playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" width="640" height="472"></video>
+		<img src="images/a20.png?v1" alt="" class="vloading lt50p">
+		<img src="images/c28.png?v1" alt="" class="vpaused lt50p">
+	</div>
+	<div class="p9 section">
+		<div class="slide slide1">
+			<div class="p9-btm wh100p">
+				<img src="images/a30.jpg?v1" alt="">
+				<img src="images/c23.png?v1" alt="" class="p9-btmshadow wh100p">
+				<p class="p9-btmtxt wh100p"></p>
+				<img src="images/c21.png?v1" alt="" class="p9-btn lt50p">
+			</div>
+			<div class="p9-mid wh100p">
+				<div class="p9-midInner wh100p">
+					<div class="p9-car">
+						<img src="images/c15.png?v1" alt="" class="p9-car1 p9-c">
+						<img src="images/c16.png?v1" alt="" class="p9-car2 p9-c">
+						<img src="images/c17.png?v1" alt="" class="p9-car3 p9-c">
+					</div>
+					<div class="p9-words">
+						<img src="images/c18.png?v1" alt="" class="p9-words1 p9-w">
+						<img src="images/c19.png?v1" alt="" class="p9-words2 p9-w">
+						<img src="images/c20.png?v1" alt="" class="p9-words3 p9-w">
+					</div>
+				</div>
+			</div>
+			<div class="p9-tit">
+				<div class="p9-tittop"></div>
+				<img src="images/c22.png?v1" alt="" class="p9-tittxt lt50p">
+				<div class="p9-titbtm"></div>
+			</div>
+			<div class="p9-role">
+				<div class="p9-roleshadow"></div>
+				<img src="images/c25.png?v1" alt="" class="p9-roleimg">
+				<img src="images/c26.png?v1" alt="" class="p9-roletxt">
+				<img src="images/c24.png?v1" alt="" class="p9-roleline">
+			</div>
+		</div>
+		<div class="slide slide2">
+			<img id="generateimg" width="100%" height="100%">
+			<div class="p10-btn"><a href="http://t.shuqi.com/route.php?ct=welfare&id=500085">&nbsp;</a></div>
+			<div class="p11-btn">
+				<div class="p11-btn1"></div>
+				<!-- <div class="p11-btn2"><a href="http://m.tb.cn/h.WwDfJ9F">&nbsp;</a></div> -->
+			</div>
+			<!-- <img src="images/a27.png?v1" alt="" class="p10-presstip"> -->
+			<div class="p11-bMask wh100p">
+				<img src="images/c27.png?v1" alt="" class="p11-share">
+			</div>
+		</div>
+	</div>
+	<div class="sndctrl">
+		<img src="images/a22.png?v1" alt="" class="noline lt50p">
+	</div>
+	<audio id="bgm" src="./media/bgm.mp3" loop="loop" autoplay="autoplay"></audio>
+<script src="./libs/jquery-3.0.0.min.js"></script>
+<script src="./libs/hammer.min.js"></script>
+<script src="./libs/exif.js"></script>
+<script src="./libs/uploadImage.js"></script>
+<script src="./libs/createjs-2015.11.26.min.js"></script>
+<script src="loading.js?ver=1.04120015"></script>
+<script src="moments.js?ver=1.04120015"></script>
+<script src="share.js?ver=1.04120015"></script>
+<script>
+var isWeixin = (function () { //判断是否是微信
+  var ua = navigator.userAgent.toLowerCase();
+  return ua.match(/MicroMessenger/i) == "micromessenger";
+})();
+var isQd=true;
+var isWxReady=false;
+
+var protocolStr = document.location.protocol;
+var http = "http";
+if(protocolStr === "https"){
+	http = "https";
+}
+
+// var shareobj={
+// 	title:"这是一条充满爱的朋友圈 众星云集 就等你的加入",
+// 	desc:"",
+// 	link:"http://aliwenxue.maimang.net.cn/",
+// 	imgUrl:"http://aliwenxue.maimang.net.cn/images/icon.jpg",
+// 	type:"",
+// 	seccess:function(){},
+// 	cancel:function(){}
+// }
+// wx.ready(function(){
+// 	isWxReady=true;
+// 	shareFunc(shareobj);
+// 	isWeixin=true;
+// 	isQd=false;
+//	document.getElementById("bgm").play();
+// });
+// function shareFunc($shareobj){
+// 	if(isWxReady){
+// 		wx.onMenuShareTimeline($shareobj);
+// 		wx.onMenuShareAppMessage($shareobj);
+// 		wx.onMenuShareQQ($shareobj);
+// 		wx.onMenuShareWeibo($shareobj);
+// 		wx.onMenuShareQZone($shareobj);
+// 	}
+// }
+// wx.error(function(res){});
+document.addEventListener("WeixinJSBridgeReady", function () {
+  document.getElementById("bgm").play();
+}, false);
+</script>
+<script>
+var qduuid=getCookie("qduuid");
+qduuid=qduuid?qduuid:("qd_"+uuid(18,16));
+
+var config={
+	openid : "oLVPpjqs2BhvzwPj5A-vTYAX4GLc"||qduuid,
+	nickname : "刺猬宝宝"||"有爱的心",
+	headimgurl : "http://wx.qlogo.cn/mmopen/JcDicrZBlREhnNXZRudod9PmibRkIs5K2f1tUQ7lFjC63pYHaXGxNDgMzjGDEuvzYZbFOqtUXaxSdoZG6iane5ko9H30krIbzGv/0"||"./images/icon.jpg", 
+	posturl:"./usercount.php",
+	total : 3217,
+	newTotal : 3217
+};
+//shareobj.title="谢谢您，您是第"+config.total+"位参与益起读书公益阅读的人";
+//shareFunc(shareobj);
+var stageW=window.innerWidth;
+var stageH=window.innerHeight;
+var contcanvas, stage, exportRoot,exportRoot0;
+var fps=24;
+var myPlayer;
+var bgm=document.getElementById("bgm");
+$(function(){
+	contcanvas = document.getElementById("canvas");
+	images0 = images0||{};
+	ss = ss||{};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad0);
+	loader.addEventListener("complete", handleComplete0);
+	loader.loadManifest(lib0.properties.manifest);
+	
+	$(".sndctrl").click(function(){
+	  if(bgm.paused){
+	    bgm.play();
+	    $(this).removeClass("muted");
+	  }else{
+	    bgm.pause();
+	    $(this).addClass("muted");
+	  }
+	})
+})
+function handleFileLoad0(evt) {	
+	if (evt.item.type == "image") { images0[evt.item.id] = evt.result; }	
+}
+function handleComplete0(evt) {
+	var queue = evt.target;
+	var ssMetadata = lib0.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot0 = new lib0.loading();
+	stage = new createjs.Stage(contcanvas);
+	//stage = new createjs.StageGL(contcanvas,{ antialias: true });
+	stage.addChild(exportRoot0);
+	exportRoot0.x=(stageW-172)/2;
+	exportRoot0.y=(stageH-230)/2-20;
+	createjs.Ticker.setFPS(lib0.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);	
+	init1();    
+}
+function init1() {
+	images = images||{};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+
+function handleFileLoad(evt) {	
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }	
+	var pct=String(Math.floor(100*evt.target._numItemsLoaded/evt.target._numItems));
+	exportRoot0.sin.gotoAndStop(parseInt(pct.substr(-1,1)));
+	if(pct.length>1){
+		exportRoot0.ten.alpha=1;
+		exportRoot0.ten.gotoAndStop(parseInt(pct.substr(-2,1)));
+	}
+	if(pct.length>2){
+		exportRoot0.hun.alpha=1;
+	}
+}
+
+function handleComplete(evt) {
+	stage.removeChild(exportRoot0);
+	delete exportRoot0;
+	domInit();
+	$(".p1-counttxt").html('现在已收获了<span id="p1-num">'+config.total+'</span>个爱心');
+	$(".p9-btmtxt").html('目前已有<span id="p9-num">'+config.total+'</span>人加入我们');
+	$(".p1").show();
+	exportRoot = new lib.moments();
+	createjs.Touch.enable(stage);
+	//createjs.MotionGuidePlugin.install();
+	fps=lib.properties.fps;
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);	    
+	showCont();
+}
+function domInit(){
+	$(".p1-btn").click(function(){
+		$(".p1").hide().remove();
+		$(".p2").show();
+	})
+	$(".p9-btn").click(function(){
+		$(".p9").addClass("anim2");
+	})
+	$(".p11-btn1").click(function(){
+		$(".p11-bMask").show();
+	})
+	$(".p11-bMask").click(function(){
+		$(".p11-bMask").hide();
+	})
+}
+function showCont(){
+	var img=new Image();
+	img.setAttribute("crossOrigin",'Anonymous');
+	img.src=config.headimgurl;
+	img.onload=function(){
+		var nickimg=new createjs.Bitmap(img);
+		exportRoot.conts.p1.headimg.addChild(nickimg);
+		nickimg.scaleX=72/img.width;
+		nickimg.scaleY=72/img.height;
+		config.nickimg=img;
+	}
+  img.onerror = img.onabort = function(){console.log("nickimg load failed")};
+	exportRoot.conts.p1.username.font="28px 黑体";
+	exportRoot.conts.p1.username.text=config.nickname;
+	myPlayer = document.getElementById("video");
+	myPlayer.src="media/tv15.mp4";	
+}
+function playingListen(func){
+  myPlayer.addEventListener("timeupdate",function listenvtime(e){})
+
+  myPlayer.addEventListener("waiting",function(){
+  	$(".vloading").show();
+    console.log('waiting');
+  })
+  myPlayer.addEventListener("canplaythrough",function(){
+    console.log('canplaythrough');
+  })
+  myPlayer.addEventListener("playing",function(){
+    console.log('playing');
+    $(".vloading,.vpaused").hide();
+    $("#videoBox").one("click",function(){
+			myPlayer.pause();
+		})
+  })
+  myPlayer.addEventListener("pause",function(){
+  	console.log("paused");
+  	//showshare();
+  	createShare();
+  	if(!isAndroid){
+	  	$(".vpaused").show();
+	  }
+	  $("#videoBox").one("click",function(){
+			myPlayer.play();
+		})
+  })
+  myPlayer.addEventListener("ended",function(){
+  	console.log("ended");
+  	$(".vpaused").hide();
+  	showshare();
+  })
+  function showshare(){
+  	if(isAndroid){
+	  	myPlayer.remove();
+	  	delete myPlayer;
+	  }
+  	createShare();
+  }
+}
+var userphoto,postphoto;
+function uploadSecFunc(imagefile,w,h){
+	$(".p2-btn").addClass("disabled");
+	$(".p2").hide().remove();
+	$("body").addClass("nobg");
+	userphoto=new createjs.Bitmap(imagefile[0]);
+	postphoto=userphoto.clone();
+	stage.addChild(exportRoot);	
+	exportRoot.conts.p1.photo.addChild(userphoto);
+	exportRoot.postmoment.photo.addChild(postphoto);
+	setTimeout(function(){
+		var _fixW=userphoto.getBounds().width;
+		var _fixH=userphoto.getBounds().height;
+		if(_fixW!=w){
+			userphoto.scaleX=userphoto.scaleY=w/_fixW;
+		}
+		postphoto.scaleX=postphoto.scaleY=147/_fixW;
+		postphoto.y=(147-_fixH*147/_fixW)/2;
+		p1PhotoReflow(_fixH*w/_fixW);
+	},0);
+	// $.post(config.posturl,{
+	// 	openid:config.openid
+	// },
+	(function(data){
+		console.log(data);
+		config.newTotal=data.total;
+		//shareobj.title="谢谢您，您是第"+config.newTotal+"位参与益起读书公益阅读的人";
+		//shareFunc(shareobj);
+	})({total:3218})
+	//,"json");
+	if(isQd){
+		setCookie("qduuid",qduuid);
+	}
+}
+function p1PhotoReflow(h){
+	var _photoBtm=exportRoot.conts.p1.photo.y+h;
+	exportRoot.conts.p1.time.y=15+_photoBtm;
+	exportRoot.conts.p1.pop.y=14+_photoBtm;
+	exportRoot.conts.p1.likes.y=55+_photoBtm;
+	initPage(h);
+}
+var ContsArr=[];
+var popYArr=[];
+var newYArr=[0];
+//var hArr=[0,5268,579.8,1315.1,279.5,1217.5];
+function initPage(h){
+	ContsArr=[exportRoot.conts.p1,
+		exportRoot.conts.p3_1,
+		exportRoot.conts.p13,
+		exportRoot.conts.p14,
+		exportRoot.conts.p15,
+		exportRoot.conts.p16
+	];
+	newYArr[1]=h+55+608.5+115;
+	//hArr[0]=newYArr[1];
+	for(var i=2;i<ContsArr.length;i++){
+		newYArr[i]=newYArr[i-1]+ContsArr[i-1].getBounds().height;
+	}
+	for(var i=2;i<ContsArr.length;i++){
+		exportRoot.conts.removeChild(ContsArr[i]);//先移除不可见内容减少内存压力
+	}
+	setTimeout(function(){
+		ContsArr[0].y=0;
+		popYArr.push(ContsArr[0].y);
+		ContsArr[1].y=ContsArr[0].y+exportRoot.conts.p1.likes.y+exportRoot.conts.p1.likes.getBounds().height;
+		popYArr.push(ContsArr[1].y);
+
+		for(var i=2;i<ContsArr.length;i++){
+			var _y=ContsArr[i-1].y+ContsArr[i-1].getBounds().height;
+			ContsArr[i].y=_y;
+			popYArr.push(_y);
+		}
+	},0);
+}
+
+function align(){
+	for(var i=0;i<ContsArr.length;i++){
+		if(ContsArr[i]) ContsArr[i].y=newYArr[i];
+	}
+}
+function reflow(){
+	var diff=exportRoot.conts.p1.likes.getBounds().height;
+	for(var i=1;i<ContsArr.length;i++){
+		if(ContsArr[i]) ContsArr[i].y=popYArr[i]+diff;
+	}
+}
+function videoInit(){
+	$("#videoBox").addClass("show").one("click",vClick);
+}
+var sndPlayStatus;
+function vClick(){
+	if(!bgm.paused){
+		sndPlayStatus="play";
+		$(".sndctrl").triggerHandler("click");
+	}
+	$(".sndctrl").hide();
+	exportRoot.conts.p16.photo.gotoAndStop(0);
+	stage.update();
+	createjs.Ticker.removeEventListener("tick", stage);
+	$("#videoBox").addClass("show pos");
+	if(isAndroid&&isWeixin){ $("#videoBox").addClass("androidWx"); }
+	myPlayer.play();
+	playingListen();
+}
+function createShare(){
+	var pRatio = window.devicePixelRatio;
+	var shareCanvas=document.createElement("canvas");
+	shareCanvas.style.backgroundColor = "#fff";
+	images1 = images1||{};
+	ss = ss||{};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){
+		if (evt.item.type == "image") { images1[evt.item.id] = evt.result; }
+	});
+	loader.addEventListener("complete", function(evt){
+		var queue = evt.target;
+		var ssMetadata = lib1.ssMetadata;
+		for(i=0; i<ssMetadata.length; i++) {
+			ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+		}
+		var exportRoot1 = new lib1.share();
+		var shareStage = new createjs.Stage(shareCanvas);
+		shareStage.addChild(exportRoot1);
+		//var iw=window.innerWidth,ih=window.innerHeight;
+		var iw=stageW,ih=stageH;
+		shareCanvas.width=iw*pRatio;
+		shareCanvas.height=ih*pRatio;
+		shareStage.scaleX = pRatio;
+		shareStage.scaleY = pRatio;	
+		if(!isQd){
+			$(".p10-btn").show().css({bottom:ih*(1-.899)});
+			// $(".p10-presstip").css({bottom:ih*(1-.899)+143}).show();
+			exportRoot1.btm.alpha=1;
+			exportRoot1.btm.y=ih*.899;
+		}else{
+			$(".p11-btn").show().css({bottom:ih*(1-.85)});
+			exportRoot1.btm_qd.alpha=1;
+			exportRoot1.btm_qd.y=ih*.931;
+		}
+		exportRoot1.bgimg.y=ih*.5;
+		exportRoot1.tit.y=ih*.117;
+		exportRoot1.tit.userid.font="bold 20px 黑体";
+		exportRoot1.tit.userid.text=config.nickname;
+		exportRoot1.tit.txtline1.font="bold 22px 黑体";
+		exportRoot1.tit.txtline1.text="我是“益起读书”第"+ config.newTotal +"个参与者，";
+		if(config.nickimg){
+			var nickimg=new createjs.Bitmap(config.nickimg);
+			exportRoot1.tit.nickimg.addChild(nickimg);
+			nickimg.scaleX=80/config.nickimg.width;
+			nickimg.scaleY=80/config.nickimg.height;
+		}
+		shareStage.update();
+		var base64 = shareCanvas.toDataURL("image/jpeg", 0.6);
+		$("#generateimg").attr("src",base64);
+
+		$(".p9").show();
+		var mc=new Hammer(document.body)
+		mc.on("panleft",function(ev){
+			$(".p9").addClass("anim1");
+			if(isAndroid){
+		  	myPlayer.remove();
+		  	delete myPlayer;
+		  }
+			mc.destroy();
+		})
+	});
+	loader.loadManifest(lib1.properties.manifest);
+	$(".sndctrl").show();
+	if(sndPlayStatus=="play"){ bgm.play(); }
+}
+function getLabelFramenum(mc,label){
+	var _labels=mc.labels;
+	for(var i=0;i<_labels.length;i++){
+		if(_labels[i].label==label){
+			return _labels[i].position;
+		}
+	}
+	throw new Error("can't find "+label+" label in "+mc);
+}
+function moveContY(toY,toFrame,ease){
+	if('undefined'==typeof ease){ ease=createjs.Ease.sineInOut; }
+	createjs.Tween.get(exportRoot.conts).to({y:toY},1000*(1+getLabelFramenum(exportRoot,toFrame)-exportRoot.currentFrame)/fps,ease); 
+}
+function uuid(len, radix) {
+  var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+  var uuid = [], i;
+  radix = radix || chars.length;
+  if (len) {
+    for (i = 0; i < len; i++) uuid[i] = chars[0 | Math.random()*radix];
+  } else {
+    var r;
+    uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';
+    uuid[14] = '4';
+    for (i = 0; i < 36; i++) {
+      if (!uuid[i]) {
+        r = 0 | Math.random()*16;
+        uuid[i] = chars[(i == 19) ? (r & 0x3) | 0x8 : r];
+      }
+    }
+  }
+  return uuid.join('');
+}
+function setCookie(c_name,value,expiredays){
+	var exdate=new Date()
+	exdate.setDate(exdate.getDate()+expiredays)
+	document.cookie=c_name+ "=" +escape(value)+((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+}
+function getCookie(c_name){
+if (document.cookie.length>0){
+  c_start=document.cookie.indexOf(c_name + "=")
+  if (c_start!=-1){ 
+    c_start=c_start + c_name.length+1 
+    c_end=document.cookie.indexOf(";",c_start)
+    if (c_end==-1) c_end=document.cookie.length
+    return unescape(document.cookie.substring(c_start,c_end))
+    } 
+  }
+	return ""
+}
+</script>
+</body>
+</html>

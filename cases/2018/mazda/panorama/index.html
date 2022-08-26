@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>mazda3</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="./css/pannellum.css"/>
+<style>
+html,body{position: relative;width: 100%; height: 100%; overflow: hidden; background-color: #000;}
+body{margin:0; padding:0; display: block; font-family: 'Helvetica Neue', 'Roboto', "microsoft yahei"; background: #0c1433; background: -webkit-linear-gradient(top, #0c1433 0%,#010104 100%); background: linear-gradient(to bottom, #0c1433 0%,#010104 100%); }
+p,input{margin:0; padding: 0;}
+input{border:0; background-color: transparent;}
+.bodywrapbg{background: #020206; background: url(./img/b01.jpg?ver=1) center top no-repeat; background-size: 100%; opacity: 0; -webkit-transition: opacity .9s .6s; transition: opacity .9s .6s; will-change:opacity;}
+.bodybgshow{ opacity: 1; }
+.p0{}
+.lt50p{position: absolute; left: 50%; top: 50%;}
+.wh375px{position: absolute; left: 50%; top: 50%; width: 375px; height: 600px; margin:-300px 0 0 -187.5px; overflow: hidden; }
+.wh100p{position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+.p2{ width: 100%; height: 100%; visibility: hidden; opacity: 0;}
+.p2show{visibility: visible; opacity: 1; z-index: 1;}
+#panorama {width: 375px; height: 600px;}
+.p2-tip{position: absolute; left: 0; top: 88%; width: 100%; color: #fff; font-size: 14px; text-align: center; pointer-events: none;}
+.p2show .p2-tip{-webkit-animation: fadeOut 1s 2s both; animation: fadeOut 1s 2s both;}
+.panocover{background-color: rgba(0,0,0,.7); z-index: 1;}
+.pancoverimg{margin-left: -100px; margin-top: -96px;}
+.hotSpotsCss{ width: 45px; height: 45px;}
+.noAni .hotSpotsCss{opacity: 0;}
+.hotSpotsCss:after{content: "";display: block; margin: auto; position: absolute; left: 0; top: 0; bottom: 0; right: 0; -webkit-animation: flash .3s alternate infinite; animation: flash .3s alternate infinite;}
+.hs1:after{width: 21px; height: 7px; background:url(./img/i1.png) center center no-repeat;background-size: 100% 100%;}
+.hs2:after{width: 25px; height: 11px; background:url(./img/i2.png) center center no-repeat;background-size: 100% 100%;}
+.hs3:after{width: 18px; height: 15px; background:url(./img/i3.png) center center no-repeat;background-size: 100% 100%;}
+.hs4:after{width: 20px; height: 18px; background:url(./img/i4.png) center center no-repeat;background-size: 100% 100%;}
+.hs5:after{width: 10px; height: 20px; background:url(./img/i5.png) center center no-repeat;background-size: 100% 100%;}
+.hs6:after{width: 17px; height: 17px; background:url(./img/i6.png) center center no-repeat;background-size: 100% 100%;}
+.hs7:after{width: 8px; height: 20px; background:url(./img/i7.png) center center no-repeat;background-size: 100% 100%;}
+.bmask{display: none; background-color: rgba(0,0,0,.5);}
+.p2-spotsdetail{z-index: 2;}
+.p2-detailbox,.p1-rulebox{ margin-left: -139px; margin-top: -184px; width: 278px; height: 368px; background: url(./img/c00.png) 0 0 no-repeat; background-size: cover; text-align: center; z-index: 1; -webkit-animation: bounceIn .6s both; animation: bounceIn .6s both;}
+.p2-redbagbox{ margin-left: -89px; margin-top: -151px; width: 178px; height: 302px; -webkit-animation: zoomIn .3s both; animation: zoomIn .3s both;}
+.p2-detailimg{ top: 92px;}
+.x{top:auto; bottom: -45px; width: 45px; height: 45px; margin-left: -22px; margin-top: -7px; background: url(./img/a07.png) center center no-repeat; background-size: 33% 33%; -webkit-animation: roll 2s  infinite; animation: roll 2s  infinite;}
+.p2-bagbtn{position: absolute; left: 50%; bottom: 28px; margin-left: -69px;}
+.p2-bag,.hasBag .p2-nobag{display: none;}
+.hasBag .p2-bag{display: block;}
+.p1-ruleimg{width: 100%; height: 100%;}
+#canvas{width: 375px; height: 600px;}
+#fwcanvas{display: none; width: 100%; height: 100%;}
+.wrap{position: absolute; left: 50%; top: 50%; margin:-300px 0 0 -187.5px; width: 375px; height: 600px;}
+.redbagWrap{display: none;}
+.bagopen{opacity: 0; pointer-events: none;}
+.bagclose,.bagopen{-webkit-transform-origin: 50% 65%; transform-origin: 50% 65%;}
+.baguptxt{position: absolute; left: 50%; margin-left: -120px; top: 6px;}
+.bagtip{position: absolute; left: 0; bottom: -35px; width: 100%; text-align: center; color: #eec06d; font-size:12px; }
+.open .baguptxt,.open .bagtip{display: none;}
+.open .bagclose{-webkit-animation: shake .6s both; animation: shake .6s both;}
+.open .bagopen{-webkit-animation: openbagout .6s both; animation: openbagout .6s both;}
+.bagglow{ margin-left: -193px; margin-top: -193px; -webkit-animation: roll2 6s linear infinite; animation: roll2 6s linear infinite;}
+.p2-bagresult{display: none; margin-left: -139px; margin-top: -220px; width: 278px; height: 440px;}
+.noluckimg{ top: 85px; margin-left: -67px;  }
+.noluckmsg{ position: absolute; left: 0; top: 260px; width: 100%; height: 15px; font-size: 12px; color: #e58f00; text-align: center; line-height: 15px;}
+.noluckmsg i{display: inline-block; width: 25px; height: 1px; background-color: #e48f02; vertical-align: middle;}
+.noluckbtn,.luckybtn{ top: 282px; margin-left: -78px;}
+.luckybtn{}
+#name,#phone{position: absolute; left: 50px; top: 217px; width: 181px; height: 25px; color: #000; font-size: 12px; text-indent: 10px;}
+#phone{top:255px;}
+.rstmsg{display: none;}
+.sharemsg{display: none; margin-left: -141px; margin-top: -89px; width: 283px; height: 178px;}
+.subsuc,.deviceUsed,.noluckSec{display: none;  -webkit-animation: bounceIn .4s both; animation: bounceIn .4s both;}
+.subsucmsg{margin-left: -77px; top: 49px;}
+.sharebtn,.backbtn{top: 124px; margin-left: -69px; }
+.noluckSecMsg{margin-left: -113px; top: 49px;}
+.devmsg{margin-left: -103px; top: 49px;}
+
+.disabled{pointer-events: none;}
+.glass{position: absolute; right: 15px; top: 0;-webkit-animation: glassmove .35s alternate ease-in-out infinite; animation: glassmove .35s alternate ease-in-out infinite; pointer-events: none;}
+.musicshare{display: none; z-index: 999; }
+.sndctrl{position: absolute; right: 15px; top: 15px; width: 29px; height: 33px; z-index: 99;}
+.sndicon{width: 29px; height: 33px; background: url(./img/a03.png) center center no-repeat; background-size: 50% 50%;}
+.sndctrl i{ position: absolute; left:6px; top:16px; display:none; background-color: #d4b57e; width: 20px; height: 1px; -webkit-transform: rotate(45deg); transform: rotate(45deg);}
+.logo{position: absolute; left: 15px; top: 15px; display: none; -webkit-animation: fadeIn .5s 1s both; animation: fadeIn .5s 1s both;}
+.deviceUsed{}
+
+@-webkit-keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@-webkit-keyframes fadeOut {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+@keyframes fadeOut {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+@-webkit-keyframes flash {
+	from { opacity: 1 }
+	to { opacity: .7 }
+}
+@keyframes flash {
+	from { opacity: 1 }
+	to { opacity: .7 }
+}
+@-webkit-keyframes glassmove {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: translate3d(0, -4px, 0); transform: translate3d(0, -4px, 0); }
+}
+@keyframes glassmove {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: translate3d(0, -4px, 0); transform: translate3d(0, -4px, 0); }
+}
+@-webkit-keyframes zoomIn {
+	from { -webkit-transform: scale3d(0, 0, 1); transform: scale3d(0, 0, 1); }
+	to { -webkit-transform: none; transform: none; }
+}
+@keyframes zoomIn {
+	from { -webkit-transform: scale3d(0, 0, 1); transform: scale3d(0, 0, 1); }
+	to { -webkit-transform: none; transform: none; }
+}
+@-webkit-keyframes roll {
+	0%,50% { -webkit-transform: none; transform: none; }
+	100% { -webkit-transform: rotateZ(360deg); transform: rotateZ(360deg); }
+}
+@keyframes roll {
+	0%,50% { -webkit-transform: none; transform: none; }
+	100% { -webkit-transform: rotateZ(360deg); transform: rotateZ(360deg); }
+}
+@-webkit-keyframes zoomtan {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: scale3d(.8, .8, 1); transform: scale3d(.8, .8, 1); }
+}
+@keyframes zoomtan {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: scale3d(.8, .8, 1); transform: scale3d(.8, .8, 1); }
+}
+@-webkit-keyframes bounceIn {
+	0% { -webkit-transform: scale3d(0, 0, 1); transform: scale3d(0, 0, 1); }
+	40% { -webkit-transform: scale3d(1.05, 1.05, 1); transform: scale3d(1.05, 1.05, 1); }
+	70% {-webkit-transform: scale3d(.95, .95, 1); transform: scale3d(.95, .95, 1);}
+	100%{-webkit-transform: none; transform: none;}
+}
+@keyframes bounceIn {
+	0% { -webkit-transform: scale3d(0, 0, 1); transform: scale3d(0, 0, 1); }
+	40% { -webkit-transform: scale3d(1.05, 1.05, 1); transform: scale3d(1.05, 1.05, 1); }
+	70% {-webkit-transform: scale3d(.95, .95, 1); transform: scale3d(.95, .95, 1);}
+	100%{-webkit-transform: none; transform: none;}
+}
+@-webkit-keyframes shake {
+	0% { -webkit-transform: none; transform: none; }
+	15%,45% { -webkit-transform: scale3d(.8, .8, 1) rotateZ(-2deg); transform: scale3d(.8, .8, 1) rotateZ(-2deg); }
+	30% { -webkit-transform: scale3d(.8, .8, 1) rotateZ(2deg); transform: scale3d(.8, .8, 1) rotateZ(2deg); }
+	60%,100%{-webkit-transform: scale3d(.8, .8, 1) rotateZ(0); transform: scale3d(.8, .8, 1) rotateZ(0);}
+}
+@keyframes shake {
+	0% { -webkit-transform: none; transform: none; }
+	15%,45% { -webkit-transform: scale3d(.8, .8, 1) rotateZ(-2deg); transform: scale3d(.8, .8, 1) rotateZ(-2deg); }
+	30% { -webkit-transform: scale3d(.8, .8, 1) rotateZ(2deg); transform: scale3d(.8, .8, 1) rotateZ(2deg); }
+	60%,100%{-webkit-transform: scale3d(.8, .8, 1) rotateZ(0); transform: scale3d(.8, .8, 1) rotateZ(0);}
+}
+@-webkit-keyframes openbagout {
+	0%,60% { -webkit-transform: scale3d(.8, .8, 1); transform: scale3d(.8, .8, 1);  opacity: 0;}
+	100% { -webkit-transform: none; transform: none; opacity: 1;}
+}
+@keyframes openbagout {
+	0%,60% { -webkit-transform: scale3d(.8, .8, 1); transform: scale3d(.8, .8, 1);  opacity: 0;}
+	100% { -webkit-transform: none; transform: none; opacity: 1;}
+}
+@-webkit-keyframes roll2 {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: rotateZ(360deg); transform: rotateZ(360deg); }
+}
+@keyframes roll2 {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: rotateZ(360deg); transform: rotateZ(360deg); }
+}
+@-webkit-keyframes downbounce1 {
+	0% { -webkit-transform: translate3d(0, -140px, 0) scale(.5); transform: translate3d(0, -140px, 0) scale(.5); opacity: .5;}
+	40%{ -webkit-transform: translate3d(0, -800px, 0); transform: translate3d(0, -800px, 0); opacity: 1;}
+	60% { -webkit-transform: translate3d(0, 30px, 0); transform: translate3d(0, 30px, 0); opacity: 1;}
+	80% { -webkit-transform: translate3d(0, -30px, 0); transform: translate3d(0, -30px, 0); opacity: 1;}
+	100%{-webkit-transform: none; transform: none; opacity: 1;}
+}
+@keyframes downbounce1 {
+	0% { -webkit-transform: translate3d(0, -140px, 0) scale(.5); transform: translate3d(0, -140px, 0) scale(.5); opacity: .5;}
+	40%{ -webkit-transform: translate3d(0, -800px, 0); transform: translate3d(0, -800px, 0); opacity: 1;}
+	60% { -webkit-transform: translate3d(0, 30px, 0); transform: translate3d(0, 30px, 0); opacity: 1;}
+	80% { -webkit-transform: translate3d(0, -30px, 0); transform: translate3d(0, -30px, 0); opacity: 1;}
+	100%{-webkit-transform: none; transform: none; opacity: 1;}
+}
+
+</style>
+</head>
+<body>
+	<div class="bodywrapbg wh100p"></div> 
+	<div class="p2 wh100p" data-response-1="true">
+		<div id="panorama"></div>
+		<p class="p2-tip">转动屏幕搜寻内饰找寻“亮点”</p>
+		<div class="panocover wh100p">
+			<img src="./img/c23.png" alt="" width="201" height="192" class="pancoverimg lt50p">
+		</div>
+		<div class="bmask p2-spotsdetail wh100p">
+			<canvas id="fwcanvas" width="750" height="1200"></canvas>
+
+			<div class="detailboxWrap wrap" data-response="true">
+				<div class="p2-detailbox lt50p">
+					<img src="./img/c01.png" alt="" class="p2-detailimg lt50p">
+					<img src="./img/c08.png?ver=1" width="138" height="44" class="p2-nobag p2-bagbtn">
+					<img src="./img/c09.png" width="138" height="33" class="p2-bag p2-bagbtn">
+					<div class="p2-closebtn x lt50p"></div>
+				</div>
+			</div>
+			
+			<div class="redbagWrap wrap" data-response="true">
+				<div class="p2-redbagbox lt50p">
+					<img src="./img/c11.png" width="387" height="387" alt="" class="bagglow lt50p">
+					<img src="./img/c14.png" width="241" height="23" alt="" class="baguptxt">
+					<img src="./img/c12.png" width="100%" height="100%" alt="" class="bagclose wh100p">
+					<img src="./img/c13.png" width="100%" height="100%" alt="" class="bagopen wh100p">
+					<p class="bagtip">点击红包参与抽奖</p>
+				</div>
+				<div class="p2-bagresult lt50p">
+					<img src="./img/c15.png" width="100%" height="100%" alt="" class="resultbg">
+					<div class="noluck rstmsg wh100p">
+						<img src="./img/c16.png?ver=1" width="134" height="145" alt="" class="noluckimg lt50p">
+						<p class="noluckmsg "><i></i>&nbsp;还有<span>两</span>次机会&nbsp;<i></i></p>
+						<img src="./img/c17.png" width="157" height="50" alt="" class="noluckbtn lt50p">
+					</div>
+					<div class="lucky rstmsg wh100p">
+						<img src="./img/c18.png" width="100%" height="100%" alt="" class="luckyimg">
+						<input type="text" name="name" id="name" placeholder="姓名">
+						<input type="tel" name="phone" id="phone" placeholder="手机" maxlength="11">
+						<img src="./img/c19.png" width="157" height="50" alt="" class="luckybtn lt50p">
+					</div>
+				</div>
+				<div class="sharemsg lt50p" >
+					<div class="subsuc wh100p">
+						<img src="./img/c20.png?ver=1" width="100%" height="100%" alt="">
+						<img src="./img/c27.png" width="153" height="62" alt="" class="subsucmsg lt50p">
+						<img src="./img/c21.png" width="138" height="31" alt="" class="sharebtn lt50p">
+					</div>
+					<div class="noluckSec wh100p">
+						<img src="./img/c20.png?ver=1" width="100%" height="100%" alt="">
+						<img src="./img/c24.png" width="226" height="42" alt="" class="noluckSecMsg lt50p">
+						<img src="./img/c21.png" width="138" height="31" alt="" class="sharebtn lt50p">
+					</div>
+					<div class="deviceUsed wh100p">
+						<img src="./img/c20.png?ver=1" width="100%" height="100%" alt="">
+						<img src="./img/c25.png" width="207" height="57" alt="" class="devmsg lt50p">
+						<img src="./img/c26.png" width="138" height="31" alt="" class="backbtn lt50p">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="p0 p1 wh100p" id="loading">
+		<div class="p0p1wrap wh375px"  data-response="true">
+			<canvas id="canvas" width="750" height="1200"></canvas>
+		</div>
+		<img src="./img/b04.png" alt="" width="30" height="38" class="logo">
+	</div>
+
+	<div class="p1-rule bmask wh100p">
+		<div class="wrap" data-response="true">
+			<div class="p1-rulebox lt50p">
+				<img src="./img/c10.png" alt="" class="p1-ruleimg">
+				<div class="p1-closebtn x lt50p"></div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="musicshare wh100p" data-response-1="true">
+		<img src="./img/c22.png?ver=1" width="50" height="233" alt="" class="glass">
+
+	</div>
+	<!-- <div class="sndctrl">
+		<div class="sndicon"></div><i></i>
+		<audio id="bgm" src="./media/bgm.mp3" autoplay="autoplay"></audio>
+	</div> -->
+<script src="./js/createjs-2015.11.26.min.js"></script>
+<script src="./js/pannellum.min.js"></script>
+<script src="./js/jquery-3.0.0.min.js"></script>
+<script src="loading.js?1517983"></script>
+<script src="cover.js?151798713"></script>
+<script src="fireworks.js?1517398"></script>
+<script>
+var canvas, stage, loader, exportRoot0, exportRoot, exportRoot1, fwcanvas, fwstage;
+var pano;
+var Config={
+	flag:1,
+	formflag:1,
+	luckChance:2,
+	shareChance:true,
+	lucky:false,
+	numCn:["一","两"]
+};
+(function(){
+var TD = {};
+TD.responseBody = function (config) {
+  config = config || {};
+  config.width = config.width || 375;
+  config.height = config.height || 600;
+  config.type = config.type || 'cover'; // 'cover'、'contain'
+
+  var responseList = $('[data-response]');
+
+  var rate = void 0;
+  var rateCover = void 0;
+  var rateContain = void 0;
+
+  var responseFn = function responseFn() {
+    var rateX = document.documentElement.clientWidth / config.width;
+    var rateY = document.documentElement.clientHeight / config.height;
+
+    rateCover = rateX > rateY ? rateX : rateY;
+    rateContain = rateX < rateY ? rateX : rateY;
+
+    switch (config.type) {
+      case 'cover':
+        rate = rateCover;
+        break;
+      case 'contain':
+        rate = rateContain;
+        break;
+      default:
+        rate = 1;
+    }
+
+    responseList.each(function () {
+      var type = $(this).attr('data-type');
+      var elRate = void 0;
+      if (type === 'cover') {
+        elRate = rateCover;
+      } else if (type === 'contain') {
+        elRate = rateContain;
+      } else {
+        elRate = rate;
+      }
+      this.style.webkitTransform = 'scale(' + elRate + ')';
+    });
+  };
+
+  responseFn();
+
+  $(window).on('resize', function () {
+    //responseFn();
+  });
+  return rate;
+};
+
+TD.responseBody({
+  width: 375,
+  height: 600,
+  type: 'contain'
+});
+
+
+function initfw(){
+	fwcanvas=document.getElementById("fwcanvas");
+	fwComplate();
+}
+function fwComplate(evt){
+	exportRoot1 = new lib1.fireworks();
+	fwstage = new createjs.Stage(fwcanvas);
+
+	createjs.Ticker.setFPS(lib1.properties.fps);
+	createjs.Ticker.addEventListener("tick", fwstage);
+}
+$(function(){
+	init();
+})
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+	loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad0);
+	loader.addEventListener("complete", handleComplete0);
+	loader.loadManifest(lib0.properties.manifest);
+}
+function handleFileLoad0(evt) {	
+	if (evt.item.type == "image") { images0[evt.item.id] = evt.result; }	
+}
+function handleComplete0(evt) {
+	exportRoot0 = new lib0.loading();
+	stage = new createjs.Stage(canvas);
+	createjs.Touch.enable(stage);
+	createjs.MotionGuidePlugin.install();
+	stage.addChild(exportRoot0);	
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);	    
+
+	loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+
+	$("#panorama").css({width:document.documentElement.clientWidth,
+		height:document.documentElement.clientHeight});
+	pano=initPano();
+}
+function handleFileLoad(evt){
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }	
+	exportRoot0.loadnum.num.text=Math.floor(100*evt.target._numItemsLoaded/evt.target._numItems) +" %";
+}
+function handleComplete(evt){
+	exportRoot = new lib.cover();
+	stage.addChild(exportRoot);
+	exportRoot0.gotoAndPlay(1);
+	$(".logo").show();
+	initPage();
+	initfw();
+}
+
+function initPage(){
+	$(".panocover").click(function(){
+		$(".panocover").hide();
+		$(".p2").removeClass("noAni");
+	})
+	$(".p2-closebtn,.p2-nobag").click(function(){
+		$(".p2-spotsdetail").hide();
+		$(".p2").removeClass("noAni");
+		$(".p2-detailbox").removeClass("hasBag");
+	})
+	$(".p1-closebtn").click(function(){
+		$(".p1-rule").hide();
+	})
+	$(".p2-bag").click(function(){
+		//抽个大红包
+		$(".detailboxWrap").hide();
+		$("#fwcanvas").show();
+		fwstage.addChild(exportRoot1);
+		$(".redbagWrap").show();
+	})
+	var luckcount_demo=0;
+	$(".bagclose").click(function(){
+		$(".bagclose").addClass("disabled");
+		$(".p2-redbagbox").addClass("open");
+
+		if(Config.flag){
+			// 演示注释
+			// $.ajax({
+			// 	url:"http://top.yidianzixun.com/exposedInterface/luckyMazda",
+			// 	type:"post",
+			// 	data:{},
+			// 	dataType:"json",
+			// 	beforeSend: function() {
+			// 		Config.flag = 0;
+			// 	},
+			// 	success:function(data){
+				var _data={status:-1}
+				if(++luckcount_demo>2) _data.status=1;
+
+				(function(data){
+					Config.flag = 1;
+					if(1==data.status){//中奖
+						Config.lucky=true;
+						setTimeout(function(){
+							$(".p2-bagresult").show();
+							$(".bagglow").hide();
+							$(".rstmsg").hide();
+
+							$(".lucky").show();
+							//code=data.code;
+						},300);
+					}else if(-1==data.status){//未中奖
+						setTimeout(function(){
+							
+							$(".bagglow").hide();
+							$(".rstmsg").hide();
+
+							if(Config.luckChance>0){
+								if(Config.shareChance){
+									$(".p2-bagresult").show();
+									$(".noluck").show();
+									$(".noluckmsg span").text(Config.numCn[Config.luckChance-1]);
+								}else{
+									$(".sharemsg,.noluckSec").show();
+								}
+							}else{
+								//第二次依然没有中奖
+								$(".sharemsg,.noluckSec").show();
+							}
+							Config.luckChance--;
+						},300);
+					}else{
+						console.log(data);
+					}
+				})(_data)
+			// 演示注释
+			// 	},
+			// 	error:function(XMLHttpRequest, textStatus, errorThrown) {
+			// 		Config.flag = 1;
+			// 		alert("对不起，由于网络原因请稍后重试");
+			// 	}
+			// })
+		}
+	})
+	$(".noluckbtn").click(function(){
+		//再抽一次
+		$(".bagclose").removeClass("disabled");
+		$(".p2-bagresult").hide();
+		$(".bagglow").show();
+		$(".p2-redbagbox").removeClass("open");
+	})
+
+	$(".luckybtn").click(function(){
+		//提交信息
+		$(".luckybtn").addClass("disabled");
+		var _name=$("#name").val();
+		var _phone=$("#phone").val();
+		if(_name.replace(/\s+/g,"")==""){
+			$(".luckybtn").removeClass("disabled");
+			$("#name").focus();
+			alert("请输入姓名");
+		}else if(_phone.replace(/\s+/g,"")==""){
+			$(".luckybtn").removeClass("disabled");
+			$("#phone").focus();
+			alert("请输入手机号码");
+		}else{
+			if(Config.formflag){
+				// $.ajax({
+				// 	url:"http://top.yidianzixun.com/exposedInterface/updateLuckyMazdaInfo",
+				// 	type:"post",
+				// 	data:{
+				// 		name:_name,
+				// 		phone:_phone,
+				// 		//code:code
+				// 	},
+				// 	dataType:"json",
+				// 	//contentType:"application/json; charset=utf-8",
+				// 	beforeSend: function() {
+				// 		Config.formflag = 0;
+				// 	},
+				// 	success:
+					(function(data){
+						console.log(data)
+						$(".luckybtn").removeClass("disabled");
+						
+						Config.formflag=1;
+						if(1==data.status){
+							$(".sharemsg,.subsuc").show();
+							$(".lucky").addClass("disabled");
+						}else if(-1==data.status){
+							switch(data.message){
+								case "请填写姓名":
+									alert(data.message);
+								break;
+								case "请填写正确的手机号码":
+									alert(data.message);
+								break;
+								case "领奖失败":
+									$(".sharemsg,.deviceUsed").show();
+								break;
+								case "领取奖品过期":
+									alert(data.message);
+								break;
+								default:
+								break;
+							}	
+						}
+					})({status:1})
+				// 	error:function(XMLHttpRequest, textStatus, errorThrown) {
+				// 		Config.formflag = 1;
+				// 		$(".luckybtn").removeClass("disabled");
+				// 		alert("对不起，由于网络原因请稍后重试");
+				// 	}
+				// })
+			}
+		}
+	})
+	
+	$(".sharebtn").click(function(){
+		$(".sharemsg,.detailboxWrap,.redbagWrap,.p2-bagresult,.noluckSec,.subsuc,#fwcanvas").hide();
+		$(".musicshare").show();
+		$(".p2-redbagbox").removeClass("open");
+	})
+
+	$(".backbtn").click(function(){
+		$(".sharemsg,.deviceUsed").hide();
+	})
+}
+
+
+
+function initPano(){	
+	var detailDim=[{w:433,h:377},{w:402,h:347},{w:404,h:377},{w:402,h:377},{w:422,h:387},{w:402,h:347},{w:402,h:377}];
+	var hasBagArr= new Array(7);
+	for(var i=1;i<=3;i++){
+		grabag(i);
+	}
+	function grabag(i){
+		var random=Math.ceil(Math.random()*7)-1;
+		if(!hasBagArr[random]){
+			hasBagArr[random]=true;
+		}else{
+			grabag(i);
+		}
+	}
+	var _path=window.location.pathname.match(/\S+\//)[0];
+	return pannellum.viewer('panorama', {
+    "type": "multires",
+    "multiRes": {
+      //"path": "/2018mazda/panorama/img/multires/%l/%s%y_%x",
+      "path": _path+"img/multires/%l/%s%y_%x",
+      "fallbackPath": "/fallback/%s",
+      "extension": "jpg",
+      "tileResolution": 512,
+      "maxLevel": 3,
+      "cubeResolution": 1272
+    },
+    //"type": "equirectangular",
+    //"panorama": "./img/panorama_o2.jpg?ver=1.0",
+    "hfov":52,
+    "showZoomCtrl":false,
+    "showFullscreenCtrl":false,
+    "autoLoad":true,
+    "hotSpots":[
+    	{
+        "pitch": -12.21,
+        "yaw": 4.87,
+        "cssClass": "hotSpotsCss hs1",
+        "clickHandlerFunc": hotspot,
+        "clickHandlerArgs":{id:1}
+	    },{
+        "pitch": -75.83,
+        "yaw": -25.13,
+        "cssClass": "hotSpotsCss hs2",
+        "clickHandlerFunc": hotspot,
+        "clickHandlerArgs":{id:2}
+      },{
+        "pitch": -43.07,
+        "yaw": -35.94,
+        "cssClass": "hotSpotsCss hs3",
+        "clickHandlerFunc": hotspot,
+        "clickHandlerArgs":{id:3}
+      },{
+        "pitch": 4.91,
+        "yaw": -21.85,
+        "cssClass": "hotSpotsCss hs4",
+        "clickHandlerFunc": hotspot,
+        "clickHandlerArgs":{id:4}
+      },{
+        "pitch": -0.79,
+        "yaw":  6.33,
+        "cssClass": "hotSpotsCss hs5",
+        "clickHandlerFunc": hotspot,
+        "clickHandlerArgs":{id:5}
+      },{
+        "pitch": -5.23,
+        "yaw": -12.83,
+        "cssClass": "hotSpotsCss hs6",
+        "clickHandlerFunc": hotspot,
+        "clickHandlerArgs":{id:6}
+      },{
+        "pitch": -33.09,
+        "yaw": 7.44,
+        "cssClass": "hotSpotsCss hs7",
+        "clickHandlerFunc": hotspot,
+        "clickHandlerArgs":{id:7}
+      }
+    ],
+    //hotSpotDebug :true
+	}); 
+	function hotspot(obj,arg){
+		if(hasBagArr[arg.id-1]){
+			$(".p2-detailbox").addClass("hasBag");
+		}
+
+		$(".p2-spotsdetail,.detailboxWrap").show();
+		$(".p2").addClass("noAni");
+		var thisDim=detailDim[arg.id-1];
+		$(".p2-detailimg").attr("src","./img/c0"+arg.id+".png").width(thisDim.w/2).height(thisDim.h/2).css({
+			"margin-left":-thisDim.w/4
+		});
+	}
+}
+
+function setCookie(c_name,value,expiredays){
+	var exdate=new Date()
+	exdate.setDate(exdate.getDate()+expiredays)
+	document.cookie=c_name+ "=" +escape(value)+
+	((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+}
+function getCookie(c_name){
+if (document.cookie.length>0){
+  c_start=document.cookie.indexOf(c_name + "=")
+  if (c_start!=-1){ 
+    c_start=c_start + c_name.length+1 
+    c_end=document.cookie.indexOf(";",c_start)
+    if (c_end==-1) c_end=document.cookie.length
+    return unescape(document.cookie.substring(c_start,c_end))
+    } 
+  }
+	return ""
+}
+})()
+function shareSecHandler(){
+	if(Config.shareChance&&!Config.lucky){
+		Config.shareChance=false;
+		if(Config.luckChance<=0){
+			Config.luckChance=1;
+		}
+		$(".musicshare").hide();
+		$(".redbagWrap,.p2-redbagbox").show();
+		$(".bagclose").removeClass("disabled");
+	}
+}
+function p0playEnd(){
+	stage.removeChild(exportRoot0);
+	exportRoot.gotoAndPlay(1);
+}
+function p1btnFunc(evt){
+	$(".p2").addClass("p2show noAni");
+	stage.removeChild(exportRoot0);
+	stage.removeChild(exportRoot);
+	$(".p0").remove();
+}
+function ruleFunc(evt){
+	$(".p1-rule").show();
+}
+function bodycolorChange(){
+	$(".bodywrapbg").addClass("bodybgshow");
+}
+</script>
+</body>
+</html>

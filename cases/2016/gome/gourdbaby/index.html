@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>爷爷，你是不是心甘情愿跟了蛇精？</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link href="css/style.css?ver=1.1" rel="stylesheet">
+</head>
+<body>
+  <section id="loading">	
+  	<div class="gifarea">
+      <img src="img/loading.gif" width="200" height="200" alt="" class="loading">
+  		<p class="percent">0</p>
+    </div>
+  </section>
+  <section class="page p0">
+		<img data-src="img/a01.jpg" width="640" height="1136" alt="" class="p0bg">
+		<div class="chshj"><img data-src="img/a00.gif" width="103" height="168" alt="" class="chshjimg"></div>
+		<img data-src="img/a03.png" width="640" height="1040" alt="" class="p0border">
+		<img data-src="img/a17.png" width="470" height="145" alt="" class="p0txt">
+  	<img data-src="img/a04.png" width="298" height="106" alt="" class="playbtn">
+  </section>
+  <section class="page p1">
+  	<div class="video videoouter">
+      <video class="video js-video" webkit-playsinline width="640" height="1040" poster="img/a02.jpg">
+        <source src="media/v0829.mp4" type="video/mp4">
+      </video>
+      <canvas class="canvas js-canvas" width="640" height="1040"></canvas>
+    </div>
+    <div class="vend">
+    	<img data-src="img/a03.jpg" width="640" alt="" class="vendbg">
+    	<img data-src="img/a02.png" width="280" height="85" alt="" class="p1btn">
+    </div>
+    
+    <!-- <img data-src="img/a01.png" width="640" height="482" alt="" class="tittop"> -->
+  </section>
+  <section class="page p2">
+  	<img data-src="img/a04.jpg" width="640" alt="" class="p2bg">
+  	<img data-src="img/a05.png" width="640" height="391" alt="" class="p2plant">
+  	<img data-src="img/a01.png" width="640" alt="" class="p2btop">
+  	<img data-src="img/a06.png" width="390" height="292" alt="" class="p2tit1 p2tit">
+  	<img data-src="img/a07.png" width="345" height="198" alt="" class="p2tit2 p2tit">
+  	<!-- <img data-src="img/a08.png" width="494" height="76" alt="" class="p2tit3 p2tit"> -->
+  	<img data-src="img/a09.png" width="236" height="79" alt="" class="p2fribtn">
+  	<img data-src="img/a10.png" width="236" height="79" alt="" class="p2shbtn">
+  	<div class="blankMask">
+  		<div class="bm1 bm">
+  			<img data-src="img/a11.png" width="261" height="266" alt="" class="bm1boy">
+  			<img data-src="img/a12.png" width="321" height="36" alt="" class="bm1txt">
+  			<!-- <img data-src="img/a05.jpg" width="241" height="240" alt="" class="qrcode"> -->
+        <img data-src="img/a18.png" width="640" height="1040" alt="" class="qrcode2">
+  		</div>
+  		<div class="bm2 bm">
+  			<img data-src="img/a15.png" width="211" height="36" alt="" class="bm2txt">
+  			<img data-src="img/a14.png" width="67" height="59" alt="" class="bm2arrow">
+  			<img data-src="img/a13.png" width="211" height="215" alt="" class="bm2boy">
+  			<img data-src="img/a16.png" width="297" height="407" alt="" class="bm2light">
+  		</div>
+  	</div>
+  </section>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/fontfaceobserver.standalone.js"></script>
+<script src="js/common.js?ver=1.34"></script>
+<audio src="media/audio1.mp3" id="audio1" preload="preload"></audio>
+<audio src="media/audio2.mp3" id="audio2" preload="preload"></audio>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>快！趣现场</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="wrapper">
+  <canvas id="canvas" width="640" height="1136"></canvas>
+  <section class="pops">
+    <div class="popcont big rule">
+      <img src="img/b02.png" width="591" height="682" alt="" class="popbg">
+      <div class="rule1">
+        <img src="img/b04.png" width="446" height="439" alt="">
+        <img src="img/b06.png" class="prev">
+        <img src="img/b05.png" class="next">
+      </div>
+      <div class="rule2">
+        <img src="img/b07.png" width="446" height="485" alt="">
+        <img src="img/b06.png" class="next">
+        <img src="img/b05.png" class="prev">
+      </div>
+      <img src="img/b03.png" width="" height ="" class="headphoto" >
+      <img src="img/b01.png" alt="" class="ruleclose">
+    </div>
+    <div class="popcont tiny login">
+      <img src="img/b32.png" width="592" height="462" alt="" class="popbg">
+      <img src="img/b30.png" width="339" height="53" alt="" class="loginnomal">
+      <b class="tipshow">展示页面随意填写手机号与验证码</b>
+      <p class="logincodeerr"></p>     
+      <img src="img/b19.png" width="453" height="85" alt="" class="loginbg">
+      <input type="tel" placeholder="| 请输入您的手机号码" class="mobile0" name="mobile0" maxlength="11" value="13500000000">
+      <input type="tel" placeholder="| 验证码" class="vertifycode" name="vertifycode" maxlength="4" value="1234">
+      <div class="CodeBtnArea"><div class="codebtn">获取短信验证码</div><div class="codesec"><span id="codesecnum">60</span>秒后重新发送</div></div>
+      <img src="img/b18.png" width="275" height="87" alt="" class="loginbtn">
+    </div>
+    <div class="popcont small result">
+      <img width="401" alt="" class="rstslogan">
+      <img src="img/b10.png" width="591" height="322" alt="" class="popbg">
+      <div class="rstcont lucky">
+        <img src="img/b15.png" width="438" height="246" alt="" class="luckybg">
+        <img src="img/b16.png" width="116" height="117" alt="" class="goluck">
+        <p class="score">0</p>
+      </div>
+      <div class="rstcont pity">
+        <img src="img/b14.png" width="438" height="246" alt="" class="pitybg">
+        <img src="img/b13.png" width="116" height="117" alt="" class="playagain">
+        <p class="score">0</p>
+      </div>
+      <div class="rstcont hadplay">
+        <img src="img/b17.png" width="438" height="245" alt="" class="hadplaybg">
+        <img src="img/b11.png" width="104" height="106" alt="" class="hadplayok">
+        <p class="score">0</p>
+      </div>
+    </div>
+    <div class="popcont tiny prize">
+      <img src="img/b32.png" width="592" height="472" alt="" class="popbg">
+      <img src="img/b33.png" width="425" height="107" alt="" class="prizetop">
+      <p class="prizetip2">奖品以实物为准</p>
+      <img src="" alt="" class="award">
+      <p class="unluckytip">太可惜了<br>奖品太抢手，所以本次没抽中</p>
+      <p class="prizetip">如果您未及时领取抽中奖品<br>将视为自动放弃奖品</p>
+      <img src="img/b31.png" width="257" height="87" alt="" class="getprize">
+      <img src="img/b11.png" width="104" height="106" alt="" class="subok">
+    </div>
+    <div class="popcont big form">
+      <img src="img/b02.png" width="591" height="682" alt="" class="popbg">
+      <img src="img/b08.png" width="484" height="595" alt="" class="formbg">
+      <form action="#" id="formmsg" class="formmsg" onsubmit="return false;">
+        <input type="text" placeholder="| 请输入姓名" class="username" name="username">
+        <input type="text" placeholder="| 请输入手机号" class="mobile" name="mobile" readonly="readonly" maxlength="11">
+        <textarea cols="20" rows="5" wrap="soft" placeholder="| 请输入收奖地址" class="address" name="address"></textarea>
+        <button id="smtbtn" class="smtbtn">
+          <img src="img/b09.png" width="116" height="117" alt="">
+        </button>
+      </form>
+    </div>
+    <div class="popcont small subsuc">
+      <img src="img/b10.png" width="591" height="322" alt="" class="popbg">
+      <img src="img/b12.png" width="438" height="158" alt="" class="subsucbg">
+      <img src="img/b11.png" width="104" height="106" alt="" class="subok">
+    </div>
+  </section>
+  <img src="img/a01.png" width="182" height="38" alt="" class="logol">
+  <img src="img/a02.png" width="180" height="92" alt="" class="logor" id="logor">
+  <div class="sndbtn" id="sndbtn"><i class="laba"></i><b class="muteline"></b></div>
+  <section class="loading" id="loading">
+    <div class="gifarea">
+      <img src="img/loading.gif" width="250" height="250" alt="">
+      <p class="numtxt"><span id="num" class="num">01</span>%</p>
+    </div>
+  </section>
+</div>
+<div id="orientLayer" class="mod-orient-layer">
+  <div class="mod-orient-layer__content">
+    <i class="icon mod-orient-layer__icon-orient"></i>
+    <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+  </div>
+</div>
+
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/createjs-2015.11.26.min.js"></script>
+<script src="js/cover.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+
+<!--Mock start-->
+<script src="../../../libs/mock.js"></script>
+<script>
+    var Mock_db = {
+        timestamp: null,
+        rand_num: null,
+        sign: null
+    }
+    var ErrorMap = new Map([
+      [0, 'OK'],
+      [10004, 'timestamp错误'],
+      [10005, 'rand_num错误'],
+      [10006, 'sign错误'],
+      [10007, '没有用户名'],
+      [10008, '没有地址'],
+      [10009, '不合法的手机号'],
+      [10010, '不合法的func'],
+      [10011, '验证码不正确'],
+      [23333, '参数错误']
+    ])
+
+    Mock.mock(/init_info\.php.*/, 'get', function(options){
+      var getQueryString = getParam(new URL('http://' + decodeURIComponent(options.url)));
+      if(getQueryString('g_channel') == 'hxFootball'){
+        Mock_db.timestamp = new Date().valueOf(); 
+        Mock_db.rand_num = Math.random();
+        Mock_db.sign = Mock.Random.guid().replace(/-/g,'').toLowerCase();
+
+        var data = {
+          timestamp: Mock_db.timestamp,
+          rand_num: Mock_db.rand_num,
+          sign: Mock_db.sign,
+          token: '',
+          app_type: 2,
+          g_channel:'hxFootball',
+          activityData: [],
+        }
+        return {
+          data, 
+          backtrace: '', 
+          ...getErrorRes(0, ErrorMap)
+        };
+      }else {
+        return getErrorRes(23333, ErrorMap);
+      }
+    })
+
+    Mock.mock(/create_code\.php.*/, 'get', function(options){
+      var getQueryString = getParam(new URL('http://' + decodeURIComponent(options.url)));
+      if(getQueryString('g_channel') == 'hxFootball'){
+        if(String(getQueryString('phone')).length == 11){
+          return {backtrace: '', ...getErrorRes(0, ErrorMap)};
+        }else{
+          return getErrorRes(10009, ErrorMap);
+        }
+      }else{
+        return getErrorRes(23333, ErrorMap);
+      }
+    })
+
+    Mock.mock(/submit_activity\.php.*/, 'get', function(options){
+      var getQueryString = getParam(new URL('http://' + decodeURIComponent(options.url)));
+      var callback = getQueryString('func');
+      if(getQueryString('g_channel') == 'hxFootball'){  
+        if(getQueryString('timestamp') != Mock_db.timestamp){
+          return getErrorRes(10004, ErrorMap);
+        }else if(getQueryString('rand_num') != Mock_db.rand_num){
+          return getErrorRes(10005, ErrorMap);
+        }else if(getQueryString('sign') != Mock_db.sign ){
+          return getErrorRes(10006, ErrorMap);
+        }else{
+          if(callback == 'login'){
+
+            if(String(getQueryString('phone')).length != 11){
+              return getErrorRes(10009, ErrorMap);
+            }else if(String(getQueryString('code')).length != 4){
+              return getErrorRes(10011, ErrorMap);
+            }else{
+              return {count: 0, ...getErrorRes(0, ErrorMap)}
+            }
+          }else if(callback == 'fetchActivity'){
+            return { 
+              award: (function(max, min){
+                  return Math.floor(Math.random() * (max + 1 - min)) + min
+              })(7, 1),
+              ...getErrorRes(0, ErrorMap)
+            }
+          }else if(callback == 'submitUserInfo'){
+       
+            if(!getQueryString('data[username]')){
+              return getErrorRes(10007, ErrorMap);
+            }else if(!getQueryString('data[address]')){
+              return getErrorRes(10008, ErrorMap);
+            }else if(String(getQueryString('phone')).length != 11){
+              return getErrorRes(10009, ErrorMap);
+            }else{
+              return getErrorRes(0, ErrorMap);
+            } 
+            
+          }else{
+            return getErrorRes(10010, ErrorMap)
+          }
+        }
+      }else{
+        return getErrorRes(23333, ErrorMap);
+      }
+    })
+
+    function getErrorRes($code, $ErrorMap){
+      return {
+        errno: $code,
+        errmsg: $ErrorMap.get($code)
+      }
+    }
+    function getParam($URL){
+      return function ($attr){
+        return $URL.searchParams.get($attr)
+      }
+    }
+</script>
+<!--Mock end-->
+</body>
+</html>

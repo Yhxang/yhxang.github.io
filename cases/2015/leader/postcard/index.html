@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>2015明信片显露真性情</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+	var version = parseFloat(RegExp.$1);
+	if(version>2.3){
+		document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+	}else{
+		document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+	}
+} else {
+	document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<style>
+body,ul,li,p,h1,h2,h3,h4,h5,h6,span{margin: 0;padding: 0; }
+body{background-color:#95cfb7 ;}
+ul,li{list-style: none;}
+.shareicon{ position: absolute; left: -9999px; top: -9999px; display: block; width: 0; height: 0;}
+.clearfix:after { content: "."; visibility: hidden; display: block; clear: both; height: 0; }
+#loading{ font-size:25px; color: #000; text-align: center; padding-top:420px; }
+.logo{position: absolute; left:22px; top:18px; z-index:99;}
+.wrapholder{width: 640px;height:1138px; overflow: hidden;margin: 0 auto;}
+.wrap{ position: relative; margin: 0 auto; width: 640px; /*height:1138px;*/}
+.p1_up_container{position: absolute;width:640px;height:300px;left:0px; top:0px;}
+.p1_up_board{position: absolute; width:640px;height:15px;left:0px; top:285px;background-color: #ffecde;	visibility:hidden;	}
+.p1_down_container{	position:absolute;width:640px;height:660px;	left:0px;	top:300px;	/*background-color:gray;*/}
+.page1,.page2,.page3{position:absolute; left:0px;top:0px;width:640px;height:1138px;display: none;overflow: hidden;}
+.p1_bg{	position:absolute; left:0px;top:0xp; visibility:hidden;}
+.logo{position: absolute; left:10px; top:10px; }
+.p101{position: absolute;left:292px;top:135px;visibility:hidden;-webkit-transform:scale(0.1); transform:scale(0.1);}
+.p102{position: absolute;left:64px;top:79px;visibility:hidden;-webkit-transform:scale(0.1);transform:scale(0.1);}
+.p103{position: absolute;left:194px;top:174px;visibility:hidden;-webkit-transform:scale(0.1); transform:scale(0.1);}
+.p104{position: absolute;left:319px;top:90px;visibility:hidden;	-webkit-transform:scaleY(0.1);transform:scaleY(0.1); -webkit-transform-origin:top center; transform-origin:top center; }
+.p105{position: absolute;left:448px;top:117px;visibility:hidden;-webkit-transform:scale(0.3); transform:scale(0.3); }
+.downborder{border-bottom:#ffecde solid 1px;}
+.p1_down_letter{position:absolute;width:640px;height:300px;left:0px;top:0px;}
+.p1_down_letter_1{position:absolute;width:120px;height:160px;top:90px;left:77px;}
+.p1_down_letter_2{position:absolute;width:120px;height:160px;top:88px;left:259px;}
+.p1_down_letter_3{position:absolute;width:120px;height:160px;top:90px;left:445px;}
+.p107{position: absolute;left:54px;top:51px;visibility:hidden;}
+.p108{position: absolute;left:39px;top:250px;visibility:hidden;}
+.p109{position: absolute;left:12px;top:11px;visibility:hidden;}
+.p110{position: absolute;left:5px;top:48px;-webkit-transform:scaleX(0.1); transform:scaleX(0.1); visibility:hidden;}
+.p111{position: absolute;left:16px;top:16px;visibility:hidden;}
+.p112{position: absolute;left:7px;top:49px;visibility:hidden;-webkit-transform:scaleX(0.1); transform:scaleX(0.1);}
+.p113{position: absolute;left:12px;top:11px;visibility:hidden;}
+.p114{position: absolute;left:7px;top:47px;	visibility:hidden;-webkit-transform:scaleX(0.1); transform:scaleX(0.1);}
+.p1_d_photo_container{position: absolute;width:640px;height:410px;left:0px;top:300px;}
+.p115{position: absolute;left:31px;bottom:0px;width:577px;height:408px;opacity: 0;}
+.p1_d_nextbtn_container{position: absolute;width:640px;height:90px;left:0px;bottom:-142px;z-index:1;}
+.p106{position: absolute;display: block;left:165px;top: 0px;visibility:hidden;-webkit-transform:scale(0.8);transform:scale(0.8);}
+.p1_down_board{position:absolute;top:25px;left:10px;width:620px;height:800px;border:#ffecde solid 2px;visibility:hidden;}
+.title2{position: absolute; left:243px; top:116px;}
+.opts{position: absolute;left:0; top:250px;}
+.opts li{position: absolute; display: none; }
+.opts i{display: block;width:37px; height: 37px; background: url(img/a17.png) 0 0 no-repeat; position: absolute; bottom:-5px; right:-5px; z-index: 5; overflow: hidden; transition:all 0s linear 0.3s; background-size: 100%}
+.opts b{display: block; width:0px; height: 31px; margin-left: 4px; overflow: hidden; -webkit-transition:all .3s ease-out; transition:all .3s ease-out;}
+.opts li.active b{width:31px;}
+@-webkit-keyframes dou{0%{-webkit-transform: scale(1);transform: scale(1);} 30%{-webkit-transform: scale(.92);transform: scale(.92);} 70%{-webkit-transform: scale(1.08);transform: scale(1.08);} 100%{-webkit-transform: scale(1);transform: scale(1);}}
+@keyframes dou{0%{-webkit-transform: scale(1);transform: scale(1);} 30%{-webkit-transform: scale(.95);transform: scale(.95);} 70%{-webkit-transform: scale(1.05);transform: scale(1.05);} 100%{-webkit-transform: scale(1);transform: scale(1);}}
+.opts li.active img{-webkit-animation:dou .2s; animation:dou .2s; -webkit-filter:brightness(.9);}
+.slt1{ left:2px; top:0px;}
+.slt2{ left:201px; top:0px;}
+.slt3{ left:400px; top:0px;}
+.slt4{left:6px; top:123px;}
+.slt5{ left:203px; top:121px;}
+.slt6{left:5px; top:280px;}
+.slt7{ left:470px; top:121px;}
+.slt8{ left:2px; top:426px;}
+.slt9{ left:200px; top:426px;}
+.slt10{left:400px; top:426px;}
+.slt11{ left:6px; top:543px;}
+.slt12{ left: 200px; top: 543px;}
+.slt13{ left:470px; top:539px;}
+.slt1 i{ right:-2px; bottom:-2px;}
+.slt2 i{right:-2px; bottom: 1px;}
+.slt4 i{right:0;bottom: 0px;}
+.slt5 i{bottom: 0}
+.slt6 i{right:0; bottom: 0;}
+.slt7 i{bottom:2px;}
+.slt10 i{bottom: 0px;}
+.choose{position: absolute; bottom:45px; left:50%; width:300px; height: 78px; margin-left: -150px; -webkit-transition:all .05s; transition:all .05s; z-index:6; /*display: none;*/ -webkit-filter:grayscale(1);}
+.enable{-webkit-filter:none;}
+.mdown{-webkit-transform: scale(.95);transform: scale(.95);}
+.xiaoren{position: absolute;left: 29px; top: 103px;}
+.page3{display: block; overflow: visible;}
+.title3{ margin: 130px auto 0; text-align: center; display: none;}
+.msg{width: 640px; height: 780px; overflow: hidden; position: absolute; top:100px; z-index: 1;}
+.msgSpec{ top:195px;  }
+.postmark{ width: 170px; height: 170px; margin: 485px auto 0; position: relative; z-index: 3;  display: none; }
+.coverSpec{display:block;}
+.covering{ display: block; -webkit-animation:cover .3s ease-in; animation:cover .3s ease-in; }
+@-webkit-keyframes cover{from{-webkit-transform: scale(2.5);transform: scale(2.5);} to{-webkit-transform: scale(1);transform: scale(1);}}
+@keyframes cover{from{-webkit-transform: scale(2.5);transform: scale(2.5);} to{-webkit-transform: scale(1);transform: scale(1);}}
+.paper{position: absolute; width: 570px; height:765px;left: 34px; overflow: hidden;}
+.contholder{position: absolute; bottom: 160px;}
+.cont{position: absolute; top: 0; left:0; width: 570px; }
+.cont .pic{display: block; margin: 50px auto 0; z-index:1; position: relative;}
+.cover{position: absolute; bottom: 0px; left:22px; pointer-events:none; z-index: 2;}
+.txt{width:520px; margin: 5px auto 0; display: block; text-align: center; font-size: 31px; color: #fff; line-height: 40px; font-weight: bold;}
+.txtarea{width:470px; height: 175px; margin: 10px auto 0; display: none; text-align: center; font-size: 31px; color: #000; line-height: 34px; z-index:2; position: relative; }
+.editself{ width: 249px; height: 50px; margin: 10px auto; position: relative;}
+@-webkit-keyframes pencel{0%{-webkit-transform: translate3d(-5px, 0, 0);transform: translate3d(-5px, 0, 0);} 50%{-webkit-transform: translate3d(1px, -3px, 0);transform: translate3d(1px, -3px, 0);}100%{-webkit-transform: translate3d(-5px, 0px, 0);transform: translate3d(1-5px, 0px, 0);}}
+@keyframes pencel{0%{-webkit-transform: translate3d(-5px, 0, 0);transform: translate3d(-5px, 0, 0);} 50%{-webkit-transform: translate3d(1px, -3px, 0);transform: translate3d(1px, -3px, 0);}100%{-webkit-transform: translate3d(-5px, 0px, 0);transform: translate3d(1-5px, 0px, 0);}}
+.pencil{position: absolute; right:-15px; top:-10px; -webkit-animation: pencel .8s ease .1s infinite;animation: pencel .8s ease .1s infinite;}
+.postmarkarea{ width: 640px; height: 244px; position: absolute; left: 0; bottom:-250px; -webkit-transition: transform .2s;transition: transform .2s; -webkit-transition: -webkit-transform .4s;transition: -webkit-transform .4s; text-align: center;}
+.postin{-webkit-transform: translate3d(0, -250px, 0);transform: translate3d(0, -250px, 0);}
+.postout{-webkit-transform: translate3d(0, 0px, 0);transform: translate3d(0, 0px, 0);}
+.ptip{position: relative; z-index: 3;}
+.marks3{position: relative;z-index: 1;}
+.postbgc{ background-color: #f2d2bb; height: 244px; width:640px; position: absolute; z-index: 1; top:-30px; -webkit-transform: scaleX(2);transform: scaleX(2);}
+.postmarks{ margin-left: 15px; /*margin-top: 15px;*/ position: relative; z-index: 2;}
+.postmarks li{float:left; margin: 0 17px; width: 165px;}
+.postmarks li:nth-child(2) img{margin-top: -15px; margin-left: 5px; }
+.postmarks li.active{ -webkit-animation:dou .2s; animation:dou .2s; }
+.complete,.editagain{display: none; margin: 10px auto 0; }
+.to{color:#fff; font-weight: bold; font-size: 50px; position: absolute; top:80px; left: 80px; z-index:10;}
+@-webkit-keyframes shanshuo{0%{-webkit-transform: scale(1);transform: scale(1);} 50%{-webkit-transform: scale(1.1);transform: scale(1.1);} 100%{-webkit-transform: scale(1);transform: scale(1);}}
+@keyframes shanshuo{0%{-webkit-transform: scale(1);transform: scale(1);} 50%{-webkit-transform: scale(1.1);transform: scale(1.1);} 100%{-webkit-transform: scale(1);transform: scale(1);}}
+.covertip{-webkit-animation: shanshuo .5s infinite; animation: shanshuo .5s infinite;}
+.mask{	width: 640px;height:100%; position: relative;}
+.mask .maskbg{	background-color: rgba(0,0,0,.9);width: 100%;height:100%;-webkit-transform:rotate(30deg) translate3d(1280px,-200px,0) scaleX(1.7);transform:rotate(30deg) translate3d(1280px,-200px,0) scaleX(1.7);-webkit-transition:all 0.6s;transition:all 0.6s;}
+.mask .maskshow{-webkit-transform:rotate(0deg) translate3d(0px,0px,0) scaleX(1.7);transform:rotate(0deg) translate3d(0px,0px,0) scaleX(1.7);}
+.mask img{position: absolute;bottom: 50px;left:70px;-webkit-transform:translate3d(0,200px,0);transform:translate3d(0,200px,0);-webkit-transition:all .8s .4s;transition:all .8s .4s;}
+.mask img.in{-webkit-transform:translate3d(0,0px,0);transform:translate3d(0,0px,0);}
+.titleSpec{ position: absolute; width: 640px; top:95px; text-align: center; display: none;}
+.btnSpec{position: absolute; bottom:90px; width:640px; display: none; }
+.btnSpec img{display: block; margin: 0 15px; float: left;}
+.btnSpec img:first-child{margin-left: 42px;}
+.sharetip,.sharetip2{position: absolute; right: 30px; top:0px; -webkit-animation: pencel .7s alternate infinite; animation: pencel .7s alternate infinite; display: none; z-index: 2;}
+.txtSpec{ color:#353132; position: absolute; bottom:15px; width: 640px; text-align: center; font-size: 28px; line-height: 32px; font-weight: bold; display: none; }
+.wy{display: none;}
+</style>
+</head>
+<body>
+<img src="img/wxicon.jpg" class="shareicon" alt="">
+<div class="wrapholder">
+	<div class="wrap">
+		<div id="loading">loading...</div>
+		<div class="logo"><img data-src="img/a01.png"></div>
+		<div class="page1">
+			<div class="p1_up_container">
+		    	<img class="p101" data-src="img/p101.png">
+		    	<img class="p102" data-src="img/p102.png">
+		    	<img class="p103" data-src="img/p103.png">    
+		    	<img class="p104" data-src="img/p104.png">
+		    	<img class="p105" data-src="img/p105.png">  
+		    	<div class="p1_up_board"></div>  
+	    	</div>
+			<div class="p1_down_container">		        	
+	        	<div class="p1_down_letter">
+		        	<img class="p107" data-src="img/p107.png">
+		        	<img class="p108" data-src="img/p108.png">
+		        	<div class="p1_down_letter_1">
+	        		<img class="p109" data-src="img/p109.png">
+	                <img class="p110" data-src="img/p110.png">
+	                </div>
+	        		<div class="p1_down_letter_2">
+		 				<img class="p111" data-src="img/p111.png">
+		           		<img class="p112" data-src="img/p112.png">
+		        	</div>
+	        		<div class="p1_down_letter_3">
+		 				<img class="p113" data-src="img/p113.png">
+		           	 	<img class="p114" data-src="img/p114.png">
+		       	 	</div>
+				</div>
+				<div class="p1_d_photo_container">
+					<img class="p115" data-src="img/p115.png">
+				</div>
+				<div class="p1_d_nextbtn_container">
+					<img class="p106" data-src="img/p106.png" >
+				</div>	
+	            <div class="p1_down_board"></div>
+			</div>
+		</div>
+		<div class="page2" >
+			<div class="title2">
+				<h2><img data-src="img/a02.png"></h2>
+				<h3><img data-src="img/a03.png"></h3>
+			</div>
+			<img class="xiaoren" src="img/a19.png" alt="">
+			<ul class="opts">
+				<li class="slt1"><img data-src="img/a04.png" alt="话唠青年"><i><b><img data-src="img/a17_1.png" ></b></i></li>
+				<li class="slt2"><img data-src="img/a05.png" alt="潜在土豪"><i><b><img data-src="img/a17_1.png" ></b></i></li>
+				<li class="slt3"><img data-src="img/a06.png" alt="小鲜肉"><i><b><img data-src="img/a17_1.png" ></b></i></li>
+				<li class="slt4"><img data-src="img/a07.png" alt="高端吃货"><i><b><img data-src="img/a17_1.png" ></b></i></li>
+				<li class="slt5"><img data-src="img/a08.png" alt="不洗头之交"><i><b><img data-src="img/a17_1.png" ></b></i></li>
+				<li class="slt6"><img data-src="img/a09.png" alt="滑板鞋时尚分子"><i><b><img data-src="img/a17_1.png" ></b></i></li>
+				<li class="slt7"><img data-src="img/a10.png" alt="高冷美艳女神范儿"><i><b><img data-src="img/a17_1.png" ></b></i></li>
+				<li class="slt8"><img data-src="img/a11.png" alt="点赞狂魔"><i><b><img data-src="img/a17_1.png" ></b></i></li>
+				<li class="slt9"><img data-src="img/a12.png" alt="完美主义"><i><b><img data-src="img/a17_1.png" ></b></i></li>
+				<li class="slt10"><img data-src="img/a13.png" alt="钱串子"><i><b><img data-src="img/a17_1.png" ></b></i></li>
+				<li class="slt11"><img data-src="img/a14.png" alt="犯贱党"><i><b><img data-src="img/a17_1.png" ></b></i></li>
+				<li class="slt12"><img data-src="img/a15.png" alt="体贴暖男"><i><b><img data-src="img/a17_1.png" ></b></i></li>
+				<li class="slt13"><img data-src="img/a16.png" alt="呆萌憨"><i><b><img data-src="img/a17_1.png" ></b></i></li>
+			</ul>
+			<div class="choose">
+				<img data-src="img/a18.png">
+			</div>
+		</div>
+		<div class="page3" style="display:none">
+			<div class="title3"><img data-src="img/b01.png"></div>
+			<h2 class="titleSpec"><img data-src="img/b01.png"></h2>
+			<div class="msg">
+				<div class="paper">
+					<div class="contholder">
+						<img data-src="img/b02.png">
+						<div class="cont">
+							<img class="pic" data-src="img/result/m1.jpg">
+							<p class="txt"></p>
+							<textarea class="txtarea" maxlength="70" rows="5"></textarea>
+							<div class="editself">
+								<img data-src="img/b04.png">
+								<img class="pencil" data-src="img/b05.png">
+							</div>
+							<img class="complete" data-src="img/b07.png">
+							<img class="editagain" data-src="img/b07.png">
+						</div>
+						<p class="to">To</p>
+					</div>
+				</div>
+				<div class="cover"><img data-src="img/b03.png"></div>
+				<div class="postmark"><img data-src="img/p301.png" ></div>
+			</div>
+			
+			<div class="mask">
+				<div class="maskbg"></div>
+				<img data-src="img/b08.png" >
+			</div>
+			<div class="postmarkarea">
+				<img class="ptip" data-src="img/b13.png">
+				<div class="marks3">
+					<div class="postbgc"></div>
+					<ul class="postmarks clearfix">
+						<li><img data-src="img/p301.png"></li>
+						<li><img data-src="img/p302.png"></li>
+						<li><img data-src="img/p303.png"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="btnSpec clearfix">
+				<img class="xuanyao" data-src="img/b09.png">
+				<img class="laiyizhang" data-src="img/b10.png">
+			</div>
+			<p class="txtSpec">关注统帅电器公众账号，<br>2015性情好礼随你任性！</p>
+			<div class="sharetip"><img data-src="img/b11.png"></div>
+			<div class="sharetip2"><img data-src="img/b12.png"></div>
+		</div>
+	</div>
+	<div class="wy">
+		<div id="__newsapp_sharewxurl">http://mediav.tongshuai.maimang.net.cn/</div>
+		<div id="__newsapp_sharewxthumburl">http://mediav.tongshuai.maimang.net.cn/img/wxicon.jpg</div>
+		<div id="__newsapp_sharewxtitle">你在我心中是这个样子，那句话终于有勇气告诉你</div>
+		<div id="__newsapp_sharewxtext">2015明信片显露真性情</div>
+	</div>
+
+</div>
+<audio id="pageaudio" autoplay="autoplay" style="position: absolute; top:50px; left:50px"><source src="ksamd.mp3" type="audio/mpeg"></audio>
+
+<script src="js/zepto.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/images.js"></script>
+<script>
+var rstArr=[
+"话唠青年<br>你从哪里来？要到哪里去？<br>家里几口人？地里几亩地？<br />你说句话啊，我只是想在过年之前多交一个朋友而已",
+"潜在土豪<br>一上高楼万里愁，我给土豪推推油！<br>路见不平一声吼，抱住土豪不松口。<br>2015土豪且行且珍惜",
+"小鲜肉<br>穿衣服显瘦，脱衣服有肉。<br>留胡子成熟，剃胡子呆萌，100块钱我都不要你的，来吧~2015 “小鲜肉”马上到你的碗里去",
+"高端吃货<br>希望你在新的一年里喝酸奶不舔盖<br>吃薯条再也不舔手指",
+"不洗头之交<br>你知道的，在面对不想参加的约会时“我还没洗头”是万能拒绝句，可我从来不会拒绝你。过去有桃园结义如今有不洗头可约。么么哒",
+"滑板鞋时尚分子<br>摩擦摩擦，是你的步伐<br>内什么~ 2015年挖掘机高级班<br>毕业一定要拿全额奖学金",
+"高冷美艳女神范儿<br />每天都是小V脸，保持火辣魔鬼S曲线<br>路易威登爱马仕，安静躺在你的身边",
+"点赞狂魔<br>点赞之交淡如水，评论才是真朋友2015祝你收获更多的友谊",
+"完美主义<br>作为朋友，失败的时候多看看我<br>你就发现自己已经完美了",
+"钱串子<br>2015我们的目标：<br>向钱看，向厚赚",
+"犯贱党<br>想你是件快乐的事! 见你是件开心的事! 爱你是我永远要做的事! <br>把你放在心上是我一直在做的事! <br>不过骗你，是刚发生的事！哈哈！",
+"体贴暖男<br>暖男有三宝：人好、随叫、支付宝<br />女神有三宝：干嘛、呵呵、去洗澡<br>2015请继续做个中央空调般的暖男吧！",
+"呆萌憨<br>天然呆，常卖萌，为人憨，<br />这样才会人见人爱嘛，希望你的<br>2015人见人爱花见花开"
+]
+var bodyStyle = document.body.style;
+bodyStyle.mozUserSelect = 'none';
+bodyStyle.webkitUserSelect = 'none';
+$(function(){
+	var tl,t2,t3,t4;
+	tl=new TimelineMax();
+	t2=new TimelineMax({repeat:-1, yoyo:true});
+	t3=new TimelineMax();
+	t4=new TimelineMax();
+	var selId;
+	var custom="";
+	var postmark;
+	var uid;
+	var linkother;
+	var url=location.search;
+	var search="";
+	var stageH=$(window).height();
+	var rate=stageH/1138;
+	var iswx=is_weixn();
+	var isNewsApp = (/NewsApp/ig).test(navigator.userAgent);
+	$(".wrap").css({
+		"-webkit-transform":"scale("+rate+")",
+		"transform":"scale("+rate+")"
+	})
+	$(".wrapholder").css({
+		height:stageH
+	})
+
+	loadResources(loadingImages,function (n, i, img) {
+		$("#loading").html("loading&nbsp;&nbsp;" + Math.round(i * 100 / n) + "%");
+		if (n != i) return;
+		$("img").each(function(){
+			$(this).attr("src",$(this).data("src"));
+		})
+		$("#loading").hide();
+		if(url.indexOf("uid")!=-1){ 
+		uid=url.replace(/\&\S+/img,"").split("uid=")[1]; 
+
+		//查询uid相应信息
+		$.post("./tongshuai_search.php?ran="+Math.random(),{
+			userid:uid
+		},function(data){
+			data=$.parseJSON(data);
+			if(data.result="success"){
+				selId=Number(data.type);
+				postmark=Number(data.postmark);
+				custom=data.content;
+				linkother=true;
+				queryState(linkother);
+			}else{
+				console.log("Query Error")
+			}
+		})
+		}else{
+			linkother=false;
+			queryState(linkother);
+		}
+	})
+	
+	function queryState(islinkother){
+		if(islinkother){
+			$(".btnSpec,.txtSpec,.titleSpec").show();
+			$(".page3").show();
+			$(".editself,.postmarkarea").hide();
+			showMapping(selId,custom);
+			custom="";
+			$(".postmark img").attr("src",$(".postmarks li").eq(postmark).find("img").attr("src"));
+			$(".postmark").addClass("coverSpec");
+			$(".msg").addClass("msgSpec");
+			$(".laiyizhang").tap(function(){
+				$(".page3,.btnSpec,.sharetip,.txtSpec,.titleSpec").hide();
+				$(".postmarkarea,.editself").show();
+				$(".postmark").removeClass("coverSpec");
+				$(".msg").removeClass("msgSpec");
+				page1_animate();
+			})
+			$(".xuanyao").tap(function(){
+				$(".sharetip").show();
+			})
+		}else{
+			page1_animate();
+		}
+	}
+
+	function page1_animate(){
+		$(".page1").show();
+		tl = new TimelineMax().
+		timeScale(0.8).
+		set([".logo", ".p102"], {autoAlpha:1}, 0).
+		to(".p102", 0.5, {scale:1, ease:Bounce.easeOut}, 0).
+		set(".p103", {autoAlpha:1}, 0.3).
+		to(".p103", 0.5, {scale:1, ease:Bounce.easeOut},0.3).
+		set(".p101", {autoAlpha:1}, 0.5).
+		to(".p101", 0.5, {scale:1, ease:Bounce.easeOut},0.5).       
+		set(".p104", {autoAlpha:1}, 0.8).
+		to(".p104", 0.5, {scaleY:1, ease:Bounce.easeOut},0.8).  
+		add("act1done").     
+		set(".p105", {autoAlpha:1}, 1.2).
+		to(".p105", 0.3, {scale:1}, 1.2).
+		from(".p105", 0.3, {rotation:-360}, 1.2).      
+		set([".p107", ".p1_up_board", ".p108",  ".p110", ".p1_down_board"], {autoAlpha:1}, "act1done-=0.4").
+		to(".p110", 0.4, {scaleX:1},"act1done-=0.4").
+		set(".p109", {autoAlpha:1}, "act1done-=0.4").
+		set(".p112", {autoAlpha:1}, "act1done-=0.2").
+		to(".p112", 0.4,{scaleX:1},"act1done-=0.2").
+		set(".p111", {autoAlpha:1}, "act1done+=0.2").
+		set(".p114", {autoAlpha:1}, "act1done+=0.2").
+		to(".p114", 0.4, {scaleX:1},"act1done+=0.2").
+		set(".p113", {autoAlpha:1},"act1done+=0.6").
+		to(".p115", 0.4, {opacity:1}, "act1done+=0.6").
+		from(".p115", 0.4, {bottom:"-=80"}, "act1done+=0.6").
+		set(".p106", {autoAlpha:1, onComplete:function(){
+			initP1Nextbtn();
+			t2.fromTo(".p106", 0.4, {scale:0.8}, {scale:0.85}, 0);
+		}}, "act1done+=0.8");
+	}
+	function page2_animate(){
+		tl.timeScale(2).reverse();
+
+		t3.timeScale(1).delay(5.5)
+		.set(".page2",{css:{display:"block"}})
+		.call(function(){$(".page1").hide();})
+		.from(".xiaoren",.3,{autoAlpha:0,y:30})
+		.from(".title2 h2",.3,{x:50,autoAlpha:0})
+		.from(".title2 h3",.3,{x:50,autoAlpha:0},"-=.2")
+
+		.staggerTo(".opts li",.01,{css:{display:"block"}},.08,"-=.1")
+		.staggerFrom(".opts li",.5,{scale:.01, ease:Bounce.easeOut},.08,"-=.6")
+		.from(".choose ",.5,{y:150})
+		
+	}
+	function page3_animate(){
+		$(".page2").hide();
+		t4.timeScale(1)
+		.delay(.3)
+		.call(function(){$(".page3").show()})
+		.set(".msg",{css:{display:"block"}})
+		.from(".msg",.8,{scale:1.1,y:-250,ease:Power2.easeOut,onStart:function(){$(".postmarkarea").addClass("postin")}},"+=.05")
+		.from(".contholder",.9,{y:350,ease:Power2.easeOut},"-=.2") 
+	}
+	function initP1Nextbtn(){
+		$(".p1_d_nextbtn_container img").tap(function(){
+			t2.kill();
+			page2_animate();
+		})
+	}
+
+	$(".opts li").tap(function(){
+		selId=$(this).index();
+		$(this).addClass("active").siblings().removeClass("active");
+		$(".choose").addClass("enable")//show();
+		document.title="原来你是我心中的"+$(this).find("img").attr("alt")+"，那句话终于有勇气告诉你";
+
+		/*if(iswx){
+			wxFunc(WeixinApi);
+		}
+		if(isNewsApp){
+			wyFunc();
+		}*/
+
+		defineChoose();
+	})
+	function defineChoose(){
+		$(".choose").mousedown(function () {
+			console.log(1)
+			$(this).removeAttr("style");
+			$(this).addClass("mdown");
+		})
+		$(".choose").mouseup(function(e){
+			console.log(2)
+			$(this).removeClass("mdown");
+			showMapping(selId);
+			setTimeout(function(){
+				page3_animate();
+			},400)
+		})
+	}
+	$(".xuanyao")[0].ontouchstart=function(){
+		$(this).removeAttr("style");
+		$(this).addClass("mdown");
+	}
+	$(".laiyizhang")[0].ontouchstart=function(){
+		$(this).addClass("mdown");
+	}
+	$(".xuanyao")[0].ontouchend=function (e) {
+		$(this).removeAttr("style");
+		$(this).removeClass("mdown");
+	}
+	$(".laiyizhang")[0].ontouchend=function (e) {
+		$(this).removeClass("mdown");
+	}
+	
+	function showMapping(n,str){
+		$(".pic").attr("src","img/result/m"+(n+1)+".jpg");
+		if(!!str){
+			$(".txt").html(toHtml(str));
+			$(".txtarea").html(str);
+		}else{
+			$(".txt").html(rstArr[n]);
+			$(".txtarea").html(toText(rstArr[n]));
+		}
+	}
+
+	$(".editself,.editagain").tap(function(){
+		$(".txt").hide();
+		$(".txtarea").html(toText($(".txt").html())).css("display","block").focus();
+		$(this).hide();
+		$(".complete").css("display","block");
+	})
+	$(".complete").tap(function(){
+		var inputcont=$(".txtarea").val();
+		if(inputcont.replace(/\s+/img,"")==""){
+			alert("请输入内容");
+			return;
+		}else{
+			if(topure(inputcont)==topure(rstArr[selId])){
+				$(".txt").html(rstArr[selId])
+			}else{
+				$(".txt").html(toHtml(inputcont));
+				custom=inputcont;
+			}
+			$(".ptip").addClass("covertip");
+			$(".txtarea").hide();
+			$(".txt").show();
+			$(this).hide();
+			$(".editagain").css("display","block");
+		}
+	})
+	//已选择盖章动作
+	$(".postmarks li").tap(function(){
+		$(".complete").trigger("tap");
+		if($(".txtarea").val().replace(/\s+/img,"")==""){
+			return;
+		}
+		postmark=$(this).index();
+		$(".postmark img").attr("src",$(this).find("img").attr("src"));
+		$(this).addClass("active").siblings().removeClass("active");
+		$(".postmark").addClass("covering");
+		$(".complete,.editself,.editagain").hide();
+		
+		setTimeout(function(){
+			$(".postmarkarea").addClass("postout");
+			$(".mask .maskbg").addClass("maskshow");
+			$(".mask img").addClass("in");
+			$(".sharetip2").show();
+		},350)
+
+		//产生uid
+		uid=uuid(16,16);
+		search="?uid="+uid;
+
+		if(iswx){
+			wxFunc(WeixinApi);
+		}
+		if(isNewsApp){
+			wyFunc();
+		}
+
+		//发送用户信息		
+		$.post("tongshuai_submit.php?ran="+Math.random(),{
+			userid:uid,
+			type:selId,
+			content:custom,
+			postmark:postmark
+		},function(data){
+			data=$.parseJSON(data);
+			if(data.result=="success"){
+				console.log("Send Seccess");
+				//alert(uid)
+			}else if(data.result=="fail"){
+				console.log("Send Error: "+data.errmsg);
+				//alert("fail")
+			}
+		})
+	})
+	var audio=document.getElementById("pageaudio");
+	$("html").one("touchstart",function(){
+		audio.play();
+	})
+	$("body").one("touchstart",function(){
+		audio.play();
+	})
+
+	function toHtml(str){
+		return str.replace(/\n/img,"<br>");
+	}
+	function toText(str){
+		return str.replace(/<br\s*\/?\s*>/img,"\n");
+	}
+	function topure(str){
+		return str.replace(/\s*/img,"").replace(/<br\s*\/?\s*>/img,"").replace(/\n/img,"");
+	}
+
+	var shareTitle="你在我心中是这个样子，那句话终于有勇气告诉你";
+	function wxFunc(Api){
+	    var wxData = {
+	        "appId": "",
+	        "imgUrl" : location.href.split("?")[0]+'/img/wxicon.jpg',
+	        "link" : location.href.split("?")[0]+search,
+	        "desc" : shareTitle,
+	        "title" : "2015明信片显露真性情"
+	    };
+	    var wxCallbacks = {
+	        favorite : false,
+	        confirm : function(resp) {
+	        	_hmt.push(['_trackEvent', "WeiXinShare", "ShareSuccess"]);
+	        	location.href="http://mp.weixin.qq.com/s?__biz=MjM5ODE0NzU0MA==&mid=202703818&idx=1&sn=a0c4ebdff2ebef54d3198d57f58ed544&scene=1&from=singlemessage&isappinstalled=0#rd";
+	        }
+	    };
+	    Api.shareToFriend(wxData, wxCallbacks);
+	    Api.shareToTimeline(wxData, wxCallbacks);
+	    Api.shareToWeibo(wxData, wxCallbacks);
+	    Api.generalShare(wxData,wxCallbacks);
+	}
+
+	if(iswx){
+		WeixinApi.ready(wxFunc);
+	}
+	if(isNewsApp){
+		wyFunc();
+	}
+
+	function wyFunc(){
+		$("#__newsapp_sharewxurl").text(location.href.split("?")[0]+search);//分享地址
+		$("#__newsapp_sharewxtitle").text(shareTitle);//分享标题
+		$(".sharetip2 img").attr("src","img/b14.png").click(function(){
+			location.href="share://209";
+		});
+
+	}
+	
+})
+
+function uuid(len, radix) {
+    var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+    var uuid = [], i;
+    radix = radix || chars.length;
+    if (len) {
+      for (i = 0; i < len; i++) uuid[i] = chars[0 | Math.random()*radix];
+    } else {
+      var r;
+      uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';
+      uuid[14] = '4';
+      for (i = 0; i < 36; i++) {
+        if (!uuid[i]) {
+          r = 0 | Math.random()*16;
+          uuid[i] = chars[(i == 19) ? (r & 0x3) | 0x8 : r];
+        }
+      }
+    }
+    return uuid.join('');
+}
+var resourceDir="";
+function loadResources(urls, progress) {
+    var loadedCount = 0;
+    var loaded = function () {
+        ++loadedCount;
+        if (progress) progress(urls.length, loadedCount, this);
+    };
+    for (var i = 0; i < urls.length; ++i) {
+        if (!urls[i]) {
+            loaded();
+            return;
+        }
+        var img = new Image();
+        //resourceMap[urls[i]] = img;
+        img.onload = loaded;
+        img.onabort = loaded;
+        img.onerror = loaded;
+        img.src = resourceDir + urls[i];//+ "?ver=" + j_version;
+    }
+}
+function is_weixn(){
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+        return true;
+    } else {
+        return false;
+    }
+}
+</script>
+
+<script src="../../../libs/mock.js"></script>
+<script>
+	Mock.mock(/tongshuai_search.php\?ran=0\.\d+/,{
+		result: 'success',
+		'type|1-13': 1,
+		'postmark|0-2': 1,
+		content: '祝我发财！<br/>圣体健康！'
+	})
+	Mock.mock(/tongshuai_submit\.php\?ran=0\.\d+/,{
+		result: 'success',
+		errmsg: 'none'
+	})
+</script>
+</body>
+</html>

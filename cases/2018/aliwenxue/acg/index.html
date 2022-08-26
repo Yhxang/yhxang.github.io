@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>突破次元壁，找到二次元中的你</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<link href="./css/style.css?201808022135" rel="stylesheet">
+<!-- <?php
+//include("weixin.php");
+?> -->
+</head>
+<body>
+<img src="share.jpg" alt="" class="fakeicon">
+<div id="wrap" class="wrap">
+	<div id="loading">
+		<div id="loading-center">
+			<div id="loading-center-absolute">
+				<div class="object" id="object_one"></div>
+				<div class="object" id="object_two"></div>
+				<div class="object" id="object_three"></div>
+				<div class="object" id="object_four"></div>
+				<div class="object" id="object_five"></div>
+			</div>
+			<p class="pct" id="pct"></p>
+		</div>
+	</div>
+	<div class="section p1">
+		<img data-src="./img/a01.jpg" alt="" class="wh100p p1-bg">
+		<div class="p1-txtarea">
+			<img data-src="./img/a01.png" alt="" class="p1-txtbg">
+			<img data-src="./img/a02.png" alt="" class="p1-txt1">
+			<img data-src="./img/a03.png" alt="" class="p1-txt2">
+			<img data-src="./img/a04.png" alt="" class="p1-txt3">
+			<img data-src="./img/a08.png" alt="" class="p1-txt4">
+		</div>
+		<div class="p1-role"><img data-src="./img/a05.png" alt="" class="p1-roleimg"></div>
+		<img data-src="./img/a09.png" alt="" class="p1-logo lt50p">
+		<div class="p1-btnarea">
+			<input type="text" placeholder="输入你的名字" class="p1-name">
+			<img data-src="./img/a06.png" alt="" class="p1-btn">
+			<img data-src="./img/a15.png" alt="" class="p1-btn-mask">
+		</div>
+	</div>
+	<div class="section p2">
+		<img data-src="./img/a02.jpg" alt="" class="lt50p p2-bg">
+		<div class="p2-txtarea wh100p"></div>
+		<img data-src="./img/a07.png" alt="" class="p2-tit">
+	</div>
+
+	<div class="section p3">
+		<img alt="" class="p3-store wh100p">
+		<img alt="" class="p3-bg p3-angel lt50p disabled">
+		<div id="animation_container" class="animation_container disabled">
+			<canvas id="canvas" width="640" height="935" class="canvas"></canvas>
+			<div id="dom_overlay_container" class="dom_overlay_container"></div>
+		</div>
+		<div class="p3-txtarea disabled">
+			<img data-src="./img/a10.png" alt="">
+			<div class="p3-txt"></div>
+		</div>
+		<div class="p3-btm disabled">
+			<!-- <p class="p3-btmtxt">长按保存图片，喊朋友一起进入二次元</p> -->
+			<img data-src="./img/a18.png" alt="" class="p3-btmtxt1">
+			<img data-src="./img/a19.png" alt="" class="p3-btmtxt2">
+			<img data-src="./img/a09.png" alt="" class="p3-logo">
+		</div>
+		<div class="p3-btn">
+			<img data-src="./img/a11.png" alt="" class="p3-btnimg1">
+			<img data-src="./img/a16.png" alt="" class="p3-btnimg2">
+		</div>
+		<!-- <img data-src="./img/a12.png" alt="" class="p3-retest lt50p"> -->
+	</div>
+	<div class="section p3-detals">
+		<div class="p3-detailbox lt50p">
+			<div class="scaleholder wh100p">
+				<img data-src="./img/a03.jpg" alt="">
+				<img src="" alt="" class="p3-pop">
+				<img src="" alt="" class="p3-god">
+				<div class="p3-titholder">
+					<img src="" alt="" class="p3-tit">
+				</div>
+				<img data-src="./img/a13.png" alt="" class="p3-dclose">
+				<a href="javascript:void(0);" class="p3-link lt50p"><img data-src="./img/a14.png" alt=""></a>
+			</div>
+		</div>
+	</div>
+	<div class="sndctrl"><i class="lt50p"></i></div>
+</div>
+<div id="orientLayer" class="mod-orient-layer">
+	<div class="mod-orient-layer__content">
+		<i class="icon mod-orient-layer__icon-orient"></i>
+		<div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+	</div>
+</div>
+<audio src="./media/bgm.mp3" loop="loop" autoplay="autoplay" preload="preload" id="bgm"></audio>
+<script>
+var stageW=640,stageH,stageMaxH=1386,stageRate;
+function resizeFunc(){
+	stageRate=window.innerWidth/stageW;
+	stageH=window.innerHeight*stageW/window.innerWidth;
+	var wrap=document.getElementById("wrap");
+	wrap.style.height=stageH+"px";
+	wrap.style.webkitTransform="scale3d("+stageRate+","+stageRate+",1)";
+	wrap.style.transform="scale3d("+stageRate+","+stageRate+",1)";
+}
+resizeFunc();
+window.addEventListener("resize",resizeFunc)
+</script>
+<script src="./libs/jquery-3.0.0.min.js"></script>
+<script src="./libs/createjs-2015.11.26.min.js"></script>
+<script src="./libs/roles.js?201807301620"></script>
+<script src="./libs/toshare.js?1533221460809"></script>
+<script>
+var bgm=document.getElementById("bgm");
+document.addEventListener("WeixinJSBridgeReady", function () {
+  document.getElementById("bgm").play();
+}, false);
+var flas=[
+	{id:"r01",fid:"62A984E13D3AB2468460E722914C8138",n:"道姑",gid:1,intro:"个人技能：太极八卦掌<br/>深层人格：爱八卦<br/>独特体质：喝酒不脸红<br />感情线：被师兄暗恋多年没察觉"},
+	{id:"r02",fid:"93F85D59EFCB574085F15A4ED1A30F84",n:"地狱男孩",gid:2,intro:"招牌动作：坏笑时只翘起右边嘴角<br>反面人格：晕头转向的年下忠犬<br>习惯嗜好：高兴的时候甩尾巴<br>隐藏技能：能用触角安抚他人情绪"},
+	{id:"r03",fid:"5AC74B43DDF7FD438E80CDDD2EF435AC",n:"家里蹲",gid:3,intro:"感情线: 感情线是没有了, 这辈子都没有了<br />个人技能: 背诵全文<br />反面人格: 小恶魔<br />隐藏技能: 美妆达人"},
+	{id:"r04",fid:"A03B2EAEFD4AED48AF83A318172002A7",n:"另类血族",gid:4,intro:"独特体质: 吸血时瞳孔会变翡翠绿<br />特殊口癖: “看在上帝的份上…”<br />绝对领域: 手腕<br />理想型: 黄皮肤圆滚滚的摇滚嗜血少女"},
+	{id:"r05",fid:"B55B1B389D5E0C4BBE9A458FE2C9FC31",n:"魔戒法师",gid:5,intro:"个人技能: 1秒扶摇直上九万里<br />绝对领域: 龙角<br />习惯嗜好: 用袖口擦龙角<br />独特体质: 生来克火"},
+	{id:"r06",fid:"5DF8867DC6CDD24E9A2BDEB23F517DBF",n:"魔族幼女",gid:4,intro:"个人技能: 脑内自带GPS<br />习惯嗜好: 用经纬度表示位置<br />招牌动作: 跺脚求抱<br />理想型: 幼驯染"},
+	{id:"r07",fid:"8EB3AAE846FD6D45838108C5FCCCB82A",n:"十二猫妖",gid:1,intro:"招牌动作：舔毛<br />理想型：隔壁大型犬<br />反面人格：女仆型服务人格<br />绝对领域：尾骨"},
+	{id:"r08",fid:"CE6133D844A9FE4ABD9AB02F609CCA7A",n:"兽人",gid:3,intro:"特殊口癖：“以前你不是这样的…”<br />个人技能：根据翻的书页来控制时间<br />特殊体质：摸过受潮的书页会过敏<br />招牌动作：梳理须子"},
+	{id:"r09",fid:"1681D5D4B0C1BE4290C8002255A72610",n:"饲养员",gid:2,intro:"招牌动作：摸头杀<br />深层人格：抖M<br />习惯嗜好：肢体接触<br />独特体制：耐力极强"},
+	{id:"r10",fid:"870FE368119A774EA83DC4551767550E",n:"亡灵法师",gid:5,intro:"绝对领域：指尖<br />个人技能：瞬间变装<br />特殊体质：喝下魔法药水会变猫<br />招牌动作：单眼wink~"},
+	{id:"r11",fid:"10728D68990B6E4FA14C9CD1155AC9B7",n:"巫女",gid:3,intro:"个人技能: 看穿人心<br />习惯嗜好: 读出第一次见面人的内心os<br />招牌动作: 发呆<br />特殊口癖: “我不是故意的…”"},
+	{id:"r12",fid:"84FD4CD31F37C34999E1027A84A1CA85",n:"武士",gid:5,intro:"个人技能：刀光剑影，御风飞行<br />深层人格：玻璃心<br />独特体质：吃什么脂肪都会转化成肌肉<br />习惯动作：防御姿势"},
+	{id:"r13",fid:"BC05555333372241BCF2E299A3A5002B",n:"吟游诗人",gid:1,intro:"个人技能: 一盏灯一背包行走江湖<br />习惯嗜好: 边走边吟<br />独特体制: 适应能力极强<br />习惯动作: 掏出诗集"},
+	{id:"r14",fid:"AA28C1848BAFB7408C06A4E5534C1B73",n:"预言家",gid:2,intro:"个人技能：天眼<br />习惯嗜好：占卜<br />独特体制：自愈<br />习惯动作：来, 我给你占卜一下"},
+	{id:"r15",fid:"B7A46D989FD2894B990059953C2C7FC0",n:"指挥官",gid:4,intro:"个人技能：神算<br />习惯嗜好：命令别人<br />独特体制：百毒不侵 刀枪不入<br />习惯动作：抱胸、睥睨"},
+	{id:"r16",fid:"D3C272344E5B0F438866934518748FE7",n:"武器",gid:4,intro:"真的很抱歉<br />你竟然成了端木夜雨手中的一把枪！"}
+]
+var manifest=["a01.jpg","a01.png","a02.png","a03.png","a04.png","a05.png","a06.png","a08.png","a09.png"];
+var angelname=["伯爵","娜娜","镰仓","端木","蕾姆"];
+var resultId;
+var fromPage="普通";
+$(function(){
+	var p2txtshtml="";
+	for(var i=0;i<=100;i++){
+		var timg=new Image();
+		var _idx=Math.ceil(Math.random()*20);
+		var idx=(_idx<10)?("0"+_idx):_idx;
+		var anidel=Math.random()*2.5;
+		var anidur=.5+Math.random()*1;
+		var txthtml='<img src="./img/b'+idx+'.png" class="p2-txt" style="top:'+i+'%;-webkit-animation-duration:'+anidur+'s;animation-duration:'+anidur+'s; -webkit-animation-delay:'+anidel+'s"; animation-delay:'+anidel+'s"; />'
+		p2txtshtml+=txthtml;
+	}
+	window.onorientationchange = function(e) {
+		if (window.orientation != 0) {
+			$("#orientLayer").addClass("show");
+			//createjs.Ticker.removeEventListener("tick", stage);
+		} else {
+			$("#orientLayer").removeClass("show");
+			//createjs.Ticker.addEventListener("tick", stage);
+		}
+		setTimeout(function(){
+			resizeFunc();
+			//alert(window.innerHeight+"_"+stageW+"_"+window.innerWidth+"-"+stageH)
+		},110);
+	};
+	loadResources(manifest,function(n,i,img){
+		$("#pct").html(Math.round(i * 100 / n) + "%");
+    if (n != i) return;
+    $("img").each(function(){
+    	var _src=$(this).data("src");
+    	if(_src){
+	      $(this).attr("src",_src);
+	    }
+	    $("#loading").remove();
+	    $(".p1").show();
+	    $(".p2-txtarea").html(p2txtshtml);
+	    if(-1 != window.location.pathname.indexOf("_sq")){
+	    	fromPage="端内";
+	    	$(".p3-btm").addClass("p3-btm-2");
+	    }
+    })
+  })
+  $(window).one("click",function(){
+  	if(!$(".sndctrl").hasClass("muted") && bgm.paused) $(".sndctrl").triggerHandler("click");
+  })
+	$(".p1-btn").click(function(){
+		var username=$(".p1-name").val();
+		if(""==username.replace(/\s+/g,"")){
+			alert("请输入名字");
+			$(".p1-name").focus();
+			return;
+		}
+		var WordData=JSON.stringify({content:username});
+		$(".p1-btnarea").addClass("transfer");
+		$.ajax({
+			url:"//contentservice.sqreader.com/api/v1/sensitiveWord/sensitiveWordCheck",
+			type:"POST",
+			data:WordData,
+			contentType:"application/json",
+			dataType:"json",
+			success:function(result){
+				if(200==result.code){
+					$(".p1").addClass("animOut");
+					$(".p2").show();
+					resultId=generateRst(sumCharCode(username),16);
+					console.log(resultId)
+					showResult(resultId);
+					setTimeout(function(){
+						exportRoot.box.box2.txt.text=username;
+						$(".p2-tit").addClass("bounceZoomOut");
+						setTimeout(function(){
+							$(".p1-btnarea").removeClass("transfer");
+							$(".p2").hide();
+							$(".p3").show();
+							exportRoot.box.y+=20;
+							fnStartAnimation();
+						},250);
+					},2500)
+				}else if(1001==result.code){
+					alert("名字不合法，请换个名字")
+					$(".p1-name").focus();
+					$(".p1-btnarea").removeClass("transfer");
+				}else{
+					console.log("Error code: "+result.code);
+					$(".p1-btnarea").removeClass("transfer");
+				}
+			}
+		});
+	})
+	$(".p3-btn").click(function(){
+		$(".p3-detals").show();
+	})
+	$(".p3-dclose").click(function(){
+		$(".p3-detals").hide();
+	})
+	$(".p3-link").click(function(){
+		//_czc.push(﻿["_trackEvent","守护神","跳转",flas[resultId-1].n+"_"+angelname[flas[resultId-1].gid-1]+"_"+fromPage]);
+		window.location.href="http://t.shuqi.com/#!/ct/cover/bid/7460145/";
+	})
+	// $(".p3-retest").click(function(){
+	// 	$(".p3-detals").removeClass("p3-dtl"+$(".p3-detals").data("gid"));
+	// 	$(".p2,.p3").hide();
+	// 	$(".p1").show().removeClass("animOut");
+	// 	$(".p2-tit").removeClass("bounceZoomOut");
+	// 	$(".p3").removeClass("weapon");
+	// 	$(".p1-name").val("");
+	// })
+	$(".sndctrl").click(function(){
+		if(bgm.paused){//暂停状态
+			bgm.play();
+			$(".sndctrl").removeClass("muted");
+		}else{
+			bgm.pause();
+			$(".sndctrl").addClass("muted");
+		}
+	})
+})
+function showResult(idx){
+	var _idx=idx<10?("0"+idx):idx;
+	init(flas[idx-1].id,flas[idx-1].fid);
+	$(".p3-txt").html(flas[idx-1].intro);
+	//$(".p3-store").attr("src","img/r"+_idx+".jpg");
+	createShare($(".p1-name").val(),"img/s"+_idx+".jpg");
+	var _gid=flas[idx-1].gid;
+	$(".p3-angel").attr("src","img/g0"+_gid+".jpg");
+	$(".p3-detals").addClass("p3-dtl"+_gid).data("gid",_gid);
+	$(".p3-god").attr("src","img/ga"+_gid+".png");
+	$(".p3-pop").attr("src","img/gb"+_gid+".png");
+	$(".p3-tit").attr("src","img/gc"+_gid+".png");
+	if(16==idx){
+		$(".p3").addClass("weapon");
+	}
+}
+
+function sumCharCode(str){
+	var codeSum=0;
+	for(var i=0;i<str.length;i++){
+		codeSum+=str[i].charCodeAt();
+	}
+	return codeSum;
+}
+function generateRst(num,dvs){
+	var pat=num%dvs;
+	if(0==pat){pat=dvs;}
+	return pat;
+}
+function formatNum(num){
+	if(num<10) return "0"+num;
+	return num;
+}
+var canvas, stage, stage1, exportRoot, exportRoot1, anim_container, dom_overlay_container, fnStartAnimation;
+function init($id,$fid) {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition($fid);
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp,$id)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp,$id) {
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib[$id]();
+	stage = new lib.Stage(canvas);	
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
+			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;            
+			stage.tickOnUpdate = false;            
+			stage.update();            
+			stage.tickOnUpdate = true;		
+		}
+	}
+	makeResponsive(false,'both',false,1);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	//fnStartAnimation();
+}
+function createShare(username,imgsrc){
+	var shareCvs = document.createElement("canvas");
+	shareCvs.width = 640;			
+	shareCvs.height = 1136; 
+	shareCvs.setAttribute("id","sharecvs");
+	var comp=AdobeAn.getComposition("B4A22EEFD4035440B341932511469BDD");
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	exportRoot1 = new lib.toshare();
+	stage1 = new lib.Stage(shareCvs);	        
+	stage1.tickOnUpdate = false;            
+	stage1.update();            
+	stage1.tickOnUpdate = true;		
+	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	stage1.addChild(exportRoot1);
+	stage1.update();
+
+	exportRoot1.username.text=username;
+	var img=new Image();
+	img.setAttribute("crossOrigin",'Anonymous');
+	img.src=imgsrc;
+	img.onload=function(){
+		var sharebg=new createjs.Bitmap(img);
+		exportRoot1.holder.addChild(sharebg);
+		stage1.update();
+		var base64 = shareCvs.toDataURL("image/jpeg", 0.6);
+		$(".p3-store").attr("src",base64);
+	}
+}
+var filepath="./img/";
+function loadResources(urls, progress) {
+  var loadedCount = 0;
+  var loaded = function () {
+    ++loadedCount;
+    if (progress) progress(urls.length, loadedCount, this);
+  };
+  for (var i = 0; i < urls.length; ++i) {
+    if (!urls[i]) {
+      loaded();
+      return;
+    }
+    var img = new Image();
+    img.onload = loaded;
+    img.onabort = loaded;
+    img.onerror = loaded;
+    img.src =  filepath + urls[i];//"?ver="+ver;
+  }
+}
+</script>
+</body>
+</html>

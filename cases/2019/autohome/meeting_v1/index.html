@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>汽车之家</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="./css/style.css?1" rel="stylesheet">
+
+</head>
+<body onLoad="init0();">
+<div id="wrap">
+	<img src="" alt="" id="gimg">
+	<div id="animation_container">
+		<canvas id="canvas" width="750" height="1453"></canvas>
+		<div id="dom_overlay_container"></div>
+	</div>
+	<form action="javascript:smt();" class="nameinput" id="nameinput">
+		<input type="text" name="username" id="username">
+	</form>
+	<div id="spdbtn"></div>
+	<div id="linkbtn">
+		<div class="linkcirc"></div>
+		<img src="./img/a0_bglowouter.png" width="126" height="126" alt="" class="bglowouter autocenter">
+		<img src="./img/a0_bglowinner.png" width="126" height="126" alt="" class="bglowinner autocenter">
+		<img src="./img/a0_bglowbig.png" alt="" class="bglowbig">
+	</div>
+	<img src="./img/a0_invitation5.png" alt="" id="linktxt1"> 
+	<img src="./img/a0_invitation6.png" alt="" id="linktxt2">
+</div>
+<audio src="./media/bgm.mp3" loop="loop" autoplay="autoplay" id="bgm"></audio>
+<script>
+var stageW,stageH,stageT,stageB,spaceH,stageRate;
+var stageMaxH=1453;
+stageW=750;
+stageRate=window.innerWidth/stageW;
+
+// stageB=stageMaxH-spaceH;
+var wrap=document.getElementById("wrap");
+
+function resizeFunc(){
+	stageH=window.innerHeight*stageW/window.innerWidth;
+	spaceH=(stageMaxH-stageH)/2;
+	stageT=-spaceH;
+	wrap.style.height=stageH+"px";
+	wrap.style.webkitTransform="scale3d("+stageRate+","+stageRate+",1)";
+	wrap.style.transform="scale3d("+stageRate+","+stageRate+",1)";
+}
+resizeFunc();
+//window.addEventListener("resize",resizeFunc);
+// var canvas = document.getElementById("canvas");
+// var stageOffsetY=(stageH-stageMaxH)/2;
+// canvas.style.marginTop=stageOffsetY+"px";
+
+</script>
+<script src="js/createjs-2015.11.26.min.js"></script>
+<script src="loading.js?15622531505361"></script>
+<script src="main.js?15549814233129301251"></script>
+<script>
+function isPassive() {
+	var supportsPassiveOption = false;
+	try {
+		addEventListener("test", null, Object.defineProperty({}, 'passive', {
+			get: function () {
+				supportsPassiveOption = true;
+			}
+		}));
+	} catch(e) {}
+	return supportsPassiveOption;
+}
+function stopPull(e){
+	e.preventDefault(); 
+}
+document.addEventListener('touchmove', stopPull, isPassive() ? {
+	capture: false,
+	passive: false
+} : false);
+function $$ (id){
+	return document.getElementById(id);
+}
+function smt(){
+	//launchbtnFunc();
+	$$("username").blur();
+	return false;
+}
+$$("username").addEventListener('blur',function(){
+	window.scrollTo(0,0);
+	document.body.scrollTop=0;
+})
+var canvas, stage, exportRoot0, exportRoot, anim_container, dom_overlay_container, fnStartAnimation, loader0, loader;
+var username_txt;
+var sndloadnum=0;
+var imgloadnum=0;
+var imgloadCpt=false;
+function init0() {
+	var _body=document.getElementsByTagName('body')[0];
+    _body.style.height=_body.clientHeight+"px";
+
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("45707DE201D4814EBEAC6C0CA6C92692");
+	var lib0=comp.getLibrary();
+	loader0 = new createjs.LoadQueue(false);
+	loader0.addEventListener("fileload", function(evt){handleFileLoad0(evt,comp)});
+	loader0.addEventListener("complete", function(evt){handleComplete0(evt,comp)});
+	var lib0=comp.getLibrary();
+	loader0.loadManifest(lib0.properties.manifest);
+
+}
+function handleFileLoad0(evt, comp) {
+	var images0=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images0[evt.item.id] = evt.result; }	
+}
+function handleComplete0(evt,comp) {
+	var lib0=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib0.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot0 = new lib0.loading();
+	stage = new lib0.Stage(canvas);	
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot0);
+		createjs.Ticker.setFPS(lib0.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+		exportRoot0.y=stageT;
+	}	    
+	function makeResponsive(isResp, respDim, isScale, scaleType) {			
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib0.properties.width, h = lib0.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio=1,sRatio=1;		
+			canvas.width = stageW*pRatio*sRatio;			
+			canvas.height = stageH*pRatio*sRatio;
+			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  stageW*sRatio+'px';				
+			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = stageH*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			           
+			stage.tickOnUpdate = false;                  
+			stage.update();      
+			stage.tickOnUpdate = true;		
+		}
+	}
+	makeResponsive(false,'both',false,1);	
+	AdobeAn.compositionLoaded(lib0.properties.id);
+	fnStartAnimation();
+	init();
+	sndInit();
+}
+function init() {
+	var comp=AdobeAn.getComposition("EB935B2159682B4982E14E7AF3108DA4");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){imghandleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { 
+		images[evt.item.id] = evt.result; 
+		var _imgpct=evt.target._numItemsLoaded / evt.target._numItems;
+		imgloadnum=Math.floor(90*_imgpct);
+		var pct=sndloadnum+imgloadnum;
+		var _pct=(sndloadnum+imgloadnum)/100;
+		//exportRoot0.num.text=pct+"%";
+	}	
+}
+function imghandleComplete(evt,comp){
+	_evt=evt;
+	_comp=comp;
+	imgloadCpt=true;
+	if(sndloadnum==10){
+		handleComplete(evt,comp);
+	}
+}
+var _evt,_comp;
+function handleComplete(evt,comp) {
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	
+	setTimeout(function(){
+		stage.removeChild(exportRoot0);
+		exportRoot = new lib.main();
+		exportRoot.y=stageT;
+	  stage = new lib.Stage(canvas);
+	  fnStartAnimation()
+
+	  exportRoot.logo.y=spaceH+stageH*81/stageMaxH;
+	  
+	},0)
+		
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	AdobeAn.compositionLoaded(lib.properties.id);
+}
+function sndInit(){
+	if (!createjs.Sound.initializeDefaultPlugins()) { return;}
+	var assetsPath = "./media/";
+  var sounds = [{
+    src:"sounds.mp3", data: {
+      audioSprite: [
+        {id:"launch", startTime:(0/25)*1000, duration:148/25*1000},
+        {id:"standby",startTime:(148/25)*1000,duration:(382-148)/25*1000},
+        {id:"drivestart",startTime:(404/25)*1000,
+        	duration:(867-404)/25*1000},
+        {id:"driving",startTime:867/25*1000,duration:(1628-867)/25*1000},
+        {id:"stoping",startTime:1661/25*1000,duration:(1821-1661)/25*1000},
+        {id:"txtAniBgm",startTime:1849/25*1000,duration:(2963-1849)/25*1000},
+        {id:"click",startTime:2965/25*1000,duration:(2983-2965)/25*1000},
+        {id:"doorsnd",startTime:2985/25*1000,duration:(3020-2985)/25*1000}
+      ]}
+    }
+  ];
+  createjs.Sound.alternateExtensions = ["mp3"];
+  createjs.Sound.on("fileload", function loadSound(){ 
+  	sndloadnum=10;
+  	if(imgloadCpt){
+  		handleComplete(_evt,_comp);
+  	}
+  });
+  createjs.Sound.registerSounds(sounds, assetsPath);
+}
+function launchbtnFunc(e){
+	$$("bgm").play();
+	var username=$$("username");
+	if(username.value.trim()!=""){
+		username_txt=username.value;
+		exportRoot.launch.btn.removeEventListener("click",launchbtnFunc);	
+		exportRoot.launch.gotoAndPlay("out");
+		toggleClass($$("nameinput"),"fadeOut");
+		$$("username").blur();
+		exportRoot.gotoAndPlay("p1");
+		exportRoot.launch.btn.gotoAndStop(1);
+
+		createjs.Sound.play("launch").addEventListener("complete",function(){
+			createjs.Sound.play("standby", {interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1});
+		});
+		//
+	}else{
+		username.focus();
+	}
+}
+function launchBtnInit(){
+	var nameinput=$$("nameinput");
+	nameinput.style.display="block";
+	var username=$$("username");
+	exportRoot.launch.y=.863*stageH+spaceH;
+	username.addEventListener("focus",function(e){
+
+	})
+	username.addEventListener("blur",function(e){
+		if(username.value!=""){
+			exportRoot.launch.launchglow.gotoAndPlay(2);
+			exportRoot.launch.bglow.gotoAndPlay(2);
+		}
+	})
+	exportRoot.launch.btn.addEventListener("click",launchbtnFunc);
+	exportRoot.p1bg.addEventListener("click",function(){
+		$$("username").blur();
+		window.scrollTo(0,0);
+	})
+}
+function operationInit(){
+	$$("nameinput").remove();
+	exportRoot.operation.y=spaceH+stageH;
+	var spdbtn=exportRoot.spdbtn;
+	spdbtn.y=.632*stageH+spaceH;
+	createjs.Tween.get(exportRoot.operation).to({alpha:1},1500);
+	createjs.Tween.get(exportRoot.spdbtn).to({alpha:1},1000);
+	$$("spdbtn").style.display="block";
+	$$("spdbtn").addEventListener("touchstart",function(e){
+		speedAniTo(120,1200);
+		spdbtn.gotoAndPlay(2);
+		exportRoot.mc.play();
+
+		createjs.Sound.stop();
+		createjs.Sound.play("drivestart").addEventListener("complete",function(){
+			createjs.Sound.play("driving",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1})
+		})
+	})
+	$$("spdbtn").addEventListener("touchend",function(e){
+		speedAniTo(0,500,true);
+		spdbtn.gotoAndStop(0);
+		exportRoot.mc.stop();
+
+		createjs.Sound.stop();
+		createjs.Sound.play("stoping");
+	})
+}
+var intervalId;
+function speedAniTo(spdtarget,dur,stop){
+	var lpointer=exportRoot.operation.meterL.pointer;
+	var rpointer=exportRoot.operation.meterR.pointer;
+	var speednum=exportRoot.operation.speednum;
+	createjs.Tween.get(lpointer,{override:true,onChange:function(e){
+		speednum.text=Math.floor(160*lpointer.rotation/275);
+		rpointer.rotation=lpointer.rotation;
+	}}).to({rotation:275*spdtarget/160},dur);
+
+	window.clearTimeout(intervalId);
+	if(stop) return;
+	intervalId=window.setTimeout(function(){
+		speedAniTo(90+Math.ceil(Math.random()*40),Math.random()*300+300);
+	},dur);
+}
+function moviePlayEnd(){
+	createjs.Tween.get(exportRoot.mc).to({alpha:0},1000).call(function(){
+		exportRoot.mc.removeAllEventListeners();
+		exportRoot.removeChild(exportRoot.mc);
+		exportRoot.gotoAndPlay("hodor");
+	})
+
+	speedAniTo(0,500,true);
+	$$("spdbtn").remove();
+	createjs.Sound.stop();
+	createjs.Sound.play("stoping");
+
+	createjs.Tween.get(exportRoot.spdbtn).to({alpha:0,scaleX:.6,scaleY:.6},200,createjs.Ease.quadOut).call(function(){
+		exportRoot.removeChild(exportRoot.spdbtn);
+	});
+	
+}
+function initOpenDoor(){
+	exportRoot.openbtn.addEventListener("click",function clickDoorFunc(e){
+		exportRoot.openbtn.gotoAndPlay(2);
+		exportRoot.gotoAndPlay("opendoor");
+		exportRoot.openbtn.removeEventListener("click",clickDoorFunc);
+		createjs.Sound.play("click");
+	})
+}
+function doorOpen(){
+	createjs.Sound.play("doorsnd");
+}
+function txtAniPlay(){
+	$$("bgm").pause();
+	createjs.Sound.play("txtAniBgm",{interrupt: createjs.Sound.INTERRUPT_ANY, loop:-1})
+	//$$("openbgm").play();
+}
+function invatitionInit(){
+	exportRoot.uname.username.text=username_txt;
+	$$("linkbtn").style.top=224*stageH+spaceH;
+	exportRoot.invitationtit.y=.224*stageH+spaceH;
+	exportRoot.lastbtm.y=.794*stageH+spaceH;
+}
+function linkbtnFunc(){
+	
+	toggleClass($$("linkbtn"),"fadeIn",function(btn){
+		btn.addEventListener("webkitAnimationEnd",showQrSilent);
+		btn.addEventListener("animationEnd",showQrSilent)
+		btn.addEventListener("click",function(e){
+			window.location.href="https://wx.ifaceyun.com/confer/www/signup.php?id=259";
+		})
+		//setTimeout(generateShare,0);
+		function showQrSilent(){
+			exportRoot.lastbtm.qrcode.alpha=1;
+		}
+	})
+	toggleClass($$("linktxt1"),"fadeIn");
+	toggleClass($$("linktxt2"),"fadeIn");
+}
+function generateShare(){
+	var base64;
+	var _manifest;
+	var _queue=new createjs.LoadQueue(true);
+	_queue.addEventListener("fileload",_onFileLoaded.bind(this));
+	_queue.addEventListener("complete",_onComplete.bind(this));
+
+	setTimeout(function(){
+		base64=canvas.toDataURL("image/jpeg",0.8);
+		_manifest=[
+			{src:base64,id:"bg",type:"image"},
+			{src:"./img/a0_invitation_tip.png",id:"tip"}
+		];
+		_queue.loadManifest(_manifest);
+	},0);	
+	
+	var _images={};
+	function _onFileLoaded(evt){
+		var item=evt.item;
+		_images[evt.item.id]=evt.result;
+	}
+	function _onComplete(evt){
+		var newCvs=document.createElement("canvas");
+		newCvs.width=stageW;
+		newCvs.height=stageH;
+		var newStg=new createjs.Stage(newCvs);
+		var bg=new createjs.Bitmap(_images.bg);
+		var tip=new createjs.Bitmap(_images.tip);
+		newStg.addChild(bg);
+		newStg.addChild(tip);
+		tip.x=(stageW-_images.tip.width)/2;
+		tip.y=stageH*.892-_images.tip.height/2;
+		newStg.update();
+		var _base64=newCvs.toDataURL("image/jpeg",0.6);
+		$$("gimg").src=_base64;
+		$$("gimg").style.display="block";
+
+		toggleClass(animation_container,"disabled");
+		createjs.Ticker.removeAllEventListeners();
+	}
+}
+function toggleClass(Dom,className,addFunc,removeFunc){
+	var cN=Dom.className;
+	if(cN.indexOf(className)==-1){
+		cN+=(" "+className);
+		if(addFunc) addFunc(Dom);
+	}else{
+		cN=cN.replace(className,"");
+		if(removeFunc) removeFunc(Dom);
+	}
+	Dom.className=cN.trim();
+}
+if (!String.prototype.trim) {
+  String.prototype.trim = function () {
+    return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+  };
+}
+</script> 
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1f2151c442c158a699a5afabc5ba1f8a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

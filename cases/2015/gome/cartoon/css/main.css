@@ -1,0 +1,97 @@
+body,ul,li,p,h1,h2,h3,h4,h5,h6,span{margin: 0;padding: 0; }
+body{width:640px; /*background-color: #c11d42;*/font:28px/1 "黑体" ; }
+ul,li{list-style: none;}
+input,textarea,select{border:none; padding: 0; margin: 0; }
+textarea{background: none;}
+.clear:after{content: "."; display: block; height:0; clear:both; visibility: hidden;}
+.clear{*zoom:1;}
+.shareicon{ position: absolute; left: -9999px; top: -9999px; display: block; width: 0; height: 0;}
+#loading{position: fixed; text-align: center; width: 100%; top:45%; left:50%; margin-left: -50%; font-size: 30px; color:#000; }
+#loading p{color: #fff;}
+.clearfix{clear: both;}
+
+.floor1{width:100%;height:375px;background:url(../img/p11.jpg) center top no-repeat;}
+.floor2{width:100%;height:542px;background:url(../img/p12.jpg) center top no-repeat;margin-top:20px;}
+.floor3{width:100%;height:893px;background:url(../img/p13.jpg) center top no-repeat;position: relative;}
+.btn{display: block;width: 200px;height: 63px;background: url(../img/p7-3.png) no-repeat;margin-left:-100px;position: absolute;bottom:40px;left:50%;}
+
+
+/*实习申请表*/
+.banner{width:100%;height:228px;background: url(../sqb-img/banner.jpg) center top no-repeat; position: relative;}
+.icon{display: inline-block;position: absolute;}
+.icon_jia{background: url(../sqb-img/icon_4.png) 0 0 no-repeat; width: 21px; height: 21px; margin-left:-10px;}
+.icon1{width:136px;height:129px;background: url(../sqb-img/icon1.png) no-repeat;left:0;top:188px;}
+.icon2{width:166px;height:208px;background :url(../sqb-img/icon2.png) no-repeat;right:0;top:1038px;}
+.icon3{width:47px;height:56px;background :url(../sqb-img/icon3.png) no-repeat;left:40px;bottom:800px;}
+
+.sqb_main{width: 100%;height: 2080px;background: url(../sqb-img/line_1.png) center top no-repeat;margin-top:40px; position: relative;}
+
+.comwidth{width:540px;margin: 0 auto;clear:both;}
+.comwidth input{font-size:28px;line-height: 40px; display: inline-block;position: absolute;z-index: 2; background: none; }
+.sqb_f1{height: 420px;}
+.comwidth li{ text-indent: 10px;position: relative;overflow: hidden; }
+.sqb_f1 li{height: 60px; line-height: 60px;width: 100%;}
+.sqb_f1 .fl{width:325px;float: left;}
+.sqb_f1 .fr{width:200px;float: left;height: 305px;}
+.imgbox{width: 174px;height: 214px;margin:15px 20px;text-align: center;}
+.imgbox p{padding-top:105px; padding-bottom: 5px;}
+.sqb_f1 li.last{float: none;position: relative; width:100%;}
+.sqb_f1 .xingming input{width: 75%;left: 76px; margin-top: 10px;}
+.sqb_f1 .xingbie input{width: 75%;left: 76px;  margin-top: 10px;}
+.sqb_f1 .minzu input{width: 75%;left: 76px; margin-top: 10px;}
+.sqb_f1 .jiguan ,.sqb_f1 .chushengriqi{margin-top:4px;}
+.sqb_f1 .jiguan input{width: 75%;right: 10px;top: 10px;}
+.sqb_f1 .chushengriqi input{width:55%;right: 15px;top: 7px;}
+.sqb_f1 .wenhuachengdu {line-height: 60px;width: 100%;position: relative;}
+.sqb_f1 .wenhuachengdu input{width: 45%;right:-5px;top: 10px;}
+.jiatingxiangxizhuzhi{width:100%;position: relative;clear: both;text-indent: 10px;}
+.sqb_f1 .jiatingxiangxizhuzhi textarea{width: 95%;height:60px;z-index:2;line-height: 30px;position: absolute;font-size: 28px;overflow:hidden;right:10px;top:40px;}
+
+/*sqb_f2*/
+.sqb_f2{margin-top:50px;height: 360px;}
+.sqb_f2 li{float: none;line-height:55px;}
+.sqb_f2 li.last{margin-top:10px;}
+.sqb_f2 .qiwangshixichengshi{width: 60%;
+height: 38px;font-size: 28px;line-height: 38px;font-family: "黑体";outline: none;
+background-color: transparent;
+border: 0;}
+.sqb_f2 input.youzhengbianma{width:70%;right:10px;top: 5px;}
+.sqb_f2 input.lianxidianhua{width: 55%;right:10px;top: 5px;}
+.sqb_f2 input.dianzixinxiang{width: 70%;right:10px;top: 5px;}
+.sqb_f2 input.jinjilianxiren{width: 68%;right:10px;top: 8px;}
+.sqb_f2 input.jinjilianxirendianhua{width: 58%;right:10px;top: 10px;}
+
+.sqb_tit{font-size:36px;line-height: 36px;text-align: center;margin-top:40px;}
+
+/*sqb-3*/
+.sqb_f3{margin-top:15px;}
+.sqb_f3 li{float: none;line-height:60px;}
+.sqb_f3 li.l2{height:100px;}
+
+.sqb_f3 input.daxue{width:60%;right:10px;top: 10px;}
+.sqb_f3 .daxuedizhi{width: 68%;height:100px;line-height:40px;position: absolute;font-size: 24px;overflow:hidden;right:10px; top:5px;}
+.sqb_f3  .daxuenianji{margin-top:8px;}
+.sqb_f3  .daxuenianji input{width:70%;right:10px;top: 10px;}
+.sqb_f3  .daxuezhiwu input{width:62%;right:10px;top: 10px;}
+
+/*sqb-5*/
+.sqb_f5{margin-top:70px;height:530px;}
+.sqb_f5 li{float: none;line-height:60px;}
+.sqb_f5 .suoxuezhuyaokecheng{height:220px;}
+.sqb_f5 .suoxuezhuyaokecheng textarea{width: 95%;height:160px;line-height:40px;position: absolute;font-size: 24px;overflow:hidden;right:10px;top:50px;}
+.sqb_f5 .jichuke input{width:78%;right:10px;top: 10px;}
+
+.sqb_f5 .zhuanyeke input{width:78%;right:10px;top: 5px;}
+.sqb_f5 .gerentechang textarea{width: 95%;height:110px;line-height:40px;position: absolute;font-size: 24px;overflow:hidden;right:10px;top:50px;}
+.gerentechang{height: 180px;}
+
+.subbox{margin:70px auto 40px;text-align: center; font-size: 18px;}
+
+.subbox .tip{color:#ff0101; font-family: "微软雅黑";font-size: 18px;line-height: 28px; white-space:nowrap; margin-left: -10px;} 
+.subbox .submitBtn{display: block;width: 194px;height: 64px; font-size: 25px; color: #fff; text-decoration: none; line-height: 64px; text-align: center; font-weight: bold; background: url(../sqb-img/sub-btn.png) center top no-repeat;margin:10px auto;}
+.scap{color:#000; font-size: 25px; text-decoration: none; font-weight: bold; margin-top: 10px;}
+#uploadbtn{display: block; width: 175px; height: 215px;}
+#picurl{opacity: 0; display: block; width: 175px; height: 215px;}
+#preview{display: none; width: 175px; height: 215px; margin-top: 2px;}
+#id_iframe{display: none;}
+

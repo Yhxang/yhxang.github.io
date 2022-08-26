@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>12.12 十万红信封温暖传递</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link href="" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/WeixinApi.js"></script>
+<script src="js/md5.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script>
+window.onload = function(){
+	var _loading = document.getElementById('loading');
+	_loading.style.display = "none";
+};
+document.write('<div id="loading">Loading...</div>');
+
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+	var version = parseFloat(RegExp.$1);
+	if(version>2.3){
+		document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+	}else{
+		document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+	}
+} else {
+	document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<style>
+body,ul,li,p,h1,h2,h3,h4,h5,h6,span{margin: 0;padding: 0;}
+body{background: url(img/bg1150.jpg) top center no-repeat;}
+#loading{ position: absolute; left:50%; margin-left: -50px; top:45%; font-size:25px; }
+.wrap{/*position:relative; left:0px; top:0px;*/ width:640px; margin: 0 auto; overflow: hidden; display: none;}
+.logo{position: absolute; left:19px; top:18px; }
+.logor{position:absolute; right:12px; top:8px;}
+.p1_1{position: absolute; left:61px; top:106px; }
+.p1_2{position: absolute; left:275px; top:85px; -webkit-transform:scale(.6); transform:scale(.6);}
+.p1_3{position: absolute; left:355px; top:163px; }
+.luckarea{position:relative; margin:250px auto 0; background: url(img/b01.png) 0 0 no-repeat; width: 359px; height: 527px;}
+.rst{position: absolute; top:484px; left:50%; width:482px; height:145px; margin-left: -248px; background-color: #e4e4e4;border: #a6a6a6 6px solid; text-align: center; font-size: 57px; font-weight: bold; line-height: 145px; overflow: hidden;}/*
+.cvsholder{position: absolute; top:490px; left:50%; margin-left: -241px;  width:482px; height:145px;}*/
+#cvs{position: absolute; top:490px; left:50%; margin-left: -241px; width:482px; height:145px; overflow: hidden; }
+.mask{width:100%;height:2000px; background-color:rgba(0,0,0,.9); position: absolute; top:0; left:0; display: none;}
+.mask input#mobile{ width:235px; height: 31px; background: url(img/b07.jpg) 0 0 no-repeat;  margin: 20px auto 10px; display: block; font-size: 30px; border: none; padding: 0; list-style:none;}
+.mask input#smt,.mask input#rst{ width: 92px; height: 36px; background: url(img/b06.png) 0 0 no-repeat; border: none; padding: 0; margin: 0; }
+.mask input#smt{  margin-left: 90px;    }
+.mask input#rst{  margin-left: 10px; background-position: -105px 0; }
+.btm{ -webkit-transform:scale(0.62); transform:scale(0.62); -webkit-transform-origin:0% 0%; transform-origin:0% 0%;}
+.cover{position:absolute; left:-3px; top: 127px;-webkit-transform:scale(0.62); transform:scale(0.62);-webkit-transform-origin:0% 0%; transform-origin:0% 0%;}
+.mailer{position: absolute; width: 401px; height: 386px; margin-left: -200px; left:50%; margin-top: 250px; display: none;}
+.paperholder{ width: 388px; height: 500px; position: absolute; bottom:8px; left:5px; overflow: hidden; }
+.page{background: url(img/b02.jpg) 0 0 no-repeat; background-color: #fff8ea; width: 383px; height: 395px; position: absolute; left:0px; top:420px; display: none;}
+.page1{  background-image:none;}
+.page2{ }
+.page3{  }
+.page h2,.page h3,.page h4{text-align: center; overflow: hidden;}
+.page1 h2{ margin: 30px 0 20px; height: 38px; }
+.page1 h3{ margin-bottom: 7px; height: 24px; }
+.page1 h4{ margin-top: 12px; }
+.page2 h2{margin-top: 60px;}
+.page2 h3{margin-top: 30px;}
+.page3 h2{margin-top: 38px;}
+.page3 h3{margin-top: 22px;}
+.hrt{background: url(img/a19.png) 0 0 no-repeat;width: 100px; height: 97px; position: absolute; display: none;  }
+.hrt1{ -webkit-transform:scale(.4) rotate(28deg); transform:scale(.4) rotate(28deg); top:5px; left:195px; }
+.hrt2{ -webkit-transform:scale(.6); transform:scale(.6);  top:300px; left:145px;}
+.hrt3{ -webkit-transform:scale(.5) ; transform:scale(.5); top:340px; left:80px;  }
+.hrt4{ -webkit-transform:scale(.4) ; transform:scale(.4); top:350px; left:220px; }
+.hrt5{-webkit-transform:scale(.6); transform:scale(.6);  top:280px; left:145px;}
+.hrt6{-webkit-transform:scale(.5) ; transform:scale(.5); top:320px; left:80px;}
+.hrt7{-webkit-transform:scale(.4) ; transform:scale(.4); top:330px; left:220px; }
+.hrt8{-webkit-transform:scale(.3) ; transform:scale(.3); top:360px; left:250px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="logo"><img src="img/logoHis.png"/></div>
+    <div class="logor"><img src="img/logor.png"/></div>
+	<div class="p1_1"><img src="img/a01.png"/></div>
+	<div class="p1_2"><img src="img/a02_1.png"/></div>
+	<div class="p1_3"><img src="img/a03.png"/></div>
+	<div class="luckarea"></div>
+	<div class="rst">加载中</div>
+    
+	   <canvas id="cvs" width="482" height="145"></canvas>
+    
+	<div class="mask">
+        <div class="mailer">
+            <img class="btm" src="img/a06.png">
+            <div class="paperholder">
+                <div class="page page1">
+                    <form id="telform" name="telform" action="submit.php" method="post" onsubmit="return false;">
+                        <h2><img src="img/b03.png"></h2>
+                        <h3><img src="img/b04.png"></h3>
+                        <input type="tel" id="mobile" name="mobile" maxlength="11">
+                        <input type="submit" id="smt" name="smt" value="" >
+                        <input type="reset" id="rst" name="rst" value="">
+                        <h4><img src="img/b05.png"></h4>
+                        <div class="hrt hrt1"></div>
+                    </form>
+                </div>
+                <div class="page page2">
+                    <h2><img src="img/b07.png"></h2>
+                    <h3><img src="img/b08.png"></h3>
+                    <div class="hrt hrt2"></div>
+                    <div class="hrt hrt3"></div>
+                    <div class="hrt hrt4"></div>
+                </div>
+                <div class="page page3">
+                    <h2><img src="img/b09.png"></h2>
+                    <h3><img src="img/b10.png"></h3>
+                    <div class="hrt hrt5"></div>
+                    <div class="hrt hrt6"></div>
+                    <div class="hrt hrt7"></div>
+                    <div class="hrt hrt8"></div>
+                </div>
+            </div>
+            <img class="cover" src="img/a05.png">
+        </div>
+    </div>
+</div>
+
+<!--Mock start-->
+<script src="../../../libs/mock.js"></script>
+<script>
+    Mock.mock('search_award.php', Mock.Random.natural(0, 3));
+    Mock.mock('submit.php', 1);
+</script>
+<!--Mock end-->
+
+<script>
+var bodyStyle = document.body.style;
+bodyStyle.mozUserSelect = 'none';
+bodyStyle.webkitUserSelect = 'none';
+
+function getCookie(c_name){
+    if (document.cookie.length > 0){
+        c_start = document.cookie.indexOf(c_name + "=")
+        if (c_start != -1){
+            c_start = c_start + c_name.length + 1
+            c_end = document.cookie.indexOf(";", c_start)
+            if (c_end == -1) c_end = document.cookie.length
+            return unescape(document.cookie.substring(c_start, c_end))
+        }
+    }
+    return ""
+}
+
+function setCookie(c_name, value, expiredays){
+    var exdate = new Date()
+    exdate.setDate(exdate.getDate() + expiredays)
+    document.cookie = c_name + "=" + escape(value) + 
+    ((expiredays == null) ? "": "; expires=" + exdate.toGMTString())
+}
+
+function checkCookie(foo){
+    luck = getCookie('luck')
+    if (luck != null && luck != ""){
+        $(".rst").empty();
+        showPage(3);
+    }else{
+        setCookie('luck', 'LUCKED', 365);
+        foo();
+    }
+}
+var loadingImages=["img/b01.png","img/b02.jpg","img/b03.png","img/b04.png","img/b05.png","img/b06.png","img/b07.jpg","img/b08.png","img/b09.png","img/b10.png","img/b11.jpg"]
+var resourceDir=""
+var _offsetX=0,
+    _offsetY=0;
+
+$(function(){
+    var stageW=$(window).width(),
+    stageH=$(window).height();
+    $(".wrap").height(stageH);
+    _offsetX=($(window).width()-$("#cvs").width())*.5
+    _offsetY=parseInt($("#cvs").css("top")||0)
+    loadResources(loadingImages,function (n, i, img) {
+        if (n != i) return;
+        $("#loading").html("loading&nbsp;&nbsp;" + Math.round(i * 100 / n) + "%");
+        if (i != n) return;
+        $("#loading").hide();
+        $(".wrap").show();
+        checkCookie(function(){
+            $.post("search_award.php",function(data){
+                ajax(data);
+                console.log(data)
+            })
+        })
+    })
+
+})
+
+var _res;
+var resTxt="";
+var canvas = document.getElementById("cvs"),ctx = canvas.getContext("2d");
+var x1,y1,a=30,timeout,totimes = 100,jiange = 30;
+function ajax(res){
+    _res=Number(res);
+	switch (_res){
+		case 0:
+		resTxt="谢谢参与！";
+		break;
+		case 1:
+		resTxt="10元话费";
+		break;
+		case 2:
+		resTxt="5元话费";
+		break;
+		case 3:
+		resTxt="2元话费";
+		break;
+		default:
+		break;
+	}
+	$(".rst").html(resTxt);
+
+    var img = new Image();
+    img.src = "img/b11.jpg";
+    img.onload = function(){
+        ctx.drawImage(img,0,0,canvas.width,canvas.height)
+        tapClip()
+    } 
+}
+
+var tl=new TimelineLite();
+function  showPage(str){
+    $(".wrap").css({position:"relative",top:0,left:0})
+    $(".mask").show();
+
+    $(".page"+str).show();
+
+    tl.set(".mailer",{alpha:1,scale:.1,css:{display:"block"}})
+    .to(".mailer",.3,{scale:1},"+=.5")
+    .to((".page"+str),1,{y:-390,scale:1,delay:0.5})
+    if(str==1){
+        //中奖
+        tl.set(".hrt1",{css:{display:"block"}})
+        .to(".hrt1",0.7,{x:"+=20",y:"-=20"})
+    }else if(str==2){
+        //未中奖
+        tl.set([".hrt2",".hrt3",".hrt4"],{y:150,css:{display:"block"},alpha:0},"-=.2")
+        .staggerTo([".hrt2",".hrt3",".hrt4"],0.7,{y:"-=80",alpha:1,onComplete:linkTo},.2)
+    }else if(str==3){
+        //已玩过
+        tl.set([".hrt5",".hrt6",".hrt7",".hrt8"],{y:150,css:{display:"block"},alpha:0},"-=.2")
+        .staggerTo([".hrt5",".hrt6",".hrt7",".hrt8"],0.7,{y:"-=80",alpha:1,onComplete:linkTo},.2)
+    }
+    function linkTo(){
+        $(window).click(function(){
+            location.href="http://mp.weixin.qq.com/s?__biz=MjM5MzA5OTgwOQ==&mid=201217319&idx=1&sn=5cfd763ce3f9bd0cde602956d154a487#rd";
+        })
+
+    }
+}
+
+function tapClip(){
+    var hastouch = "ontouchstart" in window?true:false,
+        tapstart = hastouch?"touchstart":"mousedown",
+        tapmove = hastouch?"touchmove":"mousemove",
+        tapend = hastouch?"touchend":"mouseup";
+  
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.lineWidth = a*2;
+    ctx.globalCompositeOperation = "destination-out";
+    
+    canvas.addEventListener(tapstart , function(e){
+        clearTimeout(timeout)
+        e.preventDefault();
+        
+        x1 = hastouch?e.targetTouches[0].pageX-_offsetX:e.clientX-canvas.offsetLeft;
+        y1 = hastouch?e.targetTouches[0].pageY-_offsetY:e.clientY-canvas.offsetTop;
+       
+        ctx.save();
+        ctx.beginPath()
+        ctx.arc(x1,y1,1,0,2*Math.PI);
+        ctx.fill();
+        ctx.restore();
+        
+        canvas.addEventListener(tapmove , tapmoveHandler);
+        canvas.addEventListener(tapend , function(){
+            canvas.removeEventListener(tapmove , tapmoveHandler);
+            
+            timeout = setTimeout(function(){
+                var imgData = ctx.getImageData(0,0,canvas.width,canvas.height);
+                var dd = 0;
+                for(var x=0;x<imgData.width;x+=jiange){
+                    for(var y=0;y<imgData.height;y+=jiange){
+                        var i = (y*imgData.width + x)*4;
+                        if(imgData.data[i+3] >0){
+                            dd++
+                        }
+                    }
+                }
+                if(dd/(imgData.width*imgData.height/(jiange*jiange))<0.7){
+                    canvas.className = "noOp";
+                    showResult();
+                }
+            },totimes)
+        });
+        function tapmoveHandler(e){
+            clearTimeout(timeout)
+            e.preventDefault()
+
+            x2 = hastouch?e.targetTouches[0].pageX-_offsetX:e.clientX-canvas.offsetLeft;
+            y2 = hastouch?e.targetTouches[0].pageY-_offsetY:e.clientY-canvas.offsetTop;
+            ctx.save();
+            ctx.moveTo(x1,y1);
+            ctx.lineTo(x2,y2);
+            ctx.stroke();
+            ctx.restore()
+            
+            x1 = x2;
+            y1 = y2;
+        }
+    })
+}
+
+
+function showResult(){
+    if(_res==0){
+        showPage(2);//未中奖
+        return;
+    }else if((_res==1)||(_res==2)||(_res==3)){ //中奖
+        showPage(1);
+        $("#smt").click(function(e){
+            e.preventDefault();
+            var telisright=true;
+            telisright=checkMobile();
+            if(!telisright){
+                telisright=true;
+                return;
+            }
+            $.post("submit.php",{
+                mobile:document.telform.mobile.value
+            },function(data){
+                data=Number(data)
+                switch(data){
+                    case -1:
+                    alert("未中奖");
+                    break;
+                    case 0:
+                    alert("手机号为空");
+                    break;
+                    case -2:
+                    alert("手机号已使用");
+                    break;
+                    case 1:
+                    //alert("提交成功");
+                    location.href="http://mp.weixin.qq.com/s?__biz=MjM5MzA5OTgwOQ==&mid=201217319&idx=1&sn=5cfd763ce3f9bd0cde602956d154a487#rd";
+                    break;
+                    default:
+                    break;
+                }
+            })
+        })
+    }
+}
+
+function checkMobile(){ 
+    var sMobile = document.telform.mobile.value 
+    if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(sMobile))){ 
+        alert("手机号有误，请输入正确手机号码"); 
+        //不是完整的11位手机号或者正确的手机号前七位
+        document.telform.mobile.focus(); 
+        return false; 
+    } else{
+        return true;
+    }
+} 
+function loadResources(urls, progress) {
+    var loadedCount = 0;
+    var loaded = function () {
+        ++loadedCount;
+        if (progress) progress(urls.length, loadedCount, this);
+    };
+    for (var i = 0; i < urls.length; ++i) {
+        if (!urls[i]) {
+            loaded();
+            return;
+        }
+        var img = new Image();
+        //resourceMap[urls[i]] = img;
+        img.onload = loaded;
+        img.onabort = loaded;
+        img.onerror = loaded;
+        img.src = resourceDir + urls[i];//+ "?ver=" + j_version;
+    }
+}
+
+</script>
+
+</body>
+</html>

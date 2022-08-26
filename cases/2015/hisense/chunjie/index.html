@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>领年画抢红包</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+	var version = parseFloat(RegExp.$1);
+	if(version>2.3){
+		document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+	}else{
+		document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+	}
+} else {
+	document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<!-- <link rel="stylesheet" href="css/animation.css"> -->
+<link rel="stylesheet" href="css/layout.css?ver=6">
+
+</head>
+<body>
+<div id="loading">loading...</div>
+<div id="wrap" class="wrap">
+	<section class="sct1">
+		<img src="img/a01.jpg" class="sct1-1 on">
+		<img src="img/a02.jpg" class="sct1-2">
+		<img src="img/a03.jpg" class="sct1-3">
+		<img class="logo1" src="img/a01.png">
+		<div class="white1"></div>
+		<img class="arrowtip" src="img/a30.png">
+	</section>
+	<section class="sct2">
+		<div class="bg2">
+			<!-- <img src="img/a04.jpg"> -->
+		</div>
+
+		<div class="slider">
+
+			<div class="title2">
+				<div class="title2-1">
+					<img src="img/a04.png">
+				</div>
+				<div class="title2-2">
+					<img src="img/a05.png">
+				</div>
+				<div class="title2-3">
+					<div class="title2-3-1"></div>
+					<div class="title2-3-2"></div>
+				</div>
+				<div class="hang2">
+					<div class="line2-1">
+						<div class="rect2"></div>
+						<div class="circle2"></div>
+					</div>
+					<div class="line2-2">
+						<div class="rect2"></div>
+						<div class="circle2"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="target">
+				<img src="img/a17.png">
+			</div>
+			<img class="targetimg" src="">
+			
+			<div class="redbag">
+				<div class="bag">
+					<img src="img/a19.png">
+					<div class="fingertip">
+						<img src="img/a21.png" alt="">
+					</div>
+				</div>
+			</div>
+			<img class="bagtxt2" src="img/a20.png">
+			<img class="phonetxt2" src="img/a25.png">
+			<form id="telform" name="telform" action="" method="post" onsubmit="return false;">
+				<input type="text" id="mobile" name="phone" value="">
+				<input type="submit" id="smt" name="smt" value=""/>
+			</form>
+			
+			<div class="tvarea">
+				<div class="tv">
+					<img src="img/a09.png" class="tvbg">
+					<div class="view">
+						<img src="img/a13.png" class="viewbg">
+						<div class="gift2">
+							<img src="img/a14.png" class="giftdown">
+							<img src="img/a15.png" class="giftup">
+							<img src="" class="picsmall">
+						</div>
+						<div class="handtip2">
+							<img src="img/a18.png" alt="">
+						</div>
+					</div>
+				</div>
+				
+				<img class="desk2" src="img/a10.png">
+			</div>
+
+			<div class="telectrlarea">
+				<div class="telectrl">
+					<img src="img/a02.png">
+				</div>
+				<div class="tip2">
+					<img src="img/a12.png">
+				</div>
+				<div class="tiptxt2">
+					<div class="tiptxt2-holder">
+						<img src="img/a11.png">
+						<img src="img/a16.png" class="tiptxt2-2">
+					</div>
+				</div>
+			</div>
+
+			<div class="rule2">
+				<img src="img/a06.png">
+				<i></i>
+			</div>
+			<div class="resultMask">
+				<div class="resultlucky">
+					<img src="img/a23.png?ver=1" class="resultbg">
+					<!-- <img src="img/a06.jpg" class="closebtn"> -->
+					<p class="money"><span></span>元话费</p>
+					<img class="inviteBtn" src="img/a22.png">
+				</div>
+				<div class="resultlose">
+					<img src="img/a24.png" alt="">
+				</div>
+			</div>
+			<div class="luckshare">
+				<img src="img/a28.png" alt="">
+			</div>
+			
+		</div>
+
+
+		<div class="slider">
+			<div class="intro2">
+				<img src="img/a07.png">
+			</div>
+			<img class="closebtn" src="img/a08.png">
+		</div>
+		<div class="whitelogo">
+			<img src="img/a03.png" alt="">
+		</div>
+		<div class="picbigarea">
+			<img src=""  class="picbig">
+			<img src="img/a29.png" class="nhdl1">
+			<img src="img/a29.png" class="nhdl2">
+			<!-- <img src="img/a05.jpg" class="hb2"> -->
+			<div class="hb2"></div>
+			<!-- <p>长按年画图片，按照提示保存至手机。</p> -->
+		</div>
+		
+	</section>
+	<section class="sct3">
+
+		<div class="whitelogo">
+			<img src="img/a03.png">
+		</div>
+		<div class="container c1">
+  		<div class="star">
+  			<a href="#" class="logo"></a>
+  			<div class="c-h"></div>
+  			<div class="c-l">
+  				<div class="s3avator"><img src=""></div>
+  				<!-- <strong>领取红包</strong><br/>
+  				<span>￥2.00</span> -->
+  			</div>
+  			<div class="c-info">
+  				<h2 class="username">FENDI—陈</h2>
+  				<p>我领取的年画是<span>“羊”洋得意</span>，</p>
+  				<p>ULED让你的年画一秒变惊艳</p>
+  				<p>你也快来玩吧！</p>
+  			</div>
+  			<div class="c-pic">
+  				<img src="" alt="">		
+  			</div>
+  			<div class="pic-box"></div>
+  			<a href="javascript:void(0);" class="btn-nhzf">&nbsp;</a>
+  		</div>
+  	</div>
+		
+	</section>
+</div>
+
+
+<!-- <div id="loading"></div> -->
+<script>
+/*=============需要php插入的值==================*/
+var oldwxid="张三"
+var oldavatar="users/tx.png";
+var oldnhIndex='2';
+var isSelf='0';
+/*===========================================*/
+//alert(isSelf);
+</script>
+<script src="js/zepto.min.js?v=12"></script>
+<script src="js/hammer.min.js?v=12"></script>
+<script src="js/TweenMax.min.js?v=12"></script>
+<script src="js/TimelineMax.min.js?v=12"></script>
+<script src="js/easing/EasePack.min.js?v=12"></script>
+<!-- <script src="js/common.js?v=16"></script> -->
+
+<!--Mock start-->
+<script src="../../../libs/mock.js"></script>
+<script>
+	Mock.mock(/hisense_luck\.php/, {
+		result: 'success',
+		price: 2
+	})
+	Mock.mock(/hisense_submit\.php/, {
+		result: 'success'
+	})
+</script>
+<!--Mock end-->
+
+<script>
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-02-13 16:30:17
+ * @version $Id$
+ */
+$(function(){
+
+	/*=============需要插入的值==================
+	
+	var oldnhIndex=2;//前人年画id
+	var isSelf=0;// 是不是自己分享的链接，0不是(有跳转按钮)，1是(无跳转按钮)
+	var oldavatar="url.jpg";//前人头像url
+	var oldwxid="张三";//前人微信用户名
+	var newavater="newurl.jpg";//现用户头像url
+	var newwxid="李四";//现用户微信用户名
+
+	===========================================*/
+	var stageW,stageH;
+	stageW=$(window).width();
+	stageH=$(window).height();
+
+
+	var luckIndex=0;//中奖id  0为默认未中奖
+	var nhindex=0;//年画id 
+	var resourceDir="img/";
+
+	$("#wrap,body,section,.slider").height(stageH);
+	var touchmc=new Hammer($("#wrap")[0],{
+		recognizers:[
+			[Hammer.Pan]
+		]
+	})
+	var loadingImages=[];
+	for(var i=1;i<=27;i++){
+		loadingImages.push("a"+(i<10?"0"+i:i)+".png");
+		if(i<=5){
+			loadingImages.push("a"+(i<10?"0"+i:i)+".jpg");
+		}
+	}
+	for(var i=1;i<=6;i++){
+		loadingImages.push("/pic/m"+i+".png");
+		loadingImages.push("/pic/p"+i+".jpg");
+	}
+	for(var i=1;i<=5;i++){
+
+	}
+	loadResources(loadingImages,function (n, i, img) {
+		$("#loading").html("loading&nbsp;&nbsp;" + Math.round(i * 100 / n) + "%");
+		if (n != i) return;
+		$("#loading").remove();
+		$("#wrap").show();
+		initStart();
+
+	})
+	var nhtxtArr=['三“羊”开泰','“羊”眉吐气','“羊”年大吉','“羊”运当头','“羊”气十足','“羊”洋得意'];
+	var olduserid=getQueryString("userid");
+
+
+	function initStart(){
+		if(olduserid){
+			$(".s3avator img").attr("src",oldavatar);
+			$(".username").text(oldwxid);
+			//alert(oldnhIndex)
+			oldnhIndex=Number(oldnhIndex);
+			$(".c-info span").text(nhtxtArr[oldnhIndex-1]);
+			$(".c-pic img").attr("src","img/pic/m"+oldnhIndex+".png")
+			$(".sct3").show();
+			$(".sct1,.sct2").hide();
+
+
+			$(".btn-nhzf").show();
+			$(".btn-nhzf").tap(function(){
+				$(".sct3").hide();
+				$(".sct1,.sct2").show();
+				enableHammer();
+			})
+			
+		}else{
+			enableHammer();
+		}
+	}
+
+	var tl=new TimelineMax({
+		paused:true
+	});
+	tl.to(".sct1-2",.6,{alpha:1})
+		.to(".sct1-3",.8,{alpha:1},"-=.2")
+		.set(".white1",{css:{display:'block'}})
+		.call(function(){
+			$(".bg2").addClass("animIn")
+		})
+		.to(".sct1",.8,{scale:5,y:250,ease:Power1.easeIn})
+
+		.to(".sct1",.5,{autoAlpha:0},"-=.5").add("p1")
+		.set(".sct1",{display:"none"})
+		.set(".sct2",{css:{display:"block"}})
+		.from(".tvarea",1.05,{y:1500,ease:Power2.easeOut},"+=.2")
+		.from(".telectrlarea",1.5,{y:1500,ease:Power2.easeOut},"-=.8")
+		.from(".title2",1,{y:"-=250",ease:Bounce.easeOut})
+		//.to(".title2-2",.5,{width:546,ease:Bounce.easeOut})
+		.to(".title2-2",.8,{width:546,ease:Bounce.easeOut},"-=.6")
+		.to(".title2-3-1,.title2-3-2",.2,{width:100},"-=.1")
+
+		//.from(".telectrl",.5,{y:-50,alpha:0,scale:1.2})
+		.from(".tip2",.2,{alpha:0, y:10},"-=.5")
+		.from(".tiptxt2",.4,{alpha:0,y:15},"+=.2")
+
+		.set(".rule2",{css:{display:"block"}})
+		.to(".rule2",.4,{width:154},"-=.2")
+		.call(telectrlinit).addPause()
+		.to(".tiptxt2-holder",.2,{y:-29,ease:Power1.easeIn})
+		.to(".giftup",.1,{x:5,y:5,rotation:5})
+		.to(".giftup",.3,{x:60,y:-40,rotation:10,ease:Power1.easeOut},"+=.15")
+		.to(".giftup",.7,{x:140,y:80,rotation:40,ease:Power1.easeInOut})
+		.to(".giftup,.giftdown",.1,{alpha:0,y:"+=10"},"-=.1")
+		.to(".picsmall",.5,{scale:1,ease:Power1.easeInOut},"-=.5")
+		.to(".tiptxt2-holder",.2,{y:-58,ease:Power1.easeOut})
+		.call(ctrlimg)
+		.addPause().add("next2")
+
+		.to(".title2",.8,{y:"-300",ease:Back.easeIn},"+=.2")
+		
+		.to(".telectrlarea",.5,{y:"+=700",ease:Power1.easeIn},"-=.5")
+		.to(".rule2",.3,{x:300},"-=.3")
+		.to(".tvarea",.6,{y:"+=180",ease:Power1.easeInOut},"-=.5")
+		.from(".target",.7,{scale:0,ease:Power1.easeInOut},"-=.3")
+		.set(".handtip2",{css:{display:"block"}})
+		.to(".handtip2",.1,{alpha:1})
+		.call(handfunc)
+		.addPause()
+		
+		.to(".targetimg",.5,{y:"-=370",x:"-=12"})
+		.set(".handtip2",{css:{display:"none"}})
+		.to(".targetimg",.1,{scale:.9,ease:Power1.easeOut},"+=.08")
+		.to(".targetimg",.5,{scale:1.6,ease:Power3.easeOut})
+		.to(".tvarea",.7,{y:"+=800",ease:Power3.easeIn},"-=.3")
+		.set(".tvarea,.rule2,.telectrlarea",{css:{display:"none"}})
+
+		.to(".target",.05,{autoAlpha:0})
+		.to(".targetimg",.8,{scale:1.21,y:"-=45",ease:Power2.easeInOut})
+		.from(".bagtxt2",.4,{scale:0,ease:Power2.easeOut},"-=.2")
+		.from(".redbag",1,{y:550,ease:Power3.easeOut},"-=.5")
+		.call(bagfunc)
+		.addPause()
+
+		.to(".redbag",.8,{y:"+=500",ease:Power3.easeIn})
+		.to(".bagtxt2",.5,{y:"+=100",autoAlpha:0},"-=.5")
+		.to(".targetimg",.8,{scale:2.073,x:"+=10",y:"+=65",ease:Power2.easeInOut},"-=.5")
+		//.set(".phonetxt2",{css:{display:"block"}})
+		//.to(".phonetxt2",.3,{alpha:1},"-=.3")
+		.from(".phonetxt2",.3,{scale:0},"-=.3")
+		.set("#telform",{css:{display:"block"}})
+		.from("#mobile",.5,{y:"+=80",alpha:0},"-=.3")
+		.from("#smt",.5,{y:"+=80",alpha:0},"-=.2")
+		.call(phonesmt)
+		.addPause()
+
+		//.set(".sct3",{css:{display:"block"}})
+		//.to(".sct3 .title2",.3,{y:0})
+		//.to(".sct2",.3,{alpha:0})
+		//.set(".sct2",{display:"none"});
+
+	function enableHammer(){
+		touchmc.on("panend",function(ev){
+			tl.play();
+			touchmc.off("panend");
+		})
+	}
+	var click1=false;
+	function telectrlinit(){
+		if(click1) return;
+
+		$(".rule2").tap(function(){
+			TweenMax.to($(".slider").eq(0),1.2,{y:-stageH,ease:Power3.easeInOut})
+			TweenMax.to($(".slider").eq(1),1.2,{y:-stageH,ease:Power3.easeInOut})
+		})
+		$(".closebtn").tap(function(){
+			TweenMax.to($(".slider").eq(0),1.2,{y:0,ease:Power3.easeInOut})
+			TweenMax.to($(".slider").eq(1),1.2,{y:0,ease:Power3.easeInOut})
+		})
+
+		$(".telectrl img").one("touchend",function(e){
+			if(tl.paused()){
+				nhindex=Math.ceil(Math.random()*6);
+
+				//console.log(nhindex)
+				$("img.picsmall").attr("src","img/pic/m"+nhindex+".png");
+				$("img.picbig").attr("src","img/pic/p"+nhindex+".jpg");
+
+				TweenMax.to(".telectrl",.1,{scale:.95,onComplete:function(){
+					TweenMax.to(".telectrl",.1,{scale:1})
+				}})
+				tl.play();
+
+				//$(".rule2,.closebtn").off("tap");
+				click1=true;
+				$(".telectrl img").off("tap");
+				
+			}
+		})	
+	}
+	var click2=false;
+	function ctrlimg(){
+		if(click2)return;
+		$(".telectrl").on("tap",function(e){
+			if(tl.paused()){
+				$(".hb2").css({"background-image":"url(img/a05.jpg)"})
+				$(".picbigarea").show().find(".picbig").width(stageW).height(stageH);
+				$(".hb2").tap(function(){
+					$(".picbigarea").hide();
+					tl.play();
+				})
+				click2=true;
+				$(".telectrl").off("tap");
+			}
+		})
+	}
+	var click3=false;
+	function handfunc(){
+		var touchmc2=new Hammer($(".picsmall")[0],{
+			recognizers:[
+				[Hammer.Pan]
+			]
+		})
+		touchmc2.on("panup",function(ev){
+			if(click3)return;
+			$(".targetimg").css({
+				left:$(".picsmall").offset().left,
+				top:$(".picsmall").offset().top,
+				display:"block"
+			}).attr("src","img/pic/m"+nhindex+".png")
+			$(".picsmall").hide();
+			$(".bag").css({
+				top:470-stageH
+			})
+			tl.play();
+			click3=true;
+		})
+	}
+
+	function bagfunc(){
+		$(".bag").tap(function(){
+			$(".fingertip").hide();
+
+			$.post("hisense_luck.php",{
+				nhindex:nhindex
+			},function(data){
+				var _data=$.parseJSON(data);
+				var _rst=_data.result;
+				if(_rst=="success"){
+					luckIndex=_data.price;
+					showresult();
+				}else if(_rst=="fail"){
+					//alert(_data.errmsg);
+				}
+			});
+
+			showresult();
+			function showresult(){
+				$(".resultMask").show();
+				if(isSelf==1){//如果玩过了
+					$(".resultlose").hide();
+					$(".resultlucky").show();
+					TweenMax.from($(".resultlucky"),.4,{scale:0,ease:Back.easeOut});
+					$(".inviteBtn").hide();
+
+					$(".money").empty().css({
+						"font-size":"40px"
+					}).html("别贪心<br/>你已经领过红包了");
+
+				}else{
+					//如果没玩过，进入抽奖
+					if(luckIndex==0){
+						//没中奖
+						$(".resultMask").css({
+							"background-color":"rgba(0,0,0,.75)"
+						})
+						$(".resultlose").show();
+						$(".resultlucky").hide();
+					}else if(luckIndex==2||luckIndex==5||luckIndex==10){
+						//中奖
+						$(".resultlose").hide();
+						$(".resultlucky").show();
+						TweenMax.from($(".resultlucky"),.4,{scale:0,ease:Back.easeOut})
+						$(".resultlucky span").text("￥"+luckIndex+".00");
+
+						$(".inviteBtn").tap(function(){
+							TweenMax.to($(".resultlucky"),.2,{scale:0,onComplete:function(){
+								$(".resultMask").hide();
+								tl.play();
+							}});
+						})
+					}else{
+						alert("luckIndex: "+luckIndex);
+					}
+				}
+			}	
+			$(".bag").off("tap");
+		})
+	}
+	var ThisUserID;
+	function phonesmt(){
+		$("#smt").tap(function(e){
+			e.preventDefault();
+			var telqualified=true;
+			var telqualified=checkMobile();
+			if(!telqualified){
+				telqualified=true;
+				return;
+			}
+			ThisUserID=uuid(16,16);
+			$.post(" hisense_submit.php",{
+				phone: document.telform.phone.value,
+			},function(data){
+				//alert("充值返回：  "+data)
+				var _data=$.parseJSON(data);
+				//alert(_data+"___data")
+				//alert(_data.result+"____result")
+				switch(_data.result){
+					case "success":
+					$(".luckshare").show();
+					//console.log("phone No. send success");
+					break;
+					case "fail":
+					console.log(_data.errmsg);
+					break;
+					default:
+					console.log(_data.result);
+					break;
+				}
+			})
+
+			$("#smt").off("tap");
+		})
+	}
+
+	function loadResources(urls, progress) {
+	    var loadedCount = 0;
+	    var loaded = function () {
+	        ++loadedCount;
+	        if (progress) progress(urls.length, loadedCount, this);
+	    };
+	    for (var i = 0; i < urls.length; ++i) {
+	        if (!urls[i]) {
+	            loaded();
+	            return;
+	        }
+	        var img = new Image();
+	        img.onload = loaded;
+	        img.onabort = loaded;
+	        img.onerror = loaded;
+	        img.src = resourceDir + urls[i];//+ "?ver=" + j_version;
+	    }
+	}
+
+	function checkMobile(){ 
+    var sMobile = document.telform.phone.value;
+    if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(sMobile))){ 
+        alert("手机号有误，请输入正确手机号码"); 
+        //不是完整的11位手机号或者正确的手机号前七位
+        document.telform.mobile.focus(); 
+        return false; 
+    } else{
+        return true;
+    }
+	} 
+	function uuid(len, radix) {
+    var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+    var uuid = [], i;
+    radix = radix || chars.length;
+    if (len) {
+      for (i = 0; i < len; i++) uuid[i] = chars[0 | Math.random()*radix];
+    } else {
+      var r;
+      uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';
+      uuid[14] = '4';
+      for (i = 0; i < 36; i++) {
+        if (!uuid[i]) {
+          r = 0 | Math.random()*16;
+          uuid[i] = chars[(i == 19) ? (r & 0x3) | 0x8 : r];
+        }
+      }
+    }
+    return uuid.join('');
+	}
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) return unescape(r[2]); return null;
+	};
+
+})
+	
+</script>
+</body>
+</html>

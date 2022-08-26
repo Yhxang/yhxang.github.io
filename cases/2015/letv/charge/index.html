@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>疯狂“摇”充电</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/style.css?ver=1.24" rel="stylesheet">
+</head>
+<body>
+<img src="img/icon.jpg" alt="" class="shareicon">
+<div id="loading">
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+  <p>loading...</p>
+</div>
+<div class="wrapholder">
+  <img data-src="img/a01.jpg" width="640" height="1136" alt="" class="p-bg">
+  <div id="wrap" class="wrap">
+    
+    <div class="p0 section swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide p8">
+          <img data-src="img/a14.png" width="640" height="742" alt="" class="p1-wall">
+          <img data-src="img/b13.png" width="640" height="409" alt="" class="p6-cloud">
+          <div class = "p8container_mobile">
+            <img data-src="img/a30.png" width="349" height="29" alt="" class="p1-btmchip">
+            <img data-src="img/c13.png" width="371" height="386" alt=""  >
+            <img data-src="img/c14.png" width="224" height="211" alt=""  class="p8cm_mobile">
+            <img data-src="img/c15.png" width="41" height="57" alt=""  class="p8cm_upflag">
+            <img data-src="img/c15.png" width="41" height="57" alt=""  class="p8cm_downflag">
+            <img data-src="img/c09.png" width="437" height="193" alt=""  class="p8cm_letter">
+          </div>
+          <div class = "p8container_letter">
+            <img data-src="img/b02.png" width="598" height="570" alt=""  >
+            <img data-src="img/c10.png" width="265" height="95" alt=""  class="p8cl_rule">
+            <img data-src="img/c08.png" width="165" height="185" alt=""  class="p8cl_box">
+            <img data-src="img/c11.png" width="541" height="330" alt=""  class="p8cl_letter">
+            <img data-src="img/c12.png" width="457" height="82" alt=""  class="p8cl_btn">   
+          </div>  
+          <img data-src="img/a58.png" width="93" height="38" alt="" class="p8-nexttip">
+        </div> 
+        <div class="swiper-slide p1">
+          <img data-src="img/a31.png" width="640" height="441" alt="" class="p1-bg">
+          <img data-src="img/a14.png" width="640" height="742" alt="" class="p1-wall">
+          <div class="p1-role">
+            <img data-src="img/a30.png" width="349" height="29" alt="" class="p1-btmchip">
+            <div class="p1-head">
+              <img data-src="img/a02.png" width="392" height="400" alt="">
+              <div class="p1-eyeglow1"></div>
+              <div class="p1-eyeglow2"></div>
+            </div>
+            <div class="p1-body">
+              <img data-src="img/a04.png" width="310" height="280" alt="">
+            </div>
+            <div class="p1-hand">
+              <img data-src="img/a03.png" width="455" height="295" alt="">
+              <div class="p1-handglow1"><img data-src="img/a15.png" width="35" height="32" alt=""></div>
+              <div class="p1-handglow2"><img data-src="img/a15.png" width="35" height="32" alt=""></div>
+            </div>
+          </div>
+          <div class="p1-gift">
+            <img data-src="img/a07.png" width="214" height="178" alt="">
+          </div>
+          <div class="p1-title">
+            <img data-src="img/a06.png" width="551" height="244" alt="" class="p1-btmtitle">
+            
+            <div class="p1-titshake">
+              <img data-src="img/a05.png" width="180" height="172" alt="">
+              <img data-src="img/a11.png" width="216" height="83" alt="" class="p1-titsak">
+            </div>
+
+            <div class="p1-battery">
+              <img data-src="img/a09.png" width="176" height="114" alt="">
+              <div class="p1-btylight">
+                <img data-src="img/a10.png" width="76" height="360" alt="">
+              </div>
+            </div>
+            <div class="p1-plugglow">
+              <img data-src="img/a16.png" width="401" height="195" alt="">
+              <img data-src="img/a17.png" width="147" height="80" alt="" class="p1-whiteplug">
+            </div>
+          </div>
+          <img data-src="img/a08.png" width="353" height="92" alt="" class="p1-btn">
+          <div class="p1-banner">
+            <img data-src="img/a12.png" width="82" height="290" alt="" class="p1-bnrl">
+            <img data-src="img/a13.png" width="57" height="411" alt="" class="p1-bnrr">
+          </div>
+          <img data-src="img/a54.png" width="104" height="203" alt="" class="p1-banner1">
+        </div>
+      </div> 
+      <img data-src="img/a01.png" width="206" height="29" alt="" class="logo">
+    </div>
+    <div class="p2 section">
+      <img data-src="img/a14.png" width="640" height="742" alt="" class="p1-wall">
+      <div class="pn-phone p2-phone">
+        <img data-src="img/a50.png" width="75" height="161" alt="" class="pn-chargeline">
+        <img data-src="img/a32.png" width="444" height="873" alt="">
+        <img data-src="img/a30.png" width="349" height="29" alt="" class="pn-chip">
+        <div class="pn-screen">
+          <img data-src="img/a02.jpg" width="405" height="543" alt="" class="pn-srnbg">
+          <div class="pn-greenbg"></div>
+          <div class="pn-timerArea">
+            <div class="pn-timer">              
+              <div class="pn-timerbg">
+                <img data-src="img/a03.jpg" width="349" height="65" alt="">
+                <div class="pn-processor"><img data-src="img/a45.png" width="379" height="61" alt=""></div>
+              </div>
+              <img data-src="img/a44.png" width="398" height="87" alt="" class="pn-timertop">
+              <div class="pn-timerl"><img data-src="img/a44.png" width="398" height="87" alt=""></div>
+              <div class="pn-timerr"><img data-src="img/a44.png" width="398" height="87" alt=""></div>
+            </div>
+            <img data-src="img/a43.png" width="166" height="46" alt="" class="pn-timertit">
+          </div>
+
+          <div class="pn-battery">
+            <img data-src="img/a34.png" width="400" height="97" alt="" class="pn-btyshadow">
+            <img data-src="img/a57.png" width="314" height="517" alt="">
+            <div class="pn-btybox">
+              <div class="pn-flowtop">
+                <div class="pn-flowtop1"></div>
+                <div class="pn-flowtop2"></div>
+              </div>
+              <div class="pn-flowbody"></div>
+              <div class="pn-flowbtm">
+                <img data-src="img/a36.png" width="304" height="32" class="pn-flowbtm1">
+                <img data-src="img/a37.png" width="304" height="32" class="pn-flowbtm2">
+              </div>
+            </div>
+            <img data-src="img/a33.png" width="314" height="517" alt="">
+          </div>
+          <img data-src="img/a41.png" width="267" height="59" alt="" class="pn-timertip pn-timertip1">
+          <img data-src="img/a42.png" width="202" height="81" alt="" class="pn-timertip pn-timertip2">
+          <img data-src="img/a49.png" width="244" height="69" alt="" class="pn-timertip pn-timertip3">
+        </div>
+      </div>
+      <div class="p2-pacemaker1">
+        <img data-src="img/a52.png" width="291" height="397" alt="" class="p2-pacelight">
+        <div class="p2-pace"><img data-src="img/a51.png" width="264" height="508" alt=""></div>
+      </div>
+      <div class="p2-pacemaker2">
+        <img data-src="img/a52.png" width="291" height="397" alt="" class="p2-pacelight">
+        <div class="p2-pace"><img data-src="img/a51.png" width="264" height="508" alt=""></div>
+      </div>
+      <img data-src="img/a53.png" width="213" height="71" alt="" class="p2-checkbty">
+      <div class="p2-helper">
+        <img data-src="img/a47.png" width="201" height="201" alt="">
+        <img data-src="img/a46.png" width="214" height="160" alt="" class="p2-helphand">
+        <img data-src="img/a48.png" width="131" height="49" alt="" class="p2-helpertxt">
+      </div>
+      <img data-src="img/a39.png" width="434" height="35" alt="" class="p2-tip">
+    </div>
+
+    <div class="p7 section">
+
+      <img data-src="img/a14.png" width="640" height="742" alt="" class="p1-wall p7-wall">
+      <img data-src="img/b13.png" width="640" height="409" alt="" class="p6-cloud">
+      <div class="p6-top p6-top1">
+        <div class="p6-battery"></div>
+        <div class="p6-batteryInfo">
+          <img data-src="img/b01.png" width="162" height="74" alt="" class="p6-batteryInfo-txt">
+          <div class="p6-electricity">
+            <span class="hundred"></span><span class="tens"></span><span class="single"></span>
+          </div>
+        </div>
+      </div>
+      <div class="p6-top p6-top2"></div>
+      <div class="pn-phone p6-phone">
+        <img data-src="img/a32.png" width="444" height="873" alt="">
+        <img data-src="img/a30.png" width="349" height="29" alt="" class="pn-chip">
+        <div class="pn-screen">
+          <img data-src="img/a02.jpg" width="405" height="543" alt="" class="pn-srnbg">
+          <div class="pn-greenbg"></div>
+          <div class="pn-battery">
+            <img data-src="img/a34.png" width="400" height="97" alt="" class="pn-btyshadow">
+            <img data-src="img/a57.png" width="314" height="517" alt="">
+            <div class="pn-btybox">
+              <div class="pn-flowtop">
+                <div class="pn-flowtop1"></div>
+                <div class="pn-flowtop2"></div>
+              </div>
+              <div class="pn-flowbody"></div>
+              <div class="pn-flowbtm">
+                <img data-src="img/a36.png" width="304" height="32" class="pn-flowbtm1">
+                <img data-src="img/a37.png" width="304" height="32" class="pn-flowbtm2">
+              </div>
+            </div>
+            <img data-src="img/a33.png" width="314" height="517" alt="">
+          </div>
+        </div>
+        <div class="pn-phonepct"><span class="hundred"></span><span class="tens"></span><span class="single"></span><img data-src="img/a56.png" width="21" height="22" alt=""></div>
+      </div>
+
+      <div class="p7-content">
+        <img data-src="img/b02.png" width="598" height="540" alt="" class="p6-cont-bg p7-cont-bg">
+        <div class="p7-ct">
+
+          <div class="p6-ct-text">
+            <div class="p6-ct-text1">
+              <span class="p6-ct-t1">xxx</span>
+              <span class="p6-ct-t2"><span>xx</span><i>%</i></span>
+              <img data-src="img/b03.png" width="294" height="95" alt="">
+            </div>
+            <div class="p6-ct-text2">
+              <img data-src="img/b11.png" width="248" height="135" alt="">
+            </div>
+          </div>
+
+          <div class="p6-cp"><img data-src="img/b14.png" width="203" height="175" alt="" ></div>
+          <div class="p7-btnBox p7-btnBox1">
+            <img data-src="img/b08.png" width="366" height="91" alt="" class="p7-btn-1">
+             <!-- p7-2 -->
+            <a href="javascript:void(0);" class="p7-btn1"><img data-src="img/b09.png" width="244" height="74" alt=""></a>
+            <a href="javascript:void(0);" class="p7-btn2"><img data-src="img/b12.png" width="244" height="74" alt=""></a>
+            <a href="javascript:void(0);" class="p7-btn3"> <img data-src="img/b10.png" width="185" height="74" alt=""></a>
+          </div>
+        </div>
+        <div class="p6-listArea">
+          <div class="p6-listOverHide">
+            <div class="p6-listHolder">
+              <ul class="p6-list"></ul>
+              <ul class="p6-list hide"></ul>
+            </div>
+          </div>
+        </div>
+        <img data-src="img/b05.png" width="361" height="102" alt="" class="p6-ecode">
+        <div class="p6-link">
+			<a href="#" onclick="counttly()" ><span class="p6-red">1000个</span><span class="p6-blue">超级移动电源等你抢！</span></a>
+			<img data-src="img/b15.png" width="39" height="34" alt="" class="p6-pointer">
+        </div>
+      </div>
+    </div>
+
+    <div class="p-chip">
+      <div class="p-chiproll">
+        <div class="p-chip1"><img data-src="img/a22.png" width="126" height="98" alt=""></div>
+        <div class="p-chip2"><img data-src="img/a23.png" width="88" height="53" alt=""></div>
+        <div class="p-chip3"><img data-src="img/a24.png" width="36" height="38" alt=""></div>
+        <div class="p-chip4"><img data-src="img/a25.png" width="59" height="57" alt=""></div>
+        <div class="p-chip5"><img data-src="img/a26.png" width="38" height="27" alt=""></div>
+        <div class="p-chip6"><img data-src="img/a27.png" width="29" height="18" alt=""></div>
+        <div class="p-chip7"><img data-src="img/a28.png" width="103" height="67" alt=""></div>
+        
+        <div class="p-chip8"><img data-src="img/a29.png" width="80" height="77" alt=""></div>
+        <div class="p-chip9"><img data-src="img/a40.png" width="156" height="167" alt=""></div>
+      </div>
+    </div>
+
+     <div class="p1-front">
+      <img data-src="img/a19.png" width="88" height="340" alt="" class="p1-front-1">
+      <img data-src="img/a20.png" width="387" height="75" alt="" class="p1-front-2">
+      <img data-src="img/a21.png" width="191" height="139" alt="" class="p1-front-3">
+    </div>
+    <div class="pm section">
+      <div class = "p5container">
+        <img data-src="img/c06.png" width="573" height="506" alt=""  >
+        <input type="text" class="p5-phone" name="usermobile" value="">
+        <img data-src="img/c07.png" width="197" height="75" alt=""  class="p5-btn">
+        <p class="p5-posting">数据发送中...</p>
+      </div>
+      <div class = "p4container">
+        <img data-src="img/c04.png" width="396" height="429" alt=""  >
+        <img data-src="img/c05.png" width="167" height="217" alt=""  class="p4-arrow">
+      </div>
+      <div class = "p3container">
+        <img data-src="img/c01.png" width="565" height="393" alt=""  >
+        <img data-src="img/c02.png" width="415" height="75" alt=""  class="p3-btn">
+        <!-- <img data-src="img/c03.png" width="51" height="54" alt=""  class="p3-close"> -->
+      </div>
+    </div>   
+  </div>
+</div>
+<!-- <h1 id="h1" style="font-size:50px; z-index:999999;position: absolute; left:0; top:0;"></h1> -->
+<p id="p-flushlayer" class="p-flushlayer"></p>
+<script src="js/zepto.min.js"></script>
+<script>
+//alert(JSON.stringify(<?php echo $gamedata?>));
+// var gamedata=<?php echo $gamedata?>;
+/* var gamedata = {
+    result: mygame.result,//查询成功 //0 查询失败 -1//过期  
+    gameid: mygame.gameid,//null,//空    “1111”, //游戏id
+    currentid: mygame.currentid,//当前用户微信id
+    currentname: mygame.currentname,//当前用户昵称
+    currentphoto: mygame.currentphoto,//头像
+    createrid: mygame.createrid,//游戏创建者微信id
+    creatername: mygame.creatername,//游戏创建者昵称
+    createrphoto: mygame.createrphoto,//创建者头像
+    createrscore: mygame.createrscore,//游戏创建者成绩
+    data: [
+      {
+        friendid: "ID9527",//朋友微信id
+        friendname: "╄→ロ觜甪丄キ昜＂",//昵称
+        friendphoto: "img/a02.png",//头像
+        friendscore: 3 //游戏成绩
+      },
+    ]
+  }; */
+var gamedata={
+  result:1,
+  gameid:null,
+  currentid:"liuneng",
+  currentname:"刘能",
+  currentphoto:"userimg/201607141637.jpg",
+  createrid:"liuneng",
+  creatername:"刘能",
+  createrphoto:"userimg/201607141637.jpg",
+  createrscore:0,
+  data: []
+}
+
+if(getQueryString('userid')!=null){
+  gamedata.createrid="zhaosi";
+  gamedata.creatername="赵四";
+  gamedata.createrphoto="userimg/201607141654.jpg";
+  gamedata.createrscore=54;
+  gamedata.data= [
+    {
+      friendid: "ID2333",//朋友微信id
+      friendname: "冰晶蝶灵·Q·璃莹殇",//昵称
+      friendphoto: "userimg/201607141700.jpg",//头像
+      friendscore: 18 //游戏成绩
+    },
+    {
+      friendid: "ID9527",//朋友微信id
+      friendname: "╄→ロ觜甪丄キ昜＂",//昵称
+      friendphoto: "userimg/201607141701.jpg",//头像
+      friendscore: 6 //游戏成绩
+    },
+    {
+      friendid: "ID6666",//朋友微信id
+      friendname: "司雪深舞",//昵称
+      friendphoto: "userimg/201607141717.jpg",//头像
+      friendscore: 10 //游戏成绩
+    },
+    {
+      friendid: "ID6565",//朋友微信id
+      friendname: "谢广坤",//昵称
+      friendphoto: "userimg/201607141720.jpg",//头像
+      friendscore: 2 //游戏成绩
+    },
+  ]
+}
+function getQueryString(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+  var r = window.location.search.substr(1).match(reg);
+  if (r != null) return unescape(r[2]); return null;
+};
+</script>
+<script src="js/common.js?ver=1.106"></script>
+<script>
+
+function counttly(){
+  //e.preventDefault()
+  $.ajax({
+   type: "GET",
+   url: "submit_project.php",
+   data: {ly:'lemall_wl'},
+   dataType: "json",
+   success: function(data){
+      if(data>0){
+        window.location.href="http://bbs.letv.com/thread-965518-1.html";
+      }
+    }
+  });
+  return false;
+}
+</script>
+
+<!--Mock start-->
+<script src="../../../libs/mock.js"></script>
+<script>
+  Mock.mock('submit_project.php', {
+    result: 1,
+    gameid: 'testno9527'
+  })
+</script>
+<!--Mock end-->
+</body>
+</html>

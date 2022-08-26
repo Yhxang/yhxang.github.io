@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>来~画了这个包，拿着去买包</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/style.css?ver=1.4" rel="stylesheet">
+</head>
+<body onload="init();">
+<img src="img/icon.jpg?ver=1" alt="" class="shareicon">
+<div id="loading" class="loading">
+	<img src="img/a01.png" width="75" height="75" alt="" class="xin">
+	<div class="pen"></div>
+	<p id="loadingnum">0%</p>
+</div>
+<div id="wrap" class="wrap">
+	<canvas id="canvas" width="640" height="1136"></canvas>
+	<div class="bMask">
+		<div class="center center1">
+			<img data-src="img/a20.png" alt="" class="base">
+			<form class="msgform" id="msgform">
+				<img data-src="img/a21.png" alt="">
+				<input type="tel" class="phone" maxlength="11" placeholder="| 输入手机号领取红包">
+				<button class="submit" type="submit">提交领取</button>
+			</form>
+			<img data-src="img/a19.png" alt="" class="cover">
+		</div>
+		<div class="center center2">
+			<img data-src="img/a22.png" width="518" height="763" alt="">
+			<a class="coloregg" href="production.html"><img data-src="img/a23.png" width="205" height="133" alt="新年大礼"></a>
+		</div>
+	</div>
+</div>
+<!-- <p class="font">| 输入手机号领取红包1234567890</p> -->
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/createjs-2015.11.26.min.js"></script>
+<script src="stage.js?ver=1.8"></script>
+<script>
+var version='1.0';
+$(function(){
+	var stageH=$(window).height();
+	$("#wrap").height(stageH);
+	$("#canvas").css({top:(stageH-1136)/2})
+	$("#msgform").submit(function(e){
+		e.preventDefault();
+		var mobile=$(".phone").val();
+		if(!/1\d{10}/.test(mobile)){
+			alert("请输入正确的手机号码");
+		}else{
+			// $.post("../submit2.php",{
+			// 	mobile:mobile,
+			// 	media:'redbag'
+			// },function(data){
+			// 	if(1==data.result){
+					$(".center1").addClass("animOut");
+					$(".center2").show();
+			// 	}else if(0==data.result){
+			// 		//alert("你已经领取过");
+			// 		$(".center1").addClass("animOut");
+			// 		$(".center2").show();
+			// 	}else{
+			// 		console.log(data.msg);
+			// 	}
+			// },'json');
+		}
+	})
+})
+var canvas, stage, exportRoot;
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+	ss = ss||{};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt) {	
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }	
+	var _num=Math.floor(100 * evt.target._numItemsLoaded / evt.target._numItems);
+  document.getElementById("loadingnum").innerHTML=(_num<10?("0"+_num):_num)+"%";
+}
+function handleComplete(evt) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	document.getElementById("wrap").style.display="block";
+	document.body.removeChild(document.getElementById("loading"));
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib._stage();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);	
+	//Registers the "tick" event listener.
+	createjs.Touch.enable(stage);
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);	    
+	//Code to support hidpi screens and responsive scaling.
+	(function(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = w*sRatio+'px';			
+			canvas.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;		
+		}
+	})(false,'both',false,1);
+
+	$("img").each(function(){
+    if($(this).data("src")){
+      $(this).attr("src",$(this).data("src")+"?ver="+version).removeAttr("data-src");
+    }
+  })	
+}
+var colors=['#D71E18','#FFB238','#3c40fa','#a030ff'];
+var color;
+var oldPt;
+var oldMidPt;
+var stroke;
+var drawingCanvas;
+
+function handleMouseDown(event) {
+	if (!event.primary) { return; }
+	stroke = 20;
+	var _oldPt = new createjs.Point(stage.mouseX, stage.mouseY);
+	oldPt=drawingCanvas.globalToLocal(_oldPt.x,_oldPt.y);
+
+	oldMidPt = oldPt.clone();
+	stage.addEventListener("stagemousemove", handleMouseMove);
+}
+
+function handleMouseMove(event) {
+	if (!event.primary) { return; }
+	var _mousexy=drawingCanvas.globalToLocal(stage.mouseX,stage.mouseY);
+	var midPt=new createjs.Point(oldPt.x + _mousexy.x >> 1, oldPt.y + _mousexy.y >> 1);
+
+	drawingCanvas.graphics.setStrokeStyle(stroke, 'round', 'round').beginStroke(color).moveTo(midPt.x, midPt.y).curveTo(oldPt.x, oldPt.y, oldMidPt.x, oldMidPt.y);
+	
+	oldPt.x = _mousexy.x;
+	oldPt.y = _mousexy.y;
+
+	oldMidPt.x = midPt.x;
+	oldMidPt.y = midPt.y;
+}
+
+function handleMouseUp(event) {
+	if (!event.primary) { return; }
+	stage.removeEventListener("stagemousemove", handleMouseMove);
+}
+
+function enterscene(e){
+	exportRoot.conts.gotoAndPlay('p2');	
+	exportRoot.conts.btn.removeEventListener("click",enterscene);
+}
+function initcvs(){
+	drawingCanvas = new createjs.Shape();
+	exportRoot.conts.cvs.addChild(drawingCanvas);
+	stage.addEventListener("stagemousedown", handleMouseDown)
+	stage.addEventListener("stagemouseup", handleMouseUp);
+	var oldcolorbtn;
+	for(var i=1;i<=4;i++){
+		(function (idx){exportRoot.conts['c'+idx].addEventListener('click',function(){
+			color=colors[idx-1];
+			exportRoot.conts['c'+idx].gotoAndStop(1);
+			if(oldcolorbtn){
+				oldcolorbtn.gotoAndStop(0);
+			}
+			oldcolorbtn=exportRoot.conts['c'+idx];
+		})})(i)
+	}
+	setTimeout(function(){exportRoot.conts.c1.dispatchEvent('click');},0);
+
+	exportRoot.conts.btn.addEventListener("click",function(){
+		$(".bMask").show();
+		$(".center1").addClass("animIn");
+	})
+}
+</script> 
+</body>
+</html>

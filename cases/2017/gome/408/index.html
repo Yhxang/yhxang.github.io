@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>408 超级福利计划</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link rel="stylesheet" href="css/swiper-3.4.1.min.css">
+<style>
+html,body,p{margin:0; padding:0; }
+img{border: none;}
+input,select,option,button{margin: 0; padding:0; border: none; background-color: transparent;}
+.wrap{position: relative; width: 640px; overflow: hidden;}
+.logo{position: absolute; left: 10px; top: 10px; z-index: 999;}
+.section{position: absolute; left:0 ; top:0; width: 640px; height: 1136px;}
+.p1{display: none; height: 100%;}
+.p1-bg{position: absolute; left: 0; bottom: 0} 
+.p1-textarea{position: absolute; left: 283px; top: 95px; width: 355px; height: 753px;}
+.p1-tt{-webkit-transform: translate3d(500px, -40px, 0); transform: translate3d(500px, -40px, 0); -webkit-animation: p1txtIn .2s .25s forwards; animation: p1txtIn .2s .25s forwards;}
+.animOut .p1-textarea{-webkit-animation: p1txtOut .25s forwards; animation: p1txtOut .25s forwards;}
+.p1-t1{position: absolute; left: 79px; top: 0;}
+.p1-t2{position: absolute; left: 0; top: 99px; -webkit-animation-delay: .3s; animation-delay: .3s;}
+.p1-t3{position: absolute; left: 63px; bottom: 0; -webkit-animation-delay: .4s; animation-delay: .4s;}
+.p1-role{position: absolute; left: 10px; bottom: 0; -webkit-transform-origin: 425px 890px; transform-origin: 425px 890px; -webkit-transform: translate3d(640px,50px,0) skewX(-30deg); transform: translate3d(640px,50px,0) skewX(-30deg); -webkit-animation: runIn .55s forwards; animation: runIn .55s forwards;}
+.animOut .p1-role{-webkit-transform: none; transform: none; -webkit-animation: runOut .4s forwards; animation: runOut .4s forwards;}
+.p1-btn{position: absolute; left: 40px; bottom: 36px;-webkit-transform-origin: 142px 49px; transform-origin: 142px 49px; -webkit-animation: laihui .25s ease-in-out alternate infinite; animation: laihui .25s ease-in-out alternate infinite;}
+.p2{top: auto; bottom: 0; background-color: #eeeeee; display: none;}
+.office{display: none; -webkit-transform: translate3d(640px, 0, 0); transform: translate3d(640px, 0, 0); -webkit-animation: rightIn .5s forwards; animation: rightIn .5s forwards;}
+.p2-rtoffice{position: absolute; right: 0; top: 0; pointer-events: none;}
+.p2-rboffice{position: absolute; right: 0; bottom: 0; pointer-events: none; -webkit-animation-delay: .2s; animation-delay: .2s;}
+.p2-card1,.p2-card2{position: absolute; left: 11px; top: 249px; width: 623px; height: 403px; display: none;}
+.p2-card1{-webkit-animation-delay: .15s; animation-delay: .15s; -webkit-transform: translate3d(640px, 0, 0); transform: translate3d(640px, 0, 0); -webkit-animation: rightIn .5s .5s forwards; animation: rightIn .5s .5s forwards;}
+.p2-text{display: none; position: absolute; left: 30px; top: 674px; -webkit-animation-delay: .15s; animation-delay: .15s; -webkit-transform: translate3d(640px, 0, 0); transform: translate3d(640px, 0, 0); -webkit-animation: rightIn .4s .2s forwards; animation: rightIn .4s .2s forwards;}
+.p2-btn{display: none; position: absolute; right: 92px; top: 928px; width: 401px; height: 76px; -webkit-transform: translate3d(640px, 0, 0); transform: translate3d(640px, 0, 0); -webkit-animation: rightIn .4s .3s forwards,laihui .25s ease-in-out .7s alternate infinite; animation: rightIn .4s .3s forwards,laihui .25s ease-in-out .7s alternate infinite;}
+.p2-text.animOut,.p2-btn.animOut,.office.animOut{opacity:1; -webkit-transform: none; transform: none; -webkit-animation: rightOut .25s forwards; animation: rightOut .25s forwards;}
+.p2-btnbg{position: absolute; left: 0; top: 0;}
+.p2-name,.p2-sex,.p2-mobile{position: absolute; left: 255px; top: 180px; width: 330px; height: 44px; line-height: 44px; color: #8e0404; font-size: 36px; font-weight: bold;}
+input::-webkit-input-placeholder{color: #8e0404;}
+.p2-sex{top: 255px; width: 95px; height: 25px; line-height: 25px; font-size: 18px;}
+.p2-mobile{left:385px; top: 255px; width: 150px; height: 25px; line-height: 25px; font-size: 20px; }
+.photoarea,.avator{position: absolute; left: 50px; top: 143px; width: 177px; height: 224px; overflow: hidden;}
+.avator{left: 410px; top: 120px; -webkit-transform: scale3d(.7, .7, 1); transform: scale3d(.7, .7, 1);}
+#pic_file{position: relative; width: 100%; height: 100%; opacity: 0;}
+.animIn .p2-card1,.animIn .office,.animIn .p2-text,.animIn .p2-btn{display: block;}
+#photoHolderCont{position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+.p2-1-bg{position: absolute; left: 0; bottom: 0; display: none; opacity: 0;}
+.p2-1-bg.animIn{display: block; -webkit-animation: fadeIn .2s forwards; animation: fadeIn .2s forwards;}
+.p2-hand{position: absolute; right: 0; top: 96px; -webkit-transform: translate3d(350px, 0, 0); transform: translate3d(350px, 0, 0); pointer-events: none;}
+.p2-hand.animIn{-webkit-animation: handIn .3s forwards; animation: handIn .3s forwards;}
+.p2-hand.animOut{-webkit-transform: none; transform: none; -webkit-animation: handOut .3s forwards; animation: handOut .3s forwards;}
+.p2-1-btn{position: absolute;left: 23px; top: 670px; -webkit-transform: translate3d(-400px, 0, 0); transform: translate3d(-400px, 0, 0); }
+.p2-1-btn.animIn{-webkit-animation: leftIn .2s .3s forwards; animation: leftIn .2s .3s forwards;}
+.p3-bg{position: absolute; left: 0; top: 0; opacity: 0; display: none;}
+.p3-bg.animIn{display: block;-webkit-animation: fadeIn .2s forwards; animation: fadeIn .2s forwards;}
+.p2-card1.flip{-webkit-animation: flip .15s ease-out forwards; animation: flip .15s ease-out forwards;}
+.p2-card2.flip{display: block; -webkit-transform: rotateY(-90deg); transform: rotateY(-90deg); -webkit-animation: flip2 .15s ease-in .15s forwards; animation: flip2 .15s ease-in .15s forwards;}
+.p3-text{position: absolute; left: 65px; top: 660px; width: 530px; font-size: 23px; line-height: 30px;}
+.p3-ttip{font-size: 18px;}
+.p2-card2name{position: absolute; left:455px; top:84px; font-weight: bold; font-size: 28px;}
+.p2-1-rbtext{position: absolute; right: 10px; bottom: 20px; text-align: right; color: #450e11; font-size: 16px; font-weight: bold; display: none;}
+.show{display: block;}
+.p1-1{position: absolute; left: 0; top: 50%; width: 100%; height: 1136px; margin-top: -568px; display: none; -webkit-transform: translate3d(0, 1137px, 0); transform: translate3d(0, 1137px, 0); -webkit-animation: pageDownIn .5s forwards; animation: pageDownIn .5s forwards;}
+.p1-1-bg{position: absolute; left: 15px; bottom: 0;  }
+.p1-prt{position: absolute; left: 52px; top: 295px; width: 542px; height: 681px; -webkit-transform: translateZ(0); transform: translateZ(0);}
+.swiper-button-prev,.swiper-button-next{position: absolute; left: 10px; top: 45%; width: 53px; height: 110px; background: url(img/a16.png) 0 0 no-repeat; overflow: hidden;}
+.swiper-button-next{left: auto; right: 10px; background-position: -53px 0;}
+.p1-1-enter{position: absolute; right: 55px; top: 75px; -webkit-animation: tand .3s alternate infinite; animation: tand .3s alternate infinite;}
+.swiper-slide{text-align: center;}
+.swiper-slide img{margin-top:55px; -webkit-transform: translateZ(0); transform: translateZ(0);}
+.p1-rt{position: absolute; left: 0; top: 50%; margin-top: -568px; width: 640px; height: 1136px;}
+.sndctrl{ position: absolute; z-index: 9999; right:15px; top:20px;}
+.sndctrl i{ display: none; position: absolute; left:-7px; top:16px; background-color: #fff; width: 45px; height: 2px; -webkit-transform: rotate(45deg); transform: rotate(45deg);}
+
+.qrcode{position: absolute; right: 53px; bottom: 50px; width: 108px; height: 190px;}
+.qrcode img{-webkit-animation: tand .4s ease-in-out alternate infinite; animation: tand .4s ease-in-out alternate infinite;}
+.p2-playagain{display: none; position: absolute; left: 50%; top: 52.5%; margin-left: -143px; margin-top: -48px;}
+.showresult{display: block;}
+.showresult .p3-bg{display: block; opacity: 1;}
+.showresult .p2-card2{display: block; top: 160px;}
+.showresult .p2-playagain{display: block;}
+@-webkit-keyframes laihui {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: translate3d(10px, 0, 0); transform: translate3d(10px, 0, 0); }
+}
+@keyframes laihui {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: translate3d(10px, 0, 0); transform: translate3d(10px, 0, 0); }
+}
+@-webkit-keyframes p1txtIn {
+	from { -webkit-transform: translate3d(500px, -150px, 0); transform: translate3d(500px, -150px, 0);}
+	to { -webkit-transform: none; transform: none; }
+}
+@keyframes p1txtIn {
+	from { -webkit-transform: translate3d(500px, -150px, 0); transform: translate3d(500px, -150px, 0);}
+	to { -webkit-transform: none; transform: none; }
+}
+@-webkit-keyframes p1txtOut {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: translate3d(500px, -150px, 0); transform: translate3d(500px, -150px, 0);}
+}
+@keyframes p1txtOut {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: translate3d(500px, -150px, 0); transform: translate3d(500px, -150px, 0);}
+}
+@-webkit-keyframes runIn {
+	0% { -webkit-transform: translate3d(640px,50px,0) skewX(-30deg); transform: translate3d(640px,50px,0) skewX(-30deg); -webkit-animation: runIn .3s forwards; }
+	60%{-webkit-transform: translate3d(0,0,0) skewX(10deg); transform: translate3d(0,0,0) skewX(10deg);}
+	100% { -webkit-transform: none; transform: none; }
+}
+@keyframes runIn {
+	0% { -webkit-transform: translate3d(640px,50px,0) skewX(-30deg); transform: translate3d(640px,50px,0) skewX(-30deg); -webkit-animation: runIn .3s forwards; }
+	60%{-webkit-transform: translate3d(0,0,0) skewX(10deg); transform: translate3d(0,0,0) skewX(10deg);}
+	100% { -webkit-transform: none; transform: none; }
+}
+@-webkit-keyframes runOut {
+	0% { -webkit-transform: none; transform: none;  }
+	40%{-webkit-transform: translate3d(0, 0, 0) skewX(-10deg); transform: translate3d(0, 0, 0) skewX(-10deg); }
+	100% { -webkit-transform: translate3d(-640px, 0, 0) skewX(0); transform: translate3d(-640px, 0, 0) skewX(0); }
+}
+@keyframes runOut {
+	0% { -webkit-transform: none; transform: none;  }
+	40%{-webkit-transform: translate3d(0, 0, 0) skewX(-10deg); transform: translate3d(0, 0, 0) skewX(-10deg); }
+	100% { -webkit-transform: translate3d(-640px, 0, 0) skewX(0); transform: translate3d(-640px, 0, 0) skewX(0); }
+}
+@-webkit-keyframes tand {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: scale3d(.8, .8, 1); transform: scale3d(.8, .8, 1); }
+}
+@keyframes tand {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: scale3d(.8, .8, 1); transform: scale3d(.8, .8, 1); }
+}
+@-webkit-keyframes flip {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: rotateY(90deg); transform: rotateY(90deg); }
+}
+@keyframes flip {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: rotateY(90deg); transform: rotateY(90deg); }
+}
+@-webkit-keyframes flip2 {
+	from { -webkit-transform: rotateY(-90deg); transform: rotateY(-90deg); }
+	to { -webkit-transform: none; transform: none; }
+}
+@keyframes flip2 {
+	from { -webkit-transform: rotateY(-90deg); transform: rotateY(-90deg); }
+	to { -webkit-transform: none; transform: none; }
+}
+@-webkit-keyframes leftIn {
+	from { -webkit-transform: translate3d(-400px, 0, 0); transform: translate3d(-400px, 0, 0); }
+	to { -webkit-transform: none; transform: none; }
+}
+
+@keyframes leftIn {
+	from { -webkit-transform: translate3d(-400px, 0, 0); transform: translate3d(-400px, 0, 0); }
+	to { -webkit-transform: none; transform: none; }
+}
+@-webkit-keyframes handIn {
+	from { -webkit-transform: translate3d(350px, 0, 0); transform: translate3d(350px, 0, 0); }
+	to { -webkit-transform: none; transform: none; }
+}
+@keyframes handIn {
+	from { -webkit-transform: translate3d(350px, 0, 0); transform: translate3d(350px, 0, 0); }
+	to { -webkit-transform: none; transform: none; }
+}
+@-webkit-keyframes handOut {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: translate3d(350px, 0, 0); transform: translate3d(350px, 0, 0); }
+}
+@keyframes handOut {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: translate3d(350px, 0, 0); transform: translate3d(350px, 0, 0); }
+}
+@-webkit-keyframes rightOut {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: translate3d(640px, 0, 0); transform: translate3d(640px, 0, 0); }
+}
+@keyframes rightOut {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: translate3d(640px, 0, 0); transform: translate3d(640px, 0, 0); }
+}
+@-webkit-keyframes rightIn {
+	from { -webkit-transform: translate3d(640px, 0, 0); transform: translate3d(640px, 0, 0); }
+	to { -webkit-transform: none; transform: none; }
+}
+@keyframes rightIn {
+	from { -webkit-transform: translate3d(640px, 0, 0); transform: translate3d(640px, 0, 0); }
+	to { -webkit-transform: none; transform: none; }
+}
+@-webkit-keyframes fadeOut {
+	from { opacity: 1; }
+	to { opacity: 0 }
+}
+@keyframes fadeOut {
+	from { opacity: 1; }
+	to { opacity: 0 }
+}
+@-webkit-keyframes fadeIn {
+	from { opacity: 0 }
+	to { opacity: 1 }
+}
+
+@keyframes fadeIn {
+	from { opacity: 0 }
+	to { opacity: 1 }
+}
+@-webkit-keyframes pageDownIn {
+	from { -webkit-transform: translate3d(0, 1137px, 0); transform: translate3d(0, 1137px, 0); }
+	to { -webkit-transform: none; transform: none; }
+}
+@keyframes pageDownIn {
+	from { -webkit-transform: translate3d(0, 1137px, 0); transform: translate3d(0, 1137px, 0); }
+	to { -webkit-transform: none; transform: none; }
+}
+</style>
+</head>
+<body>
+<!-- <div id="test"></div> -->
+<div id="wrap" class="wrap">
+	<div class="section p1">
+		<img src="img/b01.jpg" alt="" class="p1-bg">
+		<div class="p1-rt">
+			<div class="p1-textarea">
+				<img src="img/a04.png" alt="" class="p1-t1 p1-tt">
+				<img src="img/a03.png" alt="" class="p1-t2 p1-tt">
+				<img src="img/a05.png" alt="" class="p1-t3 p1-tt">
+			</div>
+			<img src="img/a02.png" alt="" class="p1-role">
+		</div>
+		<img src="img/a06.png" alt="" class="p1-btn">
+	</div>
+
+	<div class="section p1-1">
+		<img data-src="img/a15.png" alt="" class="p1-1-bg">
+		<img data-src="img/a17.png" alt="" class="p1-1-enter">
+		<div class="p1-prt swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img data-src="img/a18.png" alt=""></div>
+				<div class="swiper-slide"><img data-src="img/a19.png" alt=""></div>
+				<div class="swiper-slide"><img data-src="img/a20.png" alt=""></div>
+				<div class="swiper-slide"><img data-src="img/a21.png" alt=""></div>
+				<div class="swiper-slide"><img data-src="img/a22.png" alt="" style="margin:0"></div>
+			</div>
+			<div class="swiper-button-prev"></div>
+  		<div class="swiper-button-next"></div>
+		</div>
+		<a href="http://shouji.gomeplus.com/kd/PP025.html" class="qrcode"><img data-src="img/a23.png?ver=1.0" alt=""></a>
+	</div>
+
+	<div class="section p2">
+		<img data-src="img/b02.jpg" alt="" class="p2-1-bg">
+		<div class="p3-bg">
+			<img src="img/b03.jpg" alt="" class="p3-bgimg">
+			<p class="p3-text">将优惠券截图保存至手机，参与活动用户进店出示优惠券截图，可在购买家电时直接抵现使用；<br>购物券每件商品仅限使用一张，不可累计使用；<br>此券不可兑换现金、不找零、不可与店内其他同类优惠活动同时使用；<br>彩电、冰箱、洗衣机、空调、厨卫、小家电、电脑、数码500元以上商品抵扣100元，手机商品1000元以上抵扣100元；<br>特价机、工程机、合约机、批发、团购、配件不参与活动。<br>客服电话：4008-113-333<br><span class="p3-ttip">*活动详询门店</span></p>
+		</div>
+		<div class="p2-card1">
+			<img data-src="img/a09.png" alt="" class="p2-card1bg">
+			<input type="text" id="p2-name" class="p2-name" value="" placeholder="请填写姓名">
+			<select name="p2-sex" id="p2-sex" class="p2-sex">
+				<option value="0">请选择</option>
+				<option value="男">男</option>
+				<option value="女">女</option>
+			</select>
+			<input type="tel" id="p2-mobile" class="p2-mobile" placeholder="请输入电话号码" maxlength="11">
+			<div class="photoarea">
+				<div id="photoHolderCont"></div>
+			</div>
+		</div>
+		<img data-src="img/a14.png" alt="" class="p2-hand">
+		<img data-src="img/a08.png" alt="" class="p2-rtoffice office">
+		<div class="p2-btn">
+			<img data-src="img/a12.png" alt="" class="p2-btnbg">
+			<input name="photo" type="file" accept="image/*;capture=camera" id="pic_file">
+		</div>
+		<img data-src="img/a13.png" alt="" class="p2-1-btn">
+		<img data-src="img/a11.png" alt="" class="p2-text">
+		<img data-src="img/a07.png" alt="" class="p2-rboffice office">
+		<p class="p2-1-rbtext">凭此证方可享受特权福利</p>
+		<div class="p2-card2">
+			<img src="img/a10.png" alt="" class="p2-card2bg">
+			<div class="avator" id="avator"></div>
+			<p class="p2-card2name"></p>
+		</div>
+		<img src="img/a24.png" alt="" class="p2-playagain">
+	</div>
+	<img src="img/a01.png" alt="" class="logo">
+</div>
+<div class="sndctrl">
+  <img src="img/sndicon.png"><i></i>
+</div>
+<audio src="media/music.mp3" autoplay loop preload id="bgm"></audio>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/binaryajax.js"></script>
+<script src="js/exif.js"></script>
+<script src="js/canvasResize.js"></script>
+<script src="js/swiper-3.4.1.min.js"></script>
+<script>
+var $$=function(_id){return document.getElementById(_id);}
+var bgm=$$("bgm");
+var mobile=getCookie("mobile");
+var name,sex,imgdata;
+var x,y,r=0,s=1;
+var tX=0,tY=0;
+var targetX=0,targetY=0,targetR=0,targetS=1;
+autoPlayAudio2();
+function autoPlayAudio2() {
+  window.onload = function() {
+    if(typeof WeixinJSBridge!="undefined"){
+      WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
+        document.getElementById('bgm').play();
+      });
+    }else{
+      $(document).on("WeixinJSBridgeReady", function() {
+        if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+          f()
+        } else {
+          var e = document.addEventListener
+            , d = document.attachEvent;
+          if (e) {
+            e("WeixinJSBridgeReady", f, false)
+          } else {
+            if (d) {
+              d("WeixinJSBridgeReady", f);
+              d("onWeixinJSBridgeReady", f)
+            }
+          }
+        }
+      })
+    }
+    function f(){
+      document.getElementById('bgm').play();
+    }
+  };
+}
+
+$(function(){
+	var stageH=$(window).height();
+	$(window).resize(function(){
+		stageH=$(window).height();
+		$("#wrap").height(stageH)
+		if(stageH<960){
+			$(".p1-1-enter").css({top:(1136-stageH)/2})
+			$(".qrcode").css({bottom:(1136-stageH)/2})
+		}else{
+			$(".p1-1-enter").css({top:70})
+			$(".qrcode").css({bottom:50})
+		}
+	}).trigger("resize");
+	setTimeout(function(){
+		$("img").each(function(e){
+			if($(this).data("src")!=""){
+				$(this).attr("src",$(this).data("src"))
+			}
+		})
+	},200);
+	var imgw,imgh;
+
+	if(mobile&&mobile!=""){
+		$(".p2").addClass("showresult");
+		$.post("userinfo.php",{
+			mobile:mobile,
+			imgdata:null
+		},function(data){
+			if(1==data.result){
+				imgdata=data.imgdata;
+				name=data.name;
+				sex=data.sex;
+				x=data.x?data.x:0;
+				y=data.y?data.y:0;
+				s=data.s?data.s:1;
+				$("#p2-name").val(name);
+				$(".p2-card2name").text(name);
+				$("#p2-sex").val(sex);
+				$("#p2-mobile").val(mobile);
+				var _img=new Image();
+				_img.src=imgdata;
+				var _img1=$(_img);
+				var _img2;
+				_img.onload=function(e){
+					var boxRate=177/224;
+					var imgRate=_img.width/_img.height;
+					if(imgRate>boxRate){
+            _img1.css({
+              height:224,
+              marginLeft:(177-224*imgRate)/2
+            });
+          }else{
+            _img1.css({
+              width:177,
+              marginTop:(224-177/imgRate)/2
+            });
+          }
+          _img1.css({
+            "-webkit-transform":"translate3d("+x+"px,"+y+"px,0) scale("+s+")",
+            "transform":"translate3d("+x+"px,"+y+"px,0) scale("+s+")"
+          })
+          _img2=_img1.clone();
+          $("#photoHolderCont").html(_img1);
+					$("#avator").html(_img2);
+				}
+			}else if(0==data.result){
+				$(".p1").show();
+				$(".p2").removeClass("showresult");
+				setCookie("name","");
+				setCookie("sex","");
+				setCookie("mobile","");
+				console.log(data.errmsg);
+			}
+		},"json");
+	}else{
+		$(".p1").show();
+	}
+	$('#pic_file').change(function(e){
+		var file = e.target.files[0];
+		canvasResize(file, {
+      width: 500,
+      height: 500,
+      crop: false,
+      quality: 100,
+      rotate: 0,
+      callback: function(data, width, height) {
+        var img = new Image();
+        var _clone;
+        img.onload = function() {
+          var boxRate=177/224;
+          var imgRate=width/height;
+          var boxRate2=120/152;
+
+          if(imgRate>boxRate){
+            $(this).css({
+              height:224,
+              marginLeft:(177-224*imgRate)/2
+            });
+
+            imgh=229;
+            imgw=224*imgRate;
+          }else{
+            $(this).css({
+              width:177,
+              marginTop:(224-177/imgRate)/2
+            });
+            imgw=177;
+            imgh=177/imgRate;
+          }
+
+          $('#photoHolderCont').html($(this).addClass("generatedImg"));
+          var cont=$(this).clone();
+          $("#avator").html(cont);
+          operateImg();
+          $(".p2-text,.p2-btn,.office").addClass("animOut");
+          $(".p2-1-bg,.p2-hand,.p2-1-btn").addClass("animIn");
+          $(".p2-1-rbtext").show();
+        };
+        $(img).attr('src', data);
+        imgdata=data;
+      }
+    })
+	})
+	$(".p2-playagain").click(function(){
+		$(".p2").removeClass("showresult");
+		$(".p1").show();
+	})
+	$(".p1-btn").click(function(){
+		$(".p1").addClass("animOut");
+		$(this).hide();
+		$(".p1-1").show();
+		var mySwiper = new Swiper ('.swiper-container', {
+			loop:true,
+	    nextButton: '.swiper-button-next',
+	    prevButton: '.swiper-button-prev'
+	  })
+	})
+	$(".p1-1-enter").click(function(){
+		$(".p1,.p1-1").remove();
+		$(".p2").addClass("animIn").show();
+	})
+	$(".p2-1-btn").click(function(){
+		var _name=$("#p2-name").val();
+		var _sex=$("#p2-sex").val();
+		var _mobile=$("#p2-mobile").val();
+		if(_name==""){
+			alert("请填写姓名");
+			return;
+		}else if(_sex==0){
+			alert("请选择性别");
+			return;
+		}else if(!/1\d{10}/.test(_mobile)){
+			alert("请填写正确手机号码");
+		}else{
+			setCookie("name",_name);
+			setCookie("sex",_sex);
+			setCookie("mobile",_mobile);
+			$("#avator img").css({
+				"-webkit-transform":"translate3d("+x+"px,"+y+"px,0) scale("+s+")",
+				"transform":"translate3d("+x+"px,"+y+"px,0) scale("+s+")"
+			})
+			$(this).hide();
+			$(".p2-card2name").text(_name);
+			$(".p2-hand").addClass("animOut");
+			$(".p2-card1,.p2-card2").addClass("flip")
+			$(".p3-bg").addClass("animIn");
+			$(".p2-1-rbtext").hide();
+			// $.post("userinfo.php",{
+			// 	name:_name,
+			// 	sex:_sex,
+			// 	x:x,
+			// 	y:y,
+			// 	s:s,
+			// 	mobile:_mobile,
+			// 	imgdata:imgdata
+			// },function(data){
+			// 	if(data.result==1){
+			// 		console.log("submit ok")
+			// 	}else{
+			// 		console.log(data.errmsg);
+			// 	}
+			// },"json")
+		}
+	})
+	
+	$(".sndctrl").click(function(){
+	  if(bgm.paused){
+	    bgm.play();
+	    $(this).find("i").hide();
+	  }else{
+	    bgm.pause();
+	    $(this).find("i").show();
+	  }
+	})
+	var mc=new Hammer($$("wrap"));
+	mc.add(new Hammer.Pan({direction: Hammer.DIRECTION_ALL, threshold: 0}));
+	//mc.add(new Hammer.Rotate());
+	mc.add(new Hammer.Pinch({enable:true}));
+	
+	var pinchend=true
+	function operateImg(){
+		mc.on("pan",function(e){
+			targetX=tX+e.deltaX;
+			targetY=tY+e.deltaY;
+			setTransform($(".generatedImg"),targetX,targetY,0,targetS);	
+		})
+		mc.on("panend",function(e){
+			tX=targetX;
+			tY=targetY;
+		})
+		mc.on("pinch",function(e){
+			targetS=s*e.scale;
+			if(targetS<1) {targetS=1;return;}
+			if(targetS>2) {targetS=2;return;}
+			setTransform($(".generatedImg"),targetX,targetY,0,targetS);
+		})
+		mc.on("pinchend",function(e){
+			s=targetS
+		})
+		function setTransform(jqdom,_tx,_ty,r,s){
+			var l=r=imgw*s/2-177/2;
+			var l=177/2-imgw*s/2;
+			var b=imgh*s/2-224/2;
+			var t=224/2-imgh*s/2;
+			if(_tx<l)_tx=l;
+			if(_tx>r)_tx=r;
+			if(_ty<t)_ty=t;
+			if(_ty>b)_ty=b;
+			x=_tx;
+			y=_ty;
+
+			jqdom.css({
+				"-webkit-transform":"translate3d("+_tx+"px,"+_ty+"px,0) rotateZ("+0+"deg) scale3d("+s+","+s+",1)",
+				"transform":"translate3d("+_tx+"px,"+_ty+"px,0) rotateZ("+0+"deg) scale3d("+s+","+s+",1)"
+			})
+		}
+	}
+})
+function setCookie(c_name,value,expiredays){
+	var exdate=new Date()
+	exdate.setDate(exdate.getDate()+expiredays)
+	document.cookie=c_name+ "=" +escape(value)+ ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+}
+function getCookie(c_name){
+	if (document.cookie.length>0){
+	  c_start=document.cookie.indexOf(c_name + "=")
+	  if (c_start!=-1){ 
+	    c_start=c_start + c_name.length+1 
+	    c_end=document.cookie.indexOf(";",c_start)
+	    if (c_end==-1) c_end=document.cookie.length
+	    return unescape(document.cookie.substring(c_start,c_end))
+    } 
+  }
+	return ""
+}
+</script>
+
+<script src="../../../libs/mock.js"></script>
+<script>
+  Mock.mock(/userinfo\.php/, {
+    result: 0
+  })
+</script>
+</body>
+</html>

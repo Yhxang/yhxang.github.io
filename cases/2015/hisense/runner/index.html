@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>奔跑吧海信</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+      var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link href="css/swiper.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+<div id="loading">
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+  <p>loading...</p>
+</div>
+<div id="wrap" class="wrap">
+
+  <div class="swiper-container">
+  <img src="img/a01.jpg" class="bg">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="img/a02.png" class="idx1-title">
+          <div class="idx1-menu">
+            <img src="img/a03.png" class="idx1-productions" usemap="#Map">
+            <map name="Map">
+              <area id="area4" shape="poly" coords="142,205,147,218,146,409,146,441,73,441,12,438,8,222,10,206,141,206" href="javascript:ifrTo(4);">
+              <area id="area1" shape="poly" coords="92,204,92,1,266,1,265,30,241,29,238,396,147,399,148,213,146,204,91,204" href="javascript:ifrTo(1);">
+              <area id="area2" shape="poly" coords="241,31,241,401,241,428,442,427,445,31,242,29" href="javascript:ifrTo(2);">
+              <area id="area3" shape="poly" coords="447,181,455,176,572,189,582,404,449,419,446,412,443,402" href="javascript:ifrTo(3);">
+            </map>
+            <a href="javascript:void(0);" class="idx1-b1 idx-bb"><em><i></i></em></a>
+            <a href="javascript:void(0);" class="idx1-b2 idx-bb"><em><i></i></em></a>
+            <a href="javascript:void(0);" class="idx1-b3 idx-bb"><em><i></i></em></a>
+            <a href="javascript:void(0);" class="idx1-b4 idx-bb"><em><i></i></em></a>
+            
+
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <iframe id="ifr" src="" frameborder="0" width="640" height="1008"></iframe>
+        </div>
+    </div>
+  </div>
+  <div class="menu-switch-on hide"><img src="img/a07.png"></div>
+  <div class="whitemask"></div>
+  <div class="menu">
+    <div class="menuarea">
+      <h1></h1>
+      <ul>
+        <li class="b1"></li>
+        <li class="b2"></li>
+        <li class="b3"></li>
+        <li class="b4"></li>
+      </ul>
+      <a href="javascript:void(0);" class="prolink">更多产品页</a>
+    </div>
+    <div class="closebtn" id="closebtn">
+        <img class="polygon" src="img/a06.png">
+        <img class="xxx" src="img/a05.png">
+      </div>
+  </div>
+  <img src="img/a08.png" class="nexttip" id="nexttip">
+  <img src="img/a01.png" class="logo">
+</div> 
+<audio id="snd" src="media/music.mp3" autoplay></audio>
+<script src="js/zepto.min.js"></script>
+<script src="js/swiper.min.js"></script> 
+<script>
+var mySwiper;
+function ifrTo(_n){
+  if($){
+    if(_n!=0){
+      $("#ifr").attr("src","index_"+_n+".html");
+      $("#closebtn").triggerHandler("tap");
+      if(mySwiper){
+        mySwiper.slideTo(1);
+      }
+      $("#nexttip").addClass("show");
+    }else{
+      $("#closebtn").triggerHandler("tap");
+      $("#nexttip").removeClass("show");
+      setTimeout(function(){
+        $(".menu-switch-on").addClass("hide")
+      },100)
+      mySwiper.slideTo(0);
+    }
+  }
+}
+$(function(){
+  var resourceDir="img/";
+  var loadingImages=[];
+  var stageH=$(window).height();
+  
+  
+  $(".swiper-container").height(1008);
+  $("#wrap").height(stageH);
+  //$("#ifr").attr("height",stageH);
+
+  for(var i=1;i<=8;i++){
+    loadingImages.push("a"+(i<10?"0"+i:i)+".png");
+  }
+  loadResources(loadingImages,function (n, i, img) {
+    $("#loading p").html("loading&nbsp;" + Math.round(i * 100 / n) + "%");
+    if (n != i) return;
+    $("#loading").remove();
+    $("#wrap").show();
+    init();
+    $("#wrap").css("visibility","visible");
+  })
+  var audio=document.getElementById("snd");
+  $("html").one("touchstart",function(){
+    //sndplay=true;
+    audio.play();
+  })
+  $("body").one("touchstart",function(){
+    //sndplay=true;
+    audio.play();
+  })
+  audio.addEventListener("ended",function(e){
+    //sndplay=true;
+    audio.play();
+  },false);
+  function init(){
+    mySwiper = new Swiper ('.swiper-container', {
+      direction: 'vertical',
+      onlyExternal:true
+    }) 
+    $(".menu-switch-on").tap(function(){
+      $(".menu-switch-on").addClass("hide").removeClass("pulse");
+      $(".whitemask,#closebtn").addClass("show");
+      $(".menu").addClass("on");
+      $(".swiper-container").addClass("blur");
+      $("#nexttip").removeClass("show");
+    })
+    $("#closebtn").tap(function(){
+      $(".menu-switch-on").removeClass("hide")
+      $(".whitemask,#closebtn").removeClass("show");
+      $(".menu").removeClass("on");
+      $(".swiper-container").removeClass("blur");
+      $("#nexttip").addClass("show");
+    })
+    $(".menuarea li").each(function(n){
+      $(this).tap(function(){
+        ifrTo(n+1);
+      })
+    })
+    $(".idx1-menu .idx-bb").each(function(n){
+      $(this).tap(function(){
+        ifrTo(n+1);
+      })
+    })
+    $(".menuarea h1").tap(function(){
+      ifrTo(0);
+    })
+    $(".prolink").tap(function(){
+      ifrTo(5);
+    })
+  }
+  function loadResources(urls, progress) {
+    var loadedCount = 0;
+    var loaded = function () {
+      ++loadedCount;
+      if (progress) progress(urls.length, loadedCount, this);
+    };
+    for (var i = 0; i < urls.length; ++i) {
+      if (!urls[i]) {
+        loaded();
+        return;
+      }
+      var img = new Image();
+      img.onload = loaded;
+      img.onabort = loaded;
+      img.onerror = loaded;
+      img.src = resourceDir + urls[i];//+ "?ver=" + j_version;
+    }
+  }
+})
+</script>
+</body>
+</html>

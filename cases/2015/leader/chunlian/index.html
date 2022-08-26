@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>戳戳笑点欢乐拜年</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="format-detection" content="telephone=no"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link href="css/animation.css" rel="stylesheet">
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+	var version = parseFloat(RegExp.$1);
+	if(version>2.3){
+		document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+	}else{
+		document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+	}
+} else {
+	document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<style>
+body,ul,li,p,h1,h2,h3,h4,h5,h6,span{margin: 0;padding: 0; }
+body{width:640px; background-color: #ba1610; background: url(img/a01.jpg) 0px 0px  repeat-y; -webkit-animation: bgscroll 8s linear infinite; animation: bgscroll 8s linear infinite;}
+ul,li{list-style: none;}
+.shareicon{ position: absolute; left: -9999px; top: -9999px; display: block; width: 0; height: 0;}
+.loading{position: fixed; text-align: center; width: 100%; top:50%; left:50%; margin-left: -50%; font-size: 30px; color:#fff; }
+.logo{left:22px; top:19px; position: fixed; z-index: 99; pointer-events:none;}
+.wrap{ overflow: hidden; position: relative; }
+.bganim{position: absolute; z-index: 1; display: none; }
+.section{ width: 640px; position: absolute; top:0px; left: 0px; z-index: 2;}
+.p1_1{left:138px; top:262px; padding-top: 159px; padding-left: 8px; position: relative; -webkit-transform: scale(.8) translate3d(-800px 800px 0); transform: scale(.8) translate3d(-800px,800px,0); display: none;}
+.p1_1.addAnim{-webkit-animation: jumpIn .6s cubic-bezier(.18,.49,.22,1); animation: jumpIn .6s cubic-bezier(.18,.49,.22,1); -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards; display: block;}
+.p1_1.animOut{-webkit-animation: jumpOut 1s cubic-bezier(.18,.49,.22,1); animation: jumpOut 1s cubic-bezier(.18,.49,.22,1); -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;}
+.p1chifre{left:14px; top:24px; position: absolute;}
+.p1head{left:0px; top:0px; position: absolute; padding-left: 25px;padding-top: 25px; -webkit-animation: headsmile .12s alternate infinite; animation: headsmile .12s alternate infinite;}
+.p1hair{left:0px; top:0px; position: absolute;}
+.p1eyel{left:37px; top:65px; position: absolute;}
+.p1eyer{left:120px; top:38px; position: absolute; -webkit-animation: eyescroll .2s; animation: eyescroll .2s;}
+.p1mouth{left:115px; top:128px; position: absolute; -webkit-transform: rotate(-30deg); transform: rotate(-30deg);}
+.p1mouth img{ -webkit-animation: mouthsmile .1s ease 0s alternate infinite; animation: mouthsmile .1s ease 0s alternate infinite;}
+.p1shoe{left:268px; top:447px; position: absolute; -webkit-transform: rotate(60deg); transform: rotate(60deg); -webkit-transform-origin: 5% 3%; transform-origin: 5% 3%; -webkit-animation: shoerota 3s  infinite; animation: shoerota 3s infinite;}
+.p1_0{ left:55px; top:78px; position: absolute; width: 529px; height: 195px;}
+.p1_0 img{position: absolute;}
+.title1{ left:0px; top:0px; -webkit-transform: translate3d(-400px, 100px, 0);transform: translate3d(-400px, 100px, 0);  }
+.title1.addAnim{ -webkit-animation: title1In .2s; animation: title1In .2s;  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;}
+.title1.animOut{-webkit-animation: title1Out .2s ease .2s; animation: title1Out .2s ease .2s;  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;}
+.title2{ right:0px; top:42px;-webkit-transform: translate3d(400px, -100px, 0);transform: translate3d(400px, -100px, 0); }
+.title2.addAnim{-webkit-animation: title2In .2s; animation: title2In .2s; -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;}
+.title2.animOut{-webkit-animation: title2Out .2s ease .2s; animation: title2Out .2s ease .2s; -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;}
+.titlet,.titleb{-webkit-transition: all .2s; transition: all .2s; opacity: 0;}
+.titlet{ right:58px; top:0px; -webkit-transform: translate3d(0, 30px, 0); transform: translate3d(0, 30px, 0);}
+.titleb{ right:58px; bottom:0px; -webkit-transform: translate3d(0, -30px, 0); transform: translate3d(0, -30px, 0);}
+.titletbIn{ -webkit-transform: translate3d(0, 0px, 0); transform: translate3d(0, 0px, 0); opacity: 1;}
+.jbl,.jbr{position: fixed; bottom: 12px; pointer-events:none;}
+.jbl{left:13px;}
+.jbr{right:13px; -webkit-transform: scaleX(-1); transform: scaleX(-1);}
+.p1_btn{ left:50%; bottom:64px;position: absolute; width:291px; margin-left: -145px; opacity: 0; -webkit-transform: scale(.1) translate3d(0,150px,0); transform: scale(.1) translate3d(0,150px,0); -webkit-transition: all .2s cubic-bezier(.13,.3,.49,1.36); transition: all .2s cubic-bezier(.13,.3,.49,1.36);}
+.p1_btn.animIn{ opacity: 1; -webkit-transform: scale(1) translate3d(0,0,0); transform: scale(1) translate3d(0,0,0); }
+.p1_btn.animOut{ -webkit-transform: translate3d(0, 150px, 0); transform: translate3d(0, 150px, 0); transition: all .15s cubic-bezier(.13,.3,.49,1.36) .5s; transition: all .15s cubic-bezier(.13,.3,.49,1.36) .5s;}
+.lihua img{-webkit-animation: boom 3s cubic-bezier(.03,.1,.13,1) infinite; animation: boom 3s cubic-bezier(.03,.1,.13,1) infinite; opacity: 0;}
+.bianpao img{-webkit-animation: boom2 .1s cubic-bezier(.03,.1,.13,1) alternate infinite; animation: boom2 .1s cubic-bezier(.03,.1,.13,1) alternate infinite;}
+.lihua,.bianpao{position: absolute; }
+.b1{left:40px; top:561px;}
+.b1_1{left:455px; top:140px;}
+.b2{left:394px; top:307px;}
+.b3{left:499px; top:670px;}
+.b4{left:60px; top:326px; }
+.b5{left:532px; top:459px;}
+.b6{left:123px; top:459px;}
+.b7{left:535px; top:335px;-webkit-transform: rotate(20deg) scale(.9);transform: rotate(20deg) scale(.9);}
+.b8{left:203px; top:496px;-webkit-transform: rotate(25deg) scale(.7);transform: rotate(25deg) scale(.7);}
+.b1 img{-webkit-animation-delay:0s; animation-delay:0s;}
+.b1_1 img{-webkit-animation-delay:1.8s; animation-delay:1.8s;}
+.b2 img{-webkit-animation-delay:.8s; animation-delay:.8s;}
+.b3 img{-webkit-animation-delay:1.4s; animation-delay:1.4s;}
+.b4 img{-webkit-animation-delay:1.2s; animation-delay:1.2s;}
+.b5 img{-webkit-animation-delay:.1s; animation-delay:.1s;}
+.b7 img{-webkit-animation-delay:.04s; animation-delay:.04s;}
+.b8 img{-webkit-animation-delay:.07s; animation-delay:.07s;}
+.section2,.section3{display: none;}
+.p2_1{left:60px; top:235px; position: absolute; width: 502px; height: 338px;  }
+@media screen and (min-height:800px){
+	.p2_1{top:190px;}
+}
+@media screen and (min-height:960px){
+	.p2_1{top:235px;}
+}
+.p2_1.animIn{-webkit-animation: tanchu .5s; animation: tanchu .5s; -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;}
+.p2_1.animOut{-webkit-animation: tanchuOut .2s; animation: tanchuOut .2s; -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;}
+.p2head{left:0px; top:0px; position: absolute;}
+.p2hand{left:380px; top:223px; position: absolute;}
+.p2shadow{left:220px; top:85px; position: absolute;}
+.p2phone{left:179px; top:82px; position: absolute; -webkit-animation: yaoyiyao .4s alternate infinite; animation: yaoyiyao .4s alternate infinite;}
+.p2tip{left:235px; bottom:128px; position: absolute; display: none;}
+@media screen and (min-height: 800px){
+	.p2tip{bottom:100px;}
+}
+@media screen and (min-height: 960px){
+	.p2tip{bottom:128px;}
+}
+.p2tip2{left:144px; bottom:54px; position: absolute; display: none;}
+.p3_1{top:90px; left:0; width: 640px; height: 620px; position: absolute;}
+.p3hp{left:50%; top:0; position: absolute; margin-left: 0px; width: 0px; -webkit-transition: all .4s cubic-bezier(.41,0,.32,1); transition: all .4s cubic-bezier(.41,0,.32,1); overflow: hidden;}
+.p3hp.animIn{margin-left: -186px; width:372px;  }
+.p3hp .dltxt,.p3dll .dltxt,.p3dlr .dltxt{ position: absolute; left:17px; top:46px; }
+.p3hp .dltxt{left:45px; top:16px;}
+.p3dl{ top:124px; position: absolute; width: 113px; height: 0px; overflow: hidden; -webkit-transform-origin: 50% 0%; transform-origin: 50% 0%; /*-webkit-transition: all .6s cubic-bezier(.19,.01,.89,.6) .3s; transition: all .6s cubic-bezier(.19,.01,.89,.6) .3s; height: 0;*/}
+.p3dl.animIn{/*height: 489px;*/ -webkit-animation: duiliandrop .6s; animation: duiliandrop .6s; -webkit-animation-fill-mode: forwards;animation-fill-mode: forwards; }
+.p3dll{left:34px; }
+.p3dlr{right:34px;}
+.dlbtm{position: absolute; bottom: 0; left: 0;}
+.p3center{width: 361px; height: 522px; left: 139px; top:194px; position: absolute;}
+.p3role{ width: 100%; height: 100%; position: relative; -webkit-transform-origin: 50% 100%; transform-origin: 50% 100%; padding-top: 1px; }
+.p3role.animIn{ -webkit-animation: diaoluo .35s; animation: diaoluo .35s; }
+.p3head{width: 191px; height: 236px; background-color: #ecd3b5; border-radius: 50%; margin: 72px auto 0;}
+.p3body{ display: block; margin: -1px auto 0; position: relative;}
+.role1 .p3body{/*padding-top:72px; */ }
+.p3hair{position: absolute;}
+.role1 .p3hair{left: 23px; top:31px;}
+.role1 .face,.androidMask{ left:87px; top:76px;position: absolute; display: none}
+
+.p3tip{width: 106px; height: 86px; position: absolute; left: 130px; top:164px; display: none;}
+.p3tipbg{-webkit-animation: huxi .2s alternate infinite; animation: huxi .2s alternate infinite;}
+.p3tiptxt{position: absolute;  top:0px; bottom:0; left:0; right:0px; width: 71px; height: 69px; margin: auto; }
+.p3shadow{background-color: #960c06; width: 0px; height: 0px; border-radius: 50%; position: absolute; left: 179px; top: 502px; margin-left: -60px; margin-top: -12px; -webkit-transition: all .4s; transition: all .4s;}
+.p3shadow.animIn{width: 120px; height: 25px;}
+.p3btn{left:50%; bottom: 54px; width: 335px; margin-left: -167px;  position: absolute; display: none;} 
+.p3ok{margin-bottom: 12px;}
+#pic_file{position: absolute; width: 185px; height: 200px; margin-left: -94px; margin-top: -100px; left:50%; top:50%; background: none; opacity: 0; z-index: 999;}
+#trace{position: fixed; z-index: 9999; font-size: 50px;}
+.regardarea{position: absolute; left:37px; bottom: 56px; display: none; }
+.regards{ background-color: #930c07; width: 560px; height: 85px; border-radius: 16px; overflow: hidden; margin-bottom: 18px; /*position: absolute; bottom:*/ }
+@media screen and (min-height: 800px){
+	.p3_1{top:70px;}
+	.p3center{top:165px;}
+	.p3btn{bottom:15px;}
+	.regardarea{bottom:15px;}
+	.regards{margin-bottom: 9px;}
+}
+@media screen and (min-height: 960px) {
+	.p3_1{top:90px;}
+	.p3center{top:194px;}
+	.p3btn{bottom:54px;}
+	.regardarea{bottom:56px;}
+	.regards{margin-bottom: 18px;}
+}
+.regardtxt,.rtarea{ color:white; font-size: 30px; line-height: 35px; width: 390px; padding-left: 40px; padding-top: 6px; float:left;}
+.editregards{ width: 104px; height: 52px;  float:right; margin-right: 14px; margin-top: 14px;}
+.p3share{margin: 0 auto; width: 265px; height: 0px; overflow: hidden; -webkit-transition: height .15s; transition: height .15s; }
+.p3share.animIn{height: 65px;}
+.rtarea{ display: none; color: black; height:85px; padding: 0; border-radius: 0; }
+.p3next{ width:291px; margin: 0 auto; display: none; }
+#pic_file.newinputstyle{left:0; top:0; margin-left: 0; margin-top: 0; width: 103px; height: 48px;}
+.p3imgconfrim{text-align: center; margin-bottom: 20px; display: none;}
+.p3imgagain{width: 103px; height: 48px; display: inline-block;  margin-right: 110px; position: relative;}
+.p3imgok{}
+.imgloading{ font-size: 28px; color:#fff; display: none;}
+.sharemask{width: 100%; height: 100%; top:0; left: 0; position: absolute; background-color: rgba(0,0,0,.75); z-index: 718; display: none;}
+.sharemask img{position: absolute; right: 48px; top:0px; }
+</style>
+</head>
+<body>
+<img src="img/icon.jpg" alt="" width="350" height="350" class="shareicon">
+<div id="loading" class="loading">loading...</div>
+<div class="logo"><img data-src="img/a01.png"></div>
+<img class="jbl" data-src="img/a14.png">
+<img class="jbr" data-src="img/a14.png">
+<!-- <p id="trace"></p> -->
+<div class="wrap" id="wrap">
+	<div class="bganim">
+		<div class="lihua b1"><img data-src="img/a17.png"></div>
+		<div class="lihua b1_1"><img data-src="img/a17.png"></div>
+		<div class="lihua b2"><img data-src="img/a17.png"></div>
+		<div class="lihua b3"><img data-src="img/a17.png"></div>
+		<div class="lihua b4"><img data-src="img/a18.png"></div>
+		<div class="lihua b5"><img data-src="img/a18.png"></div>
+		<div class="bianpao b6"><img data-src="img/a19.png"></div>
+		<div class="bianpao b7"><img data-src="img/a19.png"></div>
+		<div class="bianpao b8"><img data-src="img/a19.png"></div>
+	</div>
+	<div class="section1 section">
+		<div class="p1_0">
+			<img class="title1" data-src="img/a10.png">
+			<img class="title2" data-src="img/a11.png">
+			<img class="titlet" data-src="img/a12.png">
+			<img class="titleb" data-src="img/a13.png">
+		</div>
+		<div class="p1_1"><img data-src="img/a09.png">
+			<div class="p1chifre"><img data-src="img/a03.png"></div>
+			<div class="p1head"><img data-src="img/a04.png">
+				<div class="p1hair"><img data-src="img/a05.png"></div>
+				<div class="p1eyel"><img data-src="img/a07.png"></div>
+				<div class="p1eyer"><img data-src="img/a06.png"></div>
+				<div class="p1mouth"><img data-src="img/a02.png"></div>
+			</div>
+			<div class="p1shoe"><img data-src="img/a08.png"></div> 
+		</div>
+		<div class="p1_btn"><img data-src="img/a15.png"></div>
+	</div>
+	<div class="section2 section">
+		<div class="p2_1">
+			<div class="p2shadow"><img data-src="img/a21.png"></div>
+			<div class="p2phone"><img data-src="img/a22.png"></div>
+			<div class="p2head"><img data-src="img/a16.png"></div>
+			<div class="p2hand"><img data-src="img/a20.png"></div>
+		</div>
+		<div class="p2tip"><img data-src="img/a23.png"></div>
+		<div class="p2tip2"><img data-src="img/a24.png"></div>
+	</div>
+	<div class="section3 section">
+		<div class="p3_1">
+			<div class="p3hp"><img data-src="img/a26.png">
+				<img class="dltxt">
+			</div>
+			<div class="p3dll p3dl"><img data-src="img/a25.png">
+				<img class="dltxt">
+				<img data-src="img/a31.png" class="dlbtm">
+			</div>
+			<div class="p3dlr p3dl"><img data-src="img/a25.png">
+				<img class="dltxt">
+				<img data-src="img/a31.png" class="dlbtm">
+			</div>
+		</div>
+		<div class="p3center">
+			<div class="p3shadow"></div>
+			<div class="p3role role1">
+				<div class="p3head"></div>
+				<img class="p3body">
+				<canvas id="face" class="face" width="189" height="233"></canvas>
+				<img class="androidMask" style="margin-left:-3px;margin-top:-1px;" src="img/a36.png">
+				<img class="p3hair">
+				<div class="p3tip"><img class="p3tipbg" data-src="img/a28.png">
+					<img class="p3tiptxt" data-src="img/a27.png">
+					<input type="file" accept="image/*;capture=camera" id="pic_file">
+				</div>
+			</div>
+			
+		</div>
+		<div class="p3btn">
+			<div class="p3ok"><img src="img/a29.png"></div>
+			<div class="p3chagain"><img data-src="img/a30.png"></div>
+		</div>
+		<div class="regardarea">
+			<div class="p3imgconfrim">
+				<!-- <img class="p3imgagain" src="img/a37.png" data-src="img/a37.png"> -->
+				<p class="imgloading">图片上传中...</p>
+				<div class="p3imgagain">
+					<img src="img/a38.png" >
+					<!-- <input type="file" accept="image/*;capture=camera" id="pic_file_"> -->
+				</div>
+				<img class="p3imgok" src="img/a37.png" >
+			</div>
+			<div class="regards">
+				<p class="regardtxt"></p>
+				<textarea class="rtarea" name="" id="" maxlength="28"></textarea>
+				<div class="editregards"><img data-src="img/a33.png"></div>
+			</div>
+			<div class="p3share"><img data-src="img/a32.png"></div>
+			<div class="p3next"><img data-src="img/a35.png"></div>
+		</div>
+	</div>
+	<div class="sharemask"><img data-src="img/a39.png"></div>
+</div>
+
+<audio id="pageaudio" autoplay="autoplay"><source src="mxd.mp3" type="audio/mpeg"></audio>
+<script src="js/hammer.min.js"></script> 
+<script src="js/zepto.min.js"></script>
+<script src="js/up.js"></script>
+<script src="js/bin-exif-mega.js"></script>
+<script src="js/zepto.makethumb.js"></script>
+
+<script>
+
+var bodyStyle = document.body.style;
+bodyStyle.mozUserSelect = 'none';
+bodyStyle.webkitUserSelect = 'none';
+
+var root=location.href.split("?")[0].replace(/\/[^\/]+\.(php|html)/im,'');
+var jumpUrl="http://mp.weixin.qq.com/s?__biz=MjM5ODE0NzU0MA==&mid=203375278&idx=1&sn=0e7774e166d5ab59a202e8db00941dc2&scene=1&from=singlemessage&isappinstalled=0#rd";
+var randChunLian=function(){};
+$(function(){
+	var stageW=$(window).width();
+	var stageH=$(window).height();
+	var cltype=0;
+	var userid=null;
+	var originRegard="我的拜年造型萌萌哒，戳中笑点统帅送祝福啦";
+	var regard=originRegard;
+	var isShared=false;
+	var p3Inited=false;
+	var firstUpload=true;
+	var loadingImages = [];
+	var resourceDir="img/";
+	var _UA = navigator.userAgent.toLowerCase();
+
+	var role=[
+		{id:1,b:'r1_s.png',t:'r1_h.png',mt:-1,ml:0,ft:0,fl:0},
+		{id:2,b:'r2_s.png',t:'r1_h.png',mt:-1,ml:0,ft:0,fl:0},
+		{id:3,b:'r3_s.png',t:'r3_h.png',mt:-1,ml:0,ft:0,fl:0},
+		{id:4,b:'r4_s.png',t:'r3_h.png',mt:-1,ml:0,ft:0,fl:0},
+		{id:5,b:'r5_s.png',t:'r5_h.png',mt:-9,ml:5,ft:12,fl:10},
+		{id:6,b:'r6_s.png',t:'r5_h.png',mt:-9,ml:5,ft:12,fl:10},
+		{id:7,b:'r7_s.png',t:'r1_h.png',mt:-37,ml:0,ft:0,fl:0},
+		{id:8,b:'r8_s.png',t:'r1_h.png',mt:-37,ml:0,ft:0,fl:0},
+		{id:9,b:'r9_s.png',t:'r9_h.png',mt:-1,ml:0,ft:0,fl:0},
+		{id:10,b:'r10_s.png',t:'r10_h.png',mt:-1,ml:0,ft:0,fl:0}
+	]
+
+	//添加加载资源begin
+	for(var i=1;i<=39;i++){
+		loadingImages.push("a"+(i<10?"0"+i:i)+".png");
+		if(i<=10){
+			loadingImages.push("cl/m"+i+"t.png");
+			loadingImages.push("cl/m"+i+"l.png");
+			loadingImages.push("cl/m"+i+"r.png");
+			loadingImages.push("role/r"+i+"_s.png")
+		}
+	}
+	var sArr=[1,3,5,9,10];
+	for(i=0;i<sArr.length;i++){
+		loadingImages.push("role/r"+sArr[i]+"_h.png");
+	}
+	//添加加载资源end
+
+	$(".wrap,.section").height(stageH);
+	loadResources(loadingImages,function (n, i, img) {
+		$("#loading").html("loading&nbsp;&nbsp;" + Math.round(i * 100 / n) + "%");
+		if (n != i) return;
+		$("#loading").remove();
+		$("img").each(function(){
+			$(this).attr("src",$(this).data("src"));
+		})
+		setTimeout(function(){
+			queryShared();
+		},20);
+	})
+
+	var audio=document.getElementById("pageaudio");
+	$("html").one("touchstart",function(){
+		audio.play();
+	})
+	$("body").one("touchstart",function(){
+		audio.play();
+	})
+	audio.addEventListener("ended",function(e){
+		audio.play();
+	},false);
+
+	var mc=new Hammer(document.body,{
+            touchAction: 'pan-x pan-y',
+            recognizers: [
+            [Hammer.Tap],
+            [Hammer.Pinch,{enable:true}],
+            [Hammer.Pan]
+        ]
+    });
+
+	function queryShared(){
+		userid=getQueryString("userid");
+		var imgurl;
+		if(userid!=null){
+			isShared=true;
+
+			$.post("chunlian_search.php",{
+				userid:userid
+			},function(data){
+				data=$.parseJSON(data);
+				if("success"==data.result){
+					cltype=data.cltype;
+					regard=data.regard;
+					imgurl=data.imgurl;
+
+					var cav=document.getElementById("face");
+					var ctx=cav.getContext("2d");
+					var img=new Image();
+					img.src=imgurl;
+					img.onload=function(){
+						$("#face").show();
+						if(_UA.indexOf("android")!=-1){
+							$(".androidMask").show();
+						}
+						redraw(cav,ctx,img,0,0,cav.width,cav.height);
+					}
+					playp3();
+					$(".p3next").tap(function(){
+						isShared=false;
+						regard=originRegard;
+						$(".p3hp,.p3dl,.p3shadow,.p3role").removeClass("animIn");
+						$(".p3next,.regardarea,#face,.androidMask,.p3next,.section3").hide();
+						$(".p3btn").show();
+						ctx.clearRect(0,0,cav.width,cav.height);
+						playp1();
+					})
+				}else if("fail"==data.result){
+					alert("search error: "+data.errmsg);
+				}
+			})			
+		}else{
+			playp1();
+		}
+	}
+
+    function playp1(){
+		$(".title1,.title2").addClass("addAnim");
+		setTimeout(function(){
+			$(".titlet,.titleb").addClass("titletbIn");
+			setTimeout(function(){
+				$(".p1_1").addClass("addAnim");
+				setTimeout(function(){
+					$(".bganim").show();
+					$(".p1_btn").addClass("animIn");
+					
+					$("body").on("tap",function(ev){
+						$(".title1,.title2,.p1_btn").removeClass("addAnim").addClass("animOut");
+						$(".p1_1").addClass("animOut");
+						$(".titlet,.titleb").hide();
+						setTimeout(function(){
+							$(".section2").show();
+							$(".p2tip,.p2tip2").show();
+							$(".bianpao").hide();
+							playp2();
+						},500);
+						$("body").off("tap");
+					});
+				},850);
+			},200);
+		},300);
+    }
+
+    function playp2(){
+    	$(".p2tip,.p2tip2").show();
+    	$(".p2_1").addClass("animIn");
+    	yaoInit();
+
+    	//摇一摇测试
+
+    	// mc.on("tap",function(ev){
+    	// 	randChunLian();
+    	// 	mc.off("tap");//摇一摇测试
+    	// });
+    }
+
+	function p3init(){
+    	$(".regardtxt").empty().text(regard);
+
+	    $(".p3ok").tap(function(){
+	    	$(".p3tip").show()
+	    	$(".p3ok,.p3chagain").hide();
+	    	$(".regardarea").show();
+	    })
+
+	    $(".p3chagain").tap(function(){
+	    	$(".p3shadow").removeClass("animIn");
+	    	$(".p3role").removeClass("animIn");
+	    	$(".p3dl").removeClass("animIn");
+	    	$(".p3hp").removeClass("animIn");
+	    	$(".section3").hide();
+	    	$(".section2").show();
+	    	playp2();
+	    })
+	    
+	    userid=uuid(16,16);
+
+	    $(".editregards").tap(function(e){
+	    	if(!$(this).hasClass("readyEdit")){
+	    		//显示'编辑'按钮
+	    		$(this).addClass("readyEdit")
+	    		$(".regardtxt").hide();
+	    		$(".rtarea").show().focus().val($(".regardtxt").text().replace(/^\s+/,"").replace(/\s+$/,""));
+	    		$(".editregards img").attr("src","img/a34.png");
+	    	}else{
+	    		//编辑界面，显示'完成'按钮
+	    		$(this).removeClass("readyEdit");
+	    		$(".rtarea").blur().hide();
+	    		$(".regardtxt").text($(".rtarea").val()).show();
+	    		regard=$(".rtarea").val();
+	    		$(".editregards img").attr("src","img/a33.png");
+	    		
+	    		submitRes();
+	    	}
+	    })
+		
+		$(".p3imgok").tap(function(){
+			$(".p3imgconfrim").hide();
+			$(".p3share").show().addClass("animIn");
+			$(".p3share").tap(function(e){
+				$(".sharemask").show();
+			});
+			mc.off('pan pinch panend pinchend');
+
+			var imgBase64=document.getElementById("face").toDataURL("image/jpeg");
+			
+			submitRes();
+
+			var shareObj={
+				title:'一秒戳中你笑点！我的欢乐拜年形象出炉啦',
+				desc:'戳中你的笑点了吗？我的最佳拜年新形象出炉啦',
+				link:root+"?userid="+userid,
+				imgUrl:root+'/img/icon.jpg',
+				success:function(){
+					_hmt.push(['_trackEvent', 'WeiXin', 'ShareSeccess', 'timeline','righttime']);
+					setTimeout(function(){
+			    		location.href=jumpUrl;
+			    	},200);
+				},
+				cancel:function(){
+					_hmt.push(['_trackEvent', 'WeiXin', 'ShareCancel', 'timeline','righttime']);
+				}
+			}
+			wx.onMenuShareTimeline(shareObj);
+			wx.onMenuShareWeibo(shareObj);
+
+			var shareObj2={
+				title:'戳戳笑点，欢乐拜年',
+				desc:'戳中你的笑点了吗？我的最佳拜年新形象出炉啦',
+				link:root+"?userid="+userid,
+				imgUrl:root+'/img/icon.jpg',
+				success:function(){
+					_hmt.push(['_trackEvent', 'WeiXin', 'ShareSeccess', 'friends','righttime']);
+					setTimeout(function(){
+			    		location.href=jumpUrl;
+			    	},200);
+				},
+				cancel:function(){
+					_hmt.push(['_trackEvent', 'WeiXin', 'ShareCancel','friends','righttime']);
+				}
+			}
+			wx.onMenuShareQQ(shareObj2);
+			wx.onMenuShareAppMessage(shareObj2);
+		})
+		
+		function submitRes(){
+			var imgBase64=firstUpload?"":document.getElementById("face").toDataURL("image/jpeg");
+			//提交
+			$.post("chunlian_submit.php",{
+				userid:userid,
+				cltype:cltype,
+				regard:regard,
+				imgdata: imgBase64
+			},function(data){
+				data=$.parseJSON(data);
+				if("success"==data.result){
+					console.log("submit success!")
+				}else if("fail"==data.result){ 
+					alert("submit error: "+data.errmsg);
+				}
+			})
+		}
+
+		$("#pic_file").change(function(){
+			$(".imgloading").show();
+		})
+		_initUpLoad('pic_file',function(data){
+			firstUpload=false;
+			$("#face").show();
+			if(_UA.indexOf("android")!=-1){
+				$(".androidMask").show();
+			}
+			$(".p3tip").hide();
+			editCanvas(data,document.getElementById("face"));
+			$("#pic_file").addClass("newinputstyle").appendTo($(".p3imgagain"));
+			$(".p3imgconfrim").show();
+			$(".imgloading").hide();
+		})
+
+
+    }
+    function playp3(){
+    	showResult(cltype);
+
+    	$(".section3").show();
+    	$(".p3shadow,.p3role").addClass("animIn");
+
+		if(isShared){//如果是别人分享的
+			$(".p3next,.regardarea").show();
+			$(".p3btn,.p3share,.editregards").hide();
+			$(".regardtxt").empty().width(480).text(regard);
+		}
+		var _tempShared=isShared;
+    	setTimeout(function(){
+    		$(".p3hp").addClass("animIn");
+    		setTimeout(function(){
+    			$(".p3dl").addClass("animIn");
+    			
+		    	if(_UA.indexOf("android")!=-1&&_UA.match(/android\s?(\S+)\;/)[1]=="4.4.2"&&_UA.indexOf("micromessenger")!=-1){
+		    		alert("您的微信浏览器不支持文件上传，请安装QQ浏览器后重启微信参与活动，如已安装请忽略此消息");
+		    		//Android 4.4.2 下的微信浏览器不支持上传
+		    	}
+		    	if(!_tempShared){
+		    		$(".regardtxt").text(originRegard);//打开转发的后去掉别人的祝福改为默认祝福
+		    	}
+    			if(!p3Inited){
+    				p3init();
+    				p3Inited=true;
+    			}
+    		},300);
+    	},400);
+    }
+
+    function editCanvas(dataURL,_canvas){
+    	var cav=_canvas;
+    	var ctx=cav.getContext("2d");
+    	var img=new Image();
+    	var originW,originH;
+    	var oldX,oldY,newX,newY,
+    	oldW,oldH,newW,newH,
+    	scale=1,newscale=1;
+    	var imgWhRate,cavWhRate;
+    	var cavW=cav.width,
+    	cavH=cav.height;
+    	cavWhRate=cavW/cavH;
+    	img.src=dataURL;
+    	ctx.clearRect(0,0,cav.width,cav.height);
+    	ctx.fillStyle="#ecd3b5";
+    	ctx.fillRect(0,0,cav.width,cav.height);
+    	ctx.globalCompositeOperation = 'source-over';
+    	img.onload=function(){
+    		oldW=newW=originW=img.width;
+    		oldH=newH=originH=img.height;
+    		imgWhRate=originW/originH;
+    		newX=oldX=(cav.width-originW)/2;
+    		newY=oldY=(cav.height-originH)/2;
+			ctx.drawImage(img,oldX,oldY+cavH*1/3,originW,originH);
+			ctx.globalCompositeOperation = 'destination-in';
+	    	ParamEllipse(ctx,94,116,94,116);
+
+	    	mc.on('pan pinch panend pinchend',function (ev) {
+	    		if(ev.type=="pinch"){
+	    			newW=oldW*ev.scale;
+	    			newH=oldH*ev.scale;
+	    			if(imgWhRate>cavWhRate){
+	    				if(newH<cavH){
+	    					newH=cavH;
+	    					newW=cavH*imgWhRate;
+	    				}
+	    			}else{
+	    				if(newW<cavW){
+	    					newW=cavW;
+	    					newH=cavW/imgWhRate;
+	    				}
+	    			}
+	    			newX=oldX-(newW-oldW)/2;
+	    			newY=oldY-(newH-oldH)/2;
+	    			adjustRegion();
+	    		 	redraw(cav,ctx,img,newX,newY,newW,newH);
+	    		}
+	    		if(ev.type=="pinchend"){
+					oldW=newW;
+					oldH=newH;
+					oldX=newX;
+					oldY=newY; 
+	    		}
+	    		if(ev.type=="pan"){
+	    			newX=oldX+ev.deltaX;
+	    			newY=oldY+ev.deltaY;
+	    			adjustRegion();
+	    			redraw(cav,ctx,img,newX,newY,newW,newH);
+	    		}
+	    		if(ev.type=="panend"){
+	    		 	oldX=newX;
+	    		 	oldY=newY;
+	    		}
+	    	});
+
+			function adjustRegion(){
+				if(newX>0){
+    				newX=0;
+    			}else if(newX<cavW-newW){
+    				newX=cavW-newW;
+    			}
+    			if(newY>cavH*1/5){
+    				newY=cavH*1/5;
+    			}else if(newY<cavH-newH){
+    				newY=canH-newH;
+    			}
+			}
+    	}
+    	
+    }
+    function redraw(cav,ctx,img,x,y,w,h){
+    	ctx.clearRect(0,0,cav.width,cav.height);
+    	ctx.fillStyle="#ecd3b5";
+    	ctx.fillRect(0,0,cav.width,cav.height);
+    	ctx.globalCompositeOperation = 'source-over';
+	    ctx.drawImage(img,x,y,w,h);
+	    ctx.globalCompositeOperation = 'destination-in';
+	    ParamEllipse(ctx,94,116,94,116);
+    }
+    
+    //----------------------------------------------
+    function yaoInit() {　　
+		if (window.DeviceMotionEvent) {
+			window.addEventListener('devicemotion', deviceMotionHandler, false);　　　　　
+		} else {
+
+			alert("您的设备不支持运动传感");
+		}
+		$('.section2').click(function(){
+			randChunLian()
+			count=0
+		})
+	}
+	var SHAKE_THRESHOLD = 1300;
+	var last_update = 0;
+	var x;
+	var y;
+	var z;
+	var last_x;
+	var last_y;
+	var last_z;
+	var onyaoyao = false;
+	var count = 0;
+
+	function deviceMotionHandler(eventData) {
+		var acceleration = eventData.accelerationIncludingGravity;
+		var curTime = new Date().getTime();　　
+		var diffTime = curTime - last_update;
+
+		if (diffTime > 100) {　　　　
+			last_update = curTime;　　
+			x = acceleration.x;
+			y = acceleration.y;
+			z = acceleration.z;
+			var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;　　　
+			if (speed > SHAKE_THRESHOLD) {　　　
+				count++;
+				if(count>0){
+					randChunLian();
+					count=0;
+					//window.removeEventListener('devicemotion', deviceMotionHandler, false);
+				}
+			}　　　
+			last_x = x;　　　　
+			last_y = y;　　　　
+			last_z = z;　　
+		}
+	}
+	randChunLian=function() {
+		cltype=Math.ceil(Math.random()*10);
+		//console.log(cltype);
+		setTimeout(function(){
+
+			$(".p2_1").removeClass("animIn").addClass("animOut");
+			$(".p2tip,.p2tip2").hide();
+
+			$(".p3btn,.editregards").show();
+			$(".regardtxt").width(390);
+			setTimeout(function(){ 
+				playp3();
+				setTimeout(function(){
+					$(".section2").hide();
+					$(".p2_1").removeClass("animOut");
+				},200);
+			},200);
+		},200);
+	}
+
+	function showResult(_cltype){
+		$(".p3body").css({
+			'margin-top':role[_cltype-1].mt+"px",
+			'padding-right':role[_cltype-1].ml+"px"
+		}).attr("src","img/role/"+role[_cltype-1].b);
+		$(".p3hair").css({
+			'padding-top':role[_cltype-1].ft+"px",
+			'padding-left':role[_cltype-1].fl+"px"
+		}).attr("src","img/role/"+role[_cltype-1].t);
+
+		$(".p3hp .dltxt").attr("src","img/cl/m"+_cltype+"t.png");
+		$(".p3dll .dltxt").attr("src","img/cl/m"+_cltype+"l.png");
+		$(".p3dlr .dltxt").attr("src","img/cl/m"+_cltype+"r.png");
+	}
+	//----------------------------------------------
+
+	
+	function loadResources(urls, progress) {
+	    var loadedCount = 0;
+	    var loaded = function () {
+	        ++loadedCount;
+	        if (progress) progress(urls.length, loadedCount, this);
+	    };
+	    for (var i = 0; i < urls.length; ++i) {
+	        if (!urls[i]) {
+	            loaded();
+	            return;
+	        }
+	        var img = new Image();
+	        img.onload = loaded;
+	        img.onabort = loaded;
+	        img.onerror = loaded;
+	        img.src = resourceDir + urls[i];//+ "?ver=" + j_version;
+	    }
+	}
+
+	function ParamEllipse(context, x, y, a, b){
+		//max是等于1除以长轴值a和b中的较大者
+		//i每次循环增加1/max，表示度数的增加
+		//这样可以使得每次循环所绘制的路径（弧线）接近1像素
+		var step = (a > b) ? 1 / a : 1 / b;
+		context.beginPath();
+		context.moveTo(x + a, y); //从椭圆的左端点开始绘制
+		for (var i = 0; i < 2 * Math.PI; i += step){
+		  //参数方程为x = a * cos(i), y = b * sin(i)，
+		  //参数为i，表示度数（弧度）
+		  context.lineTo(x + a * Math.cos(i), y + b * Math.sin(i));
+		}
+		context.closePath();
+		context.fill();
+	};
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) return unescape(r[2]); return null;
+	};
+	function uuid(len, radix) {
+	    var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+	    var uuid = [], i;
+	    radix = radix || chars.length;
+	    if (len) {
+	      for (i = 0; i < len; i++) uuid[i] = chars[0 | Math.random()*radix];
+	    } else {
+	      var r;
+	      uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';
+	      uuid[14] = '4';
+	      for (i = 0; i < 36; i++) {
+	        if (!uuid[i]) {
+	          r = 0 | Math.random()*16;
+	          uuid[i] = chars[(i == 19) ? (r & 0x3) | 0x8 : r];
+	        }
+	      }
+	    }
+	    return uuid.join('');
+	}
+})
+</script>
+
+<script src="../../../libs/mock.js"></script>
+<script>
+	Mock.mock('chunlian_search.php', {
+		cltype: 1,
+		regard: '羊年大吉啊哈哈',
+		imgurl: './users/20160708145228.jpg',
+		result: 'success'
+	})
+	Mock.mock('chunlian_submit.php', {
+		result: 'success',
+		errmsg: 'none'
+	})
+</script>
+</body>
+</html>

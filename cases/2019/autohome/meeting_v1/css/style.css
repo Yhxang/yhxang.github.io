@@ -1,0 +1,68 @@
+html,body{position: relative;width: 100%; height: 100%; overflow: hidden; background-color: #000d1f;}
+body{margin:0; padding:0; display: block; font-family: 'Helvetica Neue', 'Roboto', "microsoft yahei"; -webkit-background-size: 100% 100%; background-size: 100% 100%; overflow: hidden; /*background: url(../img/bgcolor.png) center center no-repeat;*/ -webkit-overflow-scrolling: touch;}
+*:not(input):not(textarea) {-webkit-touch-callout: none; -webkit-user-select: none;}
+p,input{margin:0; padding: 0;}
+input{border:0; background-color: transparent; -webkit-tap-highlight-color: transparent; }
+img{position: absolute;}
+::-webkit-input-placeholder { color:#fff; text-align: center;}
+#wrap{position: relative; width: 750px; height: 1453px; overflow: hidden; -webkit-transform-origin: left top; transform-origin: left top; }
+.disabled{pointer-events: none;}
+#animation_container{position: relative; width:750px; height: 1453px;}
+#canvas{position: absolute; display: block; }
+#dom_overlay_container{pointer-events:none; overflow:hidden; width:750px; height:1453px; position: absolute; left: 0px; top: 0px; display: block;}
+.nameinput{display: none; position: absolute; left:50%; top:72%; margin-left:-141px; margin-top: -65px; width: 282px; height: 131px; background: url(../img/a0_nameinput.png) 0 0 no-repeat;}
+.fadeOut{pointer-events: none;-webkit-animation: fadeOut .5s both; animation: fadeOut .5s both;}
+#username{position: absolute; left: 34px; top: 63px; width: 210px; height: 45px; line-height: 45px; color: #fff; background-color: transparent; font-size: 28px;}
+#spdbtn{display: none; position: absolute; left: 50%; top:63.2%; margin-left: -177px; margin-top: -77px; width:354px; height: 154px;-webkit-user-select: none;}
+#linkbtn{display: none; position: absolute; left: 50%; top:79.4%; margin-left:-63px; margin-top: -63px; width: 126px; height: 126px; opacity: 0; }
+#linkbtn.fadeIn{display: block; -webkit-animation: fadeIn .6s both; animation: fadeIn .6s both;}
+.linkcirc{position: absolute; left: -22px; top: -22px; width: 171px; height: 171px; background-color: #00448f; border-radius: 50%;}
+.bglowouter{-webkit-animation: roll 8s linear infinite; animation: roll 8s linear infinite; pointer-events: none;}
+.bglowinner{-webkit-animation: antiroll 5s linear infinite; animation: antiroll 5s linear infinite; -webkit-transform-origin: 50% 50%; transform-origin: 50% 50%; pointer-events: none;}
+.bglowbig{position: absolute; left: -120px; top: -84px; -webkit-animation: breath .8s alternate ease-in-out infinite; animation: breath .8s alternate ease-in-out infinite; pointer-events: none; }
+.autocenter{position: absolute; display: block; left: 0; right: 0; top: 0; bottom: 0; margin:auto; }
+#linktxt1{display: none; position: absolute; left: 50%; top: 87.7%; margin-left: -48px; margin-top: -13px; opacity: 0; pointer-events: none;}
+#linktxt2{display: none; position: absolute; left: 50%; top:94.7%; margin-left: -123px; margin-top: -13px; opacity: 0; pointer-events: none;}
+#linktxt1.fadeIn,#linktxt2.fadeIn{display: block; -webkit-animation: fadeIn .6s .5s both; animation: fadeIn .6s .5s both;}
+#gimg{position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: none;}
+#test{display: none; position: absolute; left: 0; top: 80%; width: 100%; color: #fff}
+@-webkit-keyframes breath {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: scale3d(1.03, 1.03, 1); transform: scale3d(1.03, 1.03, 1); }
+}
+@keyframes breath {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: scale3d(1.03, 1.03, 1); transform: scale3d(1.03, 1.03, 1); }
+}
+@-webkit-keyframes roll {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: rotateZ(360deg);transform: rotateZ(360deg); }
+}
+@keyframes roll {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: rotateZ(360deg);transform: rotateZ(360deg); }
+}
+@-webkit-keyframes antiroll {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: rotateZ(-360deg);transform: rotateZ(-360deg); }
+}
+@keyframes antiroll {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: rotateZ(-360deg);transform: rotateZ(-360deg); }
+}
+@-webkit-keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@-webkit-keyframes fadeOut {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+@keyframes fadeOut {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}

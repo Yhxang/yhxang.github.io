@@ -1,0 +1,233 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Yhxang (yhxang@163.com)
+ * @date    2015-02-10 21:30:15
+ * @version 1.0.0
+ */
+body,ul,li,p,h1,h2,h3,h4,h5,h6,span{margin: 0;padding: 0; }
+ul,li{list-style: none;}
+body{ background-color: #d8ecc3; width: 640px; overflow: hidden; -webkit-transition: background-color .6s linear; transition: background-color .6s linear; }
+body.color1,body.color2,body.color7,body.color8{background-color: #d8ecc3; }
+body.color3{background-color: #ecd6c3;}
+body.color4{background-color: #c3e8ec;}
+body.color5{background-color: #f0e3be;}
+body.color6{background-color: #c3dbec;}
+#shadow.color1,#shadow.color2,#shadow.color7,#shadow.color8{ background-color: #b9cea2; top:773px;}
+#shadow.color1{/*top:635px;*/}
+#shadow.color3{background-color: #f2bc9f;}
+#shadow.color4{background-color: #92dae2;}
+#shadow.color5{background-color: #efd9a3;}
+#shadow.color6{background-color: #a2bcce;}
+#shadow.rollsmall{-webkit-transform: scale3d(.1, .1, 1) ; transform: scale3d(.1, .1, 1); -webkit-transition-duration: .45s !important; transition-duration: .45s !important;}
+.clearfix:after { content: "."; visibility: hidden; display: block; clear: both; height: 0; }
+.shareicon{ position: absolute; left: -9999px; top: -9999px; display: block; width: 0; height: 0;}
+#loading{ font-size:25px; color: #000; text-align: center; padding-top:360px; }
+#wrap{overflow: hidden; position: relative; width: 100%; display: none;}
+.swiper-slide{position: relative; overflow: hidden;}
+.sndbtn{ width: 53px; height: 53px; background-color: #aec497; border-radius: 50%; position: fixed; right: 17px; top: 22px; overflow: hidden; z-index: 1986;}
+.sndbtn img{position: absolute; width: 28px; height: 28px; left: 0; right: 0; top: 0; bottom:0; margin: auto; }
+.swiper-container section{ width: 640px; position: relative;}
+.sndtip{position: absolute; left: 42px; top: 35px;}
+.dialogue1{ position: absolute; left: 20px; top: 154px; width: 592px; height: 372px; }
+.dialogue1 img{-webkit-transform: scale3d(0,0,1) translate3d(0,100px,0); transform: scale3d(0,0,1) translate3d(0,100px,0); -webkit-transition: all .15s; transition: all .15s;}
+.dialogue1 .dlg1{width: 592px; height: 221px; -webkit-transition-delay: .6s; transition-delay: .6s;}
+.dialogue1 .dlg2{position: absolute; left: 380px; top: 232px; -webkit-transition-delay: .4s; transition-delay: .4s;}
+.dialogue1 .dlg3{position: absolute; left: 416px; top: 298px; -webkit-transition-delay: .2s; transition-delay: .2s;}
+.dialogue1 .dlg4{position: absolute; left: 429px; top: 353px;}
+.dialogue1.animIn .dlg{-webkit-transform: scale3d(1,1,1) translate3d(0,0,0); transform: scale3d(1,1,1) translate3d(0,0,0); -webkit-transition-duration: .35s; transition-duration: .35s; }
+.box .body{position: relative;}
+.box1{position: absolute; left: 130px; top:555px; width: 408px; height: 324px; -webkit-transform-origin: center bottom; transform-origin: center bottom; }
+.box1.animIn{ -webkit-animation: dropbox .6s ease-in; animation: dropbox .6s ease-in; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards; display: block;}
+.box1_1,.box1_2,.box1_3{position: absolute; left: 0; top: 0; display: none;}
+.box1_1.on,.box1_2.on,.box1_3.on{display: block;}
+#shadow{position: absolute; left: 117px; top:773px; width: 455px; height: 114px; background-color: #b9cea2; border-radius: 50%; -webkit-transition: all .6s linear; transition: all .6s linear;}
+.eyebrow1{position: absolute; left: 81px; top:105px;}
+.eyes1{position: absolute; left: 66px; top:100px; display: none;}
+.eyes1.on{display: block;}
+.mouth1{position: absolute; left: 88px; top: 203px; }
+.mouth1.animIn{ -webkit-animation: mouthsmile .2s alternate infinite; animation: mouthsmile .2s alternate infinite;}
+.popo{position: absolute;  width: 606px; height: 351px; }
+.popo .popbody{ -webkit-transform: scale3d(0, 0, 1); transform: scale3d(0, 0, 1); -webkit-transform-origin: 63.5% 100%; transform-origin: 63.5% 100%; -webkit-transition: all .5s ease-out; transition: all .5s ease-out; -webkit-animation-fill-mode: forwards !important; animation-fill-mode: forwards !important;}
+.popo .popbody.animIn{-webkit-animation: pop .9s ease-in-out .3s; animation: pop .9s ease-in-out .3s;}
+.popo p{font-size: 43px; font-weight: bold; color: #7b8188; line-height: 64px; text-align: center; position: absolute; left: 0; right: 0; top:0; bottom: 0; margin: 100px auto 0; opacity: 0; -webkit-transition: opacity .4s; transition: opacity .4s;}
+.popo p.animIn{opacity: 1;}
+.popo1{left:42px; top:132px;}
+.popo1 p{margin-top: 100px; color:#92a480;}
+.tip1{position: absolute; left: 72px; top:420px; width: 176px; height: 126px;  -webkit-transform: translate3d(0, 0px, 0) scale3d(0,0,1); transform: translate3d(0, 0px, 0) scale3d(0,0,1);}
+.tip1.animIn{display: block; -webkit-transition: all .2s; transition: all .2s; -webkit-transform: translate3d(0, 0px, 0) scale3d(1,1,1); transform: translate3d(0, 0px, 0) scale3d(1,1,1);}
+.tip1.animOut{-webkit-transition: all 1s; transition: all 1s; -webkit-transform: translate3d(0, -30px, 0) scale3d(1,1,1); transform: translate3d(0, -30px, 0) scale3d(1,1,1);}
+.tiptxt1{position: absolute; }
+.tiptxt1.animIn{-webkit-animation: chuowo .3s alternate infinite ; animation: chuowo .3s alternate infinite;}
+.tiptxt1.animOut{  -webkit-animation-name: bounceOut; animation-name: bounceOut; -webkit-animation-duration: .75s; animation-duration: .75s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards; -webkit-animation-iteration-count:1; animation-iteration-count:1;}
+.tiptxt1_1{ left: -15px; top:12px; -webkit-animation-delay: .1s !important; animation-delay: .1s !important; }
+.tiptxt1_1 img{ -webkit-transform: scale3d(.72, .72, 1); transform: scale3d(.72, .72, 1);}
+.tiptxt1_2{ left:87px; top:0px; -webkit-animation-delay: .2s !important; animation-delay: .2s !important;}
+.tiptxt1_2 img{ -webkit-transform: scale3d(.9, .9, 1); transform: scale3d(.9, .9, 1);}
+.tiptxt1_3{ left: 56px; top:62px;}
+.firework1{width: 272px; height: 188px; position: absolute; left:175px; top:335px; -webkit-transition: all .1s ease-out; transition: all .1s ease-out; -webkit-transform: scale3d(0, 0, 1); transform: scale3d(0, 0, 1); -webkit-transform-origin: 30% 100%; transform-origin: 30% 100%;}
+.firework1.animIn{ -webkit-transform: scale3d(1, 1, 1); transform: scale3d(1, 1, 1);}
+.firework1_1,.firework1_2{ position: absolute; left: 0px; top:9px; }
+.firework1_2{left:27px; top:0px;}
+.firework1.animIn .firework1_1,.firework1.animIn .firework1_2{-webkit-animation: fireworkmove .5s ease-in-out alternate infinite; animation: fireworkmove .5s ease-in-out alternate infinite;}
+.firework1.animIn .firework1_2{-webkit-animation-delay: .2s; animation-delay: .2s;}
+.arrow1{position: absolute; left:170px; top:60px; -webkit-transform-origin: 100% 100%; transform-origin: 100% 100%; opacity: 0}
+.arrow1 img{ -webkit-animation: tanhuang .2s alternate infinite; animation: tanhuang .2s alternate infinite; -webkit-transform-origin: left top; transform-origin: left top;}
+.arrow1.animIn{opacity: 1}
+.arrow1.animOut{-webkit-transition: all .3s; transition: all .3s; -webkit-transform: scale3d(0, 0, 1); transform: scale3d(0, 0, 1);}
+.popo2{position: absolute; left: 15px; top:157px; /*width: 572px; height: 330px;*/}
+.popo2 p{font-size: 32px; margin-top: 44px; line-height: 58px; letter-spacing:-3px;}
+.box2{position: absolute; left: 71px; top:469px; padding-left: 63px;}
+.box2.animIn{ -webkit-animation: zhuang .5s alternate infinite; animation: zhuang .5s alternate infinite; }
+.glass2{position: absolute; left:46px; top:85px;}
+.glow2_1,.glow2_2{position: absolute; left:28px; top:20px; }
+.glow2_2{left: 178px; top:28px;}
+.mouth2{ position: absolute; left:192px; top:209px; display: none;}
+.mouth2.on{display: block; }
+.gold2{position: absolute; left:48px; top:102px;}
+.gold2.animIn/*,.glass2.animIn*/{-webkit-animation: guanxing .5s ease .08s alternate infinite; animation: guanxing .5s ease .08s alternate infinite;}
+.glass2.animIn .glow2{ -webkit-animation: glowglass .2s linear alternate infinite; animation: glowglass .2s linear alternate infinite;}
+.glass2.animIn .glow2_1{-webkit-animation-delay: .1s; animation-delay: .04s;}
+.hand2{position: absolute; overflow: hidden;}
+.hand2_1{width: 72px; height: 160px; left: 0px; top:153px; -webkit-transform-origin: right top; transform-origin: right top; }
+.hand2_1.animIn{-webkit-animation: hand2ani .5s alternate infinite; animation: hand2ani .5s alternate infinite;}
+.hand2_2{width: 72px; height: 161px; left: 382px; top:146px; -webkit-transform-origin: left top; transform-origin: left top;}
+.hand2_2.animIn{-webkit-animation: hand2ani2 .5s alternate infinite; animation: hand2ani2 .5s alternate infinite;}
+.hand2_2 img{position: absolute; right:0; top:0;}
+.diaozhui2{position: absolute; left:154px; top:170px; -webkit-transform-origin: 50% 0%; transform-origin: 50% 0%;}
+.diaozhui2.animIn{ -webkit-animation: yaohuang .4s alternate infinite; animation: yaohuang .4s alternate infinite; }
+.leg2{position: absolute; left:242px; top:760px;}
+.box3{position: absolute; padding-left:85px; left: 57px; top:470px; }
+.box3.animIn{-webkit-animation: niunie .9s ease-in-out alternate infinite; animation: niunie .9s ease-in-out alternate infinite;}
+.cloth3{position: absolute; left: 88px; top:100px;}
+.eyes3{position: absolute; left:148px; top: 91px;}
+.eyes3_1,.eyes3_2{display: none;}
+.eyes3_1.on,.eyes3_2.on{display:block;}
+.mouth3{position: absolute; left:193px; top:162px; display: none;}
+.mouth3.on{display: block;}
+.hand3{position: absolute; left: 0px; top:157px;}
+.hand3_1{-webkit-transform-origin: right top; transform-origin: right top;}
+.hand3_1.animIn{-webkit-animation: huangbag 1.3s alternate infinite; animation: huangbag 1.3s alternate infinite;}
+.hand3_2{left:415px; top:151px; -webkit-transform-origin: 0% 0%; transform-origin: 0% 0%;}
+.hand3_2.animIn{-webkit-animation: zuoshou 3s infinite; animation: zuoshou 3s infinite;}
+.bag3{position: absolute; left: 399px; top:145px;}
+.bag3.animIn{ -webkit-animation: dropbag 3s infinite; animation: dropbag 3s infinite;}
+.bag3.animIn img{-webkit-transform-origin: 17px 0; transform-origin: 17px 0; -webkit-animation: huangbag 1.5s linear alternate infinite; animation: huangbag 1.5s linear alternate infinite;}
+.leg3{position: absolute; left: 258px; top:760px;}
+.legL3{width: 40px; height: 93px; overflow: hidden; position: absolute; left: 0; top:0;}
+.legR3{width: 39px; height: 90px; overflow: hidden; position: absolute; left: 64px; top:7px;}
+.legR3 img{position: absolute;right: 0px; top:-7px;}
+.leg3.animIn .legR3{ -webkit-animation: niujiao .6s alternate infinite; animation: niujiao .6s alternate infinite;}
+.popo3{left:40px; top:75px; width: 572px; height: 410px;}
+.popo3 p{font-size: 34px; line-height: 50px; margin-top: 68px;}
+.box4{position: absolute;left: 42px; top:471px; padding-left: 125px;}
+.eyes4{position: absolute; left:153px; top:129px; display: none;}
+.eyes4.on{display: block;}
+.glass4{position: absolute; left:117px; top:85px;}
+.glow4_1,.glow4_2{position: absolute; left: 30px; top:34px;}
+.glow4_2{ left: 183px; top:42px;}
+.glass4.animIn .glow4{ -webkit-animation: glowglass .2s linear alternate infinite; animation: glowglass .2s linear alternate infinite;}
+.mouth4{position: absolute; left: 241px; top:196px; display:none;}
+.mouth4.on{display: block;}
+.tie4{position: absolute; left:187px; top: 206px;}
+.tie4.animIn{ -webkit-animation: lingjie 5.5s infinite; animation: lingjie 5.5s infinite;}
+.hand4{position: absolute; left:21px; top:141px;}
+.hand4_1{-webkit-transform-origin: 130px 62px; transform-origin: 130px 62px;}
+.hand4_1.animIn{-webkit-animation: hand4ani 1.2s alternate infinite; animation: hand4ani 1.2s alternate infinite;}
+.hand4_2{left:446px; top: 149px; -webkit-transform-origin: 3px 3px; transform-origin: 3px 3px;}
+.hand4_2.animIn{-webkit-animation:shoufu 5.5s infinite ; animation: shoufu 5.5s infinite ;}
+.leg4{position: absolute; left: 248px; top:764px;}
+.smoke4{position: absolute; left: -20px; top:-45px;}
+.fog4{ position: absolute; left: 12px; top:-40px; -webkit-transform-origin: 50% 100%; transform-origin: 50% 100%;}
+.fog4.animIn{-webkit-animation: foggone .35s linear alternate infinite; animation: foggone .35s linear alternate infinite;}
+.popo4{position: absolute; left: 20px; top:155px;}
+.popo4 p{font-size: 34px; line-height: 62px; margin-top: 70px;}
+.box5{position: absolute; left: 64px; top:430px; padding-top: 20px; padding-left: 70px;}
+.box5 .body{position: relative; }
+.eyes5{position: absolute; left: 103px; top:114px;}
+.eyesMask5{position: absolute; width: 28px; height: 28px; background-color: #000; opacity: 0; }
+.eyesMask5_1{left: 33px; top:25px;}
+.eyesMask5_2{left: 162px; top: 28px; }
+.eyes5.animIn .eyesMask5{-webkit-animation: zhayan 3s infinite; animation: zhayan 3s infinite;}
+.hand5_1,.hand5_2{position: absolute; left:0px; top:142px;}
+.hand5_1{-webkit-transform-origin: right top; transform-origin: right top;}
+.hand5_2{left: 388px; top:153px; -webkit-transform-origin: 25px 33px; transform-origin: 25px 33px;}
+.hand5_1.animIn{ -webkit-animation: pandahand2 1s alternate infinite; animation: pandahand2 1s alternate infinite;}
+.hand5_2.animIn{ -webkit-animation: pandahand1 1s alternate infinite; animation: pandahand1 1s alternate infinite;}
+.nose5{position: absolute; left:189px; top:199px;}
+.nose5.animIn{-webkit-animation: nosedong 2s infinite; animation: nosedong 2s infinite;}
+.mouth5{position: absolute; left: 176px; top:231px; display: none;}
+.mouth5.on{display: block;}
+.nars5_1,.nars5_2{position: absolute; left: 151px; top:222px; margin-left: -40px; margin-top: -40px;}
+.nars5_2{left: 268px; top: 229px;}
+.ear5{position: absolute; left: 89px; top: 0px; display: none; }
+.ear5.on{display: block;}
+.bamboo5{position: absolute; left: 369px; top:225px; -webkit-transform-origin: 112px 46px; transform-origin: 112px 46px; }
+.leaf5{position: absolute; -webkit-animation: leaf2 .6s alternate infinite; animation: leaf2 .6s alternate infinite;}
+.leaf5_1{left: 6px; top:44px; -webkit-transform-origin: right bottom; transform-origin: right bottom;}
+.leaf5_2{left: 94px; top: 34px; -webkit-transform-origin: 60% top; transform-origin: 60% top;}
+.leaf5_3{left: 49px; top: 112px; -webkit-transform-origin: left top; transform-origin: left top; }
+.leaf5_4{left: -30px; top: 31px; -webkit-transform-origin: right top; transform-origin: right top; }
+.bamboo5.animIn{-webkit-animation: bamboohuang 1s linear alternate infinite; animation: bamboohuang 1s linear alternate infinite;}
+.bamboo5.animIn .leaf5{ -webkit-animation-name:leaf1; animation-name:leaf1;}
+.bamboo5.animIn .leaf5_2{ -webkit-animation-timing-function: linear; animation-timing-function: linear; -webkit-animation-delay: .1s; animation-delay: .1s;}
+.bamboo5.animIn .leaf5_3{ -webkit-animation-timing-function: linear; animation-timing-function: linear; -webkit-animation-delay: .05s; animation-delay: .05s;}
+.bamboo5.animIn .leaf5_4{ -webkit-animation-name:leaf1; animation-name:leaf1;}
+.leg5{position: absolute; left: 200px; top: 742px;}
+.popo5{ left: 15px; top:120px;}
+.popo5 p{font-size:34px; line-height: 56px; margin-top: 55px; }
+.box6{position: absolute; left: 41px; top:419px; padding-left: 129px; padding-top: 52px;}
+.box6.animIn{-webkit-animation: bjhuang .6s ease-in-out alternate infinite; animation: bjhuang .6s ease-in-out alternate infinite;}
+.eyes6{position: absolute; left:155px; top: 145px;}
+.hands6{position: absolute; left: 28px; top: 173px;}
+.leg6{position: absolute; left: 266px; top:766px;}
+.shouchuan6{position: absolute; left: 452px; top: 169px;}
+.mouth6{ position: absolute; left: 243px; top:223px; -webkit-transform-origin: 80% 50%; transform-origin: 80% 50%;}
+.mouth6.animIn{-webkit-animation: koushao .2s ease-in-out alternate infinite; animation: koushao .2s ease-in-out alternate infinite;}
+.music6_1{position: absolute; left:205px; top:243px;}
+.music6_2{position: absolute; left:152px; top:248px;}
+.music6_3{position: absolute; left:84px; top:270px;}
+.music6_1.animIn{ -webkit-animation: mfly1 2s linear -1.2s infinite; animation: mfly1 2s linear -1.2s infinite; }
+.music6_2.animIn{ -webkit-animation: mfly2 2s linear -.6s infinite; animation: mfly2 2s linear -.6s infinite; }
+.music6_3.animIn{ -webkit-animation: mfly3 2s linear 0s infinite; animation: mfly3 2s linear 0s infinite; }
+.birdcave6{position: absolute; left: 0; top: 0;}
+.bird6{position: absolute; left: 20px; top:95px;}
+.bird6.animIn{-webkit-animation: birdjump 3s linear infinite; animation: birdjump 3s linear infinite;}
+.cave6{position: relative; }
+.popo6{left: 18px; top: 156px;}
+.popo6 p{font-size: 34px; line-height: 58px; margin-top: 50px;}
+.box7_1,.box7_2,.box7_3{width: 408px; position: absolute; left: 0; top: 0; display: none;}
+.box7_1.on,.box7_2.on,.box7_3.on{display: block;}
+.box7{position: absolute; left: 131px; top: 558px;}
+.eyes7,.eyes8{position: absolute; left: 66px; top: 98px; display: none;}
+.eyes7.on,.eyes8.on{display: block;}
+.mouth7{position: absolute; left: 87px; top:201px;}
+.popo7{left: 37px; top: 130px;}
+.popo7 p{/*font-size: 32px; color:#92a480; line-height: 55px; margin-top: 52px;*/ }
+.popo7 p span{font-size:51px; line-height: 72px;}
+.txts7{ margin-top: 52px; position: absolute; left: 0; top: 0; width: 100%; letter-spacing: -1px;}
+.txts7 p{font-size: 32px; color:#92a480; line-height: 55px; position: relative; margin-top: 0; -webkit-transition: all .85s; transition: all .85s; -webkit-transform: translate3d(0, 35px, 0); transform: translate3d(0, 35px, 0);}
+.txts7 p.animIn{ -webkit-transform: translate3d(0, 0px, 0); transform: translate3d(0, 0px, 0);}
+.logo7{position: absolute; left: 51px; top: 0px;}
+.title7{position: absolute; left:0; top: 135px; width: 640px; line-height: 62px; font-size: 43px; color:#b87f2a; text-align: center; }
+.video7{position: absolute; left: 32px; top: 276px; width: 578px; height: 399px; }
+.video7 video{ display: none; position: absolute; top:0; left: 0;}
+.play7{position: absolute; left:0; right: 0; top: 0; bottom: 0; margin: auto; width: 51px; height: 65px; }
+.play7_1,.play7_2{position: absolute; left: 0; top: 0; display: none;}
+.play7_1.on,.play7_2.on{display: block;}
+.mouth7.animIn{-webkit-animation: mouthsmile .2s alternate infinite; animation: mouthsmile .2s alternate infinite;}
+.box0{position: fixed; left: 130px; top: 557px; display: none;}
+.nexttip{position: fixed; left: 50%; bottom: 22px; margin-left:-29px; -webkit-transform: translate3d(0, 70px, 0); transform: translate3d(0, 70px, 0); -webkit-transition: all .5s; transition: all .5s; z-index: 19860101; }
+.nexttip.animIn_s{ -webkit-transform: translate3d(0, 0px, 0); transform: translate3d(0, 0px, 0); }
+.nexttip img{ -webkit-animation: tipdou .3s alternate infinite; animation: tipdou .3s alternate infinite;}
+#shadow.small{-webkit-transform: scale3d(.5, .5, 1) translate3d(225px,0px,0); transform: scale3d(.5, .5, 1) translate3d(225px,0px,0);}
+.box8{-webkit-transform: scale3d(.5, .5, 1) translate3d(250px,100px,0); transform: scale3d(.5, .5 1) translate3d(250px,100px,0);}
+.link8{position: absolute; width: 383px; height: 82px; overflow: hidden; left: 46px; top:740px;}
+.link8 a{display: block; width: 383px; height: 82px; position: absolute; left: 0px; top: 0; -webkit-transform: translate3d(383px, 0, 0); transform: translate3d(383px, 0, 0); -webkit-transition: all .5s ease .2s; transition: all .5s ease .2s;}
+.link8.animIn a{ -webkit-transform: translate3d(0px, 0, 0); transform: translate3d(0px, 0, 0); }
+.solg7{position: absolute; left: 233px; top: 36px;}
+.spinner{text-align: center; width: 150px; margin: 100px auto 0;}
+.spinner>div{ background-color: #2b2b2b; width: 30px; height: 30px; border-radius: 50%; display: inline-block; -webkit-animation: bouncedelay 1.0s infinite ease-in-out; animation: bouncedelay 1.0s infinite ease-in-out;}
+.spinner .bounce1{-webkit-animation-delay: -.32s; animation-delay: -.32s;}
+.spinner .bounce2{ -webkit-animation-delay: -.16s; animation-delay: -.16s;}
+#loading p{margin-top: 10px;}

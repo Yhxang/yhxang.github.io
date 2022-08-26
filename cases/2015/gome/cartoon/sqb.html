@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>趁年轻请热血</title>
+	<meta name="viewport" content="width=640,target-densitydpi=device-dpi,user-scalable=no" />
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div class="banner">
+		<span class="icon icon1"></span>
+		<span class="icon icon2"></span>
+	</div>
+	<div class="sqb_main">
+		<span class="icon icon3"></span>
+		<form action="submit_userinfo_wap.php" method="post" name="msg" id="msg" target="id_iframe">
+			<div class="comwidth sqb_f1">
+				<div class="clearfix">
+					<div class="fl">
+						<ul>
+							<li  class="xingming">
+								<label for="xingming">姓名</label>
+								<input type="text" id="xingming" name="xingming"/>
+							</li>
+							<li  class="xingbie">
+								<label for="xingbie">性别</label>
+								<input type="text" id="xingbie" name="xingbie"/>
+							</li>
+							<li class="minzu">
+								<label for="minzu">民族</label>
+								<input type="text" id="minzu" name="minzu" />
+							</li>
+							<li class="jiguan">
+								<label for="jiguan">籍贯</label>
+								<input type="text" id="jiguan" name="jiguan" />
+							</li>
+							<li  class="chushengriqi">
+								<label for="chushengriqi">出生日期</label>
+								<input type="text" id="chushengriqi" name="chushengriqi"/>
+							</li>
+						</ul>
+					</div>
+					<div class="fr">
+						<div class="imgbox">
+						<!-- <a href="javascript:void(0);" id="uploadbtn"></a> -->
+						<img src="" id="preview" width="174" height="215">
+						<input type="file" accept="image/*;capture=camera" id="picurl" name="picurl">
+						<p>上传照片</p><span class="icon icon_jia"></span>
+						
+						
+						</div>
+						<div  class="wenhuachengdu"><label for="wenhuachengdu">文化程度</label>
+						<input type="text" id="wenhuachengdu" name="wenhuachengdu"/></div>
+					</div>
+				</div>
+				<div class="jiatingxiangxizhuzhi">
+					<label for="jiatingxiangxizhuzhi">家庭详细住址</label>
+					<textarea  id="jiatingxiangxizhuzhi" name="jiatingxiangxizhuzhi"></textarea>
+				</div>
+			</div>
+
+			
+
+			<ul class="comwidth sqb_f2">
+				<li>
+					<label for="qiwangshixichengshi">期望实习城市</label>
+					<select id="qiwangshixichengshi" name="qiwangshixichengshi" class="qiwangshixichengshi">
+		                <option value="0">请选择</option> 
+		                <option value="华北大区--北京大中">华北大区--北京大中</option> 
+		                <option value="华北大区--天津分部">华北大区--天津分部</option> 
+		                <option value="华北大区--北京国美">华北大区--北京国美</option> 
+		                <option value="华北大区--河南国美">华北大区--河南国美</option> 
+		                <option value="华北大区--河南永乐">华北大区--河南永乐</option> 
+		                <option value="东北大区--黑天鹅">东北大区--黑天鹅</option> 
+		                <option value="东北大区--沈阳分部">东北大区--沈阳分部</option> 
+		                <option value="西部大区--成都分部">西部大区--成都分部</option> 
+		                <option value="西部大区--重庆分部">西部大区--重庆分部</option> 
+		                <option value="西部大区--西安分部">西部大区--西安分部</option> 
+
+		                <option value="西部大区--新疆分部">西部大区--新疆分部</option> 
+		                <option value="西部大区--陕西蜂星">西部大区--陕西蜂星</option> 
+		                <option value="华东一区--上海国美">华东一区--上海国美</option> 
+		                <option value="华东一区--上海永乐">华东一区--上海永乐</option> 
+		                <option value="华东一区--浙江分部">华东一区--浙江分部</option>
+
+		                <option value="华东二区--常州分部">华东二区--常州分部</option> 
+		                <option value="华东二区--南京分部">华东二区--南京分部</option> 
+
+		                <option value="华南一区--深圳分部">华南一区--深圳分部</option> 
+		                <option value="华南一区--广州分部">华南一区--广州分部</option> 
+
+		                <option value="华南二区--武汉分部">华南二区--武汉分部</option> 
+		                <option value="华南二区--厦门分部">华南二区--厦门分部</option> 
+
+		              </select>
+
+				</li>
+				<li>
+					<label for="youzhengbianma">邮政编码</label>
+					<input type="text" id="youzhengbianma" name="youzhengbianma" class="youzhengbianma"/>
+				</li>
+				<li>
+					<label for="lianxidianhua">联系电话(手机)</label>
+					<input type="text" id="lianxidianhua" name="lianxidianhua" class="lianxidianhua"/>
+				</li>
+				<li>
+					<label for="dianzixinxiang">电子邮箱</label>
+					<input type="text" id="dianzixinxiang" name="dianzixinxiang" class="dianzixinxiang"/>
+				</li>
+				<li>
+					<label for="jinjilianxiren">紧急联系人</label>
+					<input type="text" id="jinjilianxiren" name="jinjilianxiren" class="jinjilianxiren"/>
+				</li>
+				<li class="last">
+					<label for="jinjilianxirendianhua">紧急联系人电话</label>
+					<input type="text" id="jinjilianxirendianhua" name="jinjilianxirendianhua" class="jinjilianxirendianhua"/>
+				</li>
+			</ul>
+
+			<h2 class="sqb_tit">学习经历</h2>
+
+			<ul class="comwidth sqb_f3">
+				<li>
+					<label for="daxue">学校名称</label>
+					<input type="text" id="daxue" name="daxue" class="daxue"/>
+				</li>
+				<li class="l2">
+					<label for="daxuedizhi">学校地址</label>
+					<textarea  id="daxuedizhi" name="daxuedizhi" class="daxuedizhi"></textarea>
+				</li>
+				<li class="daxuenianji">
+					<label for="daxuenianji">所在院系</label>
+					<input type="text" id="daxuenianji" name="daxuenianji" />
+				</li>
+				<li class="daxuezhiwu">
+					<label for="daxuezhiwu">在校担任职务</label>
+					<input type="text" id="daxuezhiwu" name="daxuezhiwu" />
+				</li>
+			</ul>
+
+			
+
+			<ul class="comwidth sqb_f5">
+				<li class="suoxuezhuyaokecheng">
+					<label for="suoxuezhuyaokecheng">所学主要课程</label>
+					<textarea  id="suoxuezhuyaokecheng" name="suoxuezhuyaokecheng"  ></textarea>
+				</li>
+				<li class="jichuke">
+					<label for="jichuke">基础课</label>
+					<input type="text" id="jichuke" name="jichuke" />
+				</li>
+				<li class="zhuanyeke">
+					<label for="zhuanyeke">专业课</label>
+					<input type="text" id="zhuanyeke" name="zhuanyeke" />
+
+				</li>
+				<li class="gerentechang">
+					<label for="gerentechang">个人特长及自我评价</label>
+					<textarea  id="gerentechang" name="gerentechang" ></textarea>			
+				</ul>
+				
+				<div class="comwidth subbox">
+					<p class="tip">所填上述信息需完整且均属事实，若有不完整或不实，将取消实习资格。</p>
+					<a href="javascript:void(0);" class="submitBtn">提交</a>
+					<a href="ssap.html" target="_self" class="scap">→赛程安排←</a>
+				</div>
+		</form>
+	<iframe id="id_iframe" name="id_iframe" style=""></iframe>
+
+	</div>
+<!-- <script src="js/zepto.min.js"></script> -->
+<script src="js/jquery-2.1.1.min.js"></script>
+<script>
+var arr=["xingming","xingbie","minzu","jiguan","chushengriqi","wenhuachengdu","jiatingxiangxizhuzhi","youzhengbianma","lianxidianhua","dianzixinxiang","jinjilianxiren","jinjilianxirendianhua","daxue","daxuedizhi","daxuenianji","daxuezhiwu","suoxuezhuyaokecheng","jichuke","zhuanyeke","gerentechang"]
+var tiparr=["姓名","性别","民族","籍贯","出生日期","文化程度","家庭详细住址","邮政编码","联系电话(手机)","电子邮箱","紧急联系人","紧急联系人电话","学校名称","学校地址","所在年级","在校担任职务","所学主要课程","基础课","专业课","个人特长及自我评价"];
+$(function(){
+	$("#picurl").change(function(){
+		var file = document.getElementById("picurl");
+		var ext=file.value.substring(file.value.lastIndexOf(".")+1).toLowerCase();
+		if(ext!='png'&&ext!='jpg'&&ext!='jpeg'){
+			alert("文件必须为图片！"); return;
+		}
+		$(".imgbox p,.imgbox span").hide();
+		html5Reader(file);
+	})
+	$(".submitBtn").click(function(){
+		var filled=true;
+		for(var i=0;i<arr.length;i++){
+			var thisinput=$("#"+arr[i])
+			if(thisinput.val().replace(/\s+/,"")==""){
+				alert("请填写"+tiparr[i]+"!");
+				filled=false;
+				break;
+				return;
+			}
+		}
+		if(filled){
+			if($("#qiwangshixichengshi").val()==0){
+				alert("请选择期望实习城市！")
+				filled=false;
+				return;
+			}
+		}
+		if(filled){
+			if($("#picurl").val()==""){
+				alert("请选择照片！")
+				filled=false;
+				return;
+			}
+		}
+		if(filled){
+			$("#msg").submit();
+			$(".subbox .tip").text("我们会在7月6日之前通知你面试，请保持手机畅通");
+			$(".submitBtn").text("提交成功").unbind("click");
+			alert("发送成功！");
+		}
+	})
+	
+	function html5Reader(file){
+   var file = file.files[0];
+   var reader = new FileReader();
+   reader.readAsDataURL(file);
+   reader.onload = function(e){
+	   var pic = document.getElementById("preview");
+	   pic.src=this.result;
+	   pic.style.display="block";
+   }
+	}
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>国美 会说爱的盒子</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta name="description" content="国美 会说爱的盒子">
+<meta name="keywords" content="国美,会说爱的盒子,盒子，说爱">
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+	var version = parseFloat(RegExp.$1);
+	if(version>2.3){
+		document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+	}else{
+		document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+	}
+} else {
+	document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link rel="stylesheet" href="css/idangerous.swiper.css">
+<link rel="stylesheet" href="css/animation.css">
+<style>
+body,ul,li,p,h1,h2,h3,h4,h5,h6,span{margin: 0;padding: 0; }
+ul,li{list-style: none;}
+body{background-color: #fafbda;}
+img{font-size: 0; line-height: 0; vertical-align:bottom;}
+.swiper-container,.swiper-wrapper,.swiper-slide{ width: 640px;}
+.swiper-slide{position: relative;}
+.fgx{height: 33px; width: 100%; background:url(img/b04.jpg) 0px 0px repeat-x; -webkit-animation: bgscroll 1s linear infinite; animation: bgscroll 1s linear infinite; }
+@-webkit-keyframes bgscroll {
+	from { background-position: 0px 0px; }
+	to { background-position: -79px 0px;  }
+}
+@keyframes bgscroll {
+	from { background-position: 0px 0px; }
+	to { background-position: -79px 0px;  }
+}
+.red2{height: 238px; background:url(img/b05.jpg) 0 0 repeat-x; position: relative;}
+.red2 img{display: block; position: absolute; left:50%;}
+.nzyq,.xcdc{ -webkit-transform: scale3d(0, 0, 0); transform: scale3d(0, 0, 0); }
+.nzyq{ top:24px; margin-left: -157px;}
+.xcdc{ top:124px; margin-left: -288px; -webkit-transition-delay: .2s !important; transition-delay: .2s !important; -webkit-transition-duration: .6s !important; transition-duration: .6s !important;}
+.red2.animIn img{-webkit-transform: scale3d(1, 1, 1); transform: scale3d(1, 1, 1); -webkit-transition: all .3s ease-out; transition: all .3s ease-out;}
+.yellow{height: 758px; background-color: #fafbda; position: relative;}
+.txt1{font-size: 32px; line-height: 42px; color:#e36b6b; margin-top: 12px; text-align: center;}
+.box1{position: absolute; left: 130px; top:258px; width: 408px; height: 324px; -webkit-transform-origin: center bottom; transform-origin: center bottom; -webkit-transform: scale3d(.6, .6, 1); transform: scale3d(.6, .6, 1); }
+.box1.animIn{ -webkit-animation: dropbox .6s ease-in; animation: dropbox .6s ease-in; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards; display: block;}
+.box1_1,.box1_2,.box1_3{position: absolute; left: 0; top: 0; display: none;}
+.box1_1.on,.box1_2.on,.box1_3.on{display: block;}
+.eyes1{position: absolute; left: 66px; top:100px; display: none;}
+.eyes1.on{display: block;}
+.mouth1{position: absolute; left: 88px; top: 203px; }
+.mouth1.animIn{ -webkit-animation: mouthsmile .2s alternate infinite; animation: mouthsmile .2s alternate infinite;}
+.dalog{width: 524px; height: 277px; position: absolute; left:59px; top: 128px; pointer-events:none; z-index: 1;}
+.dalog1,.dalog2{display: none; /*pointer-events:none;*/}
+.dalog1.on,.dalog2.on{display: block;}
+.dalog2{margin-top: 5px;}
+.text2{position: absolute; left: 25px; top: 70px; /*pointer-events:none;*/}
+.qrarea{ position: absolute; margin-left: -284px; left: 50%; top: 596px; z-index: 999;  overflow: hidden;}
+.qr{width: 356px; height: 118px; background-color: #ecd8b8; border:#fff solid 2px; float: left;}
+.qr p{width: 237px; font-size: 20px; color: #766145; line-height: 25px; margin-top: 18px; text-align: center; float: left;}
+/*.qr img{position: absolute; right: 0; top: 0; z-index: 1986; width: 200px; height: 200px}*/
+img.qrimg{/*position: absolute; left: 383px; top: 600px;*/ z-index: 1986; display: block; float: right;}
+.slg{position: absolute;}
+.eyes0{position: absolute; left:414px; top:315px; display: none; }
+.eyes0.on{display: block;}
+.mouth0{position: absolute; left: 439px; top:341px;}
+@-webkit-keyframes mouthsmile2 {
+	from { -webkit-transform: translate3d(0, 0px, 0); transform: translate3d(0, 0px, 0); }
+	to { -webkit-transform: translate3d(0, 2px, 0); transform: translate3d(0, 2px, 0); }
+}
+@keyframes mouthsmile2 {
+	from { -webkit-transform: translate3d(0, 0px, 0); transform: translate3d(0, 0px, 0); }
+	to { -webkit-transform: translate3d(0, 2px, 0); transform: translate3d(0, 2px, 0); }
+}
+.mouth0.animIn{-webkit-animation: mouthsmile2 .3s alternate infinite; animation: mouthsmile2 .3s  alternate infinite;}
+.coupon{float: right;}
+</style>
+
+</head>
+<body>
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide"> 
+			<img src="img/b01.jpg" width="640" height="439">
+			<img src="img/b02.jpg" width="640" height="622">
+			<img src="img/b03.jpg" width="640" height="709">
+			<!-- <img src="img/a76.png" class="slg"> -->
+			<img src="img/b07.png" class="eyes0 on">
+			<img src="img/b08.png" class="eyes0">
+			<img src="img/b09.png" class="mouth0">
+		</div>      
+		<div class="swiper-slide">
+			<div class="red2">
+				<img src="img/b01.png" class="nzyq">
+				<img src="img/b02.png" class="xcdc">
+			</div>
+			<div class="fgx"></div>
+
+			<div class="yellow">
+				<p class="txt1">购冰箱、彩电、洗衣机、空调&nbsp;&nbsp;&nbsp;单品<br>满2000元降400元再送100积分<br>（详情见店内海报）</p>
+				
+				<div class="box1 box">
+					<img src="img/a01.png" class="body" width="408">
+					
+					<div class="box1_1"></div>
+					<img src="img/a59.png" alt="" class="box1_2">
+					<img src="img/a60.png" alt="" class="box1_3">
+					<!-- eye frames -->
+					<img class="eyes1_1 eyes1 on" src="img/a02.png">
+					<img class="eyes1_2 eyes1" src="img/a03.png">
+					<img class="eyes1_3 eyes1" src="img/a05.png">
+					
+					<!-- eye frames end-->
+					<img class="mouth1" src="img/a04.png">
+				</div>
+				<div class="dalog">
+					<img src="img/b03.png" class="dalog1 on">
+					<img src="img/b04.png" class="dalog2">
+					<img src="img/b05.png" class="text2" >
+				</div>
+				<div class="qrarea">
+					<div class="qr">	
+						<p>扫一扫<br>欢迎国美在线购物<br>更多优惠选择</p>
+						<img src="img/b07.jpg" class="qrimg">
+					</div>
+					<a href="coupon.html" target="_self" class="coupon">
+						<img src="img/b10.png">
+					</a>
+				</div>
+			</div>
+		</div> 
+	</div>
+</div>
+<script src="js/zepto.min.js"></script>
+<script src="js/idangerous.swiper.min.js"></script>   
+<script>
+$(function(){
+	var stageH=$(window).height();
+	$(".swiper-container").height(stageH);
+	var obj1,obj2
+	playFrame($(".eyes1"),8,0,0,"on");
+	playFrame($(".dalog1,.dalog2"),4,0,0,"on");
+
+	playFrame($(".eyes0"),8,0,0,"on");
+	var mySwiper = new Swiper('.swiper-container',{
+		mode:'vertical',
+		slidesPerView: 'auto',
+		slidesPerViewFit: true,
+		onFirstInit:function(){
+			playP1();
+		},
+		onSlideChangeEnd:function(){
+			switch(mySwiper.activeIndex){
+				case 0:
+				playP1()
+				break;
+				case 1:
+				playP2();
+				break;
+				default:
+				break;
+			}
+		}
+	});  
+	function playP1(){
+		resetFrames();
+		$(".mouth0").addClass("animIn")
+	}
+	function playP2(){
+		resetFrames();
+		$(".mouth1,.red2").addClass("animIn");
+	}
+	function resetFrames(){
+		$(".animIn").removeClass("animIn");
+	}
+	function playFrame(FrameQuery,FrameRate,LoopTime,Delay,DisplayClass,Func){
+		var timeinterval=Math.round(1000/FrameRate);
+		var PlayOBJ=new Object();
+		var cur=0;
+		var curTime=0;
+		var totalFrame=FrameQuery.length-1;
+		var orginInterval=timeinterval;
+		loopinterval();
+
+		function loopinterval(){
+			PlayOBJ.intervalId=setTimeout(function(){
+				if(DisplayClass){
+					FrameQuery.removeClass(DisplayClass).eq(cur).addClass(DisplayClass);
+				}else{
+					FrameQuery.hide().eq(cur).show();
+				}
+				timeinterval=orginInterval;
+				++cur;
+				if(cur>totalFrame){
+					cur=0;
+					++curTime;
+					if(Delay){
+						timeinterval=orginInterval+Delay;
+					}
+				}
+				if(LoopTime>0&&curTime>=LoopTime){
+					if(Func){
+						Func()
+					}
+					return;
+				}
+				loopinterval();
+			},timeinterval);
+		}
+		return PlayOBJ;
+	}
+	function stopFrame(PlayOBJ){
+		if(!PlayOBJ)return;
+		clearTimeout(PlayOBJ.intervalId);
+	}
+})
+</script>
+</body>
+</html>

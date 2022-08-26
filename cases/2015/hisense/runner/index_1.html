@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>倍多分十字对开门冰箱</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+      var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body class="subbody noborder">
+<div id="loading">
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+  <p>loading...</p>
+</div>
+
+<div id="wrap" class="wrap">
+  <section class="p1">
+    <h1 class="p1-title p-title">
+      <img src="img/pdt1/a02.png">
+      <i></i>
+    </h1>
+    <p class="p1-sub">多空间 多分享 生活倍新鲜</p>
+    <img src="img/pdt1/a03.png" class="p1-tip"> 
+    <img src="img/pdt1/a01.png" class="p1-pic">
+  </section>
+
+  <section class="p2">
+    <h1 class="p2-title p-title">
+      <img src="img/pdt1/a04.png">
+      <i></i>
+    </h1>
+    <p class="p2-sub">开创黄金十字结构设计，实现大冷藏大冷冻。超大冷藏室，果蔬新鲜有序。抽屉式冷藏室，存储更方便细致。-5~-18°变温，随需存储更精细。</p>
+    <div class="picholder">
+      <img src="img/pdt1/a05.png" class="p2-pic">
+      <img src="img/pdt1/a14.png" class="p2-pic-1">
+      
+      <img src="img/pdt1/a06.png" class="p2-border">
+      <!-- <img src="img/pdt1/a07.png" class="p2-tip"> -->
+
+      <img src="img/pdt1/a08.png" class="p2-border1">
+      <img src="img/pdt1/a08.png" class="p2-border2">
+
+      <img src="img/pdt1/a09.png" class="p2-tip2-1">
+      <img src="img/pdt1/a10.png" class="p2-tip2-2">
+      <img src="img/pdt1/a11.png" class="p2-tip2-3">
+
+      <img src="img/pdt1/a12.png" class="p2-tip3-1">
+      <img src="img/pdt1/a13.png" class="p2-tip3-2">
+
+    </div>
+  </section>
+
+  <section class="p3">
+    <h1 class="p2-title p-title">
+      <img src="img/pdt1/a15.png">
+      <i></i>
+    </h1>
+    <p class="p2-sub">保鲜有效延长一倍，除菌率高达99.9%，保证食物新鲜水润</p>
+    <div class="picholder">
+      <img src="img/pdt1/a16.png" class="p3-pic">
+      <img src="img/pdt1/a17.png" class="p3-glow">
+      <img src="img/pdt1/a19.png" class="p3-border">
+      <img src="img/pdt1/a18.png" class="p3-tip1">
+    </div>
+  </section>
+  <section class="p4">
+    <h1 class="p4-title p-title">
+      <img src="img/pdt1/a20.png">
+      <i></i>
+    </h1>
+    <p class="p4-sub">运用多循环技术，冷藏冷冻独立快速按需制冷，远离串味烦恼，留住食物原味</p>
+    <div class="picholder">
+      <img src="img/pdt1/a05.png" class="p2-pic">
+      <div class="p4-roll1 p4-roll">
+        <img src="img/pdt1/a21.png">
+      </div>
+      <div class="p4-roll2 p4-roll">
+        <img src="img/pdt1/a21.png">
+      </div>
+      <div class="p4-roll3 p4-roll">
+        <img src="img/pdt1/a21.png">
+      </div>
+      <img src="img/pdt1/a22.png" class="p4-tip">
+      <img src="img/pdt1/a26.png" class="p5-glow1">
+      <img src="img/pdt1/a26.png" class="p5-glow2">
+      <img src="img/pdt1/a24.png" class="p5-tip1">
+      <img src="img/pdt1/a25.png" class="p5-tip2">
+    </div>
+  </section>
+  <section class="p5">
+    <h1 class="p5-title p-title">
+      <img src="img/pdt1/a23.png">
+      <i></i>
+    </h1>
+    <p class="p5-sub">全风冷无霜技术，优化风道系统，全方位立体循环送风。免去除霜烦恼，方便省心。搭配360°矢量变频，快速制冷，锁住营养。</p>
+  </section>
+</div> 
+<script src="js/zepto.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/easing/EasePack.min.js"></script> 
+<script>
+  $(function(){
+    var stageH=$(window).height();
+    var resourceDir="img/pdt1/";
+    var loadingImages=[];
+    $("#wrap,section").height(stageH);
+    for(var i=1;i<=10;i++){
+      loadingImages.push("a"+(i<10?"0"+i:i)+".png");
+    }
+    var mc=new Hammer(document.body,{
+      touchAction: 'pan-x pan-y',
+      recognizers: [
+        [Hammer.Tap],
+        [Hammer.Pan]
+      ]
+    })
+    loadResources(loadingImages,function (n, i, img) {
+      $("#loading p").html("loading&nbsp;" + Math.round(i * 100 / n) + "%");
+      if (n != i) return;
+      $("#loading").remove();
+      $("#wrap").show();
+      init();
+      setTimeout(function(){
+        $("#wrap").css("visibility","visible");
+      },100)
+      
+    })
+    var tl=new TimelineMax();
+    function init(){
+      tl.delay(.3)
+      .fromTo(".p1-pic",1.5,{y:80,alpha:0},{y:0,alpha:1})
+      .fromTo(".p1-title",.9,{alpha:0,y:20},{alpha:1,y:0},"-=.35")
+      .from(".p1-title i",.35,{width:0},"-=.2")
+      .fromTo(".p1-sub",.6,{alpha:0,y:"+=20"},{alpha:1,y:0},"-=.2")
+      .from(".p1-tip",.4,{alpha:0,y:"-=50"},"-=.3")
+      .add("p2")
+      .addPause()
+
+      .to(".p1-tip",.8,{alpha:0,y:"+=20"})
+      .from(".p2 .p2-pic",1.3,{alpha:0,y:"+=15"})
+      .to(".p1-pic",.5,{alpha:0},"-=.8")
+      .to(".p1-title",.6,{alpha:0,y:"-=20"},"p2")
+      .to(".p1-sub",.6,{alpha:0,y:"-=20"},"p2+=.15")
+      .from(".p2 .p2-title",.8,{alpha:0,y:"+=20"},"-=.5")
+      .from(".p2 .p2-title i",.35,{width:0},"-=.2")
+      .from(".p2 .p2-sub",.5,{alpha:0,y:"+=15"},"-=.3")
+      .delay(1)
+      .from(".p2-border",.4,{alpha:0,yoyo:true})      
+      .from(".p2-border1,.p2-border2",.5,{alpha:0},"-=.1")
+      .staggerFrom(".p2-tip2-1,.p2-tip2-2",.35,{alpha:0,x:"+=25"},.1)
+      .from(".p2-tip2-3",.35,{alpha:0,x:"-=25"},"-=.2")
+      .addPause()
+
+      .staggerTo(".p2-tip2-1,.p2-tip2-2,.p2-tip2-3",.3,{alpha:0,y:"-=15"},.1)
+      .to(".p2-border1",.5,{alpha:0},"-=.3")
+      .to(".p2-border",.4,{alpha:0}) 
+      .from(".p2-pic-1",1,{alpha:0,y:"+=15"})
+      .to(".p2 .p2-pic",.7,{alpha:0,scaleX:.8},"-=.7")
+      .from(".p2-tip3-1",.6,{alpha:0,scale:.4})
+      .from(".p2-tip3-2",.5,{x:20,alpha:0},"-=.5")
+      .addPause()
+
+      .staggerTo(".p2 .p2-title,.p2 .p2-sub",.5,{alpha:0,y:"-=30"},.2)
+      .from(".p3 .p2-title",.6,{alpha:0,y:"+=15"},"-=.2")
+      .from(".p3 .p2-title i",.3,{width:0},"-=.2")
+      .from(".p3 .p2-sub",.8,{alpha:0,y:"+=15"},"-=.4")
+      .to(".p2-tip3-1",.5,{alpha:0,scale:.2},"-=.3")
+      .to(".p2-tip3-2",.5,{x:-20,alpha:0})
+      .to(".p2-border2",.5,{alpha:0})
+      .to(".p2-pic-1",.7,{alpha:0})
+      .from(".p3-pic",1,{y:"+=15",alpha:0},"-=.6").add("p3")
+      
+      
+      .from(".p3-glow",.4,{alpha:0},"-=.15")
+      .from(".p3-border",.5,{alpha:0},"-=.2")
+      .from(".p3-tip1",.4,{alpha:0,x:"+=25"},"-=.2")
+      .addPause()
+
+      .staggerTo(".p3 .p2-title,.p3 .p2-sub",.5,{alpha:0,y:"-=30"},.2)
+      .from(".p4-title",.8,{alpha:0,y:"+=15"},"-=.4")
+      .from(".p4-title i",.35,{width:0},"-=.2")
+      .from(".p4-sub",.6,{alpha:0,y:"+=15"},"-=.35")
+      .to(".p3-tip1",.3,{alpha:0,y:"-=15"})
+      .to(".p3-border",.3,{alpha:0})
+      .to(".p3-glow",.3,{alpha:0},"-=.15")
+      .from(".p4 .p2-pic",1,{alpha:0,y:"+=25"})
+      .to(".p3-pic",.6,{alpha:0},"-=.6")
+      .from(".p4-roll1",.7,{alpha:0,scale:0},"-=.2")
+      .staggerFrom(".p4-roll2,.p4-roll3",.6,{alpha:0,scale:0},.15,"-=.4")
+      .from(".p4-tip",.4,{alpha:0})
+      .addPause()
+
+      .call(function(){
+        $(window.parent.document).find(".nexttip").removeClass("show");
+      })
+      .staggerTo(".p4-title,.p4-sub",.5,{alpha:0,y:"-=30"},.2)
+      .from(".p5-title",.5,{alpha:0,y:"+=15"})
+      .from(".p5-title i",.35,{width:0},"-=.2")
+      .from(".p5-sub",.5,{alpha:0,y:"+=15"})
+      .to(".p4-tip",.4,{alpha:0})
+      .staggerTo(".p4-roll1,.p4-roll2,.p4-roll3",.4,{scale:0},.15)
+      .fromTo(".p5-glow1",.4,{scale:0},{scale:1})
+      .fromTo(".p5-glow2",.4,{scale:0},{scale:.9},"-=.2")
+      .staggerFrom(".p5-tip1,.p5-tip2",.5,{alpha:0,x:"+=20"},.1,"-=.1")
+      .call(function(){
+        $(window.parent.document).find(".menu-switch-on").addClass("pulse");
+      })
+    }
+    mc.on("pan",function(){
+      tl.play();
+    })
+    function loadResources(urls, progress) {
+      var loadedCount = 0;
+      var loaded = function () {
+        ++loadedCount;
+        if (progress) progress(urls.length, loadedCount, this);
+      };
+      for (var i = 0; i < urls.length; ++i) {
+        if (!urls[i]) {
+          loaded();
+          return;
+        }
+        var img = new Image();
+        img.onload = loaded;
+        img.onabort = loaded;
+        img.onerror = loaded;
+        img.src = resourceDir + urls[i];//+ "?ver=" + j_version;
+      }
+    }
+  })
+</script>
+</body>
+</html>

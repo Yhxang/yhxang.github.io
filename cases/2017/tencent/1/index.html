@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>QQ Demo</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="qqwrap" class="qqwrap">
+	<div class="msgarea">
+		<div class="chatbox">
+			<div class="chatconts" id="chatconts"><!-- dailogue --></div>
+			<div class="incomeara">
+				<div class="incomearabg"></div>
+				<div class="coin2holder points">
+					<div class="points points2 lt100p">
+						<i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i>
+					</div>
+					<div class="coin2glow lt100p"></div>
+					<div class="dropcoin2 lt100p">
+						<i></i><i></i><i></i><i></i><i></i>
+					</div>
+					<div class="coin2"></div>
+				</div>
+				<div class="num"><span id="hundreds">3</span><span id="tens">0</span><span id="single">0</span></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="opratearea">
+		<div class="inputbox">
+			<input type="text" disabled="disabled" name="inputtxt" class="inputtxt">
+		</div>
+		<div class="iconarea">
+			<span class="icon-mic"></span>
+			<span class="icon-image"></span>
+			<span class="icon-camera"></span>
+			<span class="icon-money"></span>
+			<span class="icon-smile"></span>
+			<span class="icon-close"></span>
+		</div>
+	</div>
+</div>
+<script>
+window.addEventListener("DOMContentLoaded",function(e){
+	qqchat.pushDailogue({uid:1,msg:"啊啊~好饿！中午没吃饱啊啊~",});
+	setTimeout(function(){
+		qqchat.pushDailogue({uid:2,msg:"有没闻到蒸排骨的味道",price:88});
+	},1600);
+})
+
+var qqchat={
+	chatTemplate:'<div class="message {User}"><img src="{ImageUrl}" width="70" height="70" alt="avator" class="avator"><div class="content"><div class="msgbubbleholder"><div class="msgbubble"><div class="bubblecont"><div class="plain"><pre>{Words}</pre></div></div></div></div></div></div>',
+	payTemplate:'<div class="payarea"><div class="coinarea"><div class="coinbg-e lt100p"></div><div class="coinbg-f lt100p"></div><div class="points lt100p"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div><i class="coin"></i></div><p class="payprice">{Price}元</p></div>',
+	pushDailogue:function(chatObj){
+		var chatconts=document.getElementById("chatconts");
+		var newDail=this.replaceTemplate(this.chatTemplate,{
+			User:chatObj.uid==1?"me":"other",
+			ImageUrl:"images/avator"+chatObj.uid+".jpg",
+			Words:chatObj.msg
+		});
+		var msgDom=this.parseDom(newDail)[0];
+		var msgbubbleholder=msgDom.querySelector(".msgbubbleholder");
+
+		if(chatObj.price){
+			var priceDail=this.replaceTemplate(this.payTemplate,{
+				Price:chatObj.price.toFixed(2)
+			})
+			var priceDail=this.parseDom(priceDail)[0];
+			var numImgGap=35;
+			setTimeout(function(){
+				msgbubbleholder.appendChild(priceDail);	
+				setTimeout(function(){
+					document.querySelector(".incomeara").style.display="block";
+					document.querySelector(".incomeara").offsetHeight;
+					document.getElementById("tens").style.backgroundPosition="0 "+(-8*numImgGap)+"px";
+					document.getElementById("single").style.backgroundPosition="0 "+(-8*numImgGap-80*numImgGap)+"px";
+				},1000);
+			},500);
+		}
+		chatconts.appendChild(msgDom);
+	},
+	replaceTemplate:function(tpt,filler){
+	  for(var attr in filler){
+	    tpt=tpt.replace(new RegExp('{'+attr+'}','img'),filler[attr]);
+	  }
+	  return tpt;
+	},
+	parseDom:function(arg) {
+		var objE = document.createElement("div");
+		objE.innerHTML = arg;
+		return objE.childNodes;
+	}
+}
+
+</script>
+</body>
+</html>

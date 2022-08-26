@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Pandora占星小巫揭秘2015星座运势！</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script>
+window.onload = function(){
+	var _loading = document.getElementById('loading');
+	_loading.style.display = "none";
+};
+document.write('<div id="loading">Loading...</div>');
+
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+	var version = parseFloat(RegExp.$1);
+	if(version>2.3){
+		document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+	}else{
+		document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+	}
+} else {
+	document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<style>
+body,ul,li,p,h1,h2,h3,h4,h5,h6,span{margin: 0;padding: 0; }
+body{background: url(img/a00.jpg) 0 0 repeat-x;}
+img{margin: 0 auto;}
+</style>
+</head>
+<body>
+
+<img id="award" src="img/a34.jpg?ver=1.0" width="640" useMap='#clickmap'>
+<map name="clickmap" id="clickmap">
+</map>
+<script src="js/jquery.min.js"></script>
+<script>
+$(function(){
+	var stageW = $(window).width();
+	var stageH = $(window).height();
+
+	$("#award").height(stageH);
+	var jumpUrl="result.html";
+	var url=location.href;
+	var starindex=0;
+	var lx=32,
+	ly=64/960*stageH,
+	rx=270,
+	ry=114/960*stageH;
+	if(url.indexOf("starindex")!=-1){ 
+		starindex=parseInt(url.split("starindex=")[1]); 
+		jumpUrl+=("?starindex="+starindex+"&back=1");
+	
+	}
+	var maphtml="";
+	maphtml+='<area shape="rect" coords="'+lx+','+ly+','+rx+','+ry+'" href ='+jumpUrl+'  />';
+	$("#clickmap").html(maphtml);
+})
+</script>
+</body>
+</html>

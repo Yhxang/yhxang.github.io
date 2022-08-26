@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>发现遗失的穿越密码</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link href="./css/style.css?ver=1.88" rel="stylesheet">
+</head>
+<body>
+<!-- <div id="loading">
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+  <p>loading...</p>
+</div> -->
+<div id="wrap" class="wrap">
+	<div class="p1 section">
+		<img src="img/a13.png" alt="" class="p1-radiation">
+		<div class="p1-doorarea">
+			<img src="img/a11.png" alt="">
+			<img src="img/a10.png" alt="" class="p1-girl">
+			<img src="img/a08.png" alt="" class="p1-steps">
+			
+			<div class="p1-leftdoor"><img src="img/a09.png" class="p1-door"></div>
+			<div class="p1-rightdoor"><img src="img/a09.png" class="p1-door"></div>
+
+ 
+  <div class="batholder-box">    
+    <div class="p1-batholder" id="p1-bat1">
+            <div class="p1-bat p1-bats" >
+              <img src="img/a95.png" alt="" class="p1-batbody">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+              <div class="right">
+                <div class="p1-wing1">
+                  <img src="img/a96.png" alt="" class="p1-wing1img">
+                  <div class="p1-wing2">
+                    <img src="img/a97.png" alt="" class="p1-wing2img">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div class="p1-batholder" id="p1-bat2">
+          <div class="p1-bat p1-bats" >
+            <img src="img/a95.png" alt="" class="p1-batbody">
+            <div class="p1-wing1">
+              <img src="img/a96.png" alt="" class="p1-wing1img">
+              <div class="p1-wing2">
+                <img src="img/a97.png" alt="" class="p1-wing2img">
+              </div>
+            </div>
+            <div class="right">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p1-batholder" id="p1-bat3">
+          <div class="p1-bat p1-bats" >
+            <img src="img/a95.png" alt="" class="p1-batbody">
+            <div class="p1-wing1">
+              <img src="img/a96.png" alt="" class="p1-wing1img">
+              <div class="p1-wing2">
+                <img src="img/a97.png" alt="" class="p1-wing2img">
+              </div>
+            </div>
+            <div class="right">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="p1-batholder" id="p1-bat4">
+          <div class="p1-bat p1-bats" >
+            <img src="img/a95.png" alt="" class="p1-batbody">
+            <div class="p1-wing1">
+              <img src="img/a96.png" alt="" class="p1-wing1img">
+              <div class="p1-wing2">
+                <img src="img/a97.png" alt="" class="p1-wing2img">
+              </div>
+            </div>
+            <div class="right">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+           <div class="p1-batholder" id="p1-bat5">
+          <div class="p1-bat p1-bats" >
+            <img src="img/a95.png" alt="" class="p1-batbody">
+            <div class="p1-wing1">
+              <img src="img/a96.png" alt="" class="p1-wing1img">
+              <div class="p1-wing2">
+                <img src="img/a97.png" alt="" class="p1-wing2img">
+              </div>
+            </div>
+            <div class="right">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            <div class="p1-batholder" id="p1-bat6">
+          <div class="p1-bat p1-bats" >
+            <img src="img/a95.png" alt="" class="p1-batbody">
+            <div class="p1-wing1">
+              <img src="img/a96.png" alt="" class="p1-wing1img">
+              <div class="p1-wing2">
+                <img src="img/a97.png" alt="" class="p1-wing2img">
+              </div>
+            </div>
+            <div class="right">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+           <div class="p1-batholder" id="p1-bat7">
+          <div class="p1-bat p1-bats" >
+            <img src="img/a95.png" alt="" class="p1-batbody">
+            <div class="p1-wing1">
+              <img src="img/a96.png" alt="" class="p1-wing1img">
+              <div class="p1-wing2">
+                <img src="img/a97.png" alt="" class="p1-wing2img">
+              </div>
+            </div>
+            <div class="right">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            <div class="p1-batholder" id="p1-bat8">
+          <div class="p1-bat p1-bats" >
+            <img src="img/a95.png" alt="" class="p1-batbody">
+            <div class="p1-wing1">
+              <img src="img/a96.png" alt="" class="p1-wing1img">
+              <div class="p1-wing2">
+                <img src="img/a97.png" alt="" class="p1-wing2img">
+              </div>
+            </div>
+            <div class="right">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+           <div class="p1-batholder" id="p1-bat9">
+          <div class="p1-bat p1-bats" >
+            <img src="img/a95.png" alt="" class="p1-batbody">
+            <div class="p1-wing1">
+              <img src="img/a96.png" alt="" class="p1-wing1img">
+              <div class="p1-wing2">
+                <img src="img/a97.png" alt="" class="p1-wing2img">
+              </div>
+            </div>
+            <div class="right">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            <div class="p1-batholder" id="p1-bat10">
+          <div class="p1-bat p1-bats" >
+            <img src="img/a95.png" alt="" class="p1-batbody">
+            <div class="p1-wing1">
+              <img src="img/a96.png" alt="" class="p1-wing1img">
+              <div class="p1-wing2">
+                <img src="img/a97.png" alt="" class="p1-wing2img">
+              </div>
+            </div>
+            <div class="right">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p1-batholder" id="p1-bat11">
+            <div class="p1-bat p1-bats" >
+              <img src="img/a95.png" alt="" class="p1-batbody">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+              <div class="right">
+                <div class="p1-wing1">
+                  <img src="img/a96.png" alt="" class="p1-wing1img">
+                  <div class="p1-wing2">
+                    <img src="img/a97.png" alt="" class="p1-wing2img">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p1-batholder" id="p1-bat12">
+            <div class="p1-bat p1-bats" >
+              <img src="img/a95.png" alt="" class="p1-batbody">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+              <div class="right">
+                <div class="p1-wing1">
+                  <img src="img/a96.png" alt="" class="p1-wing1img">
+                  <div class="p1-wing2">
+                    <img src="img/a97.png" alt="" class="p1-wing2img">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p1-batholder" id="p1-bat13">
+            <div class="p1-bat p1-bats" >
+              <img src="img/a95.png" alt="" class="p1-batbody">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+              <div class="right">
+                <div class="p1-wing1">
+                  <img src="img/a96.png" alt="" class="p1-wing1img">
+                  <div class="p1-wing2">
+                    <img src="img/a97.png" alt="" class="p1-wing2img">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p1-batholder" id="p1-bat14">
+            <div class="p1-bat p1-bats" >
+              <img src="img/a95.png" alt="" class="p1-batbody">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+              <div class="right">
+                <div class="p1-wing1">
+                  <img src="img/a96.png" alt="" class="p1-wing1img">
+                  <div class="p1-wing2">
+                    <img src="img/a97.png" alt="" class="p1-wing2img">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p1-batholder" id="p1-bat15">
+            <div class="p1-bat p1-bats" >
+              <img src="img/a95.png" alt="" class="p1-batbody">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+              <div class="right">
+                <div class="p1-wing1">
+                  <img src="img/a96.png" alt="" class="p1-wing1img">
+                  <div class="p1-wing2">
+                    <img src="img/a97.png" alt="" class="p1-wing2img">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p1-batholder" id="p1-bat16">
+            <div class="p1-bat p1-bats" >
+              <img src="img/a95.png" alt="" class="p1-batbody">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+              <div class="right">
+                <div class="p1-wing1">
+                  <img src="img/a96.png" alt="" class="p1-wing1img">
+                  <div class="p1-wing2">
+                    <img src="img/a97.png" alt="" class="p1-wing2img">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p1-batholder" id="p1-bat17">
+            <div class="p1-bat p1-bats" >
+              <img src="img/a95.png" alt="" class="p1-batbody">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+              <div class="right">
+                <div class="p1-wing1">
+                  <img src="img/a96.png" alt="" class="p1-wing1img">
+                  <div class="p1-wing2">
+                    <img src="img/a97.png" alt="" class="p1-wing2img">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p1-batholder" id="p1-bat18">
+            <div class="p1-bat p1-bats" >
+              <img src="img/a95.png" alt="" class="p1-batbody">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+              <div class="right">
+                <div class="p1-wing1">
+                  <img src="img/a96.png" alt="" class="p1-wing1img">
+                  <div class="p1-wing2">
+                    <img src="img/a97.png" alt="" class="p1-wing2img">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p1-batholder" id="p1-bat19">
+            <div class="p1-bat p1-bats" >
+              <img src="img/a95.png" alt="" class="p1-batbody">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+              <div class="right">
+                <div class="p1-wing1">
+                  <img src="img/a96.png" alt="" class="p1-wing1img">
+                  <div class="p1-wing2">
+                    <img src="img/a97.png" alt="" class="p1-wing2img">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p1-batholder" id="p1-bat20">
+            <div class="p1-bat p1-bats" >
+              <img src="img/a95.png" alt="" class="p1-batbody">
+              <div class="p1-wing1">
+                <img src="img/a96.png" alt="" class="p1-wing1img">
+                <div class="p1-wing2">
+                  <img src="img/a97.png" alt="" class="p1-wing2img">
+                </div>
+              </div>
+              <div class="right">
+                <div class="p1-wing1">
+                  <img src="img/a96.png" alt="" class="p1-wing1img">
+                  <div class="p1-wing2">
+                    <img src="img/a97.png" alt="" class="p1-wing2img">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>  
+		</div>
+		<img src="img/a12.png" alt="" class="p1-blackmask">
+		<div class="p1-boy">
+			
+			<div class="p1-leg"><img src="img/a02.png" alt=""><img src="img/a16.png" alt="" class="p1-cloth"></div>
+			<div class="p1-cord"><img src="img/a07.png" alt="" class="p1-cordimg"></div>
+			<div class="p1-chest"><img src="img/a03.png" alt=""><img src="img/a04.png" alt="" class="p1-hand"></div>
+			<img src="img/a06.png" alt="" class="p1-head">
+			<img src="img/a05.png" alt="" class="p1-cap">
+		</div>
+		<div class="p1-tit">
+			<img src="img/a14.png" alt="">
+      <div class="p1-bat" id="p1-bat-t">
+        <img src="img/a95.png" alt="" class="p1-batbody">
+        <div class="p1-wing1">
+          <img src="img/a96.png" alt="" class="p1-wing1img">
+          <div class="p1-wing2">
+            <img src="img/a97.png" alt="" class="p1-wing2img">
+          </div>
+        </div>
+        <div class="right">
+          <div class="p1-wing1">
+            <img src="img/a96.png" alt="" class="p1-wing1img">
+            <div class="p1-wing2">
+              <img src="img/a97.png" alt="" class="p1-wing2img">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+		</div>
+		<img src="img/a15.png" alt="" class="p1-btn">
+		
+	</div>
+	<div class="p4 section" id="stagecontainer">
+		<div class="p4-mask mask">
+			<div class="stagetip1 stagetip">
+				<!-- <img src="img/a22.png" alt="" class="tiptxtmain">
+				<img src="img/a23.png" alt="" class="keytxt"> -->
+        <img src="img/a102.png" alt="">
+        <div class="p4-cointxt"><img src="img/a100.png" alt="" class="p4-cointxtimg"></div>
+        <div class="p4-screen"><img src="img/a101.png" alt="" class="p4-screenimg"></div>
+        <div class="p4-screen mirror"><img src="img/a101.png" alt="" class="p4-screenimg"></div>
+			</div>
+			<div class="stagetip2 stagetip">
+				<!-- <img src="img/a25.png" alt="" class="tiptxtmain">
+				<img src="img/a24.png" alt="" class="keytxt"> -->
+        <img src="img/a104.png" alt="" >
+        <img src="img/a105.png" alt="" class="p4-tipcloud">
+        <div class="small"><img src="img/a105.png" alt="" class="p4-tipcloud"></div>
+        <img src="img/a103.png" alt="" class="p4-eye">
+        <img src="img/a103.png" alt="" class="p4-eye reye">
+			</div>
+			<div class="stagetip3 stagetip">
+        <div class="p4-tipglow"></div>
+        <img src="img/a106.png" alt="" class="stagetip3bg">
+				<!-- <img src="img/a27.png" alt="" class="tiptxtmain">
+				<img src="img/a26.png" alt="" class="keytxt"> -->
+        <div class="p1-bat p4-tipbat">
+          <img src="img/a95.png" alt="" class="p1-batbody">
+          <div class="p1-wing1">
+            <img src="img/a96.png" alt="" class="p1-wing1img">
+            <div class="p1-wing2">
+              <img src="img/a97.png" alt="" class="p1-wing2img">
+            </div>
+          </div>
+          <div class="right">
+            <div class="p1-wing1">
+              <img src="img/a96.png" alt="" class="p1-wing1img">
+              <div class="p1-wing2">
+                <img src="img/a97.png" alt="" class="p1-wing2img">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p1-bat p4-tipbat2">
+          <img src="img/a95.png" alt="" class="p1-batbody">
+          <div class="p1-wing1">
+            <img src="img/a96.png" alt="" class="p1-wing1img">
+            <div class="p1-wing2">
+              <img src="img/a97.png" alt="" class="p1-wing2img">
+            </div>
+          </div>
+          <div class="right">
+            <div class="p1-wing1">
+              <img src="img/a96.png" alt="" class="p1-wing1img">
+              <div class="p1-wing2">
+                <img src="img/a97.png" alt="" class="p1-wing2img">
+              </div>
+            </div>
+          </div>
+        </div>
+
+			</div>
+		</div>
+	</div>
+  <div class="p3 section">
+    <div class="p3-container">
+      <img src="img/b02.jpg" alt="" class="p3-palace">
+      <img src="img/a20.png" alt="" class="p3-cloud1">
+      <img src="img/a21.png" alt="" class="p3-cloud2">
+    </div>
+  </div>
+	<div class="p2 section">
+		<div class="p2-blackbg"></div>
+    <div class="p2-swirl">
+  		<div class="p2-circ scales1">
+  			<div class="p2-circholder ">
+  				<img src="img/a18.png" alt="" class="p2-circinner">
+  				<img src="img/a17.png" alt="" class="p2-circouter">
+  			</div>
+  		</div>
+  		<div class="p2-circ scaleno">
+  			<div class="p2-circholder">
+  				<img src="img/a18.png" alt="" class="p2-circinner">
+  				<img src="img/a17.png" alt="" class="p2-circouter">
+  			</div>
+  		</div>
+  		<div class="p2-circ scaleb1">
+  			<div class="p2-circholder ">
+  				<img src="img/a18.png" alt="" class="p2-circinner">
+  				<img src="img/a17.png" alt="" class="p2-circouter">
+  			</div>
+  		</div>
+  		<div class="p2-circ scaleb2">
+  			<div class="p2-circholder ">
+  				<img src="img/a18.png" alt="" class="p2-circinner">
+  				<img src="img/a17.png" alt="" class="p2-circouter">
+  			</div>
+  		</div>
+    </div>
+		
+    <div class="p2-glow"><img src="img/a19.png" alt="" class="p2-glowimg"></div>
+		<p class="p2-time"><span id="timetxt">2017</span>年</p>
+	</div>
+	
+	<div class="p5 section">
+		<div class="p5-container1 p5-container">
+			<img src="img/b03.jpg" alt="" class="p5-bed">
+			<img src="img/a36.png" alt="" class="p5-closedbox">
+			<div class="handtip"><img src="img/a66.png" alt="" class="tipimg"></div>
+		</div>
+		<div class="p5-container2 p5-container">
+			<img src="img/b04.jpg" alt="" class="p5-bed2">
+
+			<img src="img/b05.jpg" alt="" class="p5-bed3">
+			<img src="img/a39.png" alt="" class="p5-openbox">
+			<div class="p5-fakeneck">
+	      <div class="p5-circ1" id="p5-circ1">
+	        <img src="img/a54.png" alt="" class="p5-circimg1-1">
+	        <img src="img/a55.png" alt="" class="p5-circimg1-2">
+          <img src="img/a93.png" alt="" class="p5-circbg">
+          <!-- <canvas width="285" height="469" id="cvs" class="cvs"></canvas> -->
+          <canvas width="309" height="482" id="cvs" class="cvs"></canvas>
+          <!-- <img src="img/a92.png" alt="" class="p5-line"> -->
+	        <img src="img/a56.png" alt="" class="p5-71">
+	      </div>
+        <div class="guideCircle-w">
+            <img src="img/a108.png" alt="" class="guideCircle-l">
+          </div>
+	      <div class="handtip"><img src="img/a66.png" alt="" class="tipimg"></div>
+	      <div class="p5-batglow"><img src="img/a42.png" alt="" class="p5-glowimg"></div>
+	      <div class="p5-bat"><img src="img/a34.png" alt="" class="p5-batimg"></div>
+	      <div class="p5-coinglow"><img src="img/a43.png" alt="" class="p5-glowimg"></div>
+	      <div class="p5-coin"><img src="img/a28.png" alt="" class="p5-coinimg"></div>
+	      <div class="p5-cloudglow"><img src="img/a44.png" alt="" class="p5-glowimg"></div>
+	      <div class="p5-cloud"><img src="img/a31.png" alt="" class="p5-cloudimg"></div>
+      </div>
+			<img src="img/a40.png" alt="" class="p5-glow1 p5-glow">
+			<img src="img/a37.png" alt="" class="p5-glow2 p5-glow">
+			<img src="img/a38.png" alt="" class="p5-glow3 p5-glow">
+
+      <img src="img/a57.png" alt="" class="p5-txt1 p5-txt">
+      <img src="img/a58.png" alt="" class="p5-txt2 p5-txt">
+      <img src="img/a59.png" alt="" class="p5-txt3 p5-txt">
+      <img src="img/a60.png" alt="" class="p5-txt4 p5-txt">
+      <img src="img/a61.png" alt="" class="p5-txt5 p5-txt">
+      <img src="img/a62.png" alt="" class="p5-txt6 p5-txt">
+      <img src="img/a63.png" alt="" class="p5-txt7 p5-txt">
+      <img src="img/a64.png" alt="" class="p5-txt8 p5-txt">
+
+      <img src="img/a65.png" alt="" class="p5-realneck">
+		</div>
+	</div>
+	<div class="p6 section">
+		<div class="marrybox">
+      <h3>Marry Me?</h3>
+      <img src="img/demond.jpg" alt="" class="demond">
+      <div class="choose">
+        <div class="yesido">Yes,I do</div>
+        <div class="noidont">残忍拒绝</div>
+      </div>
+    </div>
+    <div class="secc"><div class="flower flower1"><div class="down"><img src="img/flower.png" alt="" class="flowerimg"></div></div>
+      <div class="flower flower2"><div class="down"><img src="img/flower.png" alt="" class="flowerimg"></div></div>
+      <div class="flower flower3"><div class="down"><img src="img/flower.png" alt="" class="flowerimg"></div></div>
+      <div class="flower flower4"><div class="down"><img src="img/flower.png" alt="" class="flowerimg"></div></div>
+      <div class="flower flower5"><div class="down"><img src="img/flower.png" alt="" class="flowerimg"></div></div>
+      <div class="flower flower6"><div class="down"><img src="img/flower.png" alt="" class="flowerimg"></div></div>
+      <div class="flower flower7"><div class="down"><img src="img/flower.png" alt="" class="flowerimg"></div></div>
+      <div class="flower flower8"><div class="down"><img src="img/flower.png" alt="" class="flowerimg"></div></div>
+      <div class="flower flower9"><div class="down"><img src="img/flower.png" alt="" class="flowerimg"></div></div>
+      <div class="flower flower10"><div class="down"><img src="img/flower.png" alt="" class="flowerimg"></div></div>
+      <img src="img/flowerall.png" alt="" class="flowerall">
+      <img src="img/photo.png" alt="" class="photo">
+      
+      
+    </div>
+	</div>
+  <div class="p7 section"></div>
+	<div class="p-border">
+		<div class="p-lline"></div>
+		<div class="p-rline"></div>
+		<img src="img/a01.png" alt="" class="p-top">
+		<img src="img/a01.png" alt="" class="p-bottom">
+	</div>
+
+	<div class="bmask bmask1">
+		<div class="bintroimg">
+			<img src="img/a78.png?ver=1" alt="" class="bintroimgcont">
+		</div>
+		<img src="img/a79.png" alt="" class="bclose bclose1">
+	</div>
+	<div class="bmask bmask2">
+		<div class="errormsg">
+			<img src="img/a89.png" alt="" class="errormsgimg">
+			<p class="msgtxt">您已经中过大奖啦~<br>明天再来freestyle吧！</p>
+			<img src="img/a87.png" alt="" class="p6-2-home">
+			<img src="img/a88.png" alt="" class="p6-2-share">
+		</div>
+		<img src="img/a79.png" alt="" class="bclose bclose2">
+	</div>
+	<div class="bmask bmask3">
+		<div class="errormsg">
+			<img src="img/a89.png" alt="" class="errormsgimg">
+			<p class="msgtxt">啊哦，您的手机号码存在异常<br>请更换号码填写<br>如有疑问，请咨询首汽客服<br>电话：400-660-1066</p>
+			<img src="img/a87.png" alt="" class="p6-2-changeno">
+			<img src="img/a88.png" alt="" class="p6-2-share">
+		</div>
+		<img src="img/a79.png" alt="" class="bclose bclose3">
+	</div>
+	<div class="bmask bmask4">
+		<img src="img/a91.png" alt="" class="p-shareimg">
+	</div>
+</div>
+
+<div class="hide">
+	<div id="p4-1-1">
+		<img src="img/a67.png" alt="" class="p4-1-glowtip p4-glowtip">
+		<div class="p4-1-coin">
+			<img src="img/a29.png" alt="" class="p4-1-glow">
+			<img src="img/a28.png" alt="" class="p4-1-coinimg">
+		</div>
+		<div class="handtip"><img src="img/a66.png" alt="" class="tipimg"></div>
+	</div>
+	<div id="p4-1-2">
+		<img src="img/a67.png" alt="" class="p4-1-glowtip p4-glowtip">
+		<div class="p4-1-coin">
+			<img src="img/a29.png" alt="" class="p4-1-glow">
+			<img src="img/a28.png" alt="" class="p4-1-coinimg">
+		</div>
+		<div class="handtip"><img src="img/a66.png" alt="" class="tipimg"></div>
+	</div>
+	<div id="p4-2">
+		<img src="img/a68.png" alt="" class="p4-2-glowtip p4-glowtip">
+		<img src="img/a30.png" alt="" class="p4-2-emperor">
+		<div class="p4-2-cloud">
+			<img src="img/a32.png" alt="" class="p4-2-glow">
+			<img src="img/a31.png" alt="" class="p4-2-cloudimg">
+		</div>
+		<div class="handtip"><img src="img/a66.png" alt="" class="tipimg"></div>
+	</div>
+	<div id="p4-3">
+		<img src="img/a33.png" alt="" class="p4-3-burner">
+		<img src="img/a69.png" alt="" class="p4-3-glowtip p4-glowtip">
+		<div class="p4-3-bat">
+			<img src="img/a35.png" alt="" class="p4-3-glow">
+			<img src="img/a34.png" alt="" class="p4-3-batimg">
+		</div>
+		<div class="handtip"><img src="img/a66.png" alt="" class="tipimg"></div>
+	</div>
+</div>
+<div class="sndctrl">
+  <img src="img/sndicon.png" src="img/sndicon.png"><i></i>
+</div>
+<!-- <p id="test" style="font-size: 30px; color: #fff; position: absolute; left: 0; top: 0; width: 100%; z-index: 999999; pointer-events: none;"></p>
+<p id="test2" style="font-size: 30px; color: #fff; position: absolute; left: 0; bottom: 0; width: 100%; z-index: 999998; pointer-events: none;"></p> -->
+<audio src="media/musicbg.mp3" loop preload id="bgm"></audio>
+<audio src="media/marry.mp3" loop preload id="marry"></audio>
+<audio src="media/door.mp3" autoplay preload id="doorsnd"></audio>
+<script src="js/jquery.min.js"></script>
+<script src="js/css3d.min.js"></script>
+<script src="js/orienter.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script>
+var $$=function(id){return document.getElementById(id);}
+
+var canvas = document.getElementById("cvs"),ctx = canvas.getContext("2d");
+var x1,y1,lineWidth=30,timeout,totimes = 100,jiange = 30;
+var _offsetX=0, _offsetY=0;
+var img = new Image();
+var manifest=[];
+for(var i=1;i<=10;i++){
+  var _i=i<10?("0"+i):i;
+  manifest.push("a_"+_i+".jpg");
+  manifest.push("b_"+_i+".jpg");
+  manifest.push("c_"+_i+".jpg");
+}
+
+img.src = "img/a94.png";
+img.onload = function(){
+  ctx.drawImage(img,0,0,canvas.width,canvas.height)
+  tapClip();
+} 
+function tapClip(){
+  var hastouch = "ontouchstart" in window?true:false,
+      tapstart = hastouch?"touchstart":"mousedown",
+      tapmove = hastouch?"touchmove":"mousemove",
+      tapend = hastouch?"touchend":"mouseup";
+
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+  ctx.lineWidth = lineWidth*2;
+  ctx.globalCompositeOperation = "destination-out";
+
+  // ctx.save();
+  // ctx.beginPath();
+  // ctx.rect(0,0,100,100);
+  // ctx.fill();
+  // ctx.restore();
+
+  canvas.addEventListener(tapstart , function(e){
+    clearTimeout(timeout)
+    e.preventDefault();
+    
+    x1 = hastouch?e.targetTouches[0].pageX-_offsetX:e.clientX-canvas.offsetLeft;
+    y1 = hastouch?e.targetTouches[0].pageY-_offsetY:e.clientY-canvas.offsetTop;
+   
+    ctx.save();
+    ctx.beginPath()
+    ctx.arc(x1,y1,1,0,2*Math.PI);
+    ctx.fill();
+    ctx.restore();
+    
+    canvas.addEventListener(tapmove , tapmoveHandler);
+    canvas.addEventListener(tapend , function(){
+      canvas.removeEventListener(tapmove , tapmoveHandler);
+      
+      timeout = setTimeout(function(){
+        var imgData = ctx.getImageData(0,0,canvas.width,canvas.height);
+        var dd = 0;
+        for(var x=0;x<imgData.width;x+=jiange){
+          for(var y=0;y<imgData.height;y+=jiange){
+            var i = (y*imgData.width + x)*4;
+            if(imgData.data[i+3] >0){
+              dd++
+            }
+          }
+        }
+        
+        //console.log("__"+dd/(imgData.width*imgData.height/(jiange*jiange)))
+        if(dd/(imgData.width*imgData.height/(jiange*jiange))<0.05){
+          $(".p5-fakeneck .handtip").hide();
+          $(".p5-realneck").addClass("neckmove");
+          $(".p5-txt,.p5-fakeneck,.p5-glow").addClass("fadeOut");
+          $(".p5-openbox").addClass("boxmove");
+          $(".p5-bed3").addClass("show");
+
+          setTimeout(function(){
+            $("title").html("胡芳，嫁给我吧！")
+            $(".p5").addClass("animOut");
+            $(".p6").addClass("show");
+            //$(".p-border").removeClass("zoomOut");
+          },2500)
+          $$("bgm").pause();
+        }
+      },totimes)
+    });
+    function tapmoveHandler(e){
+      clearTimeout(timeout);
+      e.preventDefault();
+      x2 = hastouch?e.targetTouches[0].pageX-_offsetX:e.clientX-canvas.offsetLeft;
+      y2 = hastouch?e.targetTouches[0].pageY-_offsetY:e.clientY-canvas.offsetTop;
+      ctx.save();
+      ctx.moveTo(x1,y1);
+      ctx.lineTo(x2,y2);
+      ctx.stroke();
+      ctx.restore()
+      
+      x1 = x2;
+      y1 = y2;
+    }
+  })
+}
+var s=new C3D.Stage();
+
+s.size(window.innerWidth,window.innerHeight).update();
+s.camera.fov=45;
+$$("stagecontainer").appendChild(s.el);
+
+var rootSp;
+
+function Cylinder(){
+  this.w=0;
+  this.h=0;
+  this.max=0;
+  this.imgindex=0;
+  this.r=0;
+  this.sp=null;
+  this.file="";
+  this.sptype=1;
+}
+Cylinder.prototype.init=function(w,h,max,imgindex,file){
+    this.sptype=1;
+    this.w=w;
+    this.h=h;
+    this.max=max;
+    this.imgindex=imgindex;
+    this.r=r=w/2/Math.tan(Math.PI/max)-3;
+    this.file=file?".png":".jpg";
+    this.sp = new C3D.Sprite();
+    this.sp.position(0, 0, 0).rotation(0,-180,0).update();
+    console.log("r = "+this.r);
+    for (var i = 0; i < this.max; i++) {
+        var _i=(i+15)<this.max?(i+15):(i-5);
+        var p = new C3D.Plane(),
+        angle=-360*_i/this.max+360/this.max/2,
+        n=angle/180*Math.PI;
+        p.size(this.w,this.h).position(Math.sin(n)*this.r,0,Math.cos(n)*this.r).rotation(0,angle+180,0).visibility({
+            alpha:1
+        });
+        if(i!=0&&i<=this.max/2){
+          //var imgi=i-Math.floor(this.max/4);
+          var imgi=i<10?("0"+i):i;
+          p.material({
+              image:"img/"+this.imgindex+"_"+imgi+this.file,
+              repeat:"no-repeat",
+              bothsides:false  
+          })
+        }
+        p.update();
+        this.sp.addChild(p);
+    }
+    return this.sp;
+}
+Cylinder.prototype.initsole=function(r){
+    this.sptype=2;
+    this.r=r;
+    this.sp = new C3D.Sprite();
+    this.sp.position(0, 0, 0).rotation(0,-180,0).update();
+    //parentSp.addChild(this.sp);
+    return this.sp;
+}
+Cylinder.prototype.addEle=function(angle,y,w,h,rx,node,onlychild){
+  var p = new C3D.Plane();
+  var n=angle*Math.PI/180;
+  p.size(w,h).position(Math.sin(n)*this.r,y,Math.cos(n)*this.r).rotation(rx,angle+180,0).visibility({alpha:1}).update();
+  if(node) {
+    if(onlychild){
+      p.el.innerHTML=node.innerHTML;
+    }else{
+      p.el.appendChild(node);
+    }
+  }
+  this.sp.addChild(p);
+  return p;
+}
+
+
+var device={
+    lat:0,
+    lon:-180
+}
+var device2={
+    lat:0,
+    lon:0
+}
+var mc=new Hammer.Manager($$("wrap"));
+var pan=new Hammer.Pan;
+pan.set({
+    threshold: 0,
+    pointers: 0
+})
+mc.add(pan);
+
+var rX=0,rY=0;
+mc.on("pan",function(e){
+  var targetY=rY-(.1*e.deltaX);
+  var targetX=rX+(.1*e.deltaY);
+  var maxvangle=15;
+  targetX=targetX>maxvangle?maxvangle:(targetX<-maxvangle?-maxvangle:targetX);
+
+  var __lon2=(device2.lon-3*e.velocityX)%360;
+  var __lon=(device.lon+__lon2)%360;
+
+  if(__lon>=-245&&__lon<=-115){
+    device2.lon=__lon2;
+  }
+  device2.lat = Math.max(-90, Math.min(90, device2.lat + 3 * e.velocityY));
+})
+var panfix=false
+
+var orilon=0;
+var o=new Orienter();
+o.onOrient=function(obj){
+  device.lat=obj.lat;
+  //$("#test2").text(-obj.lon)
+  if(-obj.lon<=-270&&-obj.lon>-360){
+    orilon=-obj.lon+180;
+  }else if(-obj.lon<=0&&-obj.lon>=-90){
+    orilon=-obj.lon-180;
+  }
+  var __lon=(orilon+device2.lon)%360;
+  if(__lon>=-245&&__lon<=-115){
+    device.lon=orilon;
+  }
+}
+var lon=0,lat=0;
+var stageBG,btnLayer;
+function cylinderInertieAnimation(){
+  lon=(device.lon+device2.lon)%360;
+  lat=.35*(device.lat+device2.lat);
+  var B=0;
+  B=updateSpritePosition(stageBG,lon,lat,.06);
+  updateSpritePosition(btnLayer,lon,lat,.06);
+
+  var q=-350-20*Math.abs(B);
+  if(q<-500) q=-500;
+  rootSp.z+=.1*(q-rootSp.z);
+  rootSp.update();
+  if(!stopAni){
+  	requestAnimationFrame(cylinderInertieAnimation);
+	}
+}
+
+var stopAni;
+function updateSpritePosition(obj,lon,lat,ease){
+    ease=ease||.35;
+    if(lon-obj.rotationY>180){
+        obj.rotationY+=360;
+    }
+    if(lon-obj.rotationY<-180){
+        obj.rotationY-=360;
+    }
+
+    //lon=Math.max(-65,Math.min(lon,65));
+    lat=Math.max(-10,Math.min(lat,10));
+    //console.log("lon: "+lon+"__device.lon:"+device.lon+" device.lat:"+device.lat+"__device2.lon:"+device2.lon+" device2.lat:"+device2.lat);
+    //$("#test").html("lon: "+lon+"<br />device.lon:"+device.lon+"<br />device2.lon:"+device2.lon)
+    var B=lon-obj.rotationY,
+    G=lat-obj.rotationX;
+
+    if(Math.abs(B)<.1){
+        obj.rotationY=lon;
+    }else{
+        obj.rotationY+=B*ease;
+    }
+    if(Math.abs(G)<.1){
+        obj.rotationX=lat;
+    }else{
+        obj.rotationX+=G*ease;
+    }
+    obj.updateT();
+    return B;
+}
+function jtAni(ry,rx,endfun){
+	JT.to(stageBG,.5,{rotationY:ry,rotationX:rx,onUpdate:function(){stageBG.updateT();},onEnd:function(){if(endfun) endfun();}})
+	JT.to(btnLayer,.5,{rotationY:ry,rotationX:rx,onUpdate:function(){btnLayer.updateT();}})
+}
+function p4click1(){
+	stopAni=true;
+	setTimeout(function(){
+    stage.endAni(function(){
+      stage.removestage();
+      stage.loadStage2();
+      stage.beginingAni(function(){
+        $(".p4-mask,.stagetip2").show();
+        p4show=2;
+        setTimeout(function(){
+          p4maskshow();
+        },3000);
+      });
+    })
+	},4000);
+}
+var stageW,stageH;
+var stage={
+	reset:function(){
+		device={
+		  lat:0,
+		  lon:-180
+		}
+		device2={
+		  lat:0,
+		  lon:0
+		}
+		lon=-180;
+    lat=0;
+		rX=rY=0;
+	},
+	stageFunc1:function(){
+		$("#p4-1-1").click(function(){
+			$(this).addClass("btnActive");
+			$(this).find(".handtip").hide();
+			$(this).find(".p4-glowtip").hide();
+			p4click1();
+			jtAni(-245,10);
+		})
+		$("#p4-1-2").click(function(){
+			$(this).addClass("btnActive");
+			$(this).find(".handtip").hide();
+			$(this).find(".p4-glowtip").hide();
+			p4click1();
+			jtAni(-115,10);
+		})
+	},
+	stageFunc2:function(){
+		$("#p4-2").click(function(){
+			$(this).addClass("btnActive");
+			$(this).find(".handtip").hide();
+			$(this).find(".p4-glowtip").hide();
+			stopAni=true;
+      jtAni(-178,-9.5);
+     
+			setTimeout(function(){
+        stage.endAni(function(){
+          stage.removestage();
+          stage.loadStage3();
+          stage.beginingAni(function(){
+            $(".p4-mask,.stagetip3").show();
+            p4show=3;
+            setTimeout(function(){
+              p4maskshow();
+            },3000);
+          },-1.5);
+        })
+			},4000);
+		})
+	},
+	stageFunc3:function(){
+		$("#p4-3").click(function(){
+			$(this).addClass("btnActive");
+			$(this).find(".handtip").hide();
+			$(this).find(".p4-glowtip").hide();
+			stopAni=true;
+			jtAni(-142,4);
+			setTimeout(function(){
+				jtAni(-182,12,function(){
+					$(".p5").addClass("show");
+					setTimeout(function(){
+						stage.removestage();
+						$(".p3,.p4").remove();
+            mc.destroy();
+					},500);
+				})
+			},4000);
+		})
+	},
+	loadStage1:function(){
+		//s.material({color:"#7e1005"}).update();
+    rootSp=new C3D.Sprite();
+    rootSp.position(0,0,730).update();
+    s.addChild(rootSp);
+
+		var cylinder01=new Cylinder();
+		stageBG=cylinder01.init(252,1554,20,"a");//r=772.57
+		rootSp.addChild(stageBG);
+
+		var cylinder02=new Cylinder();
+		btnLayer=cylinder02.initsole(750);
+		cylinder02.addEle(77,-250,254,752,2.5,$$("p4-1-1"));
+		cylinder02.addEle(282,-250,254,752,2.5,$$("p4-1-2"));
+		rootSp.addChild(btnLayer);
+	},
+  loadStage2:function(){
+  	//s.material({color:"#b82e29"}).update();
+    rootSp=new C3D.Sprite();
+    rootSp.position(0,0,730).update();
+    s.addChild(rootSp);
+
+    var cylinder01=new Cylinder();
+    stageBG=cylinder01.init(291,1555,20,"b");
+    rootSp.addChild(stageBG);
+
+    var cylinder02=new Cylinder();
+		btnLayer=cylinder02.initsole(800);
+		cylinder02.addEle(0,170,248,443,0,$$("p4-2"));
+		rootSp.addChild(btnLayer);
+  },
+  loadStage3:function(){
+  	//s.material({color:"#e9e1da"}).update();
+    rootSp=new C3D.Sprite();
+    rootSp.position(0,0,730).update();
+    s.addChild(rootSp);
+
+    var cylinder01=new Cylinder();
+    stageBG=cylinder01.init(236,1554,20,"c");
+    rootSp.addChild(stageBG);
+
+    var cylinder02=new Cylinder();
+		btnLayer=cylinder02.initsole(700);
+		cylinder02.addEle(324,180,290,95,0,$$("p4-3"));
+		rootSp.addChild(btnLayer);
+  },
+	beginingAni:function(func,fixangle){
+		stopAni=false;
+		JT.fromTo(rootSp,.5,{
+			z:730,
+		},{
+      //rotationX:-180,
+      rotationY:(fixangle?fixangle:0),//+180,
+			z:-400,
+			ease:JT.Quad.Out,
+			delay:.5,
+			onUpdate:function(){
+				rootSp.updateT();
+			},
+			onStart:function(){
+				rootSp.visibility({alpha:1}).updateV();
+			},
+			onEnd:function(){
+				setTimeout(function(){
+					o.init();
+					//cylinderInertieAnimation();
+					if(func) func();
+				},500);
+			}
+		})
+	},
+  endAni:function(func){
+    stopAni=true;
+    JT.to(rootSp,.9,{
+      rotationZ:360,
+      z:730,
+      ease:JT.Quad.In,
+      onUpdate:function(){
+        rootSp.updateT();
+      },
+      onEnd:function(){
+        if(func) func()
+      }
+    })
+  },
+	removestage:function(){
+		stopAni=true;
+		s.removeChild(rootSp);
+    o.destroy();
+    stage.reset();
+	}
+}
+function countdown(time1,time2,func){
+	var timetxt=$$("timetxt");
+	var intervalId=window.setInterval(function(){
+		if(--time1>=time2){
+			timetxt.innerText=time1;
+		}else{
+			func();
+			window.clearInterval(intervalId);
+		}
+	},5);
+}
+var p4show=0;
+function p4maskshow(){
+  if(p4show==1){
+    stage.stageFunc1();
+  }else if(p4show==2){
+    stage.stageFunc2();
+  }else if(p4show==3){
+    stage.stageFunc3();
+  }
+  if(p4show){
+    $(".p4-mask,.stagetip").hide();
+    stage.reset();
+    cylinderInertieAnimation();
+    p4show=0;
+  }
+}
+$(function(){
+  document.body.addEventListener('touchmove', function(e) {
+      e.stopPropagation();//阻止默认事件
+      e.preventDefault();//阻止冒泡
+    });
+  stageW=$(window).width();
+  stageH=$(window).height();
+  $(window).resize(function(){
+    setTimeout(function(){
+      stageW=$(window).width();
+      stageH=$(window).height();
+      $("#wrap").height(stageH);
+      //alert(stageW+"__"+stageH)
+      _offsetX=stageW*.5+parseInt($("#p5-circ1").css("margin-left"))+parseInt($("#cvs").css("left"));
+      _offsetY=(stageH-1136)/2+parseInt($("#p5-circ1").css("top"))+parseInt($("#p5-circ1").css("margin-top"))+parseInt($("#cvs").css("top"));
+    },35);
+    
+  }).triggerHandler("resize");
+
+  _offsetX=stageW*.5+parseInt($("#p5-circ1").css("margin-left"))+parseInt($("#cvs").css("left"));
+  _offsetY=(stageH-1136)/2+parseInt($("#p5-circ1").css("top"))+parseInt($("#p5-circ1").css("margin-top"))+parseInt($("#cvs").css("top"));
+  //$(".p5,.p5-container2").show();
+  
+  //$(".p6").show();
+   // $(".p4").show();
+   // stage.loadStage3();
+   // stage.beginingAni();
+   // stage.stageFunc3();
+   // cylinderInertieAnimation();
+  $(".yesido").click(function(){
+    bgm=document.getElementById("marry");
+    $$("bgm").pause();
+    $$("marry").play();
+    $(".marrybox").hide();
+    $(".secc").show();
+  })
+  $(".noidont").click(function(){
+    $(".marrybox").addClass("shake");
+    setTimeout(function(){
+      //$(".marrybox").removeClass("shake");
+      $(".noidont").hide();
+    },1100);
+  })
+	$(".p1-btn").click(function(){
+    document.getElementById("bgm").play();
+    $(".sndctrl").show();
+    $(this).hide();
+    $(".batholder-box").show();
+    $(".p7").show();    
+    setTimeout(function(){
+      $(".p1").addClass("animOut");
+      $(".p7").addClass("fadeOut");
+      setTimeout(function(){
+        $(".p1").remove();
+      },100);
+
+        $(".p2").addClass("show");
+      
+      setTimeout(function(){
+      countdown(2017,1772,function(){
+        $(".p2").addClass("animOut");
+        setTimeout(function(){
+          $(".p2").remove();
+        },2000);
+
+        $(".p3").addClass("show");
+        setTimeout(function(){
+          $(".p7").remove();
+          $(".p4").addClass("show");
+          $(".p-border").addClass("zoomOut");
+          stage.loadStage1();
+          stage.beginingAni(function(){
+            $(".p4-mask,.stagetip1").show();
+            p4show=1;
+            setTimeout(function(){
+              p4maskshow();
+            },4500);
+          });
+        },2000);
+      });
+    },1500);
+
+    loadResources(manifest,function(n,i,img){
+      $("#loading p").html("loading&nbsp;" + Math.round(i * 100 / n) + "%");
+      if (n != i) return;
+      console.log("load stage img ok");
+    })
+    },1100);
+
+    
+
+	});
+	
+	$(".p5-closedbox").click(function(){
+		$(".p5-closedbox").addClass("open");
+		$(".p5-container1 .handtip").hide();
+		setTimeout(function(){
+			$(".p5-container2").show();
+		},2000);
+	})
+	var award = null;
+	$(".p6-btn1").click(function(){
+		$(this).addClass("disabled");
+		$.post("search_award.php",null,function(data){
+			if(1==data.result){
+				award=parseInt(data.award);
+				switch (award){
+					case 1:
+					$(".p6-prizeimg").attr("src","img/a80.png");
+					$(".prizename").text("终极大奖“福佑奇缘”项链");
+					break;
+					case 2:
+					$(".p6-prizeimg").attr("src","img/a81.png");
+					$(".prizename").text("电视果");
+					break;
+					case 3:
+					$(".p6-prizeimg").attr("src","img/a82.png");
+					$(".prizename").text("爱奇艺会员卡（月卡）");
+					break;
+					case 4:
+					$(".p6-prizeimg").attr("src","img/a82.png");
+					$(".prizename").text("爱奇艺会员卡（体验卡）");
+					break;
+					case 5:
+					$(".p6-prizeimg").attr("src","img/a83.png");
+					$(".prizename").text("在野Flower");
+					break;
+					case 6:
+					$(".p6-prizeimg").attr("src","img/a84.png");
+					$(".prizename").text("首汽体验券");
+					break;
+					default:
+					console.log("data_award error");
+					break;
+				}
+				$(".p6-1").hide();
+				$(".p6-2").show();
+			}else{
+				console.log(data);
+			}
+		},"json")
+		// $(".p6-1").hide();
+		// $(".p6-2").show();
+	})
+	$(".p6-btn3").click(function(){
+		$(".bmask1").show();
+		$(".p-border").addClass("zoomOut");
+	})
+	$(".bclose1").click(function(){
+		$(".bmask1").hide();
+		$(".p-border").removeClass("zoomOut");
+	})
+	$(".bclose2").click(function(){
+		$(".bmask2").hide();
+		$(".p-border").removeClass("zoomOut");
+	})
+	$(".bclose3").click(function(){
+		$(".bmask3").hide();
+		$(".p-border").removeClass("zoomOut");
+	})
+	$(".p6-2-share").click(function(){
+		$(".bmask4").show();
+	})
+	$(".bmask4").click(function(){
+		$(".bmask4").hide();
+	})
+	$(".p6-2-home").click(function(){
+		//location.reload();
+    var len = window.location.href.indexOf("?");
+    if(len>0){
+      window.location.href=window.location.href.substring(0,len)+"?"+Math.random();
+    }else{
+      window.location.href=window.location.href+"?"+Math.random();
+    }
+	})
+	$(".p6-subbtn").click(function(){
+		var mobile=$("#mobile").val();
+		if(/1\d{10}/.test(mobile)){
+			$.post("submit_award.php",{
+				mobile:mobile
+			},function(data){
+				if(1==data.result){
+          if(award == 6){
+            $(".p6-3-subok .msgtxt").css("margin-top","125px");
+            $(".msgtxt-sq").show();
+          }else{
+            $(".p6-3-subok .msgtxt").css("margin-top","156px");
+            $(".msgtxt-sq").hide();
+          }
+          $(".p6-3").show();
+          $(".p6-2").hide();
+					//提交成功
+				}else if(2==data.result){
+					$(".bmask2").show();
+					//已经领过奖
+				}else if(3==data.result){
+					$(".bmask3").show();	
+					//虚拟领奖失败
+				}else{
+					console.log(data);
+				}
+			},"json");
+		}else{
+      alert("请填写正确的手机号码！");
+    }
+	})
+	var bgm=document.getElementById("bgm");
+	$(".sndctrl").click(function(){
+	  if(bgm.paused){
+	    bgm.play();
+	    $(this).find("i").hide();
+	  }else{
+	    bgm.pause();
+	    $(this).find("i").show();
+	  }
+	})
+
+})
+autoPlayAudio2();
+function autoPlayAudio2() {
+  window.onload = function() {
+    //alert(typeof WeixinJSBridge);
+    if(typeof WeixinJSBridge!="undefined"){
+      WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
+        // 在这里拿到 e.err_msg, 这里面就包含了所有的网络类型
+        //alert(e.err_msg);
+        f()
+      });
+    }else{
+
+      $(document).on("WeixinJSBridgeReady", function() {
+        if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+          f()
+        } else {
+          var e = document.addEventListener
+            , d = document.attachEvent;
+          if (e) {
+            e("WeixinJSBridgeReady", f, false)
+          } else {
+            if (d) {
+              d("WeixinJSBridgeReady", f);
+              d("onWeixinJSBridgeReady", f)
+            }
+          }
+        }
+      })
+    }
+    function f(){
+      //document.getElementById('bgm').play();
+
+      document.getElementById('doorsnd').play();
+      document.getElementById("doorsnd").volume = 1;
+
+    }
+  };
+}
+function resize() {
+  s.size(window.innerWidth, window.innerHeight).update();
+}
+window.onresize = function () {
+  resize();
+};
+resize();
+
+function loadResources(urls, progress) {
+  var loadedCount = 0;
+  var loaded = function () {
+    ++loadedCount;
+    if (progress) progress(urls.length, loadedCount, this);
+  };
+  for (var i = 0; i < urls.length; ++i) {
+    if (!urls[i]) {
+      loaded();
+      return;
+    }
+    var img = new Image();
+    img.onload = loaded;
+    img.onabort = loaded;
+    img.onerror = loaded;
+    img.src =  "img/"+urls[i];
+  }
+}
+
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1dbadca14983d7cdb81af405211e6d42";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

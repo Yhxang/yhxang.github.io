@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>产品促销页</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+      var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link href="css/swiper.min.css" rel="stylesheet">
+<style>
+body{margin: 0; padding:0; }
+.swiper-container{width: 640px;}
+.swiper-slide img{width: 100%; height: 100%;}
+</style>
+</head>
+<body>
+<div id="wrap" class="wrap">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="img/c01.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/c02.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/c03.jpg?ver=1">
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/zepto.min.js"></script>
+<script src="js/swiper.min.js"></script> 
+<script>
+$(function(){
+  var stageH=$(window).height();
+  $("#wrap,.swiper-container").height(stageH);
+  var nexttip=$(window.parent.document).find(".nexttip");
+  var menubtn=$(window.parent.document).find(".menu-switch-on");
+  var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'vertical',
+    onSlideChangeEnd:function(_this){
+      if(_this.activeIndex==2){
+        nexttip.removeClass("show");
+        menubtn.addClass("pulse");
+      }else{
+        nexttip.addClass("show");
+        menubtn.removeClass("pulse");
+      }
+    }
+  }) 
+})
+</script>
+</body>
+</html>

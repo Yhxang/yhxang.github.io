@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>欧洲杯看我的 猜比分看你的</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link rel="stylesheet" href="css/swiper.min.css">
+<link href="css/style.css?ver=1.5" rel="stylesheet">
+
+</head>
+<body onload="init()">
+  <div id="wrapper">
+    <img data-src="img/a01.jpg" width="640" height="1136" alt="" class="bg">
+    <canvas id="canvas" width="640" height="1136" ></canvas>
+    <img data-src="img/a01.png" alt="" class="logo">
+    <div class="p2 section">
+      <div class="swiper-container game">
+        <div class="swiper-wrapper"></div>
+        <img data-src="img/a03.png" width="52" height="123" alt="" class="swiper-button-prev">
+        <img data-src="img/a04.png" width="52" height="123" alt="" class="swiper-button-next">
+      </div>
+      <div class="swiper-container dates">
+        <div class="swiper-wrapper"></div>
+      </div>
+      <img data-src="img/a05.png" width="223" height="62" alt="" class="subguess">
+    </div>
+    <div class="p3 section">
+      <form action="#" id="userform" onsubmit="return false;">
+        <img data-src="img/a09.png" width="621" height="581" alt="" >
+        <input type="text" name="username" id="username">
+        <input type="tel" name="mobile" id="mobile">
+        <button id="smt"><img data-src="img/a08.png" width="224" height="87" alt=""></button>
+      </form>
+      <div class="subsuc">
+        <img data-src="img/a11.png" width="625" height="897" alt="">
+        <a href="http://mshop.hisense.com" class="getprize"><img data-src="img/a10.png" width="180" height="70" alt=""></a>
+        <img data-src="img/a12.png" width="120" height="139" alt="" class="qr1">
+        <!-- <img data-src="img/a13.png" alt="" class="qr2"> -->
+      </div>
+    </div>
+    <div class="swiper-container banner">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="http://mshop.hisense.com">
+          <img data-src="img/a14.png" width="640" height="95" alt="" class="ad">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="http://mshop.hisense.com">
+          <img data-src="img/a15.png" width="640" height="94" alt="" class="ad">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <ul class="winner">
+            <li>Hanson 1804****590</li>
+            <li>丁杰 1526****519</li>
+            <li>乐乐 1319****769</li>
+            <li>九月 1834****668</li>
+            <li>于潇 1863****271</li>
+            <li>侯勇 1362****294</li>
+            <li>傅女士 1358****989</li>
+            <li>刘兴彪 1370****510</li>
+            <li>刘悦 1598****705</li>
+            <li>刘芮含 1502****622</li>
+            <li>则拉兰 1377****010</li>
+            <li>叶世玉 1836****106</li>
+            <li>叶文潇 1518****264</li>
+            <li>吴喜顺 1324****557</li>
+            <li>吴梓琦 1304****393</li>
+            <li>吴涛 1580****273</li>
+            <li>吴骁祚 1527****966</li>
+            <li>周兵 1328****769</li>
+            <li>周祥祥 1841****767</li>
+          </ul>
+          <div class="winnerleft">
+            <img data-src="img/a16.png" width="86" height="68" alt="">
+            <p class="wdate">7月01日</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/createjs-2015.11.26.min.js"></script>
+<script src="ani.js?ver=1.0"></script>
+<script src="loading.js?ver=1.0"></script>
+
+<script>
+var canvas, stage, exportRoot0, exportRoot;
+function init() {
+  $("#wrapper").height($(window).height())
+  $(window).resize(App.resize);
+
+  createjs.MotionGuidePlugin.install();
+  canvas = document.getElementById("canvas");
+  images = images||{};
+  var loader = new createjs.LoadQueue(false);
+  loader.addEventListener("fileload", handleFileLoad0);
+  loader.addEventListener("complete", handleComplete0);
+  loader.loadManifest(lib0.properties.manifest);
+}
+function handleFileLoad0(evt) {
+  if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+function handleComplete0(evt) {
+  exportRoot0 = new lib0.loading();
+
+  stage = new createjs.Stage(canvas);
+  createjs.Touch.enable(stage);
+  stage.addChild(exportRoot0);
+  stage.update();
+
+  createjs.Ticker.setFPS(lib0.properties.fps);
+  createjs.Ticker.addEventListener("tick", stage);
+  loadani();
+}
+
+function loadani(){
+  var loader = new createjs.LoadQueue(false);
+  loader.addEventListener("fileload", handleFileLoad);
+  loader.addEventListener("complete", handleComplete); 
+  loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt) {
+  if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+  exportRoot0.loading.num.text=Math.floor(100*evt.target._numItemsLoaded/evt.target._numItems)+"%";
+}
+function handleComplete(evt){
+  exportRoot = new lib.ani();
+  stage.removeChild(exportRoot0);
+  stage.addChild(exportRoot);
+  $("img").each(function(){
+    var datasrc=$(this).data("src");
+    if(datasrc){
+      $(this).attr("src",datasrc);
+    }
+  })
+  App.resize();
+  App.config();
+}
+var res = [];
+//6.11
+res.push({
+  'date': '20160611',
+  'team': [{
+    'time': 'Sat Jun 11 03:00:00 +0800 2016',
+    'teama': '法国',
+    'teamb': '罗马尼亚',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Sat Jun 11 21:00:00 +0800 2016',
+    'teama': '阿尔巴尼亚',
+    'teamb': '瑞士',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  }]
+});
+
+//6.12
+res.push({
+  'date': '20160612',
+  'team': [{
+    'time': 'Sun Jun 12 00:00:00 +0800 2016',
+    'teama': '威尔士',
+    'teamb': '斯洛伐克',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Sun Jun 12 03:00:00 +0800 2016',
+    'teama': '英格兰',
+    'teamb': '俄罗斯',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Sun Jun 12 21:00:00 +0800 2016',
+    'teama': '土耳其',
+    'teamb': '克罗地亚',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  }]
+});
+
+//6.13
+res.push({
+  'date': '20160613',
+  'team': [{
+    'time': 'Mon Jun 13 00:00:00 +0800 2016',
+    'teama': '波兰',
+    'teamb': '北爱尔兰',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Mon Jun 13 03:00:00 +0800 2016',
+    'teama': '德国',
+    'teamb': '乌克兰',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Mon Jun 13 21:00:00 +0800 2016',
+    'teama': '西班牙',
+    'teamb': '捷克',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  }]
+});
+
+//6.14
+res.push({
+  'date': '20160614',
+  'team': [{
+    'time': 'Tue Jun 14 00:00:00 +0800 2016',
+    'teama': '爱尔兰',
+    'teamb': '瑞典',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Tue Jun 14 03:00:00 +0800 2016',
+    'teama': '比利时',
+    'teamb': '意大利',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  }]
+});
+
+//6.15
+res.push({
+  'date': '20160615',
+  'team': [{
+    'time': 'Wed Jun 15 00:00:00 +0800 2016',
+    'teama': '奥地利',
+    'teamb': '匈牙利',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Wed Jun 15 03:00:00 +0800 2016',
+    'teama': '葡萄牙',
+    'teamb': '冰岛',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Wed Jun 15 21:00:00 +0800 2016',
+    'teama': '俄罗斯',
+    'teamb': '斯洛伐克',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  }]
+});
+
+//6.16
+res.push({
+  'date': '20160616',
+  'team': [{
+    'time': 'Thu Jun 16 00:00:00 +0800 2016',
+    'teama': '罗马尼亚',
+    'teamb': '瑞士',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Thu Jun 16 03:00:00 +0800 2016',
+    'teama': '法国',
+    'teamb': '阿尔巴尼亚',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Thu Jun 16 21:00:00 +0800 2016',
+    'teama': '英格兰',
+    'teamb': '威尔士',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  }]
+});
+
+//6.17
+res.push({
+  'date': '20160617',
+  'team': [{
+    'time': 'Fri Jun 17 00:00:00 +0800 2016',
+    'teama': '乌克兰',
+    'teamb': '北爱尔兰',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Fri Jun 17 03:00:00 +0800 2016',
+    'teama': '德国',
+    'teamb': '波兰',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Fri Jun 17 21:00:00 +0800 2016',
+    'teama': '意大利',
+    'teamb': '瑞典',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  }]
+});
+
+//6.18
+res.push({
+  'date': '20160618',
+  'team': [{
+    'time': 'Sat Jun 18 00:00:00 +0800 2016',
+    'teama': '捷克',
+    'teamb': '克罗地亚',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Sat Jun 18 03:00:00 +0800 2016',
+    'teama': '西班牙',
+    'teamb': '土耳其',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Sat Jun 18 21:00:00 +0800 2016',
+    'teama': '比利时',
+    'teamb': '爱尔兰',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  }]
+});
+
+//6.19
+res.push({
+  'date': '20160619',
+  'team': [{
+    'time': 'Sun Jun 19 00:00:00 +0800 2016',
+    'teama': '冰岛',
+    'teamb': '匈牙利',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Sun Jun 19 03:00:00 +0800 2016',
+    'teama': '葡萄牙',
+    'teamb': '奥地利',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  }]
+});
+
+//6.20
+res.push({
+  'date': '20160620',
+  'team': [{
+    'time': 'Mon Jun 20 03:00:00 +0800 2016',
+    'teama': '罗马尼亚',
+    'teamb': '阿尔巴尼亚',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Mon Jun 20 03:00:00 +0800 2016',
+    'teama': '瑞士',
+    'teamb': '法国',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  }]
+});
+
+//6.21
+res.push({
+  'date': '20160621',
+  'team': [{
+    'time': 'Tue Jun 21 03:00:00 +0800 2016',
+    'teama': '俄罗斯',
+    'teamb': '威尔士',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Tue Jun 21 03:00:00 +0800 2016',
+    'teama': '斯洛伐克',
+    'teamb': '英格兰',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  }]
+});
+
+//6.22
+res.push({
+  'date': '20160622',
+  'team': [{
+    'time': 'Wed Jun 22 00:00:00 +0800 2016',
+    'teama': '乌克兰',
+    'teamb': '波兰',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Wed Jun 22 00:00:00 +0800 2016',
+    'teama': '北爱尔兰',
+    'teamb': '德国',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Wed Jun 22 03:00:00 +0800 2016',
+    'teama': '捷克',
+    'teamb': '土耳其',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Wed Jun 22 03:00:00 +0800 2016',
+    'teama': '克罗地亚',
+    'teamb': '西班牙',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  }]
+});
+
+//6.23
+res.push({
+  'date': '20160623',
+  'team': [{
+    'time': 'Thu Jun 23 00:00:00 +0800 2016',
+    'teama': '冰岛',
+    'teamb': '奥地利',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Thu Jun 23 00:00:00 +0800 2016',
+    'teama': '匈牙利',
+    'teamb': '葡萄牙',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Thu Jun 23 03:00:00 +0800 2016',
+    'teama': '意大利',
+    'teamb': '爱尔兰',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  },
+  {
+    'time': 'Thu Jun 23 03:00:00 +0800 2016',
+    'teama': '瑞典',
+    'teamb': '比利时',
+    'scorea': '',
+    'scoreb': '',
+    'already': -1
+  }]
+});
+
+//1/8决赛
+//6.25
+res.push( { 'date':'20160625', 'team':[ { 'time':'Sat Jun 25 21:00:00 +0800 2016', 'teama':'瑞士', 'teamb':'波兰', 'scorea':'', 'scoreb':'' , 'already': -1 } ] } );
+										 
+//6.26
+res.push( { 'date':'20160626', 'team':[ { 'time':'Sun Jun 26 00:00:00 +0800 2016', 'teama':'威尔士', 'teamb':'北爱尔兰', 'scorea':'', 'scoreb':'' , 'already':-1},
+										{ 'time':'Sun Jun 26 03:00:00 +0800 2016', 'teama':'克罗地亚', 'teamb':'葡萄牙', 'scorea':'', 'scoreb':'', 'already':-1 },
+										 { 'time':'Sun Jun 26 21:00:00 +0800 2016', 'teama':'法国', 'teamb':'爱尔兰', 'scorea':'', 'scoreb':'' , 'already':-1} ] } );		
+										 
+//6.27
+res.push( { 'date':'20160627', 'team':[ { 'time':'Mon Jun 27 00:00:00 +0800 2016', 'teama':'德国', 'teamb':'斯洛伐克', 'scorea':'', 'scoreb':'' , 'already':-1},
+										 { 'time':'Mon Jun 27 03:00:00 +0800 2016', 'teama':'匈牙利', 'teamb':'比利时', 'scorea':'', 'scoreb':'' , 'already':-1} ] } );		
+										 
+//6.28
+res.push( { 'date':'20160628', 'team':[ { 'time':'Tue Jun 28 00:00:00 +0800 2016', 'teama':'意大利', 'teamb':'西班牙', 'scorea':'', 'scoreb':'' , 'already':-1},
+										 { 'time':'Tue Jun 28 03:00:00 +0800 2016', 'teama':'英格兰', 'teamb':'冰岛', 'scorea':'', 'scoreb':'' , 'already':-1} ] } );		
+
+//7.01
+res.push( { 'date':'20160701', 'team':[ { 'time':'Fri Jul 1 03:00:00 +0800 2016', 'teama':'波兰', 'teamb':'葡萄牙', 'scorea':'', 'scoreb':'' , 'already':-1}] } );
+//7.02
+res.push( { 'date':'20160702', 'team':[ { 'time':'Sat Jul 2 03:00:00 +0800 2016', 'teama':'威尔士', 'teamb':'比利时', 'scorea':'', 'scoreb':'' , 'already':-1}] } );
+//7.03
+res.push( { 'date':'20160703', 'team':[ { 'time':'Sun Jul 3 03:00:00 +0800 2016', 'teama':'德国', 'teamb':'意大利', 'scorea':'', 'scoreb':'' , 'already':-1}] } );
+//7.04
+res.push( { 'date':'20160704', 'team':[ { 'time':'Mon Jul 4 03:00:00 +0800 2016', 'teama':'法国', 'teamb':'冰岛', 'scorea':'', 'scoreb':'' , 'already':-1}] } );
+ //7.07
+res.push( { 'date':'20160707', 'team':[ { 'time':'Thu Jul 7 03:00:00 +0800 2016', 'teama':'葡萄牙', 'teamb':'威尔士', 'scorea':'', 'scoreb':'' , 'already':-1}] } );
+//7.08
+res.push( { 'date':'20160708', 'team':[ { 'time':'Fri Jul 8 03:00:00 +0800 2016', 'teama':'德国', 'teamb':'法国', 'scorea':'', 'scoreb':'' , 'already':-1}] } );
+//7.11
+res.push( { 'date':'20160711', 'team':[ { 'time':'Mon Jul 11 03:00:00 +0800 2016', 'teama':'葡萄牙', 'teamb':'法国', 'scorea':'', 'scoreb':'' , 'already':-1}] } );
+
+var App={
+  config:function(){
+    App.fillSwiper();
+    App.qureyRst();
+    App.inituserform();
+  },
+  fillSwiper:function(){
+    var gameHtml=dateHtml='';
+    for(var i=0;i<res.length;i++){
+      gameHtml+='<div class="swiper-slide" id="d'+res[i].date+'" data-date="'+res[i].date+'">';
+      var team=res[i].team;
+      for(var j=0;j<team.length;j++){
+        gameHtml+=replaceTemp({
+          time:team[j].time,
+          teamA:checkEnglish(team[j].teama),
+          teamB:checkEnglish(team[j].teamb)
+        })
+      }
+      gameHtml+='</div>';
+      dateHtml+='<div class="swiper-slide" data-date="'+res[i].date+'">';
+      dateHtml+=res[i].date.substr(-3,1)+'.'+res[i].date.substr(-2);
+      dateHtml+='</div>'
+    }
+    $(".game .swiper-wrapper").html(gameHtml);
+    $(".dates .swiper-wrapper").html(dateHtml).width((45+60)*res.length-60);
+  },
+  qureyRst:function(){
+    var username=getCookie('username');
+    var mobile=getCookie('mobile');
+    $("#username").val(username);
+    $("#mobile").val(mobile);
+    if (username!=null && username!=""){
+      $.post("search_bet.php",{
+	  //$.post("http://euro2016.hisense.com/search_bet.php?ran="+Math.random(),{
+        username:username,
+        mobile:mobile
+      },function ($data){
+        App.fillGuessedScore($data);
+        App.queryLucky();
+      },'json');
+    }else{
+      App.queryLucky();
+    }
+  },//用户猜测结果查询
+  queryLucky:function(){
+    $.post('search_winner.php',{
+      v:1
+    },function ($data){
+      //console.log($data);
+      App.fillFinishedScore($data);
+      App.setTodayScoreStyle($data);
+      App.fixPastBug();
+    },'json');
+  },//真实比赛结果和中奖名单查询
+  fillGuessedScore: function($data){
+    var guessedbet=$data;
+    var _data=guessedbet.data;
+    if(!_data) return;
+    for(var i=0;i<_data.length;i++){
+      var _datematch=$("#d"+_data[i].date);
+      var _teams=_data[i].team;
+      for(var j=0;j<_teams.length;j++){
+        _datematch.find('.'+checkEnglish(_teams[j].teama)).val(_teams[j].scorea).addClass("guessed");
+        _datematch.find('.'+checkEnglish(_teams[j].teamb)).val(_teams[j].scoreb).addClass("guessed");
+      }
+    }
+  },//显示用户猜的比分
+  fillFinishedScore:function ($data){
+    var _data=$data.score;
+    for(var i=0;i<_data.length;i++){
+      var _datematch=$("#d"+_data[i].date).addClass("past");
+      var _teams=_data[i].team;
+      for(var j=0;j<_teams.length;j++){
+        _datematch.find('.'+checkEnglish(_teams[j].teama)).val(_teams[j].scorea).removeClass("disabled").attr('readonly','readonly').parent().addClass("finished");
+        _datematch.find('.'+checkEnglish(_teams[j].teamb)).val(_teams[j].scoreb).removeClass("disabled").attr('readonly','readonly');
+      }
+    }
+  },//显示已踢完的比赛结果
+  setTodayScoreStyle:function ($data){
+    var date=new Date($data.date);
+    //date=new Date("Sun Jun 12 22:27:15 +0800 2016");//请注销掉
+    var month=date.getMonth()+1;
+    App.todaystring=date.getFullYear()+""+(month<10?("0"+month):month)+""+(date.getDate()<10?("0"+date.getDate()):date.getDate());
+    for(var i=0;i<res.length;i++){
+      if(res[i].date==App.todaystring){
+        App.todayindex=i;
+        break;
+      }
+    }
+    if(typeof App.todayindex=='undefined'){
+      var _score=$data.score;
+      App.todaystring=_score[_score.length-1].date;
+      for(var i=0;i<=res.length;i++){
+        if(res[i].date==App.todaystring){
+          App.todayindex=i;
+          break;
+        }
+      }
+    }
+    $("#d"+App.todaystring).removeClass("past").addClass("today").find(".scorearea").each(function(){
+      if(date>new Date($(this).data("time"))){
+        $(this).find("input").addClass("disabled").attr("readonly","readonly");
+      }
+    })
+  },//当天不可猜，形式变灰
+  fixPastBug:function(){
+    $(".game .swiper-slide.past .scorearea").not(".finished").find("input").addClass("disabled").attr("readonly","readonly");
+  },//防止后台比分未更新导致还可以填写昨天比分的问题
+  inituserform:function(){
+    var subguessdata;
+    $(".subguess").click(function(){
+      subguessdata={
+        type:0,
+        username:"",
+        mobile:"",
+        data:[]
+      };
+      $(".game .swiper-slide").not(".past").each(function(e){
+        var daydata={};
+        daydata.date=String($(this).data("date"));
+        daydata.team=[];
+        var _len=$(this).find(".scorearea").filter(function(){
+          return !$(this).hasClass("finished")&&$(this).find(".scorea").val()!=""&&$(this).find(".scoreb").val()!="";
+        }).each(function(e){
+          daydata.team.push({
+            time:$(this).data("time"),
+            teama:translatemap[$(this).find(".scorea").attr("name")],
+            teamb:translatemap[$(this).find(".scoreb").attr("name")],
+            scorea:$(this).find(".scorea").val(),
+            scoreb:$(this).find(".scoreb").val()
+          })
+        }).length;
+        if(_len!=0) subguessdata.data.push(daydata);
+      })
+      //console.log(JSON.stringify(subguessdata))
+      $(".p2").hide();
+      $(".p3").show();
+    });
+
+    $("#smt").click(function(){
+      if(""==$("#username").val().replace(/\s+/g,"")){
+        alert("请填写姓名");
+      }else if(""==$("#mobile").val().replace(/\s+/g,"")){
+        if($("#mobile").val().length!=11){
+          alert("请输入正确格式的手机号码");
+          return;
+        }
+        alert("请填写手机号");
+      }else{
+        setCookie("username",$("#username").val());
+        setCookie("mobile",$("#mobile").val());
+        subguessdata.username=$("#username").val();
+        subguessdata.mobile=$("#mobile").val();
+        console.log(subguessdata)
+        $.post("submit_bet_wap.php",subguessdata,function (data){
+		//$.post("http://euro2016.hisense.com/submit_bet_wap.php",subguessdata,function (data){
+          $("#userform").hide();
+          $(".subsuc").show();
+          //console.log("submit_bet",data);
+        },'json')
+      }
+    })
+  },
+  initSwiper:function(){
+    $(".p2,.banner").show();
+    App.datetop=new Swiper('.dates',{
+      spaceBetween: 45,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      touchRatio: 0.2,
+      slideToClickedSlide:true
+    })
+    App.scores=new Swiper('.game',{
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev'
+    })
+    App.datetop.params.control =App.scores;
+    App.scores.params.control=App.datetop;
+
+    
+    
+    if(App.todayindex<0){
+      App.todayindex=0;
+    }else if(App.todayindex>res.length-1){
+      App.todayindex=res.length-1;
+    }
+    App.datetop.slideTo(App.todayindex);
+    App.scores.slideTo(App.todayindex);
+
+    var banner=new Swiper('.banner',{
+      autoplay:3500
+      //initialSlide:2
+    })
+  },//初始化swiper,flash ani.js里引用
+  resize:function(){
+    //$("#canvas").css({top:($(window).height()-1136)/2});
+  }
+}
+var translatemap={Albania:"阿尔巴尼亚",Austria:"奥地利",Belgium:"比利时",Croatia:"克罗地亚",Czech:"捷克",England:"英格兰",French:"法国",Germany:"德国",Hungary:"匈牙利",Iceland:"冰岛",Ireland:"爱尔兰",Italy:"意大利",'NorthernIreland':"北爱尔兰",Partugal:"葡萄牙",Poland:"波兰",Romania:"罗马尼亚",Russia:"俄罗斯",Slovak:"斯洛伐克",Spain:"西班牙",Sweden:"瑞典",Switzerland:"瑞士",Turkey:"土耳其",Ukraine:"乌克兰",Wales:"威尔士"};
+function checkEnglish(cn){
+  for(var i in translatemap){
+    if(cn==translatemap[i]) return i;
+  }
+}
+var template='<div class="scorearea" data-time="{{time}}"><img src="img/team/{{teamA}}.png" class="teamaimg" alt=""><input type="tel" class="scorea {{teamA}}" maxlength="1" name="{{teamA}}"><input type="tel" class="scoreb {{teamB}}" maxlength="1" name="{{teamB}}"><img src="img/team/{{teamB}}.png" class="teambimg" alt=""></div>'
+function replaceTemp(map){
+  var _template=template;
+  for(var attr in map){
+    _template=_template.replace(new RegExp("{{"+attr+"}}",'g'),map[attr])
+  }
+  return _template;
+}
+function setCookie(c_name,value,expiredays){
+  var exdate=new Date();
+  exdate.setDate(exdate.getDate()+expiredays);
+  document.cookie=c_name+ "=" +escape(value)+ ((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+}
+function getCookie(c_name){
+  if (document.cookie.length>0){
+    c_start=document.cookie.indexOf(c_name + "=")
+    if (c_start!=-1) { 
+      c_start=c_start + c_name.length+1 
+      c_end=document.cookie.indexOf(";",c_start)
+      if (c_end==-1) c_end=document.cookie.length
+      return unescape(document.cookie.substring(c_start,c_end))
+    } 
+  }
+  return ""
+}
+</script>
+
+<!--Mock start-->
+<script src="../../../libs/mock.js"></script>
+<script>
+  Mock.mock(/search_bet\.php/, )
+</script>
+<!--Mock end-->
+</body>
+</html>

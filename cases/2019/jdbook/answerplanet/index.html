@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>答案星球</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="css/swiper.min.css">
+<link href="css/style.css?1243" rel="stylesheet">
+<!-- <?php
+// include("weixin.php");
+?> -->
+</head>
+<body onload="init0();">
+<div id="wrap" >
+	<div class="swiper-container" id="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="" alt="" id="gimg">
+				<div id="animation_container">
+					<canvas id="canvas" width="750" height="1453"></canvas>
+					<div id="dom_overlay_container"></div>
+				</div>
+				<div id="sndctr" class="hide">
+					<img src="img/sndoff.png" alt="" class="sndoff sndimg">
+					<img src="img/sndon.png" alt="" class="sndon sndimg">
+				</div>
+				<img src="img/qrcodetxt.png" alt="" id="qrcodetxt">
+				<img src="img/askagain.png" alt="" id="askagain">
+				<img src="img/sharebtn.png?v1" alt="" id="sharebtn">
+				<a href="javascript:void(0);" target="_blank" id="booklink"></a>
+				<div id="uptip">
+					<!-- <img src="img/lastfinger.png" alt="" class="finger"> -->
+					<img src="img/uptipnew.png" alt="" class="uptipimg">
+					<img src="img/uptiparraw.png" alt="" class="uparrow2">
+					<img src="img/uptiparraw.png" alt="" class="uparrow1">
+				</div>
+			</div>
+			<div class="swiper-slide" >
+				<img src="img/listbg.jpg" alt="" class="listbg">
+				<img src="img/listtxt.png" alt="" class="listtxt" id="listtxt">
+				<img src="img/jdlogo.png?ver1" alt="" id="jdlogo">
+				<a href="https://pro.m.jd.com/mall/active/46Vsus7SpKRgDbyAUitFHeBJnthu/index.html" onclick="_hmt.push(['_trackEvent', 'link', '主会场']);" class="linkmain"><img src="img/linkmain.png" alt="" ></a>
+			</div>
+		</div>
+	</div>
+	<!-- <p id="trace"></p> -->
+</div>
+<audio src="./media/bgm.mp3" loop="loop" autoplay="autoplay" preload="preload" id="bgm"></audio>
+<script>
+var stageW,stageH,stageT,stageB,spaceH,stageRate;
+var stageMaxH=1453;
+stageW=750;
+stageRate=window.innerWidth/stageW;
+stageH=window.innerHeight*stageW/window.innerWidth;
+spaceH=(stageMaxH-stageH)/2;
+stageT=-spaceH;
+
+var wrap=document.getElementById("wrap");
+wrap.style.height=stageH+"px";
+wrap.style.webkitTransform="scale3d("+stageRate+","+stageRate+",1)";
+wrap.style.transform="scale3d("+stageRate+","+stageRate+",1)";
+</script>
+<script src="js/createjs-2015.11.26.min.js"></script>  
+<script src="js/hammer.min.js"></script>  
+<script src="js/swiper.min.js"></script>
+<script src="loading.js?232131"></script>
+<script src="main.js?2331233"></script>
+<script src="js/data.js"></script>
+<script>
+var wxUser={
+	nickname: "微信用户名",
+	headimgurl: "./img/wxheadimg.jpg"
+}
+function isPassive() {
+	var supportsPassiveOption = false;
+	try {
+		addEventListener("test", null, Object.defineProperty({}, 'passive', {
+			get: function () {
+				supportsPassiveOption = true;
+			}
+		}));
+	} catch(e) {}
+	return supportsPassiveOption;
+}
+function stopPull(e){
+	e.preventDefault(); 
+}
+document.addEventListener('touchmove', stopPull, isPassive() ? {
+	capture: false,
+	passive: false
+} : false);
+
+function $$ (id){
+	return document.getElementById(id);
+}
+var bgm=$$("bgm");
+var mySwiper = new Swiper ('#swiper-container', {
+	direction: 'vertical',
+	//effect:"flip",
+	allowTouchMove: false
+})
+
+var canvas, stage, exportRoot, exportRoot0, anim_container, dom_overlay_container, fnStartAnimation, loader0, loader;
+var sndloadnum=0;
+var imgloadnum=0;
+var imgloadCpt=false;
+var walkcjs;
+
+function init0(){
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("909A3DC7DC05B64E9C3F4003D3406CCA");
+	var lib0=comp.getLibrary();
+	loader0 = new createjs.LoadQueue(false);
+	loader0.addEventListener("fileload", function(evt){handleFileLoad0(evt,comp)});
+	loader0.addEventListener("complete", function(evt){handleComplete0(evt,comp)});
+	var lib0=comp.getLibrary();
+	loader0.loadManifest(lib0.properties.manifest);
+
+	var hiddenProperty = 'hidden' in document ? 'hidden' : 'webkitHidden' in document ? 'webkitHidden' : 'mozHidden' in document ? 'mozHidden' : null;
+	var visibilityChangeEvent = hiddenProperty.replace(/hidden/i, 'visibilitychange');
+	var onVisibilityChange = function(){
+		
+		if (!document[hiddenProperty]) {    
+			//document.title='激活状态';
+			if(!BgmPaused) toggleClass($$("sndctr"),"muted");
+		}else{
+			//document.title='离开页面啦';
+			BgmPaused=bgm.paused;
+			if(!BgmPaused) bgm.pause();
+		}
+	}
+	document.addEventListener(visibilityChangeEvent, onVisibilityChange);
+}
+var BgmPaused;
+
+function handleFileLoad0(evt, comp){
+	var images0=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images0[evt.item.id] = evt.result; }	
+}
+function handleComplete0(evt,comp) {
+	var lib0=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib0.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot0 = new lib0.loading();
+	stage = new lib0.Stage(canvas);	
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot0);
+		createjs.Ticker.setFPS(lib0.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+		exportRoot0.y=stageT;
+	}	
+
+	createjs.Tween.get(exportRoot0.liconpos,{loop:-1}).to({rotation:360},4500);
+	createjs.Tween.get(exportRoot0.liconpos).to({scaleX:1.5,scaleY:1.5},300,createjs.Tween.quadOut);
+	setTimeout(function(){
+		exportRoot0.star2.gotoAndPlay(2);	
+	},800);
+
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib0.properties.width, h = lib0.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+		
+			var pRatio=1,sRatio=1;
+			canvas.width = stageW*pRatio*sRatio;			
+			canvas.height = stageH*pRatio*sRatio;
+			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  stageW*sRatio+'px';				
+			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = stageH*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;
+			stage.scaleY = pRatio*sRatio; 
+			stage.tickOnUpdate = false;
+			stage.update();
+			stage.tickOnUpdate = true;
+		}
+	}
+	makeResponsive(false,'both',false,1);	
+	AdobeAn.compositionLoaded(lib0.properties.id);
+	fnStartAnimation();
+	init();
+	sndInit();
+}
+function init() {
+	var comp=AdobeAn.getComposition("5BA77FD3BFE2144DA71513ECA89A675E");
+	var lib=comp.getLibrary();
+	loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){imghandleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { 
+		images[evt.item.id] = evt.result; 
+		var _imgpct=evt.target._numItemsLoaded / evt.target._numItems;
+		imgloadnum=Math.floor(90*_imgpct);
+		var pct=sndloadnum+imgloadnum;
+		var _pct=(sndloadnum+imgloadnum)/100;
+		exportRoot0.num.text=pct+"%";
+		createjs.Tween.get(exportRoot0.process.rampl).to({x:43*2*_pct-43},100);
+	}	
+}
+function imghandleComplete(evt,comp){
+	_evt=evt;
+	_comp=comp;
+	imgloadCpt=true;
+	if(sndloadnum==10){
+		handleComplete(evt,comp);
+	}
+}
+var _evt,_comp;
+function handleComplete(evt,comp) {
+	createjs.Tween.get(exportRoot0.process.rampl,{override:true}).to({x:43*2*(sndloadnum+imgloadnum)/100-43},100);
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	var lbtn=exportRoot0.lbtn;
+	var _y=exportRoot0.lbtn.y
+	createjs.Tween.get(lbtn).set({scaleX:1.4,scaleY:1.4,y:_y+100,alpha:0}).call(function(){
+		createjs.Tween.get(lbtn).to({alpha:1,scaleX:1,scaleY:1,y:_y},450,createjs.Ease.quadOut);
+	});
+	
+	lbtn.addEventListener("click",function(e){
+
+		createjs.Sound.play("click");
+		createjs.Tween.get(exportRoot0).to({alpha:0},200);
+		createjs.Tween.get(exportRoot0.liconpos).to({scaleX:0,scaleY:0,alpha:0},200,createjs.Ease.easeIn).call(function(){
+
+			stage.removeChild(exportRoot0);
+
+			exportRoot = new lib.main();
+			stage = new lib.Stage(canvas);
+			fnStartAnimation();	
+		})
+		// bgmcjs=createjs.Sound.play("bgm");
+		// bgmcjs.on("complete",function(){
+		// 	bgmcjs.play();
+		// })
+		// bgmcjs.volume = 0.3;
+		bgm.play();
+		var sndctr=$$("sndctr");
+		sndctr.className="";
+		sndctr.addEventListener("click",function(e){
+			toggleClass(this,"muted",function(){
+				//bgmcjs.paused=true;
+				bgm.pause();
+			},function(){
+				//bgmcjs.paused=false;
+				bgm.play();
+			})
+		})
+	})
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+		exportRoot.earthbtm.y=stageH;
+		exportRoot.tit.y=stageH*.158;
+		exportRoot.tts.y=stageH*.371;
+		exportRoot.starbg.y=stageH*.5;
+		exportRoot.boxs.y=stageH*.478;
+		exportRoot.boxt1.y=exportRoot.boxt2.y=stageH*.21;
+		exportRoot.book.y=(stageH-stageMaxH)/2;
+		exportRoot.sellbookpos.y=stageH*.83;
+		exportRoot.readlogo.y=stageH*.776;
+		exportRoot.cbtn1.y=exportRoot.cbtn2.y=stageH*.57;
+
+		//$$("qrcodetxt").style.top=
+		$$("askagain").style.top=stageT+831+"px";
+		$$("sharebtn").style.top=stageT+748+"px";
+		$$("uptip").style.top=stageH*.936+"px";//(stageH-98)+"px";
+		$$("jdlogo").height=stageH*.05;
+	}	    
+}	
+function sndInit(){
+	if (!createjs.Sound.initializeDefaultPlugins()) { return;}
+	var assetsPath = "./media/";
+  var sounds = [{
+    src:"sounds.mp3", data: {
+      audioSprite: [
+        {id:"ufo", startTime:(0/25)*1000, duration:(91/25)*1000},
+        {id:"keyboard", startTime:(99/25)*1000, duration: (27/25)*1000},
+        {id:"book", startTime:(130/25)*1000, duration: (32/25)*1000},
+        {id:"click",startTime:(167/25)*1000, duration: (22/25)*1000}
+      ]}
+    }
+  ];
+  createjs.Sound.alternateExtensions = ["mp3"];
+  createjs.Sound.on("fileload", function loadSound(){ 
+  	sndloadnum=10;
+  	if(imgloadCpt){
+  		exportRoot0.num.text="100%";
+  		createjs.Tween.get(exportRoot0.process.rampl).to({x:43*2*(sndloadnum+imgloadnum)/100-43},100);
+  		handleComplete(_evt,_comp);
+  	}
+  });
+  createjs.Sound.registerSounds(sounds, assetsPath);
+}
+function starbgPlayEnd(){
+	exportRoot.starbg.planet1.play();
+	//safari 12.2+ deviceorientation disabled https://github.com/aframevr/aframe/issues/3976
+	createjs.Tween.get(exportRoot.starbg.points1,{loop:-1}).to({alpha:.5},800).to({alpha:1},800);
+	createjs.Tween.get(exportRoot.starbg.points2,{loop:-1}).wait(300).to({alpha:.5},1200).to({alpha:1},1200);
+	createjs.Tween.get(exportRoot.starbg.points3,{loop:-1}).wait(500).to({alpha:.6},900).to({alpha:1},900);
+}
+var mc;
+var dirction;
+var BallTween;
+var QuesIndex;
+var randbookId;
+var thisbook;
+function touchFunc(isfirst){
+	exportRoot.earthbtm.ftip.gotoAndPlay(1);
+	mc=new Hammer.Manager(document.getElementById("wrap"));
+	mc.add(new Hammer.Pan({direction:Hammer.DIRECTION_HORIZONTAL,threshold:30}));
+	var tarR=0;
+	var ball=exportRoot.earthbtm.earths.ball;
+	var role=exportRoot.earthbtm.earths.role;
+	var roleshadow=exportRoot.earthbtm.earths.roleshadow;
+	var _dirction=0;
+
+	mc.on("panstart",panstartFunc);
+	mc.on("pan",panFunc);
+	mc.on("panleft",panleftFunc);
+	mc.on("panright",panrightFunc);
+	mc.on("panend",panendFunc);
+
+	exportRoot.cbtn1.addEventListener("click",function(ev){
+		panleftFunc();
+		panendFunc();
+	});
+	exportRoot.cbtn2.addEventListener("click",function(ev){
+		panrightFunc();
+		panendFunc();
+	});
+
+	function panstartFunc(ev){
+		tarR=ball.rotation;
+		BallTween&&BallTween.pause();
+	}
+	function panFunc(ev){
+		var r=tarR+ev.deltaX;
+		ball.rotation=r*.8;
+	}
+	function panleftFunc(ev){
+		_dirction=1;
+		BallTween=createjs.Tween.get(role).to({scaleX:_dirction,skewX:-3},200,createjs.Ease.sineInOut);
+		createjs.Tween.get(roleshadow).to({alpha:0,scaleX:0,scaleY:0},120).to({alpha:1,scaleX:_dirction,scaleY:1},180);
+	}
+	function panrightFunc(ev){
+		_dirction=-1;
+		BallTween=createjs.Tween.get(role).to({scaleX:_dirction,skewX:3},200,createjs.Ease.sineInOut);
+		createjs.Tween.get(roleshadow).to({alpha:0,scaleX:0,scaleY:0},120).to({alpha:1,scaleX:_dirction,scaleY:1},180);
+	}
+	function panendFunc(ev){
+		if(_dirction!=dirction){
+			if(isfirst){
+				exportRoot.earthbtm.earths.role.gotoAndPlay("start");
+				exportRoot.earthbtm.earths.roleshadow.gotoAndPlay("start");
+				createjs.Tween.get(exportRoot.earthbtm.ftip).to({alpha:0},500);
+				exportRoot.tit.gotoAndPlay("out");
+				exportRoot.tts.gotoAndPlay("out");
+				createjs.Tween.get(exportRoot.starbg).wait(1000).to({alpha:0.5},500);	
+			}else{
+				_dirction==1?exportRoot.boxt2.gotoAndPlay("out"):exportRoot.boxt1.gotoAndPlay("out");
+				exportRoot.boxs.gotoAndPlay("out");
+			}
+			// walkcjs= createjs.Sound.play("walk");
+			// walkcjs.on("complete",function(){
+			// 	walkcjs.play();
+			// })
+			_dirction==1?exportRoot.boxt1.gotoAndPlay(1):exportRoot.boxt2.gotoAndPlay(1);
+			BallTween=createjs.Tween.get(ball,{override:true,loop:-1}).to({rotation:_dirction*360+ball.rotation},2000,createjs.Ease.Linear);
+			mc.destroy();
+			dirction=_dirction;
+
+			exportRoot.cbtn1.mouseEnabled = exportRoot.cbtn2.mouseEnabled = false;
+			createjs.Tween.get(exportRoot.cbtn1).to({alpha:0,x:exportRoot.cbtn1.x-20},200);
+			createjs.Tween.get(exportRoot.cbtn2).to({alpha:0,x:exportRoot.cbtn2.x+20},200);
+
+			createjs.Sound.play("click");
+		}
+	}
+}
+function cbtnIn(){
+	createjs.Tween.get(exportRoot.cbtn1).set({y:stageH*.57,alpha:0,scaleX:.6,scaleY:.6}).call(function(){
+		createjs.Tween.get(exportRoot.cbtn1).to({y:stageH*.57,alpha:1,scaleX:1,scaleY:1},500,createjs.Ease.quadOut);
+	});
+	createjs.Tween.get(exportRoot.cbtn2).set({y:stageH*.57,alpha:0,scaleX:.6,scaleY:.6}).call(function(){
+		createjs.Tween.get(exportRoot.cbtn2).to({y:stageH*.57,alpha:1,scaleX:1,scaleY:1},500,createjs.Ease.quadOut);
+	});
+}
+function choseMask(){
+	var row=thisbook.rows;
+	setTimeout(function(){
+		exportRoot.book.bookmask2.alpha=exportRoot.book.bookmask3.alpha=exportRoot.book.bookmask4.alpha=0;
+		exportRoot.book["bookmask"+row].alpha=1;
+		exportRoot.book["bookmask"+row].gotoAndPlay(1);
+	},0);
+}
+function showqr(){
+	toggleClass($$("askagain"),"fadeUp");
+	toggleClass($$("sharebtn"),"fadeUp");
+	setTimeout(function(){
+		toggleClass($$("uptip"),"fadeIn");
+	},800);
+	createjs.Tween.get(exportRoot.book.qrcode).wait(300).to({alpha:1},800).call(function(){
+		generateLastFrame();
+	});
+}
+function alignInitQues(){
+	exportRoot.questions.ufopos.y=stageH*.44;
+	exportRoot.questions.ques.y=stageH*.25;
+}
+function initGetansBtn(){
+	var getans=exportRoot.questions.getans;
+	createjs.Tween.get(getans).wait(50).to({alpha:1},1000);
+	getans.y=stageH*.66;
+	getans.mouseChildren=false;
+	getans.addEventListener("click",function(ev){
+		createjs.Sound.play("click");
+		createjs.Sound.play("ufo");
+		ev.target.gotoAndPlay(1);
+		exportRoot.questions.ufopos.gotoAndPlay(1);
+		getans.mouseEnabled=false;
+
+		var dir=dirction==1?"l":"r";
+		randbookId=Math.ceil(Math.random()*5);
+		thisbook=BookInfo[dirction==1?0:1][QuesIndex-1][randbookId-1];
+		wordsrc="./img/q"+dir+QuesIndex+"d"+randbookId+".png";
+		booksrc="./img/q"+dir+QuesIndex+"b"+randbookId+".png";
+		loadword(wordsrc);
+		loadbook(booksrc);
+	})
+}
+function loadword(src){
+	var img=new Image();
+	img.src=src;	
+	var txtholder=exportRoot.book.txtholder;
+	txtholder.removeAllChildren();
+	img.onload=function(){
+		var imgcjs=new createjs.Bitmap(img);
+		txtholder.addChild(imgcjs);
+		//stage.update();
+	}
+}
+function loadbook(src){
+	var img=new Image();
+	img.src=src;	
+	exportRoot.sellbookpos.bookholder.removeAllChildren();
+	img.onload=function(){
+		var imgcjs=new createjs.Bitmap(img);
+		exportRoot.sellbookpos.bookholder.addChild(imgcjs);
+	}
+}
+function ufoPlayEnd(){
+	exportRoot.book.play();
+}
+function bookOpen(){
+	createjs.Sound.play("book");
+	createjs.Tween.removeAllTweens();
+
+	var bggray=exportRoot.bggray;
+	if(stageH<stageMaxH){
+		bggray.y=stageH-stageMaxH;
+	}else{
+		bggray.scaleY=stageH/stageMaxH;
+	}	
+	bggray.gotoAndStop(1);
+	createjs.Tween.get(bggray).to({alpha:1},1000*15/24).call(function(){
+
+	});
+	var abovebook=exportRoot.book.abovebook;
+	var bookHeadPos=exportRoot.book.localToGlobal(abovebook.x,abovebook.y);
+	if(bookHeadPos.y<10){
+		_bookY=exportRoot.book.y;
+		createjs.Tween.get(exportRoot.book).to({y:_bookY+10-bookHeadPos.y,alpha:1},1000);
+		exportRoot.sellbookpos.y=stageH*.875;
+		exportRoot.readlogo.y=stageH*.875-60;
+		toggleClass($$("uptip"),"small");
+	}
+	if(stageH<1180){
+		var bookzoom=.92;
+		createjs.Tween.get(exportRoot.book).to({scaleX:bookzoom,scaleY:bookzoom},1000);
+		$$("qrcodetxt").style.webkitTransform=$$("qrcodetxt").style.transform="scale3d("+bookzoom+","+bookzoom+",1)";
+		abovebook.y+=10;
+	}
+	if(stageH<1080){
+		exportRoot.sellbookpos.scaleX=exportRoot.sellbookpos.scaleY=.9;
+		exportRoot.sellbookpos.y=stageH*.89;
+		exportRoot.readlogo.y=stageH*.89-60;
+	}
+
+	abovebook.username.text=wxUser.nickname;
+	var img=new Image();
+	img.setAttribute("crossOrigin",'Anonymous');
+	img.src=wxUser.headimgurl;
+	img.onload=function(){
+		var headimgcjs=new createjs.Bitmap(img);
+		headimgcjs.scaleX=72/img.width;
+		headimgcjs.scaleY=72/img.height;
+		abovebook.avatorholder.addChild(headimgcjs);
+	}
+	
+}
+function textAni(){
+	createjs.Tween.get(exportRoot.book.txtholder,{override:true}).set({alpha:0}).to({alpha:1},1000);
+	createjs.Tween.get(exportRoot.book.abovebook).to({alpha:1},800);
+
+	choseMask();
+	var sellbookpos=exportRoot.sellbookpos;
+	sellbookpos.gotoAndPlay(1);
+	var readlogo=exportRoot.readlogo;
+	readlogo.gotoAndStop(1);
+	createjs.Tween.get(readlogo).wait(300).to({alpha:1},600);
+	
+	var booklink=$$("booklink");
+	booklink.style.left=sellbookpos.x+"px";
+	booklink.style.top=sellbookpos.y+"px";
+	booklink.setAttribute("href",thisbook.link);
+	booklink.addEventListener("click",function(e){
+		if(_hmt) _hmt.push(['_trackEvent', 'link', 'click', thisbook.name]);
+	})
+	toggleClass(booklink,"show");
+
+	var qrcodetxt=$$("qrcodetxt");
+	qrcodetxt.style.top = exportRoot.book.y+701+"px";
+	toggleClass(qrcodetxt,"fadeIn");
+
+	initaskbtn();
+	createjs.Sound.play("keyboard").volume=.6;
+}
+function initaskbtn(){
+	$$("askagain").addEventListener("click",function(){
+		location.reload();
+	})
+	$$("sharebtn").addEventListener("click",function(){
+		$$("qrcodetxt") && $$("qrcodetxt").remove();
+	})
+}
+function quesFunc(){
+	for(var i=1;i<=4;i++){
+		(function (n){
+			var lt=exportRoot.boxs["lt"+n];
+			lt.mouseChildren=false;
+			lt.addEventListener("click",function(ev){
+				createjs.Tween.get(ev.target.l.colormask).to({alpha:1},150);
+				createjs.Tween.get(ev.target.r.colormask).to({alpha:1},150);
+
+				QuesIndex=n;
+				mc.destroy();
+				dirction==1?exportRoot.boxt1.gotoAndPlay("out"):exportRoot.boxt2.gotoAndPlay("out");
+				exportRoot.boxs.gotoAndPlay("out");
+
+				createjs.Tween.get(exportRoot.questions).wait(1000).call(function(){
+					exportRoot.questions.gotoAndStop(1);
+				})
+
+				createjs.Sound.play("click");
+			},false)
+		})(i);
+	}
+}
+
+function generateLastFrame(){
+	var base64=canvas.toDataURL("image/jpeg",0.6);
+	exportRoot.sellbookpos.gotoAndPlay("goon");
+	var gimg=document.getElementById("gimg");
+	gimg.style.display="block";
+	gimg.setAttribute("src",base64);
+	document.getElementById("animation_container").className="disabled";
+
+	document.removeEventListener('touchmove', stopPull,isPassive() ? {
+		capture: false,
+		passive: false
+	} : false)
+	mySwiper.allowTouchMove=true;
+}
+if (!String.prototype.trim) {
+  String.prototype.trim = function () {
+    return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+  };
+}
+function toggleClass(Dom,className,addFunc,removeFunc){
+	var cN=Dom.className;
+	if(cN.indexOf(className)==-1){
+		cN+=(" "+className);
+		if(addFunc) addFunc();
+	}else{
+		cN=cN.replace(className,"");
+		if(removeFunc) removeFunc();
+	}
+	Dom.className=cN.trim();
+}
+
+// function test(a,b,c){
+// 	loadword("./img/q"+a+b+"d"+c+".png");
+// 	loadbook("./img/q"+a+b+"b"+c+".png")
+// 	var _thisbook=BookInfo[a=="l"?0:1][b-1][c-1];
+// 	console.log(_thisbook)
+// 	$$("booklink").setAttribute("href",_thisbook.link);
+// 	var row=_thisbook.rows;
+
+// 	setTimeout(function(){
+// 		exportRoot.book.bookmask2.alpha=exportRoot.book.bookmask3.alpha=exportRoot.book.bookmask4.alpha=0;
+// 		exportRoot.book["bookmask"+row].alpha=1;
+// 		exportRoot.book["bookmask"+row].gotoAndPlay(1);
+// 		var txtholder=exportRoot.book.txtholder;
+// 		var t=createjs.Tween.get(txtholder,{override:true}).set({alpha:0}).call(function(){
+// 			createjs.Tween.get(txtholder).to({alpha:1},800,createjs.Ease.Linear);
+// 		})
+// 	},0);
+// }
+
+
+// var booktext=[
+// 	[{word:"要成长为新的物种，\n就要经历所有你不会\n再扮演的角色。",author:"凯文·凯利"}]
+// ]
+// var text="要成长为新的物种，\n就要经历所有你不会\n再扮演的角色。"
+
+// var fontloader = new createjs.FontLoader({
+// 	src:[{
+// 		src:"local('fzqkbysjt'),url(./font/fzqkbysjt.woff) format('woff')",
+// 		family:"fzqk"
+// 	}],
+// 	type:"font",
+// 	injectCSS:true
+// }, true);
+// fontloader.on("complete",function fontHandleLoad(){
+// 	//alert(' l f c')
+// 	console.log("l f c")
+// })
+// function textAni(text,string){
+// 	var _n=0;
+// 	var _text="";
+// 	var len=string.length;
+// 	var intervalid; 
+// 	text.font="bolder 50px fzqk";
+// 	//text.font="50px fzqk"
+// 	function textloop(){
+// 		intervalid=setTimeout(function(){
+// 			if(++_n<len){
+// 				_text+=string[_n];
+// 				text.text=_text;
+// 				if(intervalid) setTimeout(intervalid)
+// 				textloop();
+// 			}
+// 			console.log(_n,len,_n<len)
+// 		},120);
+// 	}
+// 	textloop();
+// }
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b5a1fe4d5632699b994db7b1cb730fd0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

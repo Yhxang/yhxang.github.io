@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tugboy</title>
+<style>
+*{margin: 0;padding:0;}
+body{background-color: #000;}
+</style>
+</head>
+<body>
+<script src="js/pixi.min.js"></script>
+<script src="js/pixi-spine.js"></script>
+<script>
+(function(){
+	var stageW=window.innerWidth;
+	var stageH=window.innerHeight;
+	var app = new PIXI.Application();
+	var boy;
+	var animation;
+	var animationframeFun;
+
+	var allcontW=3000,allcontH=2000;
+	var SafeAreaWidth=450;
+	var state="paused";
+	app.renderer.view.style.display="block";
+	app.renderer.view.style.position="absolute";
+	app.renderer.autoResize=true;
+	document.body.appendChild(app.view);
+
+	PIXI.loader.add("spineCharacter","images/role.json").add("ropemid","images/ropemid.png").load(setup);
+
+	function setup(loader,resources){
+		animation = new PIXI.spine.Spine(resources.spineCharacter.spineData);
+		animation.stateData.setMix("willwin","win",.3);
+		animation.stateData.setMix("willlose","lose",.3);
+		animation.stateData.setMix("plain","lose",.3);
+		animation.stateData.setMix("plain","willlose",.3);
+
+	  if (animation.state.hasAnimation('plain')) {
+	    animation.state.setAnimation(0, 'plain', true);
+	    animation.state.timeScale = 1;
+	  }
+
+		var sky=new PIXI.Graphics();
+	 	sky.beginFill(0x7dd6ff);
+	 	sky.drawRect(0,0,allcontW,allcontH);
+	 	sky.endFill();
+	 	
+	 	var ground=new PIXI.Graphics();
+	 	ground.beginFill(0x445772);
+	 	ground.drawRect(0,allcontH/2,allcontW,allcontH/2);
+	 	ground.endFill();
+	 	
+	 	var stageBgContainer=new PIXI.DisplayObjectContainer();
+	 	stageBgContainer.addChild(sky);
+	 	stageBgContainer.addChild(ground);
+	 	stageBgContainer.pivot.set(allcontW/2,allcontH/2);
+	 	stageBgContainer.position.set(stageW/2,stageH/2);
+	 	app.stage.addChild(stageBgContainer);
+
+	 	boy=new PIXI.Sprite();
+	 	boy.anchor.set(.5,1);
+	 	boy.scale.set(.5,.5)
+	 	boy.addChild(animation);
+	 	boy.x=stageW/2;
+	 	boy.y=stageH/2+50;
+
+	 	var ropemidspr=new PIXI.Sprite(resources.ropemid.texture);
+	 	ropemidspr.position.set(320,-121);
+	 	ropemidspr.scale.y=1.3;
+	 	boy.addChild(ropemidspr);
+
+	 	var redline1=new PIXI.Graphics();
+		redline1.lineStyle(4, 0xFF0000, 1);
+		redline1.moveTo(stageW/2-SafeAreaWidth/2, stageH/2);
+		redline1.lineTo(stageW/2-SafeAreaWidth/2, stageH);
+		
+		var redline2=new PIXI.Graphics();
+		redline2.lineStyle(4, 0xFF0000, 1);
+		redline2.moveTo(stageW/2+SafeAreaWidth/2, stageH/2);
+		redline2.lineTo(stageW/2+SafeAreaWidth/2, stageH);
+		
+		var stageContainer=new PIXI.DisplayObjectContainer();
+		stageContainer.addChild(redline1);
+		stageContainer.addChild(redline2);
+		stageContainer.addChild(boy);
+	 	app.stage.addChild(stageContainer);
+
+		var comeonBtn=drawBtn("加油",0x2973fb,tapFunc);
+	 	comeonBtn.position.set(stageW/2-100,stageH/2+100);
+	 	comeonBtn.visible=false;
+	 	var hurryBtn=drawBtn("大力",0x2973fb,jumpFunc);
+	 	hurryBtn.position.set(stageW/2+100,stageH/2+100);
+	 	hurryBtn.visible=false;
+	
+	 	var preStage=new PIXI.Container();
+	 	var preStagebg=new PIXI.Graphics();
+	 	preStagebg.beginFill("black");
+	 	preStagebg.drawRect(0,0,stageW,stageH);
+	 	preStagebg.endFill();
+	 	var playtxt=new PIXI.Text("开始",{fill:"white",fontSize:40});
+	 	playtxt.x=(stageW-playtxt.width)/2;
+	 	playtxt.y=(stageH-playtxt.height)/2;
+	 	preStage.addChild(preStagebg).addChild(playtxt);
+	 	preStage.interactive=true;
+	 	preStage.on("tap",gamestart).on("click",gamestart);
+	 	app.stage.addChild(preStage);
+	 	function gamestart(){
+	 		if(state=="paused"){
+		 		preStage.visible=false;
+		 		setTimeout(function(){
+		 			comeonBtn.visible=true;
+		 			hurryBtn.visible=true;
+		 			animationframeFun=defaultMoveing;
+		 		},1000);
+		 		state="playing";
+		 	}
+	 	}
+
+	 	animationframeFun=noMoving;
+	 	gameLoop();
+		app.start();
+	}
+	function showResult(txt,fontSize){
+	 	if(!fontSize) fontSize=40;
+	 	var masktxt=new PIXI.Text(txt,{fill:"red",fontSize:fontSize});
+	 	masktxt.x=(stageW-masktxt.width)/2;
+	 	masktxt.y=(stageH-masktxt.height)/2-150;
+
+	 	var maskStage=new PIXI.Container();
+	 	maskStage.addChild(masktxt);
+	 	return maskStage;
+	}
+
+	function gameLoop(){
+		requestAnimationFrame(gameLoop);
+		checkResult();
+		animationframeFun();
+		app.renderer.resize(window.innerWidth,window.innerHeight);
+	}
+
+	function checkResult(){
+		if(state=="playing"){
+			if(boy.x<(stageW/2-SafeAreaWidth/2)){
+				state="win";
+				animation.state.clearTracks();
+				animation.state.addAnimation(0, 'willwin', false);
+				animation.state.addAnimation(0,"win",true,1.1);
+				animationframeFun=noMoving;
+				var winResult=showResult("胜利！");
+				app.stage.addChild(winResult);
+			}else if(boy.x>(stageW/2+SafeAreaWidth/2)){
+				state="lose";
+				animation.state.clearTracks();
+				animation.state.addAnimation(0, 'willlose', true);
+				animation.state.addAnimation(0,"lose",true,1);
+				animationframeFun=noMoving;
+				var loseResult=showResult("失败！");
+				app.stage.addChild(loseResult);
+			}else{
+				//console.log('come on')
+			}
+		}
+	}
+
+	function tapFunc(){
+		if(state=="playing"){
+		 	var t=0,b=boy.x,c=-20,d=20;
+			animation.state.setAnimation(0, 'tug', false);
+		 	animation.state.timeScale = 2;
+		 	animationframeFun=function(){
+				boy.x=Tween.Quint.easeInOut(t,b,c,d);
+				if(t<d) {
+					t++;
+				}else{
+					animation.state.setAnimation(0, 'plain', true);
+					animation.state.timeScale = 1;
+					animationframeFun=defaultMoveing;
+				}
+			}
+		}
+	}
+	function jumpFunc(){
+		if(state=="playing"){
+			var t=0,b=boy.x,c=-80,d=40;
+			animation.state.setAnimation(0, 'jump', false);
+		 	animation.state.timeScale = 1.5;
+		 	animationframeFun=function(){
+		 		boy.x=Tween.Quad.easeInOut(t,b,c,d);
+				if(t<d) {
+					t++;
+				}else{
+					animation.state.setAnimation(0, 'plain', true);
+					animation.state.timeScale = 1;
+					animationframeFun=defaultMoveing;
+				}
+			}
+		}
+	}
+
+	function drawBtn(txt,color,func){
+		var pullBtn=new PIXI.Sprite();
+		var pullbg=new PIXI.Graphics();
+		var btnW=120,btnH=50;
+		pullbg.beginFill(0x2973fb);
+		pullbg.drawRect(0,0,btnW,btnH);
+		var txt=new PIXI.Text(txt,{fill:"white",fontSize:30});
+		txt.x=(btnW-txt.width)/2;
+		txt.y=(btnH-txt.height)/2;
+		pullBtn.interactive=true;
+		pullBtn.buttonMode=true;
+		pullBtn.addChild(pullbg).addChild(txt);
+		pullBtn.on("tap",func).on("click",func);
+		pullBtn.pivot.set(btnW/2,btnH/2);
+		app.stage.addChild(pullBtn);
+		return pullBtn;
+	}
+	function defaultMoveing(){
+		boy.x+=1;
+	}
+	function noMoving(){}
+})()
+
+var Tween = {
+	Quad: {
+	  easeIn: function(t,b,c,d){
+	    return c*(t/=d)*t + b;
+	  },
+	  easeOut: function(t,b,c,d){
+	    return -c *(t/=d)*(t-2) + b;
+	  },
+	  easeInOut: function(t,b,c,d){
+	    if ((t/=d/2) < 1) return c/2*t*t + b;
+	    return -c/2 * ((--t)*(t-2) - 1) + b;
+	  }
+	},
+	Quint: {
+	  easeIn: function(t,b,c,d){
+	    return c*(t/=d)*t*t*t*t + b;
+	  },
+	  easeOut: function(t,b,c,d){
+	    return c*((t=t/d-1)*t*t*t*t + 1) + b;
+	  },
+	  easeInOut: function(t,b,c,d){
+	    if ((t/=d/2) < 1) return c/2*t*t*t*t*t + b;
+	    return c/2*((t-=2)*t*t*t*t + 2) + b;
+	  }
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>12.12 十万红信封温暖传递</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<script src="js/jquery.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/easing/EasePack.min.js"></script> 
+<script src="js/hammer.min.js"></script>
+<script src="js/images.js"></script>
+<script>
+window.onload = function(){
+	var _loading = document.getElementById('loading');
+	_loading.style.display = "none";
+};
+document.write('<div id="loading">Loading...</div>');
+
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+	var version = parseFloat(RegExp.$1);
+	if(version>2.3){
+		document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+	}else{
+		document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+	}
+} else {
+	document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<style>
+body,ul,li,p,h1,h2,h3,h4,h5,h6,span{margin: 0;padding: 0;}
+body{background: url(img/bg1150.jpg) top center no-repeat;}
+ul,li{list-style: none;}
+#loading{ position: absolute; left:50%; margin-left: -50px; top:45%; font-size:25px; }
+.shareicon{ position: absolute; left: -9999px; top: -9999px; display: block; width: 0; height: 0;}
+.wrap{position:relative; width:640px; margin: 0 auto; overflow: hidden; display: none;}
+.action1{position: relative;}
+.logo{position: absolute; left:19px; top:18px; }
+.logor{position:absolute; right:12px; top:8px;}
+.p1{position: absolute;z-index: 2014; width:100%;}
+.p1_1{position: absolute; left:176px; top:141px; opacity: 0; visibility: hidden; -webkit-transform:scale(1.2); transform:scale(1.2); }
+.p1_2{position: absolute; left:115px; top:250px; opacity: 0; visibility: hidden;  }
+.p1_3{position: absolute; left:355px; top:163px; opacity: 0; visibility: hidden; }
+.p1_3_1{position: absolute; left:175px; top:346px; opacity: 0; visibility: hidden; -webkit-transform:translateX(30px); transform:translateX(30px);}
+.p1_4{position: absolute; left:29px; top:461px; opacity: 0; visibility: hidden;}
+.p1_5{position: absolute; left:278px; top:640px; opacity: 0; visibility: hidden;}
+.p1_6{position: absolute; left:100px; top:610px; opacity: 0; visibility: hidden;}
+.p1_7{position: absolute; left:155px; top:865px; opacity: 0; visibility: hidden;}
+.p2_1{position: absolute; left:15px; top:324px; opacity:0; visibility: hidden; width: 647px; height: 625px; -webkit-transform:scale(0.7) rotate(33deg); transform:scale(0.7)  rotate(33deg);  }
+.p2_1_cover{position:absolute; left:-3px; top: 206px}
+.p2_1_paper{position:absolute; left:5px; top:0px; margin-top: -380px;  width:620px; height:1000px; overflow: hidden;}
+.andrfix{width:100%; height: 100%; overflow: hidden;}
+.paper0,.paper1,.paper2,.paper3,.paper4{ position:absolute; left:12px; top:620px; }
+.paper0,.paper2,.paper3,.paper4{left:27px;}
+.txt1{position: absolute; top:88px; left:92px; -webkit-transform:rotate(30deg); transform:rotate(30deg); /*visibility: hidden;*/}
+.txt2{position: absolute; top:50px; }
+.paper2 h3{color:#000; position: absolute; top:183px; left: 214px; font-size: 30px;}
+.paper2 ul{overflow: auto; position: absolute; top:240px; left:20px;}
+.paper2 li{float: left; border-radius: 50%; margin-left: 7px; margin-right: 7px;}
+.paper2 li p{ font-size: 18px; color: #fff; text-align: center;}
+.paper2 img{display: block; margin: 0 auto;}
+.cir1{width:130px; height: 130px; background-color: #0bcee5;}
+.cir2{width:108px; height: 108px; background-color: #ffa517; margin-top: 13px;}
+.cir3{width:130px; height: 130px; background-color: #51e638;}
+.cir4{width:112px; height: 112px; background-color: #dd54fb; margin-top: 10px;}
+.cir1 img{margin-top:5px; margin-bottom: 5px;}
+.cir2 img{margin-top:15px;}
+.cir3 img{margin-top:10px; margin-bottom: 5px;}
+.cir4 img{margin-top:7px; margin-bottom: 3px;}
+.msg{position: absolute; width:584px; text-align: center; font-size: 24px; line-height: 38px; }
+.paper2 .msg{ top:380px;}
+.paper3 h3,.paper4 h3,.paper4 h4{ font-size: 38px; color: #ec3449; border-top:9px #ec3449 solid; border-bottom:9px #ec3449 solid; line-height: 62px; position: absolute; top:70px; left:156px; }
+.paper3 .msg{ top:189px; }
+.mid{ position: absolute; width: 647px; height: 625px; top: 0px; left: 0px; }
+.mid img{position: absolute; opacity: 0;}
+.pen{ bottom: 0px; right:0px; }
+.flower{ bottom: 0px; left:50px; }
+.award{ bottom:0px; left:100px;}
+.paper4 h3{left:180px; top:45px;}
+.paper4 h4{ font-size: 25px; border:none; top:110px; left:180px; }
+.paper4 .msg{ top:191px; line-height: 36px; }
+.hrt1,.hrt2,.hrt3,.hrt4,.hrt5,.hrt6,.hrt7,.hrt8{background: url(img/a19.png) 0 0 no-repeat; width:100px; height: 97px; overflow: hidden; position: absolute; top:0px; left:0px; color: #efe2c6; font-size: 25px; font-weight: bold; text-align: center; line-height: 80px; opacity:0; }
+.hrt0{ position: absolute;top:250px; left:160px; opacity: 0; visibility: hidden;}
+.hrt1{left:250px; top:15px;}
+.hrt2{left:400px; top:-30px;}
+.hrt3{left:150px; top:-50px;}
+.hrt4{-webkit-transform:scale(0.8); transform:scale(0.8); left:100px; top:30px;}
+.hrt5{-webkit-transform:scale(0.7); transform:scale(0.7); left:150px; top:-40px;}
+.hrt6{-webkit-transform:scale(0.7); transform:scale(0.7); left:320px; top:0px;}
+.hrt7{-webkit-transform:scale(0.6); transform:scale(0.6); left:450px; top:-10px;}
+.hrt8{-webkit-transform:scale(0.6); transform:scale(0.6); left:500px; top:20px;}
+.p4_1{position: absolute; top:480px; left:65px; opacity: 0; width: 514px; height: 328px; background: url(img/a20.png) 0 0 no-repeat; display: none; opacity: 0;}
+.msgcover{ margin: 85px auto 0; display: block;}
+.flower2{position: absolute; top:187px; right: 0px; opacity: 0;}
+.flower3{position: absolute; top:330px; left:45px; opacity: 0;}
+.flower4{position: absolute; top:750px; left:40px; opacity: 0;}
+
+.p3_1{position:absolute;left:93px; top:380px; display: none; opacity: 0;}
+.p3_1_txt{position: absolute;left:330px; top:0px; opacity: 0;}
+.pointer{position:absolute; top:-45px; left: 190px; display: block; opacity: 0;}
+.fire{position:absolute; top:-110px; left: 190px; opacity: 0;}
+
+.arrow{display:block;margin-left:-35px; position: fixed; bottom:10px; left:50%; width:70px; height:30px; -webkit-animation:upDownBtn 1s infinite; animation:upDownBtn 1s infinite; z-index:2016;}
+.shareintro{ width:100%;height: 2000px; position: absolute; top:0; left:0; background-color: rgba(0,0,0,.8); display: none; z-index:2015;}
+.shareintro img{ position: absolute; right:50px; top:0; }
+@-webkit-keyframes upDownBtn{0%{opacity:0;-webkit-transform:translateY(20px);transform:translateY(20px)}100%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}
+@keyframes upDownBtn{0%{opacity:0;-webkit-transform:translateY(20px);-ms-transform:translateY(20px);transform:translateY(20px)}100%{opacity:1;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}}
+</style>
+</head>
+<body>
+<img src="img/wxicon.jpg" alt="" class="shareicon">
+<div class="wrap" id="wrap">
+	<div class="action1">
+		<div class="p1">
+			<div class="logo"><img src="img/logoHis.png"/></div>
+			<div class="logor"><img src="img/logor.png"/></div>
+			<div class="p1_1"><img src="img/a01.png"/></div>
+			<div class="p1_2"><img src="img/a02_1.png"/></div>
+			<div class="p1_3_1"><img src="img/a03_1.png"/></div>
+			<div class="p1_3"><img src="img/a03.png"/></div>
+			<div class="p1_7"><img src="img/a09.png"/></div>
+			<div class="p1_4"><img src="img/a04.png"/></div>
+			<div class="p1_6"><img src="img/a08.png"/></div>
+			<div class="p1_5"><img src="img/a07.png"/></div>
+		</div>
+		
+		<div class="p2_1">
+			<img src="img/a06.png">
+			<div class="p2_1_paper">
+				<div class="andrfix">
+					<div class="paper1"><img src="img/a10.jpg"><img class="txt1" src="img/a11.png"></div> 
+					<div class="paper3">
+						<img src="img/a16.jpg">
+						<h3>红信封温暖传递</h3>
+						<div class="msg">
+							<p>
+							亲爱的信封们：<br>
+							海信的明天有你更精彩，<br>
+							邀你一起为海信点亮生日蜡烛，<br>
+							10万红信封生日礼金等你分享！
+							</p>
+						</div>
+					</div> 
+					<div class="paper4">
+						<img src="img/a16.jpg">
+						<h3>45年巅峰之作</h3>
+						<h4>2014年12月12日-14日</h4>
+						<div class="msg">
+							<p>
+							在这段重要的日子里，<br>
+							海信45年典藏版家电套餐全新推出：<br>
+							海信ULED、苹果派A8空调、<br>
+							旋瀑洗洗衣机、倍多分十字对开门冰箱<br>
+							45年巅峰之作，你值得拥有！<br>
+							更有发票抵现金、老用户到店礼等<br>
+							粉丝答谢活动！
+							</p>
+						</div>
+					</div>
+					
+					<div class="paper2">
+						<img src="img/a12.jpg">
+						<h3>海信创造了</h3>
+						<ul class="clearfix">
+							<li class="cir1"><img src="img/a12.png"><p><span class="num">128769566</span>台<br>电视机</p></li>
+							<li class="cir2"><img src="img/a13.png"><p><span class="num">43245274</span>台<br>空调</p></li>
+							<li class="cir3"><img src="img/a14.png"><p><span class="num">64617606</span>台<br>冰箱</p></li>
+							<li class="cir4"><img src="img/a15.png"><p><span class="num">52495231</span>台<br>手机</p></li>
+						</ul>
+						<div class="msg">
+							<p>
+							信封们，数字太长，不用数了，<br>
+							因为这些并不重要<br><br>
+							重要的是 在你美好的家庭场景中<br>
+							它们能成为你温暖而<br>
+							值得信赖的朋友
+							</p>
+						</div>
+					</div>
+					<div class="paper0"><img src="img/a10.jpg"><img class="hrt0" src="img/a19_1.png"></div>
+				</div>
+			</div> 
+
+			<div class="mid">
+				<img class="pen" src="img/a16.png">
+				<img class="flower" src="img/a17.png">
+				<img class="award" src="img/a18.png">				
+				<div class="hrt4"></div><div class="hrt5"></div><div class="hrt6"></div><div class="hrt7"></div><div class="hrt8"></div>
+				<div class="hrt3"></div>
+				<div class="hrt1">温暖</div>
+				<div class="hrt2">信赖</div>
+			</div>	
+			<img class="p2_1_cover" src="img/a05.png">
+		</div>
+		<div class="p3_1">
+			<img src="img/a25.png">
+			<img class="p3_1_txt" src="img/a26.png?ver=1">
+			<div class="fire"><img src="img/a28.png"></div>
+			<img class="pointer" src="img/a27.png">
+		</div>
+		<div class="p4_1">
+			<img class="msgcover" src="img/a21.png">
+		</div>
+		<img class="flower2" src="img/a22.png">
+		<img class="flower3" src="img/a23.png">
+		<img class="flower4" src="img/a24.png">
+	</div>
+	<div class="arrow"><img src="img/Arrow.png"></div>
+	<div class="shareintro"><img src="img/share.png"></div>
+</div>
+
+
+<script>
+var bodyStyle = document.body.style;
+bodyStyle.mozUserSelect = 'none';
+bodyStyle.webkitUserSelect = 'none';
+
+$(function(){
+	var stageW=$(window).width(),
+	stageH=$(window).height();
+	$(".wrap").height(stageH);	
+})
+resourceDir="";
+function loadResources(urls, progress) {
+    var loadedCount = 0;
+    var loaded = function () {
+        ++loadedCount;
+        if (progress) progress(urls.length, loadedCount, this);
+    };
+    for (var i = 0; i < urls.length; ++i) {
+        if (!urls[i]) {
+            loaded();
+            return;
+        }
+        var img = new Image();
+        //resourceMap[urls[i]] = img;
+        img.onload = loaded;
+        img.onabort = loaded;
+        img.onerror = loaded;
+        img.src = resourceDir + urls[i];//+ "?ver=" + j_version;
+    }
+}
+loadResources(['img/bg1150.jpg'],function (n, i, img) {
+	if (n != i) return;
+	loadResources(loadingImages,function (n, i, img) {
+		$("#loading").html("loading&nbsp;&nbsp;" + Math.round(i * 100 / n) + "%");
+		if (i != n) return;
+		$("#loading").hide();
+		$(".wrap").show();
+		aniStart();
+	})
+})
+var allowtouch=false;
+document.ontouchmove = function(e){ e.preventDefault(); };
+var hammer=new Hammer(document.getElementById("wrap"));
+hammer.on("panend",function(ev){
+		tl.play();
+})
+
+var tl,tl2;
+function aniStart(){
+	tl=new TimelineLite();
+	tl2=new TimelineLite();
+
+	tl.to(".p1_1",.5,{scale:1,autoAlpha:1,ease:Power2.easeIn})
+	.to(".p1_2",.5,{autoAlpha:1})
+	.to(".p1_3_1",.5,{left:"-=20",autoAlpha:1})
+	.from(".p1_4",1,{top:"-=100",rotation:30,ease:Power2.easeOut})
+	.to(".p1_4",1,{autoAlpha:1},"-=1")
+	.to(".p1_7",1,{autoAlpha:1},"-=1").add("swipe0")
+	.from(".p1_5",.7,{scale:1.5},"-=1").add("swipe1")
+	.to(".p1_5",1.3,{left:"+=120",top:"-=25",autoAlpha:1,ease:Power2.easeInOut})
+	.from(".p1_6",1,{scale:.5,left:"-=100",ease:Power2.easeIn},"swipe1")
+	.to(".p1_6",1,{autoAlpha:1},"-=1") 
+	.to(".p1_6",.3,{scale:.5,autoAlpha:0,left:"+=50",top:"-=30"},"-=.3")
+	.to(".p1_5",.3,{alpha:0,y:"-=10"})
+	.addPause()
+	.set([".p1_5",".p1_6"],{css:{display:"none"}})
+	.add("action1")
+	//信封展开
+	
+	.to(".p1_2",1,{scale:.6,x:160,y:-165},"action1")
+	.set(".p1_3_1",{autoAlpha:0},"-=.9")	
+	.to(".p1_1",1,{x:-115,y:-35},"action1")
+	.from(".p1_3",.2,{x:20},"-=.2")
+	.to(".p1_3",.2,{autoAlpha:1},"-=.2")	
+	.to(".p1_4",.6,{autoAlpha:0,y:"+=50"},"action1")
+	.to(".p2_1",.6,{autoAlpha:1},"action1")
+	.to(".p1_7",.5,{y:"+=80",autoAlpha:0},"action1+=.3")
+	.to(".p2_1",.6,{rotation:30,scale:1,x:"-=150",y:"+=150"},"action1+=.3")
+	.to(".paper0",.8,{y:-410},"-=.4")
+	.to(".hrt0",.3,{autoAlpha:1},"-=.4")
+	.to(".hrt0",.8,{y:-100},"-=.3")
+	.set([".p1_4",".p1_3_1",".p1_7"],{css:{display:"none"}})
+	.add("action2")
+
+	//第二张 心
+	.to(".paper0",.8,{y:300},"+=0.3")
+	.to(".p2_1",.5,{rotation:0,x:-20,y:140,scale:1},"-=0.1")
+	.to(".paper2",1,{y:-480,ease:Power2.easeOut},"-=0.5")
+	.to(".pen",.8,{alpha:1,y:"-=180"},"-=.5")
+	.addPause()
+	.set([".paper0"],{css:{display:"none"}})
+	.add("action3")
+
+	//第三张
+	.to(".p2_1",.8,{y:"-=50"})
+	.to(".paper2",.8,{y:300,ease:Power2.easeIn},"action3")
+	.to(".paper4",.8,{y:-430,ease:Power2.easeOut},"action3+=.5")
+	.to(".award",.8,{y:-120,alpha:1},"-=.3")
+	.addPause("+=.7")
+	.set([".paper2"],{css:{display:"none"}})
+	.add("action4")
+
+	//第四张
+	.to(".award",.5,{y:0,autoAlpha:0},"action4")
+	.to(".paper4",.8,{y:300,ease:Power2.easeIn},"action4")
+	.to(".p2_1",.5,{y:0},"-=.5")
+	.to(".paper3",.8,{y:-350,ease:Power2.easeOut},"-=0.3")
+	.to(".flower",.8,{alpha:1,y:-100},"-=.5")
+	.addPause()
+	.set([".paper4",".award"],{css:{display:"none"}})
+	.add("action5")
+
+	//收起出蛋糕
+	.to(".p2_1",.4,{alpha:0}).add("test")
+	.set(".p3_1",{css:{display:"block"}},"-.2").add("flrkey")
+	.from(".p3_1",.6,{y:"-=20",scale:.1})
+	.to(".p3_1",.5,{alpha:1},"flrkey")
+	.from(".flower3",.8,{x:"-=30",y:"-=80",scale:1.5},"flrkey+=.2")
+	.to(".flower3",.4,{autoAlpha:1},"flrkey+=.2")
+	.from(".flower4",1.1,{x:"+=50",y:"+=60",scale:1.5},"flrkey+=.3")
+	.to(".flower4",.4,{autoAlpha:1},"flrkey+=.3")
+	
+	//点火
+	.set(".p3_1_txt",{x:50},"flrkey+=.3")
+	.to(".p3_1_txt",.3,{alpha:1,x:0}).add("swipe2")
+	.from(".pointer",.7,{scale:1.5,y:-20})
+	.to(".pointer",.3,{alpha:1},"-=.7")
+	.to(".pointer",.5,{y:"-=30"})
+	.to(".pointer",.3,{alpha:0},"-=.2")
+	.addPause("+=.7")
+	.set(".pointer",{css:{display:"none"}})
+
+	//点燃
+	.to(".fire",.3,{scale:1, alpha:1,ease:Back.easeOut})
+	.to(".p3_1_txt",.5,{alpha:0,y:"-=20",onStart:bling},"-=.3")
+	.addPause()
+	
+	//蛋糕退场
+	.to(".p3_1",.3,{alpha:0,y:"-=20"})
+	.set(".p3_1_txt",{css:{display:"none"}})
+	.set([".paper3",".pen",".flower"],{css:{display:"none"}},"-=.3")
+	.to([".flower3",".flower4"],.3,{alpha:0},"-=.3")
+	.set(".p2_1",{alpha:1,rotation:-60,scaleY:.2,scaleX:.1,x:"+=150",y:"+=90"},"-=.6")
+	.to(".p2_1",0.6,{alpha:1,scaleX:1,scaleY:1,rotation:-30,x:"-=60",y:"-=40"},"-=.2")
+	.to(".paper1",.8,{y:-380,ease:Power2.easeOut},"-=.3")
+	.addPause()
+
+	//收信，心入场
+	.to(".paper1",1.5,{y:0,ease:Power3.easeInOut,onStart:kill})
+	.staggerTo([".hrt3",".hrt7",".hrt1",".hrt8",".hrt2",".hrt6",".hrt4",".hrt5"],0.5,{autoAlpha:1},.3,"-=0.8")
+	.staggerTo([".hrt3",".hrt7",".hrt1",".hrt8",".hrt2",".hrt6",".hrt4",".hrt5"],2.8,{y:500,ease:Power3.easeIn},.3,"-=3").add("flrkey2")
+	.to(".p2_1",1,{scale:0.7,x:"-=60",y:"-=140"},"-=0.1")
+	.to(".p2_1",.5,{autoAlpha:0},"-=.5")
+	.set(".p4_1",{css:{display:"block",rotation:-29,scale:1.15,x:70,y:30,autoAlpha:0}},"flrkey2")
+	.to(".p4_1",.5,{autoAlpha:1,scale:1},"flrkey2")
+	.to(".p4_1",.7,{x:0,y:-50,onComplete:clickShare},"-=.5")
+	.from(".flower2",1.3,{x:"+=80",scale:1.5},"flrkey2")
+	.to(".flower2",.4,{autoAlpha:1},"flrkey2")
+	.from(".flower3",.8,{x:"-=30",y:"-=80",scale:1.5},"flrkey2+=.2")
+	.to(".flower3",.4,{autoAlpha:1},"flrkey2+=.2")
+	.from(".flower4",1.1,{x:"+=50",y:"+=60",scale:1.5},"flrkey2+=.3")
+	.to(".flower4",.4,{autoAlpha:1},"flrkey2+=.3")
+
+	function bling(){
+		tl2.to(".fire img",.1,{scale:.9,repeat:-1,yoyo:true});
+	}
+	function kill(){
+		tl2.kill();
+	}
+	function clickShare(){
+		$(".msgcover").click(function(){
+			$(".shareintro").show().click(function(){
+				location.href="luck.html";
+			})
+		})
+	}
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>30周年福利大放送</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+ <div id="loading">
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+  <p>loading...</p>
+</div>
+<div class="wrap" id="wrap">
+	<div class="initscrn">
+		<img data-src="img/a00.jpg" alt="" class="bg">
+		<div class="timearea">
+			<h2 class="curtime">00:00</h2>
+      <div class="curdate">12月19日 星期一</div>
+		</div>
+		<img data-src="img/a00.png" alt="" class="weixin">
+	</div>
+  <div class="contarea">
+    <div class="cont">
+      <div class="contHolder"></div>
+    </div>
+    <div class="inputarea">
+      <div class="input"><span></span><i></i></div>
+      <div class="inputsel"></div>
+      <ul class="keyboards"><li class="stline">q</li><li>w</li><li>e</li><li>r</li><li>t</li><li>y</li><li>u</li><li>i</li><li>o</li><li>p</li><li class="ndline">a</li><li>s</li><li>d</li><li>f</li><li>g</li><li>h</li><li>j</li><li>k</li><li>l</li><li class="rdline">z</li><li>x</li><li>c</li><li>v</li><li>b</li><li>n</li><li>m</li></ul>
+      <div class="post"><p>确认</p></div>
+    </div>
+  </div>
+  
+  <div class="production">
+    <img data-src="img/p1.jpg" width="640" alt="">
+  </div>
+  <div class="bMask">
+  	<div class="front">
+  		<img data-src="img/a05.png" alt="" class="fd1 fd">
+  		<img data-src="img/a06.png" alt="" class="fd2 fd">
+  		<img data-src="img/a07.png" alt="" class="fd3">
+  		<img data-src="img/a08.png" alt="" class="fd4 fd">
+  		<img data-src="img/a09.png" alt="" class="fd5 fd">
+  		<img data-src="img/a10.png" alt="" class="bg">
+  		<input type="tel" maxlength="11" class="mobile" id="mobile">
+  		<!-- <img data-src="img/a04.png" alt="" class="closebtn closebtn1"> -->
+  		<img data-src="img/a03.png" alt="" class="subbtn">
+  	</div>
+  	<div class="back">
+  		<img data-src="img/a13.png" alt="" class="bgtop">
+  		<img data-src="img/a14.png" alt="" class="quan">
+  		<img data-src="img/a11.png" alt="" class="bg">
+  		<ul class="intro">
+  			<li>消费者进店即可获赠100元购物券，凭此券可在购买家电时直接抵现使用，结算时向店员提供手机号即可；</li>
+  			<li>购物券每件商品仅限使用一张，不可累计使用；此券不可兑换现金、不找零、不可与店内其他同类优惠活动同时使用；</li>
+  			<li>彩电、冰箱、洗衣机、空调、厨卫、小家电、电脑、数码500元以上商品抵扣100元</li>
+  			<li>手机商品1000元以上抵扣100元</li>
+  			<li>特价机、工程机、合约机、批发、团购、配件不参与活动</li>
+        <li>有效日期：2016.12.23-2017.1.2<br>客服电话：4008113333</li>
+  		</ul>
+  		<img data-src="img/a04.png" alt="" class="closebtn closebtn2">
+  		<img data-src="img/a15.png" alt="" class="egg">
+  		<img data-src="img/a16.png" alt="" class="eggtip">
+  	</div>
+  </div>
+  <div class="hidden hidden1">
+    <img data-src="img/a15.png" class="egg">
+    <img data-src="img/a19.png" class="h1tip">
+  </div>
+</div>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script>
+var dailogue=[
+  {uid:3,type:0,msg:"嘿，新面孔啊~你这来的正是时候，赶上福利了,猜猜今天群里谁生日",delay:1900},
+  {uid:6,type:0,msg:"反正不是我{e1}",delay:1200},
+  {uid:4,type:0,msg:"过生日？谁过生日啊？",delay:1500},
+  {uid:3,type:0,msg:"你们好好想想，是咱们的老朋友{e3}",delay:2100},
+  {uid:6,type:0,msg:"能不能给点提示让我们猜猜，猜对给个红包吧！",delay:2100},
+  {uid:9,type:0,msg:"和我一样名字里有个美字~",delay:2100},
+  {uid:6,type:0,msg:"那我知道啦！是国美吧？",delay:2100},
+  {uid:3,type:0,msg:"真聪明！国美30周年了，让我们一起同贺一下吧，我先来~",delay:2100},
+  // {uid:2,type:4.1,msg:"格力空调<br />KFR-26GW/(26559)FNAa-A3淡蓝色",rgdwords:"国美30年生日快乐,让我们在未来的日子里共同发展。祝愿国美越做越好!",person:"珠海格力电器股份有限公司<br />董事长兼总裁   董明珠",delay:2600},
+  {uid:3,type:4.1,msg:"创维电视 65G7",rgdwords:"国美30年生日快乐{e5}{e5}{e5}创维携手国美电器，为消费者提供美妙的健康科技生活~",person:"创维集团 CEO<br />杨东文",delay:2600},
+  {uid:4,type:4.1,msg:"TCL彩电<br />Q65X1S-CUD",rgdwords:"国美30年生日快乐{e5}{e5}{e5}期待TCL与国美的战略合作关系，能助力国美谱写零售新篇章！",person:"TCL集团总裁、多媒体CEO<br />薄连明",delay:2600},
+  {uid:5,type:4.1,msg:"索尼电视<br />Z9D系列 65Z9D/75Z9D",rgdwords:"国美30年生日快乐!我们相信国美这种探索具有长久的力量，将助力国美走向下一个30年，成就其长青基业，索尼公司也将以共同的努力，期待与国美深化合作下一个30年！",person:"索尼(中国)有限公司<br />董事长总裁 高桥洋先生",delay:2600},
+  {uid:6,type:4.2,msg:"西门子冰箱<br />BCD-452W<br />(KM46FA30TI)浅金",rgdwords:"国美30年生日快乐{e5}{e5}{e5}携手国美，推动消费升级！",person:"博西家用电器（中国）有限公司<br />副总裁兼首席销售官：王伟庆",delay:2600},
+  // {uid:7,type:4.2,msg:"老板烟灶套餐<br />CXW-200-8215+JZT-9B32",rgdwords:"国美30年生日快乐{e5}{e5}{e5}老板与国美携手并进，共创中国零售业美好的未来！",person:"杭州老板电器股份有限公司<br />总裁：任富佳",delay:2600},
+  {uid:8,type:4.1,msg:"方太洗碗机 JBSD2T-Q3",rgdwords:"国美30年生日快乐{e5}{e5}{e5}重新定义零售，让我们走得比梦想更远！",person:"宁波方太营销有限公司<br />总裁：茅忠群",delay:2600},
+  {uid:9,type:4.2,msg:"美的九曲焖香IH电饭煲<br />FZ4005XM",rgdwords:"国美30年生日快乐{e5}{e5}{e5}美的国美双双联手，为消费者服务下一个30年！",person:"芜湖美的生活电器制造有限公司<br />总经理：李国林",delay:2600},
+  {uid:1,type:0,msg:"感动到哭{e7}，亲们真是实力相助啊~一起走过的30年感谢有你们的支持和相伴，国美30周年庆重新定义零售，我也来回馈一下{e0}",delay:2100},
+  {uid:1,type:2,msg:"国美30周年 欢乐启幕",delay:2100},
+  // {type:3,msg:"珠海格力电器股份有限公司董事长兼总裁 董明珠",delay:300},
+  {type:3,msg:"创维集团CEO 杨东文",delay:350},
+  {type:3,msg:"TCL集团总裁、多媒体CEO 薄连明",delay:300},
+  {type:3,msg:"索尼(中国)有限公司董事长总裁 高桥洋",delay:300},
+  {type:3,msg:"博西家用电器(中国)有限公司副总裁兼首席销售官 王伟庆",delay:300},
+  // {type:3,msg:"杭州老板电器股份有限公司总裁 任富佳",delay:300},
+  {type:3,msg:"宁波方太营销有限公司总裁 茅忠群",delay:300},
+  {type:3,msg:"芜湖美的生活电器制造有限公司总经理 李国林",delay:300},
+  {uid:1,type:0,msg:"对了，话说我家最近新装修了，有空来坐坐。一水儿的现代智能黑科技，好玩还有趣！",delay:1200},
+  {uid:1,type:5,msg:".hidden1",delay:200}
+];
+var manifest=["a00.jpg"];
+var version="1.1";
+for(var i=0;i<=19;i++){
+	manifest.push("a"+(i<10?"0"+i:i)+".png");
+	if(i<=9) manifest.push('i'+i+'.jpg');
+  if(i<=7) manifest.push('e'+i+'.png');
+  if(i>=3&&i<=9) {
+    manifest.push('p'+i+'.png');
+    manifest.push('s'+i+'.png');
+  }
+}
+var firstInterval=600;
+var order=0;
+var isVideoOver;
+$(function(){
+	var stageH=$(window).height();
+  $(".wrap").height(stageH);
+  $(".cont").height(stageH-86);
+  loadResources(manifest,function (n, i, img) {
+    $("#loading p").html("loading&nbsp;" + Math.round(i * 100 / n) + "%");
+    if (n != i) return;
+    $("#loading").remove();
+    $("img").each(function(){
+      if($(this).data("src")){
+        $(this).attr("src",$(this).data("src")+"?ver="+version).removeAttr("data-src");
+      }
+    })
+    $(".inputarea").css({
+      "background-image":"url("+$(".inputarea").css("background-image")+"?ver="+version+")"
+    });
+    $(".intro li").css({
+      "background-image":"url("+$(".intro li").css("background-image")+"?ver="+version+")"
+    })
+    $("#wrap").show();
+
+    var d=new Date();
+    var h=d.getHours();
+    var m=d.getMinutes();
+    var daycnzharr=["一","二","三","四","五","六","日"];
+    $(".curtime").text((h<10?("0"+h):h)+":"+(m<10?("0"+m):m));
+    $(".curdate").text((d.getMonth()+1)+"月"+d.getDate()+"日 星期"+daycnzharr[d.getDay()-1]);
+    var intervalID=window.setTimeout(unlock,2000);
+    $(".initscrn").on("mouseup touchend",function(e){
+      unlock();
+      window.clearTimeout(intervalID);
+    })
+
+    $(".subbtn").click(function(){
+      if(!/1\d{10}/.test($("#mobile").val())){
+        alert("请填写正确的手机号");
+      }else{
+        // $.post("submit.php",{
+        //   mobile:$("#mobile").val()
+        // },function(data){
+        //   if(1==data.result){
+            $(".front").addClass("aniOut");
+            $(".back").show().addClass("aniIn");
+            setTimeout(function(){
+             $(".front").hide();
+            },250);
+        //   }else if(0==data.result){
+        //     alert("您已经领过啦");
+
+        //     $(".front").addClass("aniOut");
+        //     $(".back").show().addClass("aniIn");
+        //     setTimeout(function(){
+        //      $(".front").hide();
+        //     },250);
+        //   }
+        // },"json");
+      }
+    })
+    $(".closebtn2").click(function(){
+      $(".mtip").text("已领取");
+    	$(".bMask").fadeOut(100,function(){
+    		++order;
+    		playDailogue(null,function(){
+          $(".egglink").click(function(){
+            $(".production").show();
+          })
+        });
+    	});
+    })
+    $(".egg").click(function(){
+      $(".production").show();
+    })
+   })
+})
+function unlock(){
+  $(".weixin").addClass("aniOut").on("animationend webkitAnimationEnd",function(){
+    $(".initscrn").remove();
+  });
+  $(".contarea").show();
+  setTimeout(function(){
+    $(".contarea").addClass("normal");
+    playDailogue(15,function(){
+      $(".money").one("click",function(){
+        $(".bMask").show();
+      })
+    });
+  },200);
+}
+function playDailogue(StopOrder,func){
+	if(!StopOrder){
+		StopOrder=dailogue.length-1;
+	}
+	setTimeout(function(){
+    showDailogue();
+    if(order==StopOrder){
+    	if(func) func();
+    	return;
+    }
+    order++;
+    setTimeout(arguments.callee,dailogue[order-1].delay);
+  },firstInterval);
+}
+var template='\
+<div class="dBox">\
+  <img src="{imgurl}" width="72" height="72" class="avatar">\
+  <div class="pop">\
+    <i></i>\
+    <p class="words">{words}</p>\
+  </div>\
+</div>';
+var thumbtemplate='\
+<div class="dBox">\
+	<img src="{imgurl}" width="72" height="72" class="avatar">\
+	<div class="pop">\
+		<i></i>\
+		<p class="words">{words}</p>\
+		<img src="{thumburl}" class="thumb"\>\
+	</div>\
+</div>';
+var moneytemplate='\
+<div class="dBox money">\
+	<img src="{imgurl}" width="72" height="72" class="avatar">\
+	<div class="pop">\
+		<i></i>\
+		<img src="img/a01.png?ver='+version+'" class="redbag">\
+		<p class="words">{words}</p>\
+		<span class="mtip">领取红包</span>\
+		<div class="bagtip">微信红包</div>\
+	</div>\
+</div>';
+var tiptemplate='\
+<div class="tipBox">\
+  <img src="img/a01.png?ver='+version+'" class="redbag">\
+  <p class="words">{words}&nbsp;&nbsp;&nbsp;领取了你的<em>红包</em></p>\
+</div>';
+var presenttemplate='\
+<div class="dBox present">\
+	<img src="{imgurl}" width="72" height="72" class="avatar">\
+	<div class="pop">\
+  	<i></i>\
+  	<p class="words">{words}<br /><img src="img/a18.png?ver='+version+'"><img class="price" src="{price}"></p>\
+    <div class="thumb"><img src="{thumburl}" class="thumbimg"></div>\
+  	<div class="knot">\
+  		<img src="img/a17.png?ver='+version+'" class="knotimg">\
+    </div>\
+  	<div class="regard">\
+			<p class="rgdwords">{rgdwords}</p>\
+			<p class="person">{person}</p>\
+			<div class="bigavator"><img src="{imgurl}"></div>\
+  	</div>\
+	</div>\
+</div>';
+function showDailogue(){
+  var newDail;
+  var _d=dailogue[order];
+
+  if(0==_d.type){
+  	newDail= replaceTemplate(template,{
+      imgurl:'img/i'+_d.uid+'.jpg?ver='+version,
+      words:_d.msg.replace(/{(\S*?)}/g,'<img src="img/$1.png?ver='+version+'" class="emoji">')
+    });
+  }else if(1==_d.type||1.1==_d.type){
+  	newDail=replaceTemplate(thumbtemplate,{
+    	imgurl:'img/i'+_d.uid+'.jpg?ver='+version,
+    	words:_d.msg,
+    	thumburl:_d.thumb
+    })
+  }else if(2==_d.type){
+  	newDail=replaceTemplate(moneytemplate,{
+   		imgurl:'img/i'+_d.uid+'.jpg?ver='+version,
+      words:_d.msg
+    });
+  }else if(3==_d.type){
+  	newDail=replaceTemplate(tiptemplate,{
+   		imgurl:'img/i'+_d.uid+'.jpg?ver='+version,
+      words:_d.msg
+    });
+  }else if(4==_d.type||4.1==_d.type||4.2==_d.type){
+  	newDail=replaceTemplate(presenttemplate,{
+   		imgurl:'img/i'+_d.uid+'.jpg?ver='+version,
+      words:_d.msg?_d.msg:"&nbsp;",
+      thumburl:(4!=_d.type)?("img/p"+_d.uid+".png?ver="+version):"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=",
+      price:'img/s'+_d.uid+'.png?ver='+version,
+      rgdwords:_d.rgdwords.replace(/{(\S*?)}/g,'<img src="img/$1.png?ver='+version+'" class="emoji">'),
+      person:_d.person
+    });
+  }else if(5==_d.type){
+    newDail= replaceTemplate(template,{
+      imgurl:'img/i'+_d.uid+'.jpg?ver='+version,
+      words:$(_d.msg).html()
+    });
+  }
+
+  var newDailDom=$(newDail);
+  if(typeof _d.uid!="undefined"&&0==_d.uid){
+    newDailDom.addClass("self");
+  }
+  switch(_d.type){
+  	case 1:
+  	newDailDom.addClass("product");
+  	break;
+  	case 1.1:
+  	newDailDom.addClass("product1");
+  	break;
+  	case 2:
+  	newDailDom.addClass("money");
+  	break;
+  	case 4.1:
+  	newDailDom.addClass("present1");
+  	break;
+  	case 4.2:
+  	newDailDom.addClass("present2");
+  	//newDailDom.find(".thumb,.words").remove();
+  	break;
+    case 5:
+    newDailDom.addClass("egglink");
+    break;
+  	default:
+  	break;
+  }
+  newDailDom.appendTo($(".contHolder"));
+  // document.getElementById("messageBox").pause();
+  // document.getElementById("messageBox").play();
+  setTimeout(function(){
+    $(".cont").animate({scrollTop:-$(".cont").height()+$(".contHolder").outerHeight()+22+22},200);
+  },30);
+}
+function replaceTemplate(tpt,filler){
+  for(var attr in filler){
+    tpt=tpt.replace(new RegExp('{'+attr+'}','img'),filler[attr]);
+  }
+  return tpt;
+}
+function loadResources(urls, progress) {
+  var loadedCount = 0;
+  var loaded = function () {
+    ++loadedCount;
+    if (progress) progress(urls.length, loadedCount, this);
+  };
+  for (var i = 0; i < urls.length; ++i) {
+    if (!urls[i]) {
+      loaded();
+      return;
+    }
+    var img = new Image();
+    img.onload = loaded;
+    img.onabort = loaded;
+    img.onerror = loaded;
+    img.src =  'img/'+urls[i] +"?ver="+version;
+  }
+}
+</script>
+</body>
+</html>

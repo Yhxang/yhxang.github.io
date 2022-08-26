@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>一米阳光对开门冰箱</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+      var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<!-- <link href="css/swiper.min.css" rel="stylesheet"> -->
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body class="subbody">
+<div id="loading">
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+  <p>loading...</p>
+</div>
+
+<div id="wrap" class="wrap">
+   <section class="p21">
+    <h1 class="p21-title">
+      <img src="img/pdt2/b01.png">
+    </h1>
+    <!-- <i class="i-tip"></i> -->
+    <p class="p21-sub"><img src="img/pdt2/b04.png"></p>
+    <img src="img/pdt2/b02.png" class="p21-tip"> 
+    <img src="img/pdt2/b03.png" class="p21-pic">
+  </section>
+  <section class="p22">
+    <h1 class="p22-title">
+      <img src="img/pdt2/b05.png">
+    </h1>
+    <p class="p22-sub">6道工艺实现三段沙色光线变化<br />
+面板四角采用90°钻石切割工艺，精雕细琢<br />
+铂金灰-琴键形把手，符合人体工程学<br />
+60cm超薄箱体，与橱柜深度吻合
+</p>
+    <div class="picholder_22">
+      <img src="img/pdt2/b06.png" class="p22-pic">
+      <img src="img/pdt2/b07.png" class="p22-pic-1">
+
+      <img src="img/pdt2/b08.png" class="p22-pic-2">
+      <img src="img/pdt2/b09.png" class="p22-pic-3">
+    </div>
+  </section>
+
+  <section class="p23">
+    <h1 class="p23-title">
+      <img src="img/pdt2/b10.png">
+    </h1>
+    <p class="p23-sub">冷藏室、冷冻室配备独立循环风道和风门<br/>
+快速降温，持久保鲜.免去除霜烦恼 
+</p>
+    <div class="picholder_23">
+      <img src="img/pdt2/b15.png" class="p23-pic">
+      <img src="img/pdt2/b13.png" class="p23-cool">
+      <img src="img/pdt2/b14.png" class="p23-freeze">
+    </div>
+  </section>
+  <section class="p24">
+    <h1 class="p24-title">
+      <img src="img/pdt2/b11.png">
+    </h1>
+    <p class="p24-sub">配备绿色净化系统，整机高效抑菌防霉、全范围<br />净化空气.抑菌率99%，保持食物新鲜、健康</p>
+    <div class="picholder_24">
+      <img src="img/pdt2/b16.png" class="p24-pic">
+    </div>
+  </section>
+</div> 
+<script src="js/zepto.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/easing/EasePack.min.js"></script> 
+<script>
+  $(function(){
+
+    var stageH=$(window).height();
+    var resourceDir="img/pdt2/";
+    var loadingImages=[];
+    $("#wrap,section").height(stageH);
+    for(var i=1;i<=10;i++){
+      loadingImages.push("b"+(i<10?"0"+i:i)+".png");
+    }
+    var mc=new Hammer(document.body,{
+      touchAction: 'pan-x pan-y',
+      recognizers: [
+        [Hammer.Tap],
+        [Hammer.Pan]
+      ]
+    })
+    loadResources(loadingImages,function (n, i, img) {
+      $("#loading p").html("loading&nbsp;" + Math.round(i * 100 / n) + "%");
+      if (n != i) return;
+      $("#loading").remove();
+      $("#wrap").show();
+      init();
+      setTimeout(function(){
+        $("#wrap").css("visibility","visible");
+      },100)
+      
+    })
+    var tl=new TimelineMax();
+    function init(){
+      tl.delay(.3)
+      .fromTo(".p21-tip",1,{y:-80,alpha:0},{y:0,alpha:1})
+      .fromTo(".p21-pic",1.5,{alpha:0},{alpha:1},"-=.2")
+      .fromTo(".p21-title",1,{alpha:0,x:-20},{alpha:1,x:0},"-=.4")
+      .fromTo(".p21-sub",.8,{alpha:0,x:-20},{alpha:1,x:0},"-=.4")
+      .add("p2")
+      .addPause()
+
+      .to(".p21-tip,.p21-pic",.8,{alpha:0,y:"+=20"})
+      .from(".p22 .p22-pic",1.3,{alpha:0,y:"+=15"},"+=.2")
+      .to(".p21-title",.8,{alpha:0,y:"-=15"},"p2")
+      .to(".p21-sub",.7,{alpha:0,y:20},"p2+=.1")
+      .from(".p22 .p22-title",.8,{alpha:0,y:20},"p2+=.2")
+      .from(".p22 .p22-sub",1,{alpha:0,y:"+=15"},"p2+=.3")
+      .delay(1)
+      .staggerFrom(".p22-pic-1,.p22-pic-2,.p22-pic-3",.5,{alpha:0,width:"0px",height:"0px"},.2)
+      .addPause()
+
+      .staggerTo(".p22-pic-1,.p22-pic-2,.p22-pic-3",.3,{alpha:0},.1)
+      .to(".p22 .p22-sub",.5,{alpha:0,y:"+=20"},"-=.3")
+      .to(".p22 .p22-title",.4,{alpha:0}) 
+      .from(".p22 .p22-pic",1,{alpha:0,y:"+=15"},"-=0.5")
+     .fromTo(".p23-title",1,{alpha:0,y:20},{alpha:1,y:0},"-=.6")
+      .fromTo(".p23-sub",1,{y:20,alpha:0},{y:0,alpha:1})
+      .fromTo(".p23-pic",1.5,{alpha:0,y:"-=100"},{alpha:1,y:0},"-=.4")
+      .staggerFrom(".p23-cool,.p23-freeze",.8,{alpha:0,y:0},.2)
+      .addPause()
+
+      .call(function(){
+        $(window.parent.document).find(".nexttip").removeClass("show");
+      })
+      .staggerTo(".p23-cool,.p23-freeze",.3,{alpha:0},.1)
+      .to(".p23 .p23-sub",.5,{alpha:0,y:"+=20"},"-=.3")
+      .to(".p23 .p23-title",.4,{alpha:0}) 
+      .from(".p23 .p23-pic",1,{alpha:0,y:"+=15"},"-=0.5")
+      .fromTo(".p24-title",1,{alpha:0,y:20},{alpha:1,y:0},"-=.6")
+      .fromTo(".p24-sub",1,{y:20,alpha:0},{y:0,alpha:1})
+      .fromTo(".p24-pic",1.5,{alpha:0,y:"-=100"},{alpha:1,y:0},"-=.4")
+      .call(function(){
+        $(window.parent.document).find(".menu-switch-on").addClass("pulse");
+      });
+    }
+    mc.on("pan",function(){
+      tl.play();
+    })
+    function loadResources(urls, progress) {
+      var loadedCount = 0;
+      var loaded = function () {
+        ++loadedCount;
+        if (progress) progress(urls.length, loadedCount, this);
+      };
+      for (var i = 0; i < urls.length; ++i) {
+        if (!urls[i]) {
+          loaded();
+          return;
+        }
+        var img = new Image();
+        img.onload = loaded;
+        img.onabort = loaded;
+        img.onerror = loaded;
+        img.src = resourceDir + urls[i];//+ "?ver=" + j_version;
+      }
+    }
+  })
+</script>
+</body>
+</html>

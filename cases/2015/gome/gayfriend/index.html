@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>好基友的日常(6)</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link href="css/style.css?ver=1.20" rel="stylesheet">
+</head>
+<body>
+<img src="img/share.jpg" alt="" class="shareicon">
+<div id="loading">
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+  <p>loading...</p>
+</div>
+<div class="wrap" id="wrap">
+  <div class="contarea">
+    <div class="cont">
+      <div class="contHolder">
+        <div class="top"><p>悟空邀请你加入了群聊</p></div>
+      </div>
+    </div>
+    <div class="inputarea">
+      <div class="input"><span></span><i></i></div>
+      <div class="inputsel"></div>
+      <ul class="keyboards"><li class="stline">q</li><li>w</li><li>e</li><li>r</li><li>t</li><li>y</li><li>u</li><li>i</li><li>o</li><li>p</li><li class="ndline">a</li><li>s</li><li>d</li><li>f</li><li>g</li><li>h</li><li>j</li><li>k</li><li>l</li><li class="rdline">z</li><li>x</li><li>c</li><li>v</li><li>b</li><li>n</li><li>m</li></ul>
+      <div class="post"><p>确认</p></div>
+    </div>
+  </div>
+  <div class="sharemask">
+    <img src="img/a02.png" width="283" height="199" alt="">
+  </div>
+</div>
+<audio preload="preload" id="messageBox" src="media/message.mp3"></audio>
+<script src="js/jquery-2.1.1.min.js"></script>  
+<script>
+$.fn.extend({
+  mctap:function(func){
+    var _this=this;
+    this.on('touchstart',function(e){
+      tiptimer=new Date();
+    }).on('touchend',function(e){
+      if(new Date()-tiptimer<150) {func.bind(this,e)();}
+    })
+  }
+})
+var manifest=['a01.jpg','a01.png','v1.png','i0.jpg','videoshot.jpg'];
+for(var i=1;i<=10;i++){
+  manifest.push('e'+i+'.png');
+  if(i<=6) manifest.push('i'+i+'.jpg');
+}
+var dailogue=[
+  {uid:1,msg:"兄弟们，哥们出了点事",type:0,delay:1900},
+  {uid:2,msg:"我最近手头也不宽裕…",type:0,delay:1800},
+  {uid:3,msg:"什么情况",type:0,delay:2000},
+  {uid:1,msg:"我女朋友……",type:0,delay:2100},
+  {uid:4,msg:"那什么，兄弟你听我解释",type:0,delay:2100},
+  {uid:2,msg:"有了？？？",type:0,delay:1800},
+  {uid:3,msg:"不哭，哥一直在等你 {e1}",type:0,delay:2000},
+  {uid:1,msg:"她…她做饭了！",type:0,delay:2300},
+  {uid:3,msg:"{e2}把你给嘚瑟的……",type:0,delay:1800},
+  {uid:2,msg:"原来是在虐狗",type:0,delay:1700},
+  {uid:1,msg:"哎……看了视频你们就懂我了",type:0,delay:2100},
+  {uid:1,msg:"{v1}",type:1,delay:3100,vurl:"media/cook.mp4",vdur:"0:15",imgw:424,imgh:240},
+  {uid:3,msg:"是萝卜的错",type:0,delay:1600},
+  {uid:4,msg:"是锅的错",type:0,delay:1400},
+  {uid:5,msg:"是厨房的错",type:0,delay:1200},
+  {uid:2,msg:"赶紧快换一套嵌入式家电给女票压压惊！",type:0,delay:2800},
+  {uid:3,msg:"我家就刚买了一套，整个厨房瞬间高大上！",type:0,delay:2000},
+  {uid:0,msg:"听说国美和中国家电协会合作，最高便宜700呢！现在还貌似6折~约起来！",type:0,delay:2000},
+  {uid:4,msg:"{e8}",type:0,delay:1400},
+  {uid:3,msg:"{e10}",type:0,delay:1600},
+  {uid:5,msg:"{e9}",type:0,delay:1500},
+  {uid:0,msg:"还不赶快转发给广大基友",type:0,delay:0}
+];
+var order=0;
+var hasHash=false;
+var firstInterval=800;
+var isVideoOver;
+$(function(){
+  var stageH=$(window).height();
+  $(".wrap").height(stageH);
+  $(".cont").height(stageH-86);
+  loadResources(manifest,function (n, i, img) {
+    $("#loading p").html("loading&nbsp;" + Math.round(i * 100 / n) + "%");
+    if (n != i) return;
+    $("#loading").remove();
+    $("#wrap").show();
+    if(window.location.hash){
+      var hashorder=parseInt(window.location.hash.substr(2));
+      for(order=0;order<=parseInt(window.location.hash.substr(2));++order){
+        hasHash=true;
+        showDailogue();
+      }
+      order=hashorder;
+      firstInterval=0;
+    }
+    setTimeout(function(){
+      if(!hasHash){
+        showDailogue();
+      }else{
+        hasHash=false;
+      }
+      if(order>=11){
+        window.location.hash='d'+order;
+      }
+      if(order==dailogue.length-2) { 
+        isVideoOver=true; 
+        setTimeout(function(){
+          $(".contarea").addClass("focus");
+          showinputbox();
+        },dailogue[order-1].delay)
+        return;
+      }
+      order++;
+      setTimeout(arguments.callee,dailogue[order-1].delay);
+    },firstInterval);
+
+    $(".keyborads li").on('touchstart',function(){
+      $(this).addClass("active");
+    }).on('touchend',function(){
+      $(this).removeClass("active");
+    })
+
+    $(".post").click(function(e){
+      $(".sharemask").show();
+      order=dailogue.length-1;
+      $(".input").hide();
+      showDailogue();
+      $(".contarea").removeClass("focus");
+    })
+    $(".sharemask").click(function(e){
+      //$(".dBox").last().remove();
+      $(".contarea").addClass("focus");
+      $(".input").show();
+      $(this).hide();
+    })
+  })
+})
+
+var template='<div class="dBox"><img src="{imgurl}" width="72" height="72" class="avatar"><div class="pop"><i></i><p>{words}</p></div></div>';
+var videotemplate='<div class="dBox"><img src="{imgurl}" width="72" height="72" class="avatar"><div class="pop"><i></i><p>{words}<em></em><span class="vdur">{vdur}</span></p></div></div>';
+var linktemplate='<div class="dBox link"><img src="{imgurl}" width="72" height="72" class="avatar"><div class="pop"><i></i><div class="dLink"><h2>{tit}</h2><img src="{limg}" alt=""><p>{sub}</p></div></div></div>';
+function showDailogue(){
+  var newDail;
+  switch(dailogue[order].type){
+    case 0:
+    newDail= replaceTemplate(template,{
+      imgurl:'img/i'+dailogue[order].uid+'.jpg',
+      words:dailogue[order].msg.replace(/{(\S*?)}/g,'<img src="img/$1.png" class="emoji">')
+    });
+    break;
+    case 1:
+    var _vlink=(/Android (\d+\.\d+)/.test(ua))?'video.html':dailogue[order].vurl;
+    newDail=replaceTemplate(videotemplate,{
+      imgurl:'img/i'+dailogue[order].uid+'.jpg',
+      words: dailogue[order].msg.replace(/{(\S*?)}/g,'<a href="'+_vlink+'" ><img src="img/$1.png" width="'+dailogue[order].imgw+'" height="'+dailogue[order].imgh+'"></a>'),
+      vdur:dailogue[order].vdur
+    });
+    break;
+    case 2:
+    newDail=replaceTemplate(linktemplate,{
+      imgurl:'img/i'+dailogue[order].uid+'.jpg',
+      tit: dailogue[order].link.tit,
+      limg:dailogue[order].link.limg,
+      sub:dailogue[order].link.sub
+    });
+    break;
+    default:
+    break;
+  }
+  var newDailDom=$(newDail);
+  if(0==dailogue[order].uid){
+    newDailDom.addClass("self");
+  }else if(1==dailogue[order].uid&&1!=dailogue[order].type){
+    newDailDom.addClass("first");
+  }
+  if(1==dailogue[order].type){
+    newDailDom.addClass("video");
+  }
+  newDailDom.appendTo($(".contHolder"));
+  document.getElementById("messageBox").pause();
+  document.getElementById("messageBox").play();
+  setTimeout(function(){
+    $(".cont").animate({scrollTop:-$(".cont").height()+$(".contHolder").outerHeight()+22+22},200);
+  },30);
+}
+var intervalkeypress;
+function keypress(){
+  var len= $(".keyboards li").length;
+  var _this;
+  intervalkeypress=setTimeout(function(){
+    var ran=Math.round(Math.random()*len)
+    if(_this) _this.removeClass("active");
+    _this=$(".keyboards li").eq(ran);
+    _this.addClass("active");
+    intervalkeypress=setTimeout(arguments.callee,180)
+  }, 180);
+}
+var inputboxidx=0;
+function showinputbox(){
+  keypress();
+  var str=dailogue[dailogue.length-1].msg;
+  var htxt='';
+  setTimeout(function(){
+    htxt+=str[inputboxidx]
+    $(".input span").text(htxt);
+    if(inputboxidx==str.length-1) {
+      if(intervalkeypress)clearTimeout(intervalkeypress);
+      $(".keyboards li").removeClass('active'); 
+      $(".post").show();
+      return;
+    }
+    inputboxidx++
+    setTimeout(arguments.callee,400)
+  },400)
+}
+
+function replaceTemplate(tpt,filler){
+  for(var attr in filler){
+    tpt=tpt.replace(new RegExp('{'+attr+'}','img'),filler[attr]);
+  }
+  return tpt;
+}
+function loadResources(urls, progress) {
+  var loadedCount = 0;
+  var loaded = function () {
+    ++loadedCount;
+    if (progress) progress(urls.length, loadedCount, this);
+  };
+  for (var i = 0; i < urls.length; ++i) {
+    if (!urls[i]) {
+      loaded();
+      return;
+    }
+    var img = new Image();
+    img.onload = loaded;
+    img.onabort = loaded;
+    img.onerror = loaded;
+    img.src =  'img/'+urls[i];
+  }
+}
+</script>
+</body>
+</html>

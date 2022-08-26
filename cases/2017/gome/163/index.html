@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3.10黑色星期伍</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link href="css/swiper-3.4.1.min.css" rel="stylesheet">
+<link href="css/style-wap.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrappoutter">
+  <div id="wrap" class="wrap">
+  	<div id="videoBox">
+	  	<video id="video"  preload="auto" poster="img/p1_0.jpg" webkit-playsinline="true" x-webkit-airplay="true" playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" width="1" height="1">
+	  		 <!-- <source src="media/role1.mp4" type="video/mp4"> -->
+	  	</video>
+      <img id="poster" src="img/p3_0.jpg" alt="">
+      <img src="img/a29.png" alt="" class="vloading">
+      <div class="handtip"><div class="hand"></div><div class="handlight"></div></div>
+	  	<div id="tap" class="tap"><i class="arc1"></i><i class="arc2"></i><em></em></div>
+      
+  	</div>
+    <div class="p1 pp">
+      <input type="tel" maxlength="11" id="mobile" name="mobile">
+      <div id="closeBtn"></div>
+      <div id="submitBtn"></div>
+    </div>
+    <div class="p2 pp">
+      <img src="img/a01.jpg" alt="">
+      <img src="img/a02.png" alt="" id="linkBtn">
+    </div>
+  	<div class="p3 p4 pp">
+      <div id="suprise">
+        <img src="img/a04.png" alt="" class="sprtit">
+        <img src="img/a03.png" alt="" class="sprbox">
+      </div>
+    </div>
+    <div class="more pp">
+      <img src="img/a03.jpg" alt="">
+      <div class="moreslide ms1">
+        <img src="img/a17.png" alt="" class="morerole1 morerole">
+        <img src="img/a16.png" alt="" class="follow follow1">
+        <p class="rolename rolename1">雅痞男</p>
+        <img src="img/a18.png" alt="" class="morerole2 morerole">
+        <img src="img/a16.png" alt="" class="follow follow2">
+        <p class="rolename rolename2">元气少女</p>
+        <img src="img/a19.png" alt="" class="morerole3 morerole">
+        <img src="img/a16.png" alt="" class="follow follow3">
+        <p class="rolename rolename3">邻家男孩</p>
+      </div>
+      <div class="moreslide ms2">
+        <img src="img/a30.png" alt="" class="morerole4 morerole">
+        <img src="img/a16.png" alt="" class="follow follow4">
+        <p class="rolename rolename1">邻家女孩</p>
+        <img src="img/a31.png" alt="" class="morerole5 morerole">
+        <img src="img/a16.png" alt="" class="follow follow5">
+        <p class="rolename rolename2">帅气校草</p>
+        <img src="img/a32.png" alt="" class="morerole6 morerole">
+        <img src="img/a16.png" alt="" class="follow follow6">
+        <p class="rolename rolename3">萝莉盟主</p>
+      </div>
+      <div class="msprev"><img src="img/a05.png" alt=""></div>
+      <div class="msnext"><img src="img/a05.png" alt=""></div>
+      <img src="img/a20.png" alt="" class="moretxt">
+    </div>
+  	<!-- <p id="test"></p> -->
+  </div>
+  <div class="production p5">
+    <img src="img/a02.jpg" alt="" class="p5bg">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/a08.png" alt="" class="prtimg"></div>
+        <div class="swiper-slide"><img src="img/a09.png" alt="" class="prtimg"></div>
+        <div class="swiper-slide"><img src="img/a10.png" alt="" class="prtimg"></div>
+        <div class="swiper-slide"><img src="img/a11.png" alt="" class="prtimg"></div>
+        <div class="swiper-slide"><img src="img/a12.png" alt="" class="prtimg mart100"></div>
+        <div class="swiper-slide"><img src="img/a13.png" alt="" class="prtimg mart100"></div>
+        <div class="swiper-slide"><img src="img/a21.png" alt="" class="prtimg"></div>
+        <div class="swiper-slide"><img src="img/a22.png" alt="" class="prtimg"></div>
+        <div class="swiper-slide"><img src="img/a23.png" alt="" class="prtimg"></div>
+        <div class="swiper-slide"><img src="img/a24.png" alt="" class="prtimg mart100"></div>
+        <div class="swiper-slide"><img src="img/a25.png" alt="" class="prtimg"></div>
+        <div class="swiper-slide"><img src="img/a26.png" alt="" class="prtimg"></div>
+      </div>
+      <div class="swiper-button-prev"><img src="img/a05.png" alt=""></div>
+      <div class="swiper-button-next"><img src="img/a05.png" alt=""></div>
+    </div>
+    <img src="img/a27.png" width="373" height="244" class="qr"  alt="">
+    <div class="pdttitarea">
+      <img src="img/a06.png" alt="">
+      <div class="pdttit">
+        <img src="img/a07.png" alt="" class="pdttitimg">
+      </div>
+    </div>
+    <div class="rbtip">
+      <img src="img/a15.png" alt="" class="rbtipbg">
+      <img src="img/a14.png" alt="" class="rbtiptit">
+    </div>
+  </div>
+  <div class="sndctrl">
+    <img src="img/sndicon.png"><i></i>
+  </div>
+  <img src="img/a01.png" alt="" class="logo" id="logo">
+</div>
+<script>
+
+var myPlayer = document.getElementById("video");
+var myPoster=document.getElementById("poster");
+var roleIndex=0;//0雅痞男1元气少女2邻家男孩3邻家女孩4帅气校草5萝莉盟主
+var rolepage=0;
+
+var date=new Date().getDate();
+switch (date){
+  case 2:
+  roleIndex=2;
+  break;
+  case 3:
+  roleIndex=1;
+  break;
+  case 8:
+  roleIndex=0;
+  break;
+  case 9:
+  roleIndex=3;
+  break;
+  case 10:
+  roleIndex=4;
+  break;
+  case 13:
+  roleIndex=5;
+  break;
+  case 14:
+  roleIndex=0;
+  break;
+  default:
+  break;
+}
+setVideo(roleIndex);
+
+function setVideo(_roleIndex){
+  document.getElementById("wrappoutter").className="role"+(_roleIndex+1);
+  myPlayer.src="media/role"+(_roleIndex+1)+".mp4";
+  myPlayer.poster="img/p"+(_roleIndex+1)+"_0.jpg";
+  myPoster.src="img/p"+(_roleIndex+1)+"_0.jpg";
+}
+</script>
+<script src="js/jquery-3.0.0.min.js"></script> 
+<script src="js/swiper-3.4.1.min.js"></script>
+<script>
+window.addEventListener('touchmove', function (e) {
+  e.preventDefault();
+}, false);
+
+var stageW,stageH;
+var mySwiper;
+var muted=false;
+var pauseManual=false;
+var role=[
+[[0,7.00,5.48],[7.20,15.00],[16.00,23.00],[23.72,29.00],[29.76,33.72,32.60]],
+[[0,6.56,5.48],[6.84,14.48],[14.96,22.40],[23.20,29.60,29.00],[31.60,34.68,34.00]],
+[[0,5.40,4.64],[6.12,13.76],[14.40,19.64],[20.32,26.32],[27.00,30.56,28.88]],
+[[0,7.20,5.84],[7.56,13.00],[13.48,20.24,19.56],[20.88,26.20,25.76],[27.32,31.04,28.52]],
+[[0,5.48,4.28],[5.92,10.84],[11.64,16.84,16.48],[17.72,23.00,22.72],[24.52,27.32,26.80]],
+[[0,7.00,5.68],[7.64,13.08],[14.60,20.18,19.92],[21.16,26.96,26.08],[27.52,29.00,28.00]]
+];
+var step=1;
+
+document.getElementById('video').addEventListener("x5videoexitfullscreen", function(){
+  //alert("exit fullscreen")
+})
+document.getElementById('video').addEventListener("x5videoenterfullscreen", function(){
+  //alert("enter fullscreen")
+})
+var manifest=["p1_0.jpg","p2_0.jpg","p3_0.jpg","p4_0.jpg","p5_0.jpg","p6_0.jpg"];
+var manifestloaded=false;
+$(function (){
+  initVideo();
+  initRoles(roleIndex);
+  $(window).resize(function(){
+    stageH=$(window).height();
+    $("#wrap").css({top:(stageH-1136)/2});
+    if(Math.abs((stageH-1136)/2)>77){
+      $("#suprise").css({top:Math.abs((stageH-1136)/2)});
+    }else{
+      $("#suprise").css({top:77+10})
+    }
+    $("#wrappoutter").height(stageH);
+  }).trigger("resize");
+  
+  $("#submitBtn").click(function(){
+    var _mobile=$("#mobile").val();
+    if(!/1\d{10}$/.test(_mobile)){
+      alert("请输入正确的手机号码");
+    }else{
+      // $.ajax({
+      //   url:"../submit_userinfo.php",
+      //   type:"get",
+      //   data:{
+      //     mobile:_mobile,
+      //     media:"a"
+      //   },
+      //   dataType: "jsonp",
+      //   jsonpCallback: "jsonp",
+      //   success:function(data){
+      //     if(1==data.result){
+      //       $("#mobile").val("");
+      //       showStep(1);
+      //     }else if(2==data.result){
+      //       showStep(3);
+      //       $("#mobile").val("");
+      //     }else{
+      //       console.log(data.errmsg);
+      //     }
+      //   },
+      //   error:function(XMLHttpRequest, textStatus, errorThrown){
+      //     alert("对不起，由于网络原因请稍后重试");
+      //   }
+      // })
+      $("#mobile").val("");
+      showStep(1);
+    }
+  })
+  $("#suprise,#linkBtn").click(function(){
+    $(".pp").hide();
+    showStep(4);
+    playingListen(initSwiper);
+  })
+  $("#closeBtn").click(function(){
+    showStep(2);
+  })   
+  $(".rbtip").click(function(){
+    $(".production").hide();
+    $(".more").show();
+    loadstart();
+  })
+  $("#tap").click(function(){
+    myPlayer.play();
+    pauseManual=false;
+    myPlayer.width=640;
+    myPlayer.height=1136;
+    $(this).hide();
+    $(".handtip").hide();
+  })
+  for(var i=1;i<=6;i++){
+    (function(idx){
+      $(".morerole"+idx+",.follow"+idx).click(function(e){
+        roleIndex=idx-1;
+        initVideo();
+      })
+    })(i)
+  }
+  $(".msprev").click(function(){
+    if(--rolepage<0){
+      rolepage=$(".moreslide").length-1;
+    }
+    initRoles();
+  })
+  $(".msnext").click(function(){
+    if(++rolepage>$(".moreslide").length-1){
+      rolepage=0;
+    }
+    initRoles();
+  })
+
+  $(".sndctrl").click(function(){
+    if(muted){
+      myPlayer.muted=muted=false;
+      $(this).find("i").hide();
+    }else{
+      myPlayer.muted=muted=true;
+      $(this).find("i").show();
+    }
+  })
+  function initVideo(){
+    step=0;
+    setVideo(roleIndex);
+    myPoster.style.display="block";
+    myPlayer.load();
+    myPlayer.muted=muted;
+    $(".pp").hide();
+    $(".tap,.handtip").show();
+    playingListen();
+  }
+  function showStep(_num){
+    $(".p1").hide();
+    $("#poster").hide();
+    step=_num;
+    myPlayer.currentTime=role[roleIndex][step][0];
+    myPlayer.play();
+    pauseManual=false;
+    playingListen();
+  }  
+})
+var prtclass=[0,0,1,1,2,2,3,3,4,4,4,5];
+function initSwiper(){
+  if(!mySwiper){
+    mySwiper = new Swiper ('.swiper-container', {
+      direction: 'horizontal',
+      loop:true,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      onSlideChangeEnd:function(cmd){
+        //console.log(cmd.activeIndex)
+        $(".pdttitimg").css({
+          "-webkit-transform":"translate3d(0,"+(-(prtclass[cmd.realIndex])*65)+"px,0)",
+          "transform":"translate3d(0,"+(-(prtclass[cmd.realIndex])*65)+"px,0)"
+        })
+      }
+    }) 
+  }
+}
+
+function initRoles(_roleIndex){
+  if(typeof _roleIndex!="undefined"){
+    if(_roleIndex<=2){
+      rolepage=0;
+    }else{
+      rolepage=1;
+    }
+  }
+  $(".moreslide").hide();
+  $(".ms"+(rolepage+1)).show();
+}
+
+function playingListen(func){
+  var hadFunc=false;
+  var _posterstyle=$("#poster")[0].style;
+  var _loadingstyle=$(".vloading")[0].style;
+  myPlayer.addEventListener("timeupdate",function listenvtime(e){
+
+    if(_posterstyle.display!="none"&&myPlayer.currentTime>0) $("#poster").hide();
+    //if(_loadingstyle.display!="none") $(".vloading").hide();
+
+    var funcInPlaying=role[roleIndex][step][2];//视频未播放完提前回调
+    if(!hadFunc&&funcInPlaying&&e.target.currentTime>funcInPlaying){ 
+      $(".p"+(step+1)).show();  
+      if(typeof func=="function") func();
+      hadFunc=true;
+    }
+    if(e.target.currentTime>role[roleIndex][step][1]-.4){
+      myPlayer.currentTime=role[roleIndex][step][1];
+      myPlayer.pause();
+      pauseManual=true;
+      
+      if(!hadFunc) $(".p"+(step+1)).show();
+      if(!hadFunc && typeof func=="function") func();
+
+      myPlayer.removeEventListener("timeupdate", listenvtime);
+    }
+  })
+
+  myPlayer.addEventListener("waiting",function(){
+    if(!pauseManual) $(".vloading").show();
+    console.log('waiting');
+  })
+  myPlayer.addEventListener("canplaythrough",function(){
+    $(".vloading").hide();
+    console.log('canplaythrough');
+  })
+  myPlayer.addEventListener("playing",function(){
+    console.log('playing');
+  })
+}
+function loadstart(){
+  loadResources(manifest,function (n, i, img) {
+    $("#loading p").html("loading&nbsp;" + Math.round(i * 100 / n) + "%");
+    if (n != i) return;
+    //$("#loading").remove();
+    // $("img").each(function(){
+    //   if($(this).data("src")){
+    //     $(this).attr("src",$(this).data("src")+"?ver="+version).removeAttr("data-src");
+    //   }
+    // })
+  })
+}
+function loadResources(urls, progress) {
+  var loadedCount = 0;
+  var loaded = function () {
+    ++loadedCount;
+    if (progress) progress(urls.length, loadedCount, this);
+  };
+  for (var i = 0; i < urls.length; ++i) {
+    if (!urls[i]) {
+      loaded();
+      return;
+    }
+    var img = new Image();
+    img.onload = loaded;
+    img.onabort = loaded;
+    img.onerror = loaded;
+    img.src =  'img/'+urls[i];
+  }
+}
+</script>
+</body>
+</html>

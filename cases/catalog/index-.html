@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无线案例</title>
+<meta name="description" content="邮箱：yhxang@163.com" />
+<!-- <script>
+var ua = navigator.userAgent;
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+
+document.write('<meta name="viewport" content="width=640, user-scalable=no, initial-scale='+phoneScale+', minimum-scale='+phoneScale+', maximum-scale='+phoneScale+'">');
+</script> -->
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<style>
+
+html,body{margin:0; padding:0; font-family: 'Helvetica Neue', Helvetica, STHeiTi, 'Microsoft YaHei', sans-serif;}
+a{display: block; height: 50px; border-bottom: 1px solid rgba(0,0,0,.3); font-size: 25px; line-height: 50px; background: -webkit-linear-gradient(top, #ffffff 0%,#f4f4f4 50%,#d8d8d8 51%,#d8d8d8 51%,#f2f2f2 100%); background: linear-gradient(to bottom, #ffffff 0%,#f4f4f4 50%,#d8d8d8 51%,#d8d8d8 51%,#f2f2f2 100%); text-decoration: none; color: #000; text-indent: 10px; overflow:hidden;}
+
+a:visited {color: #9C27B0;}
+a:hover {color:red;}
+a span{float:right; margin-right: 10px; font-size: 20px; color:rgb(121, 121, 121);}
+.shareicon{ position: absolute; left: -9999px; top: -9999px; display: block; width: 0; height: 0;}
+#caseRegion{display: none; position: absolute; left: 0; top: 0; transform: scale3d(0.5, 0.5, 1); transform-origin: 0 0;}
+#caseRegion.show{display: block;}
+
+.star{color:#ffaa46;}
+.star::before{content:'\F04CE'; display: inline-block;}
+#wrapper li{position: relative; margin-bottom: 30px; list-style: none;}
+.card{border-radius:0.5rem; border:none; overflow: hidden; box-shadow: 0 1px 3px rgb(3 0 71 / 9%);}
+.overview{position: absolute;  left: 0; bottom: 0; padding: .5rem 0.5rem; width: 100%; height: 40%; background-color: rgba(255,255,255,.9);}
+.h4{font-size: 1rem; padding: 0.5rem 0}
+.mb-2{margin-bottom: 0.5rem;}
+.border-bottom{border-bottom: 1px solid #eae7f5!important}
+#wrapper img{width: 100%; }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+var mycase=[
+  {tit:"风氢扬官网",href:"http://g-powertech.com.cn/",date:20210101,star:5,type:'PC'},
+  {tit:"打响防疫知识战",href:"./2020/58/ncpqa",date:20200321,star:3},
+  {tit:"答案星球",href:"./2019/jdbook/answerplanet",date:20190419,star:5},
+  {tit:"2019汽车产业会议",href:"./2019/autohome/meeting_v1",date:20190724,star:4},
+  // {tit:"2019汽车产业会议2-汽车之家",href:"./2019/autohome/meeting_v2",date:20190724,star:2},
+  {tit:"突破次元壁，找到二次元中的你",href:"./2018/aliwenxue/acg",date:20180809,star:3,shref:"https://aliwenxue.maimang.net.cn/731/"},
+  {tit:"海信世界杯球迷广场",href:"./2018/hisense/worldcup",date:20180612,star:5},
+  {tit:"寻人启事 重返汶川",href:"./2018/aliwenxue/512",date:20180512,star:5,shref:"https://aliwenxue.maimang.net.cn/512/",},
+  {tit:"这是一条充满爱的朋友圈",href:"./2018/aliwenxue/moments/",date:20180410,star:5,shref:"https://aliwenxue.maimang.net.cn/"},
+  {tit:"马自达3",href:"./2018/mazda/panorama/",date:20180212,star:4},
+  {tit:"故宫：寻找遗失的穿越密码",href:"./2017/iqiyi/palace/",date:20170823,star:5},
+  {tit:"HIGH购家装季",href:"./2017/gome/526/",date:20170526,star:4,shref:"http://2017.gome.com.cn/526/h5/"},
+  {tit:"五一家电低价直通车",href:"./2017/gome/bus/",date:20170501,star:5,shref:"http://2017.gome.com.cn/51h/"},
+  {tit:"抢先尝夏，这里给你360度的选择",href:"./2017/gome/aircondition/",date:20170324,star:5,shref:"http://2017.gome.com.cn/ktj/"},
+  {tit:"408 超级福利计划",href:"./2017/gome/408/",date:20170408,star:3},
+  {tit:"3.10黑色星期伍",href:"./2017/gome/163/",date:20170310,star:4},
+  {tit:"来~画了这个包，拿着去买包",href:"./2017/gome/draw/",date:20170123,star:3},
+  {tit:"30周年福利大放送",href:"./2016/gome/30years/",date:20161223,star:3},
+  {tit:"11.11来了，现金红包也来了！",href:"./2016/gome/1111/",date:20161111,star:3},
+  {tit:"爷爷，你是不是心甘情愿跟了蛇精？",href:"./2016/gome/gourdbaby/",date:20160902,star:4},
+  {tit:"快！趣现场",href:"./2016/hisense/didi2/",date:20160706,star:5},
+  {tit:"快去现场",href:"./2016/hisense/didi/",date:20160619,star:5},
+  {tit:"欧洲杯看我的 猜比分看你的",href:"2016/hisense/eurocup/",date:20160612,star:4},
+  {tit:"小米情景营销分享会",href:"./2016/mediav/xiaomishare/",date:20160429,star:3},
+  {tit:"豪门盛宴 看我主场",href:"./2016/hisense/415/",date:20160419,star:4},
+  {tit:"315，你不知道的那些事儿",href:"./2016/gome/315/",date:20160301,star:5},
+  {tit:"这是一场时光的SHOW",href:"./2016/mediav/nianhui/",date:20160122,shref:"http://2016chunjie.mediav.cn/",star:2},
+  {tit:"摇出萌造型欢乐拜大年",href:"./2016/gome/springfestival/",date:20160202,shref:"?userid=404",star:5},
+  {tit:"新年 选一份全家共享的礼物",href:"./2015/hisense/yuanchun/wap/",date:20160112,star:1},
+  {tit:"好基友的日常(6)",href:"./2015/gome/gayfriend/",date:20151231,star:5},
+  {tit:"12.12海信超级品牌日",href:"./2015/hisense/1212/",date:20151212,star:1},
+  {tit:"海尔商城30+梦想趴 生活+大联盟",href:"./2015/haier/island/",date:20151211,star:4},
+  {tit:"11.11前夜发生了什么",href:"./2015/gome/1111eve/",date:20151110,star:5},
+  {tit:"疯狂摇充电！免费乐1S到手！快帮我充电！",href:"./2015/letv/charge/",date:20151028,shref:"?userid=404",star:4},
+  {tit:"勿忘初心 与你同行",href:"./2015/gome/party/",date:20151014,star:3},
+  {tit:"十一家电购买指南，放心购",href:"./2015/gome/storm/",date:20150930,star:4},
+  {tit:"iPhone 6s发售前，Siri有话要说！",href:"./2015/gome/siri/",date:20150925,star:5},
+  {tit:"防走失手表",href:"./2015/gome/watch/",date:20150902,star:5},
+  {tit:"你的脸值多少钱？",href:"./2015/gome/face/",date:20150805,star:4},
+  {tit:"“谜样凶手”密室事件",href:"./2015/leader/detective/",date:20150727,star:2},
+  {tit:"717起来嗨",href:"./2015/gome/717high/",date:20150717,star:5},
+  {tit:"趁年轻请热血",href:"./2015/gome/cartoon/",date:20150706,star:4},
+  {tit:"“爸”道星座",href:"./2015/leader/dadsign/",date:20150617,star:2},
+  {tit:"奔跑吧海信",href:"./2015/hisense/runner/",date:20150423,star:1},
+  {tit:"海信ULED曲面电视",href:"./2015/hisense/curveduled/",date:20150415,star:3},
+  {tit:"用心去旅行",href:"./2015/leader/travel/",date:20150409,star:4},
+  {tit:"「带你吃霸王餐」绝不是一个愚人节的玩笑！",href:"./2015/gome/aprilfool/",date:20150401,star:2},
+  {tit:"我的愿望我做主！中国银行个人网络循环贷款",href:"./2015/boc/pbservice/",date:20150323,star:2},
+  {tit:"海信uled领年画抢红包",href:"./2015/hisense/chunjie/",date:20150217,shref:"?userid=404",star:3},
+  {tit:"你的心，跟你一起回家了吗？",href:"./2015/gome/gohome/",date:20150217,star:4},
+  {tit:"国美 会说话的盒子",href:"./2015/gome/box/",date:20150210,star:4},
+  {tit:"戳戳笑点欢乐拜年",href:"./2015/leader/chunlian/",date:20150123,shref:"?userid=404",star:4},
+  {tit:"2015明信片显露真性情",href:"./2015/leader/postcard/",date:20150104,shref:"?uid=404",star:2},
+  {tit:"Pandora占星小巫揭秘2015星座运势！",href:"./2014/gome/xingzuo/",date:20141229,star:1},
+  {tit:"12.12 十万红信封温暖传递",href:"./2014/hisense/1212mail/",date:20141212,star:3}
+]
+var customers={other:"其他",hisense:"海信",gome:"国美",boc:"中国银行",leader:"统帅电器",letv:"乐视",haier:"海尔",mediav:"聚胜万合",iqiyi:"爱奇艺",mazda:"马自达",aliwenxue:"阿里文学",jdbook:"京东图书",autohome:"汽车之家",58:"58同城"}
+var search=window.location.search;
+var ua = navigator.userAgent;
+var isIOSwx = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X.+MicroMessenger/)
+if(search.indexOf('star')!=-1){
+  mycase.sort(function(a,b){
+    
+    return b.star-a.star?(b.star-a.star):(b.date-a.date);
+  })
+}
+if(search.indexOf('major')!=-1){
+  var threshold=3;
+  if(getQueryString('major')) threshold=Number(getQueryString('major'));
+  var i=mycase.length-1;
+  while(i>=0){
+    if(mycase[i].star<threshold) mycase.splice(i,1);
+    --i;
+  }
+}
+
+/*
+document.addEventListener("DOMContentLoaded",function init(){
+  for(let i=0;i<mycase.length;i++){
+    const a=document.createElement('a');
+    //a.innerText=mycase[i].tit;
+    let _href=mycase[i].href;
+    let _type=mycase[i].type
+    _customer=_href.match(/\d{4}\/([^\/]+)/);
+    _customer=_customer?_customer[1]:'other';
+    a.innerHTML=mycase[i].tit + "<span>" + customers[_customer] +" " + (_type?_type:"H5") + "</span>";
+    
+    _href=_href.indexOf("http")==-1?("../"+_href):_href;
+    if (isIOSwx){
+      (function(h){
+        a.addEventListener('click',function(e){
+          e.preventDefault();
+          location.replace(h);
+        })
+      })(_href)
+    }else{
+      a.setAttribute('href',_href);
+      // a.addEventListener('click',function(){
+      //   document.getElementById("caseRegion").setAttribute('src', _href)
+      //   document.getElementById("caseRegion").classList.add('show')
+      // })
+    }
+    
+    a.setAttribute('data-date',mycase[i].date);
+    a.setAttribute('data-star',mycase[i].star);
+    if(mycase[i].shref){
+      a.setAttribute('data-href',mycase[i].shref);
+    }
+    document.body.appendChild(a);
+  }
+})
+*/
+function getQueryString(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+  var r = window.location.search.substr(1).match(reg);
+  if (r != null) return unescape(r[2]); return null;
+};
+
+
+</script>
+</head>
+<body>
+<img src="../icon.jpg" width="350" height="350" alt="shareicon" class="shareicon">
+<!-- <iframe src="" frameborder="0" id="caseRegion" width="640" height="1136"></iframe> -->
+<div id="wrapper" class="container">
+  <ul class="row">
+    <li v-for="casemsg in allCaseMsg" class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2">
+      <div class="card">
+        <img :src="casemsg.src" alt="" class="cover">
+        <div class="overview">
+          <h3 class="h4 mb-2 border-bottom">{{ casemsg.tit }}</h3>
+          <p class="h4 border-bottom"><span></span>{{ casemsg.custom }}</span>  <span>{{ casemsg.type }}</span></p>
+          <!-- <p> 
+            <i class="star"></i>
+          </p> -->
+        </div>
+        
+      </div>
+      
+    </li>
+  </ul>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", ()=>{
+  window.vm = new Vue({
+    el: '#wrapper',
+    data: {
+      mycase
+    },
+    computed: {
+      allCaseMsg: function(){
+        for(let caseMsg of this.mycase){
+          const {href, type} = caseMsg;
+          caseMsg.type = type ? type: 'H5';
+          const hrefMatch = href.match(/(\d{4})\/([^\/]+)\/([^\/]+)\/?([^\/]+)?\/?/);
+          if(hrefMatch!== null){
+            let {1: year, 2: custom, 3: project, 4: sub} = hrefMatch;
+
+            const thumbPath = `../covers/${year}_${custom}_${project}${sub ? `_${sub}` : ''}.png`;
+            console.log(thumbPath)
+            custom= customers[custom]?customers[custom]:'other';
+            Object.assign(caseMsg, {
+            custom,
+            src: thumbPath,
+          })
+           
+            console.log(caseMsg)
+          }else{
+            const thumbPath = `../covers/${href.match(/https?:\/\/([^\/]+)\//)[1]}.png`;
+            Object.assign(caseMsg, {
+            //custom,
+            src: thumbPath,
+          })
+          }
+         
+        }
+        console.log(this.mycase)
+        return this.mycase
+      }
+    }
+  })
+})
+</script>
+</body>
+</html>

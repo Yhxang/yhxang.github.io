@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>寻人启示 重返汶川</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<link href="css/style.css?ver=1.29" rel="stylesheet">
+
+</head>
+<body>
+<div id="wrap">
+	<img src="./img/icon.jpg" width="250" height="250" alt="" class="fakeicon">
+	<img src="" alt="" id="generateimg" class="wh100p" style="">
+	<canvas id="canvas" width="750" height="1624"></canvas>
+	<div id="loading" class="loading wh100p">
+		<div class="loadicon lt50p">
+			<img src="./img/b01.png?ver=1" alt="">
+			<div class="l-pen">
+				<img src="./img/b02.png?ver=1" alt="" class="l-penimg">
+			</div>
+			<p class="loadnum"></p>
+		</div>
+
+		<img src="./img/b03.png?ver=1" alt="" class="startbtn lt50p">
+	</div>
+	<img src="./img/b04.png?ver=1" alt="" class="p6-tip lt50p p6-asset">
+	<a href="http://t.shuqi.com/#!/ct/cover/bid/7038923/" target="_blank" class="p6-btn lt50p p6-asset" >
+		<img src="./img/b05.png?ver=1" alt="">	
+	</a>
+	<div class="p6-sqbtn lt50p">
+		<img src="./img/b07.png" alt="" class="p6-qrcode">
+	</div>
+	<div class="blankmask wh100p">
+		<img src="./img/b08.png?ver=1" alt="" class="nameAlert lt50p">
+	</div>
+	<div class="sndctrl">
+		<img src="./img/b06.png?ver=1" alt="" class="sndctrlimg">
+		<i class="mute"></i>
+	</div>
+</div>
+<div id="orientLayer" class="mod-orient-layer">
+	<div class="mod-orient-layer__content">
+		<i class="icon mod-orient-layer__icon-orient"></i>
+		<div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+	</div>
+</div>
+<script>
+var stageW,stageH,stageT,stageB,spaceH,stageRate;
+var stageMaxH=1624;
+stageW=750;
+stageRate=window.innerWidth/stageW;
+stageH=window.innerHeight*stageW/window.innerWidth;
+spaceH=(stageMaxH-stageH)/2;
+stageT=spaceH;
+stageB=stageMaxH-spaceH;
+
+var wrap=document.getElementById("wrap");
+wrap.style.height=stageH+"px";
+wrap.style.webkitTransform="scale3d("+stageRate+","+stageRate+",1)";
+wrap.style.transform="scale3d("+stageRate+","+stageRate+",1)";
+var canvas = document.getElementById("canvas");
+var stageOffsetY=(stageH-stageMaxH)/2;
+canvas.style.marginTop=stageOffsetY+"px";
+</script>
+<script src="./libs/createjs-2015.11.26.min.js"></script>
+<script src="./libs/jquery-3.0.0.min.js"></script>
+<script src="main.js?ver=1.20"></script>
+<script src="share.js?ver=1.20"></script>
+<script>
+var stage, exportRoot,_root,_tl;
+var shareCanvas,shareER,shareStage;
+var bgmcjs,didacjs;
+var sndloadnum=0;
+var imgloadCpt=false;
+$(function() {
+	images = images||{};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+	sndInit();
+	window.onorientationchange = function(e) {
+		if (window.orientation != 0) {
+			$("#orientLayer").addClass("show");
+			createjs.Ticker.removeEventListener("tick", stage);
+		} else {
+			$("#orientLayer").removeClass("show");
+			createjs.Ticker.addEventListener("tick", stage);
+		}
+	};
+})
+function handleFileLoad(evt) {	
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }	
+	$(".loadnum").text(sndloadnum+Math.floor(90 * evt.target._numItemsLoaded / evt.target._numItems)+" %");
+}
+function handleComplete(evt){
+	imgloadCpt=true;
+	if(sndloadnum==10){
+		imgsndloadCpt(evt);
+	}
+}
+function imgsndloadCpt(evt){
+	createjs.MotionGuidePlugin.install();
+	exportRoot = new lib.main();
+	stage = new createjs.Stage(canvas);
+	createjs.Touch.enable(stage);
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+	_tl=exportRoot.wrapper;
+	
+	$(".startbtn").show().click(function(){
+		$("#loading").remove();
+		$("#canvas").addClass("fadeIn");
+		stage.addChild(exportRoot);	
+
+  	didacjs=createjs.Sound.play("dida");
+  	didacjs.on("complete",function(){
+  		didacjs.play();
+  	})
+
+		bgmcjs=createjs.Sound.play("bgm");
+		bgmcjs.on("complete",function(){
+			bgmcjs.play();
+		})
+		bgmcjs.volume = 0.7;
+		$(".sndctrl").show().click(function(){
+			if(!bgmcjs.paused){
+				bgmcjs.paused=true;
+				$(".sndctrl").addClass("muted");
+			}else{
+				bgmcjs.paused=false;
+				$(".sndctrl").removeClass("muted");
+			}
+		});
+	});
+
+	init();	
+}
+function sndInit(){
+	if (!createjs.Sound.initializeDefaultPlugins()) { return;}
+	var assetsPath = "./media/";
+  var sounds = [{
+    src:"sounds.mp3", data: {
+      audioSprite: [
+        {id:"bgm", startTime:0, duration:(49+10/25)*1000},
+        {id:"dida", startTime:50*1000, duration:(108/25)*1000},
+        {id:"earthquake", startTime:55*1000, duration: (10+3/25)*1000},
+        {id:"glass", startTime:66*1000, duration: (1+12/25)*1000},
+        {id:"paper1", startTime:(67+20/25)*1000, duration: (35/25)*1000},
+        {id:"paper2", startTime:(69+15/25)*1000, duration: (27/25)*1000},
+        {id:"write", startTime:(70+21/25)*1000, duration: (48/25)*1000},
+        {id:"postmark", startTime:73*1000, duration: (20/25)*1000}
+      ]}
+    }
+  ];
+  createjs.Sound.alternateExtensions = ["mp3"];
+  createjs.Sound.on("fileload", function loadSound(){ 
+  	sndloadnum=10;
+  	if(imgloadCpt){
+  		$(".loadnum").text("100 %");
+  		imgsndloadCpt();
+  	}
+  });
+  createjs.Sound.registerSounds(sounds, assetsPath);
+}
+function init(){
+	scaleP1();
+	initShare();
+}
+function initShare(){
+	shareCanvas = document.createElement("canvas");
+	images0 = images0||{};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoadS);
+	loader.addEventListener("complete", handleCompleteS);
+	loader.loadManifest(lib0.properties.manifest);
+}
+function handleFileLoadS(evt) {	
+	if (evt.item.type == "image") { images0[evt.item.id] = evt.result; }	
+}
+function handleCompleteS(evt) {
+	var queue = evt.target;
+	var ssMetadata = lib0.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	shareER = new lib0.share();
+	shareStage = new createjs.Stage(shareCanvas);
+	shareStage.addChild(shareER);
+	shareStage.update();
+	var pRatio=1;//window.devicePixelRatio;
+	shareCanvas.width=stageW*pRatio;
+	shareCanvas.height=stageH*pRatio;
+	shareStage.scaleX = pRatio;
+	shareStage.scaleY = pRatio;
+}
+
+function createInput(){
+	var d = document.createElement("input");
+	d.style.top = stageOffsetY+"px";//0;
+	d.setAttribute("class","signer");
+	d.setAttribute("type","text");
+	d.setAttribute("maxlength",4);
+	d.value = "";
+	d.placeholder="请签名";
+	canvas.parentNode.appendChild(d);
+	var dcjs = new createjs.DOMElement(d); 
+	dcjs.x = _tl.blankboxpos.x;
+	dcjs.y = _tl.blankboxpos.y; 
+	stage.addChild(dcjs);
+}
+function scaleP1(){
+	_tl.p1wall.scaleY=stageH/1334;
+	_tl.p1top.y=stageT;
+	_tl.p1btm.y=stageB;
+}
+function scaleP2(){
+	_tl.p2btm.y=stageB;
+}
+function scaleP2_1(){
+	_tl.p2paper.y=_tl.p2btm.y-143;
+}
+function scaleP3(){
+	_tl.p3wallbg.p3wallimg.scaleY=stageH/1334;
+}
+function scaleP4(){
+	_tl.p4wall.scaleY=stageH/1330;
+	_tl.p4black.scaleY=stageH/1330;
+	_tl.p4top.y=stageT;
+	_tl.p4btm.y=stageB;
+}
+function scaleP5(){
+	//_tl.p5wall.scaleY=stageH/1330;
+}
+var posterId=1;
+var posttxtId=0;
+function initP5(){
+	createjs.Sound.play("write");
+
+	var now=0;
+	var max=6;
+	_tl.p5next.addEventListener("mousedown",function(){
+		if(++now>max){
+			now=0;
+		}
+		posttxtId=now;
+		_tl.p5txt.gotoAndStop(now);
+		createjs.Sound.play("write");
+		_tl.p5txt.alpha=0;
+		createjs.Tween.get(_tl.p5txt,{override:true}).to({alpha:1},1000);
+	})
+	_tl.p5prev.addEventListener("mousedown",function(){
+		if(--now<0){
+			now=max;
+		}
+		posttxtId=now;
+		_tl.p5txt.gotoAndStop(now);
+		createjs.Sound.play("write");
+		_tl.p5txt.alpha=0;
+		createjs.Tween.get(_tl.p5txt,{override:true}).to({alpha:1},1000);
+	})
+
+	var oldbtn;
+	for(var i=1;i<=3;i++){
+		(function(n){
+			var _this=_tl["p5b"+n];
+			_this.addEventListener("mousedown",function(evt){
+				if(oldbtn){
+					oldbtn.gotoAndPlay("out");
+				}
+				_this.gotoAndPlay("in");
+				_tl.postage.gotoAndStop(n);
+				oldbtn=_this;
+				posterId=n;
+			})
+		})(i)
+	}
+
+	setTimeout(function(){
+		_tl.p5b1.dispatchEvent("mousedown");
+	},0);
+
+	_tl.p5btn.addEventListener("mousedown",function(){
+		var _signername=$(".signer").val();
+		if(""==_signername.replace(/\s+/g,"")){
+			showPostcard();
+		}else{
+			var ajaxData = {"content":_signername};
+			ajaxData = JSON.stringify(ajaxData);
+			// $.ajax({
+			// 	url:"//contentservice.sqreader.com/api/v1/sensitiveWord/sensitiveWordCheck",
+			// 	type:"POST",
+			// 	data:ajaxData,
+			// 	contentType:"application/json",
+			// 	dataType:"json",
+			// 	success:function(result){
+			// 		if(result.code == 200){
+			// 			showPostcard();
+			// 		}else{
+			// 			$(".blankmask").show();
+			// 			//$(".signer").focus();
+			// 		}
+			// 	}
+			// });
+			showPostcard();
+		}
+		function showPostcard(){
+			$(".signer").hide();
+			_tl.gotoAndPlay("p6");
+			_tl.msgpaper.signer.text=_signername;
+		}
+	});
+
+	$(".nameAlert").click(function(){
+		$(".blankmask").hide();
+		$(".signer").focus();
+	})
+}
+function showP6btn(){
+	$(".p6-asset").addClass("show");
+	$("#canvas").addClass("disabled");
+	generateLastFrame();
+
+	if(window.location.pathname.indexOf("_sq.php")!=-1){
+		var $app = {};
+		$app.nativeApi = function(name,params) {
+			//客户端交互：打开客户端封面页
+			if (typeof anShuqiForSqWebJS === "undefined" || typeof anShuqiForSqWebJS[name] === "undefined") {
+				return {
+					'info': {},
+					status: 201
+				};
+			} else {
+				for (var info in params) {
+					params[info] = params[info];
+				}
+				var tmpObj = JSON.stringify(params);
+				anShuqiForSqWebJS[name](tmpObj);
+				return {
+					'info': {},
+					status: 200
+				};
+			}
+		};
+		// 端内调启书籍封面页 bid: 书籍的bookId
+		//$app.nativeApi("openAppBookCover", {"bookId": bid});
+		$(".p6-sqbtn").show().append($(".p6-btn"));
+		$(".p6-tip").hide();
+		$(".p6-btn").click(function(e){
+			e.preventDefault();
+			$app.nativeApi("openAppBookCover", {"bookId": 7038923});
+		})
+	}
+}
+function generateLastFrame(){
+	var base64=canvas.toDataURL("image/jpeg",0.6);
+	var img=new Image();
+	img.src=base64;	
+	img.onload=function(){
+		var imgcjs=new createjs.Bitmap(img);
+		imgcjs.y=(stageH-1624)/2;
+		shareER.imgholder.addChild(imgcjs);
+		shareER.p6qrcode.y=stageH*.906;
+		shareER.alilogo.y=stageH/2+111;
+		shareStage.update();
+		$("#generateimg").attr("src",shareCanvas.toDataURL("image/png",1)).show();
+	}
+}
+</script>
+
+<!-- <script src="../../../libs/mock.js"></script>
+<script>
+	Mock.mock(/\/\/contentservice\.sqreader\.com\/api\/v1\/sensitiveWord\/sensitiveWordCheck/, {
+		code: 200
+	})
+</script> -->
+</body>
+</html>

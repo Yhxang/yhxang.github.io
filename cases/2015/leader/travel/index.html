@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>用心去旅行</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+	var version = parseFloat(RegExp.$1);
+	if(version>2.3){
+		document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+	}else{
+		document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+	}
+} else {
+	document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/common.css?ver=6">
+</head>
+<body>
+<div id="loading">
+	<div class="spinner">
+	  <div class="bounce1"></div>
+	  <div class="bounce2"></div>
+	  <div class="bounce3"></div>
+	</div>
+	<p>loading...</p>
+</div>
+<img src="img/a00.jpg?ver=0" class="shareicon">
+<div id="wrap" class="wrap">
+	<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide p1">
+					<div class="p1-textarea">
+						<h2 class="p1-cn1"></h2>
+						<h2 class="p1-cn2"></h2>
+						<div class="p1-cnarea3"><h2 class="p1-cn3"></h2></div>
+						<div class="p1-enarea1"><h3 class="p1-en1"></h3></div>
+						<h3 class="p1-en2"></h3>
+						<h3 class="p1-en3"></h3>
+						<h3 class="p1-en4"></h3>
+						<i class="p1-line1"></i>
+						<i class="p1-line2"></i>
+						<i class="p1-line3"></i>
+						<i class="p1-line4"></i>
+						<i class="p1-line5"></i>
+						<em class="p1-box1"></em>
+						<em class="p1-box2"></em>
+						<em class="p1-box3"></em>
+						<em class="p1-box4"></em>
+					</div>
+					<div class="p1-tip"></div>
+        </div>
+
+        <div class="swiper-slide p2">
+        	<div class="p2-textarea">
+        		<h2 class="p2-tit"></h2>
+        		<p class="p2-sub1"></p>
+        		<p class="p2-sub2"></p>
+        		<p class="p2-sub3"></p>
+        		<p class="p2-sub4"></p>
+        	</div>
+        </div>
+
+        <div class="swiper-slide p3">        	
+        	<div class="swiper-container-h">
+				    <div class="swiper-wrapper">
+				      <div class="swiper-slide tabs3">
+				      	<div class="p3-area h1"><h2><p></p></h2></div>
+				      	<div class="p3-area h2"><h2><p></p></h2></div>
+				      	<div class="p3-area h3"><h2><p></p></h2></div>
+				      </div>
+				      <div class="swiper-slide tabs3">
+				      	<div class="p3-area h4"><h2><p></p></h2></div>
+				      	<div class="p3-area h5"><h2><p></p></h2></div>
+				      	<div class="p3-area h6"><h2><p></p></h2></div>
+				      </div>
+				      <div class="swiper-slide tabs3">
+				      	<div class="p3-area h7"><h2><p></p></h2></div>
+				      	<div class="p3-area h8"><h2><p></p></h2></div>
+				      	<div class="p3-area h9"><h2><p></p></h2></div>
+				      </div>
+				    </div>
+				    <div class="paginationholder">
+				    	<div class="l arrow"><i></i></div>
+				    	<div class="pagination"></div>
+				    	<div class="r arrow"><i></i></div>
+				    </div>
+				  </div>
+				  <div class="p3-tit">
+        		<div class="p3-tit1"><p></p></div>
+        		<div class="p3-tit2"><p></p></div>
+        	</div>
+        </div>
+    </div>
+  </div>
+
+  <div class="swiper-container2 p4-section">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide s1">
+			  	<img class="p4-pic">
+			  	<div class="p4-fog">
+			  		<img src="img/a05_1.png" class="p4-f1">
+			  		<img src="img/a05_2.png" class="p4-f2">
+			  		<img src="img/a05_3.png" class="p4-f3">
+			  		<img src="img/a05_4.png" class="p4-f4">
+			  		<img src="img/a05_5.png" class="p4-f5">
+			  		<img src="img/a05_6.png" class="p4-f6">
+			  	</div>
+			  	<div class="p4-tit">
+			  		<h2 class="p4-tit1"></h2>
+			  		<h1 class="p4-tit2"></h1>
+			  		<h2 class="p4-tit3"></h2>
+			  	</div>
+			  	<p class="p4-tip1 on"></p>
+			  	<div class="p4-tip2">
+			  		<div class="p4-circ">
+			  			<i></i>
+			  		</div>
+			  		<b></b>
+			  	</div>
+			  	<p class="p4-tip3 on"></p>
+
+			  	<div class="p4-airconarea">
+			  		<div class="p4-aircon"></div>
+			  		<div class="p4-airtip"></div>
+			  	</div>
+			  </div>
+			  <div class="swiper-slide s2">
+			  	<div class="p5-tit">
+			  		<h2 class="p5-tit1"></h2>
+			  		<h2 class="p5-tit2"></h2>
+			  		<h2 class="p5-tit3"></h2>
+			  		<h2 class="p5-tit4"></h2>
+			  		<h2 class="p5-tit5"></h2>
+			  	</div>
+			  	<div class="p5-go">
+			  		<p></p>
+			  	</div>
+			  	<div class="p5-blackmask">
+			  		<div class="p5-ticket">
+			  			<img class="p5-sub" src="">
+			  			<div class="p5-fromto">
+			  				<img src="img/a08.png" class="p5-myhome">
+			  				<img src="" class="p5-to">
+			  			</div>
+			  			<div class="p5-btn"><img src="img/a09.png"></div>
+			  		</div>
+			  		<a class="p5-more" href="http://m.tongshuai.com/">
+			  			<i class="p5-tri-l"></i>
+			  			<div class="p5-txtarea">
+			  				<img src="img/a10.png" >
+			  			</div>
+			  			<i class="p5-tri-r"></i>
+			  		</a>
+			  	</div>
+			  </div>
+		</div>
+	</div>
+  <div class="nexttip">
+		<i></i><i></i>
+	</div>
+	<div class="sndctrl">
+		<img src="img/a12.png"><i></i>
+	</div>
+	<div class="blankmask">
+		<img src="img/a11.png">
+	</div>
+  <img src="img/a01.png" class="logo">
+</div>
+<audio id="snd" src="media/music.mp3" autoplay></audio>
+<script src="js/zepto.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/common.js?ver=9"></script>
+</body>
+</html>

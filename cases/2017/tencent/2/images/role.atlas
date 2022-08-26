@@ -1,0 +1,320 @@
+
+role.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cloak
+  rotate: false
+  xy: 321, 383
+  size: 285, 127
+  orig: 285, 127
+  offset: 0, 0
+  index: -1
+cloak1
+  rotate: false
+  xy: 2, 141
+  size: 308, 113
+  orig: 308, 113
+  offset: 0, 0
+  index: -1
+eyecry
+  rotate: false
+  xy: 321, 270
+  size: 127, 79
+  orig: 127, 79
+  offset: 0, 0
+  index: -1
+eyecry1
+  rotate: false
+  xy: 2, 17
+  size: 130, 78
+  orig: 130, 78
+  offset: 0, 0
+  index: -1
+eyes
+  rotate: false
+  xy: 134, 27
+  size: 123, 68
+  orig: 123, 68
+  offset: 0, 0
+  index: -1
+eyes1
+  rotate: false
+  xy: 312, 204
+  size: 123, 45
+  orig: 123, 45
+  offset: 0, 0
+  index: -1
+eyes2
+  rotate: false
+  xy: 321, 251
+  size: 125, 17
+  orig: 125, 17
+  offset: 0, 0
+  index: -1
+eyessmile
+  rotate: false
+  xy: 828, 489
+  size: 141, 21
+  orig: 141, 21
+  offset: 0, 0
+  index: -1
+hair1
+  rotate: true
+  xy: 350, 56
+  size: 83, 60
+  orig: 83, 60
+  offset: 0, 0
+  index: -1
+hair1plus
+  rotate: false
+  xy: 255, 99
+  size: 90, 40
+  orig: 90, 40
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 256
+  size: 317, 254
+  orig: 317, 254
+  offset: 0, 0
+  index: -1
+leftarm
+  rotate: false
+  xy: 671, 300
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+leftcloth
+  rotate: false
+  xy: 506, 116
+  size: 43, 73
+  orig: 43, 73
+  offset: 0, 0
+  index: -1
+lefteyebrow
+  rotate: false
+  xy: 559, 334
+  size: 50, 47
+  orig: 50, 47
+  offset: 0, 0
+  index: -1
+leftfoot
+  rotate: false
+  xy: 612, 298
+  size: 57, 41
+  orig: 57, 41
+  offset: 0, 0
+  index: -1
+lefthand
+  rotate: true
+  xy: 543, 10
+  size: 45, 41
+  orig: 45, 41
+  offset: 0, 0
+  index: -1
+leftheadcloth
+  rotate: true
+  xy: 611, 341
+  size: 48, 59
+  orig: 48, 59
+  offset: 0, 0
+  index: -1
+leftlowerleg
+  rotate: true
+  xy: 672, 339
+  size: 50, 45
+  orig: 50, 45
+  offset: 0, 0
+  index: -1
+leftshoulder
+  rotate: false
+  xy: 350, 2
+  size: 50, 52
+  orig: 50, 52
+  offset: 0, 0
+  index: -1
+leftupperleg
+  rotate: false
+  xy: 412, 2
+  size: 60, 61
+  orig: 60, 61
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: false
+  xy: 673, 270
+  size: 35, 28
+  orig: 35, 28
+  offset: 0, 0
+  index: -1
+mouthcry
+  rotate: false
+  xy: 2, 3
+  size: 32, 12
+  orig: 32, 12
+  offset: 0, 0
+  index: -1
+mouthsmile
+  rotate: false
+  xy: 612, 266
+  size: 59, 30
+  orig: 59, 30
+  offset: 0, 0
+  index: -1
+nose
+  rotate: true
+  xy: 971, 488
+  size: 22, 29
+  orig: 22, 29
+  offset: 0, 0
+  index: -1
+pelvis
+  rotate: false
+  xy: 312, 141
+  size: 105, 61
+  orig: 105, 61
+  offset: 0, 0
+  index: -1
+redtie
+  rotate: false
+  xy: 419, 128
+  size: 85, 61
+  orig: 85, 61
+  offset: 0, 0
+  index: -1
+rightarm
+  rotate: false
+  xy: 787, 365
+  size: 41, 35
+  orig: 41, 35
+  offset: 0, 0
+  index: -1
+rightcloth
+  rotate: true
+  xy: 412, 65
+  size: 61, 79
+  orig: 61, 79
+  offset: 0, 0
+  index: -1
+righteyebrow
+  rotate: false
+  xy: 493, 57
+  size: 79, 57
+  orig: 79, 57
+  offset: 0, 0
+  index: -1
+rightfoot
+  rotate: false
+  xy: 719, 337
+  size: 50, 31
+  orig: 50, 31
+  offset: 0, 0
+  index: -1
+righthand
+  rotate: false
+  xy: 713, 289
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+rightheadcloth
+  rotate: false
+  xy: 259, 25
+  size: 89, 72
+  orig: 89, 72
+  offset: 0, 0
+  index: -1
+rightlowerleg
+  rotate: true
+  xy: 474, 11
+  size: 44, 67
+  orig: 44, 67
+  offset: 0, 0
+  index: -1
+rightshoulder
+  rotate: false
+  xy: 721, 370
+  size: 64, 30
+  orig: 64, 30
+  offset: 0, 0
+  index: -1
+rightupperleg
+  rotate: true
+  xy: 721, 402
+  size: 80, 104
+  orig: 80, 104
+  offset: 0, 0
+  index: -1
+rope
+  rotate: false
+  xy: 608, 484
+  size: 218, 26
+  orig: 218, 26
+  offset: 0, 0
+  index: -1
+ropeleft
+  rotate: false
+  xy: 321, 351
+  size: 236, 30
+  orig: 236, 30
+  offset: 0, 0
+  index: -1
+roperight1
+  rotate: false
+  xy: 437, 191
+  size: 105, 56
+  orig: 105, 56
+  offset: 0, 0
+  index: -1
+roperight2
+  rotate: false
+  xy: 608, 391
+  size: 111, 91
+  orig: 111, 91
+  offset: 0, 0
+  index: -1
+roperight3
+  rotate: true
+  xy: 553, 269
+  size: 63, 57
+  orig: 63, 57
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 97
+  size: 251, 42
+  orig: 251, 42
+  offset: 0, 0
+  index: -1
+shadowleft
+  rotate: false
+  xy: 448, 249
+  size: 103, 19
+  orig: 103, 19
+  offset: 0, 0
+  index: -1
+shadowright
+  rotate: false
+  xy: 134, 9
+  size: 112, 16
+  orig: 112, 16
+  offset: 0, 0
+  index: -1
+sweat
+  rotate: true
+  xy: 553, 248
+  size: 19, 30
+  orig: 19, 30
+  offset: 0, 0
+  index: -1
+torso
+  rotate: false
+  xy: 450, 270
+  size: 101, 79
+  orig: 101, 79
+  offset: 0, 0
+  index: -1

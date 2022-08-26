@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>“爸”道星座</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+      var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link href="css/swiper.min.css" rel="stylesheet">
+<link href="css/semantic.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/common.css?ver=8">
+</head>
+<body>
+<img src="img/icon.jpg" alt="" class="shareicon">
+  <div id="loading">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+    <p>loading...</p>
+  </div>
+  <div id="wrap" class="wrap">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide p1">
+            <div class="star">
+              <img src="img/a04.png" alt="">
+            </div>
+            <div class="p1-btm">
+              <div class="p1-city"></div>
+              <div class="p1-cloud">
+                <img src="img/a08.png">
+              </div>
+              <div class="p1-earthcir">
+                <div class="p1-land"></div>
+              </div>
+              <img class="p1-shadow" src="img/a06.png">
+              <img src="img/a05.png" class="p1-superman">
+            </div>
+            <div class="p1-title">
+              <img src="img/a03.png" alt="">
+            </div>
+            <div class="p1-describe">
+              <img src="img/a02.png" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide p2">
+
+            <div class="p2-content">
+              <div class="p2-cir">
+                <img class="cir-txt" src="img/a10.png" width="173" height="161">
+              </div>
+              <img class="p2-describe" src="img/a11.png">
+              <table cellspacing="0" cellpadding="0" style="margin:auto" class="p2-table">
+                <tbody>
+                  <tr>
+                    <td class="title">老爸生日：</td>
+                    <td class="form">
+                      <div class="ui selection dropdown year1">
+                        <input id="y1" type="hidden">
+                        <div class="default text">1900</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu year y1">
+                        </div>
+                      </div>
+                
+                      <div class="ui selection dropdown month1">
+                        <input id="" type="hidden">
+                        <div class="default text">01</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu month">
+                        </div>
+                      </div>
+                      <div class="ui selection dropdown day1">
+                        <input id="" type="hidden">
+                        <div class="default text">01</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu day">
+                        </div>
+                      </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="title">你的生日：</td>
+                    <td class="form">
+                      <div class="ui selection dropdown year2">
+                        <input id="" type="hidden">
+                        <div class="default text">1900</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu year">
+                        </div>
+                      </div>
+                      <div class="ui selection dropdown month2">
+                        <input id="" type="hidden">
+                        <div class="default text">01</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu month">
+                        </div>
+                      </div>
+                      <div class="ui selection dropdown day2">
+                        <input id="" type="hidden">
+                        <div class="default text">01</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu day">
+                        </div>
+                      </div>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="p2-btn">十分确定</div>
+            </div>
+          </div>
+
+          <div class="swiper-slide p3">
+            <img class="p3-star1" src="img/a12.png">
+            <img class="p3-star2" src="img/a13.png">
+            <img class="p3-star3" src="img/a04.png">
+            <div class="p3-content">
+              <div class="p3-cir">
+                <img class="cir-txt" src="img/a10.png" width="173" height="161">
+              </div>
+              <ul class="p3-result">
+                <li>
+                  <img class="p3-restitle" src="img/a14.png" width="187" height="40">
+                  <img class="p3-resdad" src="img/sub/d_1.png" >
+                </li>
+                <li>
+                  <img class="p3-restitle" src="img/a15.png" width="187" height="40">
+                  <img class="p3-resme" src="img/sub/u_1.png" >
+                </li>
+
+              </ul>
+              <img class="p3-btn" src="img/a16.png">
+            </div>
+
+            <div class="p3-newbg">
+              <img class="p3-lasttip" src="img/a17.png" width="377" height="31">
+              <form action="javascript:void(0);" name="regardsform" id="regardsform">
+                <textarea name="regards" id="regards" cols="30" rows="10" placeholder="想对老爸说些什么"></textarea>
+                <img class="p3-btn-2" src="img/a18.png">
+              </form>
+            </div>
+            <div class="p3-lastres">
+              <img class="p3-subres" src="img/sub/s_1.png">
+              <img class="p3-dad" src="img/sub/a_1.png">
+              <img class="p3-child" src="img/sub/c_1.png">
+            </div>
+          </div>
+
+          <div class="swiper-slide p4">
+            <img src="img/a20.png" class="p4-title">
+            <form action="#" name="usermsg" id="usermsg">
+              <div class="lb1">
+                <label for="username"></label>
+                <input type="text" name="username" id="username">
+              </div>
+              <div class="lb2">
+                <label for="phone"></label>
+                <input type="text" name="phone" id="phone">
+              </div>
+              <div class="lb3">
+                <label for="address"></label>
+                <input type="text" name="address" id="address">
+              </div>
+              <p class="p4-tip">活动截止时间：6月20日24：00<br>父亲节当天将会抽出承包奖品的幸运儿<br>并在<span>统帅电器</span>官方微信公布获奖名单</p>
+              <button id="smt"></button>
+            </form>
+          </div>
+
+      </div>
+    </div>
+
+    <img class="logo" src="img/a01.png">
+    <div class="sndctrl">
+      <i class="horn"></i>
+      <i class="sndif"></i>
+    </div>
+    <img src="img/a25.png" class="nexttip show">
+    <div class="blankmask">
+      <img class="share" src="img/a19.png" >
+      <img class="duang" src="img/a23.png" >
+      <img class="scstxt" src="img/a24.png">
+    </div>
+  </div>
+<audio id="snd" src="music.mp3" autoplay></audio>
+<!-- <script src="js/zepto.min.js"></script> -->
+
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/semantic.min.js"></script>
+<script src="js/common.js?ver=2"></script>
+
+<!--Mock start-->
+<script src="../../../libs/mock.js"></script>
+<script>
+  Mock.mock('submit.php', {
+    result: 'success'
+  })
+</script>
+<!--Mock end-->
+</body>
+</html>

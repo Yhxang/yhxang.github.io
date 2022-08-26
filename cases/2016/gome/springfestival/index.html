@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>摇出萌造型欢乐拜大年</title>
+<script>
+var b = parseInt(window.screen.width),
+    c = b / 640;
+if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+    var d = parseFloat(RegExp.$1);
+    document.write(d > 2.3 ? '<meta name="viewport" content="width=640, user-scalable=no,maximum-scale = 1.5">' : '<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+} else document.write('<meta name="viewport" content="width=640, user-scalable=no,minimum-scale = ' + c + ',maximum-scale = 1,target-densitydpi=device-dpi">');
+</script>
+<link href="css/style.css?ver=1.98" rel="stylesheet">
+</head>
+<body>
+<img src="img/icon.jpg" alt="" class="shareicon">
+<div id="loading">
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+  <p>loading...</p>
+</div>
+<div id="wrapper" class="wrapper">
+  <div class="bg"></div>
+  <div class="p-fire pf-1"><img data-src="img/a02.png" width="80" height="78" alt=""></div>
+  <div class="p-fire pf-2"><img data-src="img/a02.png" width="80" height="78" alt=""></div>
+  <div class="p-fire pf-3"><img data-src="img/a02.png" width="80" height="78" alt=""></div>
+  <div class="p-fire pf-4"><img data-src="img/a02.png" width="80" height="78" alt=""></div>
+  <div class="p-fire pf-5"><img data-src="img/a02.png" width="80" height="78" alt=""></div>
+  <div class="page p1">
+    <div class="p1-mid">
+      <img data-src="img/a13.png" width="234" height="37" alt="" class="p1-shadow">
+      <div class="p1-role">
+        <div class="p1-body">
+          <img data-src="img/a11.png" width="202" height="120" alt="">
+          <img data-src="img/a12.png" width="105" height="24" alt="" class="p1-tail">
+        </div>
+        <img data-src="img/a05.png" width="249" height="323" alt="" class="p1-phone">
+        <div class="p1-head">
+          <img data-src="img/a17.png" width="33" height="40" alt="" class="p1-water1">
+          <img data-src="img/a18.png" width="49" height="29" alt="" class="p1-water2">
+          <img data-src="img/a10.png" width="317" height="319" alt="" class="p1-facebg">
+          <div class="p1-face">
+            <img data-src="img/a06.png" width="122" height="20" alt="" class="p1-eyebrow">
+            <img data-src="img/a07.png" width="167" height="27" alt="" class="p1-eyes">
+            <img data-src="img/a08.png" width="173" height="38" alt="" class="p1-cheek">
+            <img data-src="img/a09.png" width="41" height="65" alt="" class="p1-mouth">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p1-tit">
+      <img data-src="img/a16.png" width="50" height="25" alt="" class="p1-t3">
+      <img data-src="img/a03.png" width="426" height="134" alt="" class="p1-t1">
+      <img data-src="img/a04.png" width="418" height="147" alt="" class="p1-t2">
+    </div>
+    <div class="p1-btm">
+      <img data-src="img/a15.png" width="296" height="78" alt="" class="p1-btmtxt">
+      <img data-src="img/a14.png" width="218" height="40" alt="" class="p1-shaketip">
+    </div>
+  </div>
+
+  <div class="page p2">
+    <div class="p2-roles">
+      <!-- role1 -->
+      <div class="role1 role">
+        <img data-src="img/role/r1_shadow.png" width="184" height="32" alt="" class="r1shadow">
+        <div class="r1fl1 r1fl"><img data-src="img/role/r1_fl1.png" width="58" height="51" alt=""></div>
+        <div class="r1fl2 r1fl"><img data-src="img/role/r1_fl1.png" width="33" height="29" alt=""></div>
+        <div class="r1fl3 r1fl"><img data-src="img/role/r1_fl1.png" width="33" height="29" alt=""></div>
+        <div class="r1fl4 r1fl"><img data-src="img/role/r1_fl2.png" width="30" height="28" alt=""></div>
+        <div class="r1fl5 r1fl"><img data-src="img/role/r1_fl2.png" width="30" height="28" alt=""></div>
+        <div class="allbody">
+          <div class="r1head head">
+            <canvas class="cvs" width="175" height="181"></canvas>
+            <img data-src="img/a19.png" width="237" height="130" alt="" class="pblush">
+            <img data-src="img/role/r1_h1.png" width="270" height="231" alt="" class="r1headbg">
+            <img data-src="img/role/r1_peach.png" width="123" height="71" alt="" class="r1ho1">
+
+            <div class="ptip"><img class="ptipbg" src="img/a30.png">
+              <img class="ptiptxt" src="img/a31.png">
+              <input type="file" class="filedata" name="filedata" accept="image/*" />
+            </div>
+
+          </div>
+          <img data-src="img/role/r1_body.png" width="241" height="196" alt="" class="r1body">
+        </div>
+      </div>
+      <!-- role2 -->
+      <div class="role2 role">
+        <img data-src="img/role/r1_shadow.png" width="184" height="32" alt="" class="r2shadow">
+        <div class="r2m1 r2m"><img data-src="img/role/r2_m.png" width="45" height="44" alt=""></div>
+        <div class="r2m2 r2m"><img data-src="img/role/r2_m.png" width="28" height="28" alt=""></div>
+        <div class="r2m3 r2m"><img data-src="img/role/r2_m.png" width="31" height="31" alt=""></div>
+        <div class="r2m4 r2m"><img data-src="img/role/r2_m.png" width="32" height="33" alt=""></div>
+        <div class="r2m5 r2m"><img data-src="img/role/r2_m.png" width="24" height="19" alt=""></div>
+        <div class="r2m6 r2m"><img data-src="img/role/r2_m.png" width="45" height="44" alt=""></div>
+        <div class="allbody">
+          <div class="r2head head">
+            <canvas class="cvs" width="175" height="180"></canvas>
+            <img data-src="img/a19.png" width="237" height="130" alt="" class="pblush">
+            <img data-src="img/role/r2_h1.png" width="242" height="198" alt="" class="r2headbg">
+             <div class="r2hat">
+               <img data-src="img/role/r2_hatl.png" width="86" height="69" alt="" class="r2hatl">
+               <img data-src="img/role/r2_hat.png" width="147" height="81" alt="" class="r2hatm">
+               <img data-src="img/role/r2_hatr.png" width="92" height="63" alt="" class="r2hatr">
+             </div>
+             <div class="ptip"><img class="ptipbg" src="img/a30.png">
+              <img class="ptiptxt" src="img/a31.png">
+              <input type="file" class="filedata" name="filedata" accept="image/*" />
+            </div>
+          </div>
+          <img data-src="img/role/r2_body.png" width="282" height="189" alt="" class="r2body">
+        </div>
+      </div>
+      <!-- role3 -->
+      <div class="role3 role">
+        <img data-src="img/role/r3_shadow.png" width="178" height="94" alt="" class="r3shadow">
+        <div class="allbody">
+          <div class="r3head head">
+            <canvas class="cvs" width="174" height="174"></canvas>
+            <img data-src="img/a19.png" width="237" height="130" alt="" class="pblush">
+            <img data-src="img/role/r3_sl.png" width="41" height="39" alt="" class="r3-water1">
+            <img data-src="img/role/r3_sr.png" width="29" height="40" alt="" class="r3-water2">
+            <img data-src="img/role/r3_h1.png" width="242" height="253" alt="" class="r3headbg">
+            <img data-src="img/role/r3_star.png" width="235" height="79" alt="" class="r3star">
+            <div class="ptip"><img class="ptipbg" src="img/a30.png">
+              <img class="ptiptxt" src="img/a31.png">
+              <input type="file" class="filedata" name="filedata" accept="image/*" />
+            </div>
+          </div>
+          <div class="r3body">
+            <img data-src="img/role/r3_hand.png" width="71" height="52" alt="" class="r3body_l">
+            <img data-src="img/role/r3_body.png" width="241" height="196" alt="" class="r3body_m">
+            <img data-src="img/role/r3_arm.png" width="66" height="73" alt="" class="r3body_r">
+            <img data-src="img/role/r3_stick.png" width="73" height="33" alt="" class="r3body_stick">
+          </div>
+        </div>
+      </div>
+      <!-- role4 -->
+      <div class="role4 role">
+        <img data-src="img/role/r4_shadow.png" width="123" height="26" alt="" class="r4shadow">
+        <div class="r4cloud r4cloud1"><img data-src="img/role/r4_cloud3.png" width="94" height="50" alt=""></div>
+        <div class="r4cloud r4cloud2"><img data-src="img/role/r4_cloud1.png" width="35" height="25" alt=""></div>
+        <div class="r4cloud r4cloud3"><img data-src="img/role/r4_cloud2.png" width="52" height="28" alt=""></div>
+        <div class="r4cloud r4cloud4"><img data-src="img/role/r4_cloud1.png" width="52" height="37" alt=""></div>
+        <div class="r4cloud r4cloud5"><img data-src="img/role/r4_cloud3.png" width="76" height="40" alt=""></div>
+        <div class="allbody">
+          <div class="r4head head">
+            <canvas class="cvs" width="175" height="180"></canvas>
+            <img data-src="img/a19.png" width="237" height="130" alt="" class="pblush">
+            <img data-src="img/role/r4_h1.png" width="242" height="227" alt="" class="r4headbg">
+            <div class="ptip"><img class="ptipbg" src="img/a30.png">
+              <img class="ptiptxt" src="img/a31.png">
+              <input type="file" class="filedata" name="filedata" accept="image/*" />
+            </div>
+          </div>
+          <div class="r4body">
+            <img data-src="img/role/r4_tail.png" width="79" height="49" alt="" class="r4body_tail">
+            <img data-src="img/role/r4_body.png" width="231" height="158" alt="" class="r4body_m">
+          </div>
+        </div>
+      </div>
+      <!-- role5 -->
+      <div class="role5 role">
+        <img data-src="img/role/r5_shadow.png" width="188" height="82" alt="" class="r5shadow">
+        <img data-src="img/role/r5_peach1.png" width="77" height="70" alt="" class="r5peach1">
+        <img data-src="img/role/r5_peach2.png" width="246" height="115" alt="" class="r5peach2">
+        <div class="allbody">
+          <div class="r5head head">
+            <canvas class="cvs" width="175" height="181"></canvas>
+            <img data-src="img/a19.png" width="237" height="130" alt="" class="pblush">
+            <img data-src="img/role/r5_h1.png" width="242" height="253" alt="" class="r5headbg">
+            <div class="ptip"><img class="ptipbg" src="img/a30.png">
+              <img class="ptiptxt" src="img/a31.png">
+              <input type="file" class="filedata" name="filedata" accept="image/*" />
+            </div>
+          </div>
+          <div class="r5body">
+            <img data-src="img/role/r5_body.png" width="267" height="140" alt="" class="r5body_m">
+            <img data-src="img/role/r5_arm.png" width="84" height="91" alt="" class="r5body_arm">
+            <img data-src="img/role/r5_m.png" width="37" height="54" alt="" class="r5body_money">
+          </div>
+        </div>
+      </div>
+      <div class="likerst">
+        <img data-src="img/a37.png" width="353" height="224" alt="" class="goldglow">
+        <img data-src="img/a36.png" width="172" height="126" alt="" class="gold">
+      </div>
+      <div class="dislikerst">
+        <img data-src="img/a39.png" width="183" height="107" alt="" class="handglow">
+        <img data-src="img/a38.png" width="95" height="125" alt="" class="hand">
+      </div>
+      <div class="likedbtns">
+        <img data-src="img/a34.png" width="100" height="98" alt="" class="like">
+        <img data-src="img/a35.png" width="100" height="98" alt="" class="dislike">
+      </div>
+      <!-- 红包 -->
+      <div class="redmoney"><img data-src="img/a28.png" width="97" height="125" alt=""></div>
+    </div>
+    <div class="p2-dlarea">
+      <div class="p2-dltop">
+        <img data-src="img/a20.png" width="396" height="132" alt="">
+        <img data-src="img/cl/m1t.png" alt="" class="p2-dltxt">
+      </div>
+      <div class="p2-dlvertical p2-dlleft">
+        <img data-src="img/a21.png" width="129" height="514" alt="" class="p2-dlbg">
+        <img data-src="img/cl/m1l.png" alt="" class="p2-dltxt">
+      </div>
+      <div class="p2-dlvertical p2-dlright">
+        <img data-src="img/a21.png" width="129" height="514" alt="" class="p2-dlbg">
+        <img data-src="img/cl/m1r.png" alt="" class="p2-dltxt">
+      </div>
+    </div>
+    <div class="p2-btnstep1">
+      <img data-src="img/a23.png" width="329" height="66" alt="" class="p2-yep"><br>
+      <img data-src="img/a22.png" width="245" height="26" alt="" class="p2-nope">
+    </div>
+    <div class="p2-btnstep2">
+      <div class="imgconfrim">
+        <p class="imgloading">图片上传中...</p>
+        <div class="imgagain">
+          <img data-src="img/a24.png">
+        </div>
+        <img class="imgok" src="img/a25.png">
+      </div>
+
+      <div class="regards">
+        <p class="regardtxt">祝您办事处处顺，生活步步高，彩票期期中，好运天天交！</p>
+        <textarea class="rtarea" name="" id="" maxlength="28"></textarea>
+        <div class="editregards"><img data-src="img/a27.png"></div>
+      </div>
+      <div class="pshare"><img data-src="img/a26.png"></div>
+      <div class="pnext"><img data-src="img/a29.png"></div>
+    </div>
+   
+  </div>
+  <div class="sndctrl">
+    <img src="img/sndicon.png"><i></i>
+  </div>
+  <img data-src="img/a01.png" width="165" height="46" alt="" class="p-logo">
+  <div class="product">
+    <img src="img/product.jpg" width="640" height="1008" alt="">
+    <div class="pdtclose"><i>X</i></div>
+  </div>
+  <div class="pmask"><img data-src="img/a33.png" width="306" height="141" alt=""></div>
+
+</div> 
+<!-- <h2 class="trace"></h2> -->
+<script src="js/zepto.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/easeljs-0.8.1.min.js"></script>
+<script src="js/exif.min.js"></script>
+<script>
+document.body.addEventListener('touchmove', function(e) {
+  e.stopPropagation();
+  e.preventDefault();
+});
+var cltype;
+var mc;
+var hammerevent='pan pinchstart pinch panend pinchend rotatestart rotatemove';
+var userid=null;
+var originRegard="祝您办事处处顺，生活步步高，彩票期期中，好运天天交！";
+var regard=originRegard;
+var firstUpload;
+var isShared=false;
+var chooseOver=false;
+var root="http://2016.gome.com.cn/bainian/";
+var kakaSnd=new Audio();
+kakaSnd.autoplay=false;
+kakaSnd.preload=true;
+kakaSnd.loop=false;
+kakaSnd.src='media/kaka.mp3';
+var manifest=[
+"r1_body","r1_fl1","r1_fl2","r1_h1","r1_peach","r1_shadow","r2_body","r2_h1","r2_hat","r2_hatl","r2_hatr","r2_m","r3_arm","r3_body","r3_h1","r3_hand","r3_shadow","r3_sl","r3_sr","r3_star","r3_stick","r4_body","r4_cloud1","r4_cloud2","r4_cloud3","r4_h1","r4_shadow","r4_tail",'r5_arm',"r5_body","r5_h1","r5_m","r5_peach1","r5_peach2","r5_shadow"
+]
+var version="1.2";
+for(var i=0;i<manifest.length;i++){
+  manifest[i]="img/role/"+manifest[i]+".png"+"?ver="+version;
+}
+for(var i=1;i<=39;i++){
+  var _i=i<10?("0"+i):i;
+  manifest.push("img/a"+_i+".png"+"?ver="+version);
+  if(i<=5){
+    manifest.push("img/cl/m"+i+"l.png"+"?ver="+version);
+    manifest.push("img/cl/m"+i+"t.png"+"?ver="+version);
+    manifest.push("img/cl/m"+i+"r.png"+"?ver="+version);
+  }
+}
+$(function(){
+  var stageH=$(window).height();
+  $(".wrapper").height(stageH);
+  loadResources(manifest,function (n, i, img) {
+    $("#loading p").html("loading&nbsp;" + Math.round(i * 100 / n) + "%");
+    if (n != i) return;
+    $("#loading").remove();
+    $("#wrapper").show();
+    $("img").each(function(){
+      var datasrc=$(this).data("src");
+      if(datasrc){
+        $(this).attr("src",datasrc+"?ver="+version);
+      }
+    })
+    userid=getQueryString("userid");
+    if(userid!=null){
+      showFinshed();
+    }else{
+      init();
+    }
+    $(".redmoney").tap(function(){
+      $(".product").show();
+    })
+    $(".product").tap(function(){
+      $(".product").hide();
+    })
+
+    initBgm();
+    $(".sndctrl").tap(function(){
+      if(bgm.paused){
+        bgm.play();
+        $(this).find("i").hide();
+      }else{
+        bgm.pause();
+        $(this).find("i").show();
+      }
+    })
+  })
+})
+function showduilian(idx){
+  $(".p2-dltop .p2-dltxt").attr("src","img/cl/m"+idx+"t.png")
+  $(".p2-dlleft .p2-dltxt").attr("src","img/cl/m"+idx+"l.png")
+  $(".p2-dlright .p2-dltxt").attr("src","img/cl/m"+idx+"r.png")
+}
+function showFinshed(){
+  $(".p1").hide();
+  isShared=true;
+  var imgurl;
+  $(".like").tap(function(){
+    $(".likerst").show();
+    $(".dislikerst").hide();
+  })
+  $(".dislike").tap(function(){
+    $(".dislikerst").show();
+    $(".likerst").hide();
+  })
+  $.post("chunlian_search.php",{
+    userid:userid
+  },function(data){
+    if("success"==data.result){
+      cltype=parseInt(data.cltype);
+      regard=data.regard;
+      imgurl=data.imgurl;
+      showduilian(cltype);
+      var cvs=$(".cvs").eq(cltype-1)[0];
+      var ctx=cvs.getContext("2d");
+      var img=new Image();
+      img.src=imgurl;
+      img.onload=function(){
+        ctx.clearRect(0,0,cvs.width,cvs.height);
+        ctx.fillStyle="#fbc9b2";
+        ctx.fillRect(0,0,cvs.width,cvs.height);
+        ctx.drawImage(img,0,0,cvs.width,cvs.height);
+      }
+      $(".role").removeClass("show").eq(cltype-1).addClass("show");
+      $(".regardtxt").addClass("wider");
+      $(".p2").addClass("result");
+      $(".p2,.p2-btnstep2,.pnext,.redmoney").show();
+      $(".editregards,.p2-btnstep1").hide();
+      $(".regardtxt").text(regard);
+      $(".pnext").tap(function(){
+        cltype=userid=null;
+        isShared=false;
+        regard=originRegard;
+        $(".role").removeClass("show");
+        $(".p2,.p2-btnstep2,.pnext,.likedbtns,.likerst,.dislikerst,.redmoney").hide();
+        $(".p1,.editregards,.p2-btnstep1").show();
+        $(".regardtxt").removeClass("wider");
+        $(".p2").removeClass("result");
+        ctx.clearRect(0,0,cvs.width,cvs.height);
+        init();
+      })
+    }else if("fail"==data.result){
+      alert("search error: "+data.errmsg);
+    }
+  },'json');
+}
+function init(){
+  userid=uuid(16,16);
+  if (window.DeviceMotionEvent) {
+    window.addEventListener('devicemotion', deviceMotionHandler, false);　　　　　
+  } else {
+    alert("您的设备不支持运动传感");
+  }
+  /* 不支持运动polyfill */
+  $('.p1-mid').click(function(){
+    shakeCallback();
+    count=0;
+  })
+  /* 不支持运动polyfill */
+  regard=originRegard;
+  $(".regardtxt").empty().text(regard);
+
+  $(".editregards").tap(function(e){
+    if(!$(this).hasClass("readyEdit")){
+      //显示'编辑'按钮
+      $(this).addClass("readyEdit")
+      $(".regardtxt").hide();
+      $(".rtarea").show().focus().val($(".regardtxt").text().replace(/^\s+/,"").replace(/\s+$/,""));
+      $(".editregards img").attr("src","img/a32.png");
+    }else{
+      //编辑界面，显示'完成'按钮
+      $(this).removeClass("readyEdit");
+      $(".rtarea").blur().hide();
+      $(".regardtxt").text($(".rtarea").val()).show();
+      regard=$(".rtarea").val();
+      $(".editregards img").attr("src","img/a27.png");
+      
+      submitRes();
+    }
+  })
+
+  $(".p2-yep").tap(function(){
+    chooseOver=true;
+    $(".ptip,.redmoney,.p2-btnstep2").show();
+    $(".p2-btnstep1").hide();
+    initEditCanvas(cltype);
+  })
+  $(".p2-nope").tap(function(){
+    $(".p2").hide();
+    $(".p1").show();
+  })
+
+  $(".imgok").tap(function(){
+    $(".pshare").addClass("animIn");
+    $(".regardtxt").addClass("smaller");
+    $(".editregards").show();
+    $(".imgagain,.imgok").hide();
+    mc.off(hammerevent).destroy();
+    var imgBase64=$(".cvs").eq(cltype-1)[0].toDataURL("image/jpeg");
+    submitRes();
+
+    //shareObj.link=root+"?userid="+userid;
+    //console.log(shareObj.link)
+    // sharewx();
+  })
+  $(".pshare").tap(function(){
+    $(".pmask").show();
+  })
+}
+function submitRes(){
+  var imgBase64=$(".cvs").eq(cltype-1)[0].toDataURL("image/jpeg");
+  $.post("chunlian_submit.php",{
+    userid:userid,
+    cltype:cltype,
+    regard:regard,
+    imgdata: imgBase64
+  },function (data){
+    if("success"==data.result){
+      console.log("submit success!")
+    }else if("fail"==data.result){ 
+      alert("submit error: "+data.errmsg);
+    }
+  },'json');
+}
+
+function shakeCallback(){
+  if(chooseOver) return;
+  
+  kakaSnd.pause();
+  kakaSnd.play();
+  $(".p1").addClass("animOut");
+  setTimeout(function(){
+    $(".p2").show();
+  },300);
+
+  if(cltype){
+    if(++cltype>5) cltype=1;
+  }else{
+    cltype=Math.ceil(Math.random()*5);
+  }
+  showduilian(cltype);
+  $(".role").removeClass("show").eq(cltype-1).addClass("show");
+  setTimeout(function(){
+    $(".p1").hide().removeClass("animOut");
+  },700)
+}
+
+function initEditCanvas(idx){
+  var cp_scale;
+  var canvas = $('.cvs')[idx-1];
+  var canvasWidth = canvas.width,
+      canvasHeight = canvas.height;
+  var stage = new createjs.Stage(canvas);
+  var bg = new createjs.Shape();
+  var photo;
+  
+  var oldX,oldY,newX,newY,
+      oldW,oldH,newW,newH,
+      scale=1,newscale=1;
+  var imgWhRate,cavWhRate;
+  var cavW=canvas.width,
+  cavH=canvas.height;
+  cavWhRate=cavW/cavH;
+
+  bg.graphics.f("#fbc9b2").dr(0, 0, canvasWidth, canvasHeight);
+  stage.addChild(bg);
+
+  stage.update();
+
+  $('.filedata').eq(idx-1).on('change',function(source){
+    var file = source.target.files[0];
+    var URL = window.URL || window.webkitURL;
+    var blob = URL.createObjectURL(file);
+    var orientation = 0;
+    var cPhoto;
+    EXIF.getData(file, function(){
+        orientation = EXIF.getTag(this, 'Orientation') || 0;
+    });
+    photo = new Image();
+    photo.src = blob;
+    photo.onload=function(){
+
+      photo.orientation = orientation;
+      stage.removeChild(stage.getChildByName('photo'));
+      cPhoto = new createjs.Bitmap(photo);
+      switch(photo.orientation) {
+        case 3:
+          photo.c_width = photo.width;
+          photo.c_height = photo.height;
+          cPhoto.rotation = 180;
+          break;
+        case 6:
+          photo.c_width = photo.height;
+          photo.c_height = photo.width;
+          cPhoto.rotation = 90;
+          break;
+        case 8: 
+          photo.c_width = photo.height;
+          photo.c_height = photo.width;
+          cPhoto.rotation = 270; 
+          break;
+        default:
+          photo.c_width = photo.width;
+          photo.c_height = photo.height;
+          break;
+      }
+      newW=oldW=photo.c_width;
+      newH=oldH=photo.c_height;
+      imgWhRate=oldW/oldH;
+
+      cp_scale = canvasWidth / photo.c_width;
+      if(cp_scale * photo.c_height < canvasHeight) cp_scale = canvasHeight / photo.c_height;
+
+      cPhoto.name = "photo";
+      cPhoto.scaleX = cPhoto.scaleY = cPhoto.scaleMin = cp_scale;
+      cPhoto.regX = photo.width / 2;
+      cPhoto.regY = photo.height / 2;
+      newX=oldX=cPhoto.x = canvasWidth / 2;
+      newY=oldY=cPhoto.y = canvasHeight / 2;
+      stage.addChild(cPhoto);
+      stage.update();
+      $('.filedata').eq(idx-1).val('');
+      $('.ptip').eq(idx-1).hide();
+      $(".imgconfrim").show();
+      $('.filedata').eq(idx-1).addClass("newinputstyle").appendTo($(".imgagain"));
+    }
+
+    mc=new Hammer(document.body,{
+      touchAction: 'pan-x pan-y',
+      recognizers: [
+        [Hammer.Tap],
+        [Hammer.Pinch,{enable:true}],
+        [Hammer.Pan],
+        [Hammer.Rotate,{enable:true}]
+      ]
+    })
+
+    mc.on(hammerevent,function (ev) {
+      if(ev.type=="pinchstart"){
+
+      }
+      if(ev.type=="pinch"){
+        newW=oldW*ev.scale;
+        newH=oldH*ev.scale;
+        nowscale=newW/photo.c_width
+        cPhoto.scaleX=cPhoto.scaleY=nowscale;
+        stage.update();
+        adjustRegion();
+      }
+      if(ev.type=="pinchend"){
+        oldW=newW;
+        oldH=newH;
+        oldX=newX;
+        oldY=newY; 
+      }
+      if(ev.type=="pan"){
+        newX=oldX+ev.deltaX;
+        newY=oldY+ev.deltaY;
+        adjustRegion();
+        cPhoto.x=newX
+        cPhoto.y=newY;
+        stage.update();
+      }
+      if(ev.type=="panend"){
+        oldX=newX;
+        oldY=newY;
+      }
+      if(ev.type=="rotatestart"){
+        //cPhoto.i_rotation=cPhoto.rotation;
+      }
+      if(ev.type=="rotatemove"){}
+    });
+  })
+  function adjustRegion(){
+    if(newX>cavW+newW/2){
+      newX=cavW+newW/2
+    }else if(newX<-newW/2){
+      newX=-newW/2;
+    }
+    if(newY>cavH+newH/2){
+      newY=cavH+newH/2
+    }else if(newY<-newH/2){
+      newY=-newH/2
+    }
+  }
+}
+var bgm,isMute=false;
+function initBgm(){
+  bgm=new Audio();
+  bgm.autoplay=true;
+  bgm.preload=true;
+  bgm.loop=true;
+  bgm.src='media/bgm.mp3';
+  bgm.play();
+}
+function loadResources(urls, progress) {
+  var loadedCount = 0;
+  var loaded = function () {
+    ++loadedCount;
+    if (progress) progress(urls.length, loadedCount, this);
+  };
+  for (var i = 0; i < urls.length; ++i) {
+    if (!urls[i]) {
+      loaded();
+      return;
+    }
+    var img = new Image();
+    img.onload = loaded;
+    img.onabort = loaded;
+    img.onerror = loaded;
+    img.src =  urls[i];
+  }
+}
+
+var SHAKE_THRESHOLD = 1300;
+var last_update = 0;
+var x;
+var y;
+var z;
+var last_x;
+var last_y;
+var last_z;
+var onyaoyao = false;
+var count = 0;
+
+function deviceMotionHandler(eventData) {
+  var acceleration = eventData.accelerationIncludingGravity;
+  var curTime = new Date().getTime();　　
+  var diffTime = curTime - last_update;
+
+  if (diffTime > 100) {　　　　
+    last_update = curTime;　　
+    x = acceleration.x;
+    y = acceleration.y;
+    z = acceleration.z;
+    var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;　　　
+    if (speed > SHAKE_THRESHOLD) {　　　
+      count++;
+      if(count>0){
+        shakeCallback();
+        count=0;
+        //window.removeEventListener('devicemotion', deviceMotionHandler, false);
+      }
+    }　　　
+    last_x = x;　　　　
+    last_y = y;　　　　
+    last_z = z;　　
+  }
+}
+function getQueryString(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+  var r = window.location.search.substr(1).match(reg);
+  if (r != null) return unescape(r[2]); return null;
+};
+function uuid(len, radix) {
+    var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+    var uuid = [], i;
+    radix = radix || chars.length;
+    if (len) {
+      for (i = 0; i < len; i++) uuid[i] = chars[0 | Math.random()*radix];
+    } else {
+      var r;
+      uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';
+      uuid[14] = '4';
+      for (i = 0; i < 36; i++) {
+        if (!uuid[i]) {
+          r = 0 | Math.random()*16;
+          uuid[i] = chars[(i == 19) ? (r & 0x3) | 0x8 : r];
+        }
+      }
+    }
+    return uuid.join('');
+}
+</script>
+
+<script src="../../../libs/mock.js"></script>
+<script>
+  function _getQueryString(target, name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = target.match(reg);
+    if (r != null) return unescape(r[2]); return null;
+  };
+  Mock.mock('chunlian_search.php', function(options){
+    if(_getQueryString(options.body, 'userid')!= ''){
+      return {
+        result: 'success',
+        cltype: 1,
+        regard: '恭喜发财，红包拿来，少点套路，多点真诚！',
+        imgurl: './userimg/2016020317222944555.png'
+      }
+    }else{
+      return {
+        result: 'fail',
+        errmsg: 'userid is null'
+      }
+    }
+  })
+
+  Mock.mock('chunlian_submit.php', function(options){
+    if(_getQueryString(options.body, 'userid')!= ''){
+      return {
+        result: 'success'
+      }
+    }else{
+      return {
+        result: 'fail',
+        errmsg: 'userid is null'
+      }
+    }
+  })
+</script>
+</body>
+</html>

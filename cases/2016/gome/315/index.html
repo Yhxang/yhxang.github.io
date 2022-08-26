@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>315，你不知道的那些事儿</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+
+</script>
+<link rel="stylesheet" href="css/style.css?ver=1.9">
+</head>
+<body>
+<img src="img/icon.jpg" alt="" class="shareicon">
+<div id="loading">
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+  <p>loading...</p>
+</div>
+<div class="wrapperholder">
+  <div class="wrapper">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- p1 -->
+          <div class="swiper-slide p1">
+            <div class="visibleholder">
+              <div class="p1-tit">
+                <div class="p1-texture">
+                  <div class="p1-textureimg"></div>
+                  <i class="p1-bm"></i>
+                </div>
+                <img data-src="img/a01.png" width="497" height="125" alt="" class="p1-tborder autocenter">
+                <img data-src="img/a02.png" width="493" height="121" alt="" class="p1-txt autocenter">
+              </div>
+              <div class="p1-mid">
+                <img data-src="img/a07.png" width="566" height="566" alt="">
+                <div class="p1-glowmask">
+                  <div class="p1-glowcont">
+                    <div class="p1-glow"><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i><i class="i7"></i><i class="i8"></i><i class="i9"></i><i class="i10"></i><i class="i12"></i><i class="i11"></i></div>
+                    <div class="p1-glow p1-g1"><i class="i1"></i><i class="i2"></i><i class="i3"></i><i class="i4"></i><i class="i5"></i><i class="i6"></i><i class="i7"></i><i class="i8"></i><i class="i9"></i><i class="i10"></i><i class="i12"></i><i class="i11"></i></div>
+                  </div>
+                </div>
+                <div class="p1-flyconts">
+                  <div class="p1-flyl p1-fly"><img data-src="img/a03.png" width="130" height="94" alt="" class="p1-flyimg"></div>
+                  <div class="p1-flyr p1-fly"><img data-src="img/a03.png" width="130" height="94" alt="" class="p1-flyimg"></div>
+                  <div class="p1-flyctr"></div>
+                </div>
+                
+                <div class="p1-num">
+                  <img data-src="img/a04.png" width="415" height="213" alt="" class="p1-numbg">
+                </div>
+                <div class="p1-house">
+                  <img data-src="img/a05.png" width="452" height="241" alt="">
+                  <div class="p1-fanl p1-fans"><img data-src="img/a06.png" width="86" height="86" alt="" class="p1-fan"></div>
+                  <div class="p1-fanr p1-fans"><img data-src="img/a06.png" width="86" height="86" alt="" class="p1-fan"></div>
+                </div>
+              </div>
+              <div class="p1-btm">
+                <img data-src="img/a09.png" width="544" height="228" alt="">
+                <img data-src="img/a08.png" width="484" height="182" alt="" class="p1-btmtxt">
+                <div class="p1-star p1-star1"></div>
+                <div class="p1-star p1-star2"></div>
+                <div class="p1-star p1-star3"></div>
+                <div class="p1-star p1-star4"></div>
+              </div>
+            </div>
+          </div>
+          <!-- p2 -->
+          <div class="swiper-slide p2">
+            <div class="visibleholder">
+              <div class="p2-top">
+                <img data-src="img/a13.png" width="546" height="42" alt="">
+                <div class="p2-topbox">
+                  <div class="p2-topboxup">
+                    <img data-src="img/a11.png" width="535" height="77" alt="" class="p2-tborder autocenter">
+                    <img data-src="img/a12.png" width="531" height="73" alt="" class="p2-txt autocenter">
+                  </div>
+                  <div class="p2-topboxdown">
+                    <img data-src="img/a10.png" width="534" height="65" alt="" class="p2-tbdimg">
+                  </div>
+                </div>
+              </div>
+              <div class="p2-downtoper">
+                <img data-src="img/a14.png" width="565" height="27" alt="" class="p2-downtoper">
+                <i class="p2-linel"></i><i class="p2-liner"></i>
+              </div>
+              <ul class="p2-down">
+                <li class="p2-cbox p2-cbox1">
+                  <div class="p2-boxmask">
+                    <img data-src="img/a01.jpg" width="509" height="168" alt="" class="p2-boximg">
+                  </div>
+                  <img data-src="img/a15.png" width="127" height="94" alt="" class="p2-firstline">
+                  <div class="p2-helix p2-helix1"><img data-src="img/a16.png" width="180" height="52" alt="" class="p2-hlxbg"></div>
+                  <div class="p2-helix p2-helix2"><img data-src="img/a16.png" width="180" height="52" alt="" class="p2-hlxbg"></div>
+                  <div class="p2-helix p2-helix3"><img data-src="img/a16.png" width="180" height="52" alt="" class="p2-hlxbg"></div>
+                  <p class="p2-boxtxt">国美卖场人头攒动，抢购气氛异常火爆</p>
+                </li>
+                <li class="p2-cbox p2-cbox2">
+                  <div class="p2-boxmask">
+                    <img data-src="img/a02.jpg" width="509" height="160" alt="" class="p2-boximg">
+                  </div>
+                  <div class="p2-pop p2-pop1"><img data-src="img/a17.png" width="139" height="102" alt="" class="p2-popbg"></div>
+                  <div class="p2-pop p2-pop2"><img data-src="img/a17.png" width="139" height="102" alt="" class="p2-popbg"></div>
+                  <div class="p2-pop p2-pop3"><img data-src="img/a17.png" width="139" height="102" alt="" class="p2-popbg"></div>
+                  <p class="p2-boxtxt">活动当天，数百个家电大牌，万款商品参与其中</p>
+                </li>
+                <li class="p2-cbox p2-cbox3">
+                  <div class="p2-boxmask">
+                    <img data-src="img/a03.jpg" width="509" height="159" alt="" class="p2-boximg">
+                  </div>
+                  <img data-src="img/a18.png" width="186" height="136" alt="" class="p2-boom">
+                  <p class="p2-boxtxt">80%家电畅销品远低于市场价，顾客都满载而归</p>
+                </li>
+                <li class="p2-laststar"></li>
+              </ul>
+            </div>
+          </div>
+          <!-- p3 -->
+          <div class="swiper-slide p3">
+            <div class="visibleholder">
+              <div class="p3-top">
+                <img data-src="img/a13.png" width="546" height="42" alt="">
+                <div class="p3-topbox">
+                  <div class="p3-topboxup">
+                    <img data-src="img/a20.png" width="462" height="80" alt="" class="p3-tborder autocenter">
+                    <img data-src="img/a19.png" width="456" height="74" alt="" class="p3-txt autocenter">
+                    <div class="p3-whitestarL"></div><div class="p3-whitestarR"></div>
+                  </div>
+                  <div class="p3-topboxdown">
+                    <img data-src="img/a21.png" width="451" height="90" alt="" class="p3-tbdimg">
+                    <div class="p3-redstarL"></div><div class="p3-redstarR"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="p3-down">
+                <img data-src="img/a14.png" width="565" height="27" alt="" class="p3-downtoper">
+                <div class="p3-downbg"></div>
+                <div class="p3-btmtxt">
+                  <img data-src="img/a30.png" width="546" height="169" alt="">
+                  <img data-src="img/a35.png" width="158" height="62" alt="" class="p3-millon">
+                  <div class="p3-stararea">
+                    <div class="p3-linel"></div><div class="p3-star"></div><div class="p3-star"></div><div class="p3-liner"></div>
+                  </div>
+                </div>
+                <div class="p3-win1 p3-win">
+                  <img data-src="img/a22.png" width="274" height="251" alt="">
+                  <img data-src="img/a26.png" width="64" height="77" alt="" class="p3-dollar p3-dlr1">
+                  <img data-src="img/a26.png" width="40" height="48" alt="" class="p3-dollar p3-dlr2">
+                  <img data-src="img/a26.png" width="54" height="65" alt="" class="p3-dollar p3-dlr3">
+                  <img data-src="img/a26.png" width="27" height="33" alt="" class="p3-dollar p3-dlr4">
+                  <div class="p3-w1rcont">
+                    <img data-src="img/a25.png" width="235" alt="" class="p3-w1r">
+                    <img data-src="img/a36.png" width="24" alt="" class="p3-w1rglow">
+                  </div>
+                  <img data-src="img/a24.png" width="125"  alt="" class="p3-w1head">
+                  <p class="p3-w1t">北京李先生2万元搞定一切</p>
+                  <img data-src="img/a50.png" width="54" height="59" alt="" class="p3-cursor">
+                </div>
+                <div class="p3-win2 p3-win">
+                  <img data-src="img/a23.png" width="274" height="251" alt="">
+                  <div class="p3-flag"><img data-src="img/a31.png" width="106" height="126" alt="" class="p3-flagbg"></div>
+                  <div class="p3-w2rcont">
+                    <img data-src="img/a28.png" width="76" height="79" alt="" class="p3-bag p3-bag1">
+                    <img data-src="img/a28.png" width="51" height="53" alt="" class="p3-bag p3-bag2">
+                    <img data-src="img/a28.png" width="37" height="38" alt="" class="p3-bag p3-bag3">
+                    <img data-src="img/a28.png" width="30" height="31" alt="" class="p3-bag p3-bag4">
+                    <img data-src="img/a27.png" width="282" height="317" alt="" class="p3-w2r">
+                  </div>
+                  <p class="p3-w2t">上海大妈连买带送满载而归</p>
+                  <img data-src="img/a50.png" width="54" height="59" alt="" class="p3-cursor">
+                </div>
+                <div class="p3-win3 p3-win">
+                  <div class="p3-w3rcontbg"></div>
+                  <div class="p3-w3rcont">
+                    <div class="p3-calc p3-calc1"><img data-src="img/a32.png" width="29" height="36" alt=""></div>
+                    <div class="p3-calc p3-calc2"><img data-src="img/a32.png" width="39" height="48" alt=""></div>
+                    <div class="p3-paper p3-ppr1"><img data-src="img/a33.png" width="47" height="28" alt=""></div>
+                    <div class="p3-paper p3-ppr2"><img data-src="img/a33.png" width="72" height="43" alt=""></div>
+                    <div class="p3-paper p3-ppr3"><img data-src="img/a33.png" width="46" height="28" alt=""></div>
+                    <div class="p3-paper p3-ppr4"><img data-src="img/a33.png" width="56" height="34" alt=""></div>
+                    <div class="p3-paper p3-ppr5"><img data-src="img/a33.png" width="37" height="22" alt=""></div>
+                    <div class="p3-paper p3-ppr6"><img data-src="img/a33.png" width="37" height="22" alt=""></div>
+                    <div class="p3-paper p3-ppr7"><img data-src="img/a33.png" width="60" height="36" alt=""></div>
+                    <img data-src="img/a34.png" width="271" height="124" alt="" class="p3-papers">
+                    <img data-src="img/a29.png" width="275" height="393" alt="" class="p3-w3r">
+                  </div>
+                  <p class="p3-w3t">“黑色星期伍当天到国美门店，买了一台智能大彩电，省了1000块钱！”</p>
+                  <img data-src="img/a50.png" width="54" height="59" alt="" class="p3-cursor">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- p5 -->
+          <div class="swiper-slide p5">
+            <div class="p5-top">
+              <img data-src="img/b01.png" width="543" height="45">
+            </div>
+            <div class="p5-middle">
+                <img data-src="img/a13.png" width="546" height="42" alt="">
+                <div class="p5-maintoper">
+                  <img data-src="img/b10.png" width="571" height="26" alt="" >
+                  <img data-src="img/b01.jpg" width="236" height="31" class="p5-guomei">
+                </div>
+                <div class="p5-main">
+                  <div class="p5-friday">
+                    <img data-src="img/b06.png" width="512" height="445" class="p5-star">
+                    <img data-src="img/b03.png" width="425" height="352" class="p5-friday-text">
+                  </div>
+                  <div class="p5-main-mid">
+                    <h3><img data-src="img/b04.png" width="469" height="53"></h3>
+                    <div class="p5-time">
+                      <img data-src="img/b05.png" width="165" height="33" alt="">
+                    </div>
+                  </div>
+                  <div class="p5-main-down">
+                    <img data-src="img/b07.png" width="508" height="34">
+                  </div>
+                </div>
+            </div>
+            <div class="p5-down">
+              <img data-src="img/b09.png" width="522" height="56" alt="">
+            </div>
+          </div>
+          <!-- p6 -->
+          <div class="swiper-slide p6">
+            <div class="p6-container swiper-container-inner">
+             <div class="swiper-wrapper">
+                <div class="swiper-slide b1">
+                  <img data-src="img/b29.png" width="154" height="46" class="p6-logo">
+                  <div class="p6-top">
+                    <img data-src="img/a13.png" width="566" height="38" alt="">
+                    <div class="p6-topbox">
+                      <div class="p6-topboxup">
+                        <img data-src="img/b15.png" width="518" height="111" alt="" class="p6-tborder">
+                        <img data-src="img/b11.png" width="513" height="100" alt="" class="p6-ttext">
+                        <div class="p6-textBox">
+                          <img data-src="img/b13.png" width="529" height="79" alt="" class="p6-txtbg">
+                          <img data-src="img/b12.png" width="457" height="55" alt="" class="p6-txt">
+                        </div> 
+                      </div>
+                      <img data-src="img/b03.jpg" width="208" height="32" class="p5-guomei p6-guomei">
+                    </div>
+                     <img data-src="img/b21.png" width="529" height="24" class="">
+                  </div>
+                  <div class="p6-downtoper">
+                    <img data-src="img/b14.png" width="587" height="25" alt="" class="">
+                    <i class="p2-linel"></i><i class="p2-liner"></i>
+                  </div>
+                  <div class="p6-downBox">
+                    <div class="p6-downBoxinner">
+                      <img data-src="img/c01.jpg" width="549" height="553" alt="" class="p6-pdtimg">
+                      <img data-src="img/c02.jpg" width="549" height="553" alt="" class="p6-pdtimg">
+                      <img data-src="img/c03.jpg" width="549" height="553" alt="" class="p6-pdtimg">
+                      <img data-src="img/c04.jpg" width="549" height="553" alt="" class="p6-pdtimg">
+                      <img data-src="img/c05.jpg" width="549" height="566" alt="" class="p6-pdtimg">
+                      <img data-src="img/c06.jpg" width="549" height="870" alt="" class="p6-pdtimg">
+                    </div>
+                  </div>
+                  <div class="p6-info">更多低价商品，更多新鲜发现，尽在国美电器</div>
+                  <img src="img/a52.png" width="566" height="155" alt="" class="p6-btmtxts">
+                  <img data-src="img/b30.png" width="373" height="60" alt="" class="p6-shtip">
+                </div>
+                <div class="swiper-slide b2"></div>
+              </div>
+            </div>
+          </div>
+          <!-- end -->
+      </div>
+    </div>
+  </div>
+  <div class="p4">
+    <div class="p4-win">
+      <img data-src="img/a38.png" width="591" height="71" alt="" class="p4-header">
+      <div class="p4-down">
+        <div class="p4-downinner">
+          <div class="p4-triangle"></div>
+          <img data-src="img/a26.png" width="39" height="47" alt="" class="p4-dollar p4-dlr1">
+          <img data-src="img/a26.png" width="25" height="30" alt="" class="p4-dollar p4-dlr2">
+          <img data-src="img/a26.png" width="41" height="49" alt="" class="p4-dollar p4-dlr3">
+          <img data-src="img/a39.png" width="110" height="131" alt="" class="p4-sth">
+          <div class="p4-icebox">
+            <img data-src="img/a40.png" width="49" height="58" alt="" class="p4-iceboximg">
+          </div>
+        </div>
+        <i class="p2-linel p4-linel"></i><i class="p2-liner p4-liner"></i>
+        <img data-src="img/a37.png" width="586" height="274" alt="" class="p4-tit">
+        <div class="p4-downinnerup">
+          <div class="p4-role1">
+            <img data-src="img/a25.png" width="384" height="436" alt="">
+            <img data-src="img/a24.png" width="258" height="379" alt="" class="p4-r1-head">
+            <img data-src="img/a36.png" width="83" height="149" alt="" class="p4-r1-glow">
+          </div>
+        </div>
+      </div>
+      <img data-src="img/a41.png" width="578" height="41" alt="" class="p4-btmer">
+      <div class="p3-stararea p4-stararea">
+        <div class="p3-linel"></div><div class="p3-star"></div><div class="p3-star"></div><div class="p3-liner"></div>
+      </div>
+    </div>
+    <div class="p4-win">
+      <img data-src="img/a38.png" width="591" height="71" alt="" class="p4-header">
+      <div class="p4-down">
+        <div class="p4-downinner">
+          <div class="p4-triangle p4-trg2"></div>
+          <div class="p4-icebox p4-icebox2">
+            <img data-src="img/a40.png" width="69" height="82" alt="" class="p4-iceboximg2">
+          </div>
+          <img data-src="img/a44.png" width="77" height="77" alt="" class="p4-cup">
+          <img data-src="img/a28.png" width="51" height="53" alt="" class="p3-bag p4-bag1">
+          <img data-src="img/a28.png" width="37" height="38" alt="" class="p3-bag p4-bag2">
+          <img data-src="img/a28.png" width="30" height="31" alt="" class="p3-bag p4-bag3">
+        </div>
+        <i class="p2-linel p4-linel"></i><i class="p2-liner p4-liner"></i>
+        <img data-src="img/a42.png" width="586" height="274" alt="" class="p4-tit">
+        <div class="p4-downinnerup">
+          <div class="p4-role2">
+            <div class="p4-flag">
+              <img data-src="img/a43.png" width="304" height="293" alt="" class="p4-flagbg">
+            </div>
+            <img data-src="img/a27.png" width="525" height="585" alt="" class="p4-role2bg">
+          </div>
+        </div>
+      </div>
+      <img data-src="img/a41.png" width="578" height="41" alt="" class="p4-btmer">
+      <div class="p3-stararea p4-stararea">
+        <div class="p3-linel"></div><div class="p3-star"></div><div class="p3-star"></div><div class="p3-liner"></div>
+      </div>
+    </div>
+    <div class="p4-win">
+      <img data-src="img/a38.png" width="591" height="71" alt="" class="p4-header">
+      <div class="p4-down">
+        <div class="p4-downinner">
+          <img data-src="img/a46.png" width="182" height="197" alt="" class="p4-billL">
+          <img data-src="img/a47.png" width="138" height="200" alt="" class="p4-billR">
+          <img data-src="img/a48.png" width="133" height="100" alt="" class="p4-tv">
+          <div class="p4-calc1"><img data-src="img/a32.png" width="29" height="36" alt="" class="p4-calcbg"></div>
+          <div class="p4-calc2"><img data-src="img/a32.png" width="26" height="33" alt="" class="p4-calcbg"></div>
+          <div class="p3-paper p4-ppr1"><img data-src="img/a33.png" width="72" height="43" alt=""></div>
+          <div class="p3-paper p4-ppr2"><img data-src="img/a33.png" width="47" height="28" alt=""></div>
+          <div class="p3-paper p4-ppr3"><img data-src="img/a33.png" width="63" height="38" alt=""></div>
+          <div class="p3-paper p4-ppr4"><img data-src="img/a33.png" width="78" height="47" alt=""></div>
+          <div class="p3-paper p4-ppr5"><img data-src="img/a33.png" width="60" height="36" alt=""></div>
+        </div>
+        <i class="p2-linel p4-linel"></i><i class="p2-liner p4-liner"></i>
+        <img data-src="img/a45.png" width="627" height="273" alt="" class="p4-tit">
+        <div class="p4-downinnerup">
+          <img data-src="img/a29.png" width="417" height="585" alt="" class="p4-role3">
+        </div>
+      </div>
+      <img data-src="img/a41.png" width="578" height="41" alt="" class="p4-btmer">
+      <div class="p3-stararea p4-stararea">
+        <div class="p3-linel"></div><div class="p3-star"></div><div class="p3-star"></div><div class="p3-liner"></div>
+      </div>
+    </div>
+    <img data-src="img/a51.png" width="59" height="59" alt="" class="p4-close">
+  </div>
+  <div class="sndctrl">
+    <img data-src="img/a49.png"><i class="line45"></i>
+  </div>
+  <div class="nexttip"></div>
+</div>
+<div class="orienttip"><p>请竖屏观看！</p></div>
+<script src="js/zepto.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script>
+var manifest=[];
+var mySwiper,mySwiperInner;
+var version=1.8;
+for(var i=1;i<=24;i++){
+  var _i=i<10?("0"+i):i;
+  manifest.push("img/a"+_i+".png?ver="+version);
+}
+$(function(){
+  var supportsOrientationChange = "onorientationchange" in window,
+    orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+  window.addEventListener(orientationEvent, function() {
+    //alert('HOLY ROTATING SCREENS BATMAN:' + window.orientation + " " + screen.width);
+    if(window.orientation==90||window.orientation==-90){
+      $(".orienttip").show()
+    }else{
+      $(".orienttip").hide()
+    }
+  }, false);
+  if(window.orientation==90||window.orientation==-90){
+    $(".orienttip").show();
+  }
+
+  var stageH=$(window).height();
+
+  $(window).resize(function(){
+    stageH=$(window).height();
+    $(".wrapperholder").height(stageH);
+
+    $(".wrapper,.p4").css({"margin-top":(stageH-1138)/2});
+    if(stageH<985){
+      $(".wrapper,.p4").css({
+        "-webkit-transform":"scale3d(1,"+stageH/985+",1)",
+        "transform":"scale3d(1,"+stageH/985+",1)"
+      })
+      $(".swiper-container-inner").css({
+        height:985,
+        "margin-top":(1138-985)/2
+      })
+      $(".p4").css({top:0});
+      $(".p4-close").css({bottom:(1138-985)/2})
+    }else if(stageH>=985&&stageH<1138){
+      $(".wrapper,.p4").css({ "-webkit-transform":"none", "transform":"none" })
+      $(".swiper-container-inner").css({
+        height:stageH,
+        "margin-top":(1138-stageH)/2
+      })
+      $(".p4").css({top:(1138-stageH)/2})
+      $(".p4-close").css({bottom:1138-stageH})
+    }else{
+      $(".wrapper,.p4").css({ "-webkit-transform":"none", "transform":"none" })
+    }
+    if(mySwiper) mySwiper.update();
+    if(mySwiperInner) mySwiperInner.update();
+  }).trigger("resize")
+  
+  loadResources(manifest,function (n, i, img) {
+    $("#loading p").html("loading&nbsp;" + Math.round(i * 100 / n) + "%");
+    if (n != i) return;
+    $("#loading").remove();
+    $(".wrapperholder").show();;
+    $("img").each(function(){
+      if($(this).data("src")){
+        $(this).attr("src",$(this).data("src")+"?ver="+version);
+      }
+    })
+    init();
+    initBgm();
+    $(".sndctrl").tap(function(){
+      if(bgm.paused){
+        bgm.play();
+        $(this).find("i").hide();
+      }else{
+        bgm.pause();
+        $(this).find("i").show();
+      }
+    })
+  })
+})
+function init(){
+  mySwiperInner=new Swiper(".swiper-container-inner",{
+    direction:'vertical',
+    freeMode:true,
+    slidesPerView:'auto',
+    freeModeMomentumRatio:.2
+  })
+  mySwiper=new Swiper('.swiper-container', {
+      direction:'vertical',
+      onSlideChangeEnd:function(cmd){
+        if(cmd.activeIndex==4) $(".nexttip").remove();
+      }
+  })
+  deviceRotate();
+  $(".p3-win").each(function(_n){
+    $(this).click(function(e){
+      $(".p4-win").hide().eq(_n).show();
+      $(".p4").show();
+      $(".nexttip").hide();
+    })
+  })
+  $(".p4").click(function(){
+    $(".nexttip").show();
+    $(".p4-win,.p4").hide();
+  })
+}
+var bgm,isMute=false;
+function initBgm(){
+  bgm=new Audio();
+  bgm.autoplay=true;
+  bgm.preload=true;
+  bgm.loop=true;
+  bgm.src='media/bgm.mp3';
+  bgm.play();
+}
+function deviceOrientationHandler(eventData){
+  if(eventData.gamma){
+    var angle=eventData.gamma/15;
+    angle=angle>4?4:(angle<-4?-4:angle);
+    $(".p1-numbg").css({
+      "-webkit-transform":"rotateZ("+angle+"deg)",
+      "transform":"rotateZ("+angle+"deg)"
+    })
+  }
+}
+function deviceRotate(){
+  if (window.DeviceMotionEvent) {
+    window.addEventListener('deviceorientation', deviceOrientationHandler, false);　　　　　
+  } else {
+    alert("您的设备不支持运动传感");
+  } 
+}
+function loadResources(urls, progress) {
+  var loadedCount = 0;
+  var loaded = function () {
+    ++loadedCount;
+    if (progress) progress(urls.length, loadedCount, this);
+  };
+  for (var i = 0; i < urls.length; ++i) {
+    if (!urls[i]) {
+      loaded();
+      return;
+    }
+    var img = new Image();
+    img.onload = loaded;
+    img.onabort = loaded;
+    img.onerror = loaded;
+    img.src =  urls[i];
+  }
+}
+</script>
+</body>
+</html>

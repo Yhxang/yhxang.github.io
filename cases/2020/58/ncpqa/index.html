@@ -1,0 +1,781 @@
+<!-- <?php
+// include("includes/init.php");
+// $db = new DB_sql();
+
+// $sql = "select * from anjuke_user_jiang  where 1 order by addtime desc limit 0,12";
+// $db->execute_sql($sql);
+// $result_j=$db->fetch_result_records();
+?> -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>打响防疫知识战</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script>
+
+if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+  //alert(navigator.userAgent);  
+  //window.location.href ="iPhone.html";
+} else {
+  window.location.href ="pc.html";
+}
+</script>
+<link rel="stylesheet" href="./css/swiper.min.css">
+<link rel="stylesheet" href="./css/select2.min.css">
+<!-- <link href="./css/style.css?v=123" rel="stylesheet"> -->
+<script>     
+  var str='<link href="./css/style.css?'+Math.random()+'" rel="stylesheet" type="text/css"/>';
+  document.write(str); 
+</script>
+
+<?php
+ include_once("weixin11.php");
+?>
+</head>
+<body> 
+	<div id="wrap">
+		<div class="swiper-container" id="mainfw">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide p0">
+					<div class="conts">
+						<img data-src="images/a01.jpg" alt="" class="p0-bg">
+						<img data-src="images/a02.png" width="165" height="163" alt="" class="p0-logo l50p">
+						<img data-src="images/a04.png" width="588" height="281" alt="" class="p0-tit l50p">
+						<img data-src="images/a05.png" width="641" height="66" alt="" class="p0-subtit l50p">
+						<img data-src="images/a06.png" width="632" height="57" alt="" class="p0-subtit1 l50p">
+						<img data-src="images/a03.png" width="364" height="129" alt="" class="p0-enter l50p">
+					</div>
+					<img data-src="images/a01.png" width="155"	height="43" alt="" class="logo">
+					<img data-src="images/a09.png" width="216" height="53" alt="" class="p0-rtbtn">
+				</div>
+				<!-- other slide -->
+				<div class="swiper-slide result">
+					<img data-src="images/a23.png" alt="" class="rstbg">
+					<div class="rst-failed">
+						<img data-src="images/a20.png" width="750" height="249" alt="" class="ribbon">
+						<div class="rstbtm">
+							<img data-src="images/a21.png" width="546" height="132" alt="" class="rstbtmtxt">
+							<img data-src="images/a22.png" width="317" height="113" alt="" class="btnmore">
+						</div>
+					</div>
+					<div class="rst-seccess">
+						<div class="ribbon">
+							<img data-src="images/a24.png" width="750" height="249" alt="" class="ribbonimg">
+							<img data-src="images/a25.png" width="730" height="343" alt="" class="firework">
+						</div>
+						<div class="rstbtm">
+							<img data-src="images/a21.png" width="546" height="132" alt="" class="rstbtmtxt">
+							<img data-src="images/a22.png" width="317" height="113" alt="" class="btnmore">
+						</div>
+						<div class="luckerbox l50p">
+							<img data-src="images/a26.png" width="619" height="173" alt="" class="luckerboxbg">
+							<div class="swiper-container-1">
+								<div class="swiper-wrapper">
+								</div>
+							</div>
+						</div>
+						<ul class="luckbox l50p">
+							<li id="luck-item-1"><img data-src="images/a31.png" width="125" height="125" alt=""></li>
+							<li id="luck-item-2"><img data-src="images/a32.png" width="125" height="125" alt=""></li>
+							<li id="luck-item-3"><img data-src="images/a33.png" width="125" height="125" alt=""></li>
+							<li id="luck-item-4"><img data-src="images/a34.png" width="125" height="125" alt=""></li>
+							<li class="startbtn"><img data-src="images/a30.png" width="125" height="125" alt=""></li>
+							<li id="luck-item-5"><img data-src="images/a35.png" width="125" height="125" alt=""></li>
+							<li id="luck-item-6"><img data-src="images/a36.png" width="125" height="125" alt=""></li>
+							<li id="luck-item-7"><img data-src="images/a37.png" width="125" height="125" alt=""></li>
+							<li id="luck-item-8"><img data-src="images/a34.png" width="125" height="125" alt=""></li>
+						</ul>
+					</div>
+					<img data-src="images/a01.png" width="155"	height="43" alt="" class="logo">
+				</div>
+				<div class="swiper-slide">
+					<img data-src="images/a21.png" width="546" height="132" alt="" class="rstbtmtxt moretit">
+					<div class="probox">
+						<img src="images/a39.png" width="671" height="663" alt="">
+						<div class="citytitbox">
+							<span id="cityname" class="cityname">北京</span>
+						</div>
+						<div class="proboxarea" id="proboxarea">
+							<!-- <a href=""><img src="images/projects/beijing_01.png" alt=""></a>-->
+						</div>
+					</div>
+					
+					<div class="changecity">
+						<select name="" id="cityselect2"></select>
+						<img src="images/a38.png" width="317" height="113" alt="" class="changecityimg">
+					</div>
+					<img src="images/a01.png" width="155"	height="43" alt="" class="logo">
+				</div>
+			</div>
+		</div>
+		<div class="pops">
+			<div class="pop w1">
+				<img data-src="images/a07.png" width="606" height="711" alt="" class="w1bg">
+				<img data-src="images/a08.png" width="50" height="50" alt="" class="closebtn">
+			</div>
+			<div class="pop w2">
+				<img data-src="images/a10.png" width="606" height="697" alt="" class="w2bg">
+				<form action="" method="post" id="usermsg" class="needsclick">
+					<input type="text" name="username" id="username" class="needsclick">
+					<input type="tel" name="usertel" id="usertel" maxlength="11" class="needsclick">
+					<select name="useraddr" id="useraddr"><option></option></select>
+					<input type="submit" id="w2-submit-1">
+					<img data-src="images/a11.png" width="301" height="107" alt="" id="w2-submit">
+
+				</form>
+				<img data-src="images/a08.png" width="50" height="50" alt="" class="closebtn">
+			</div>
+			<!-- <div class="pop w3">
+				<img data-src="images/a28.png" width="606" height="621" alt="" class="w3bg">
+				<form action="return false;" id="mailaddrform">
+					<textarea name="mailaddr" id="mailaddr" cols="30" rows="10"></textarea>
+				</form>
+				<input type="submit" id="w3-btn-1">
+				<img data-src="images/a29.png" width="271" height="96" alt="" class="w3-btn">
+			</div> -->
+			<div class="pop w4">
+				<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" width="600" height="1000" alt="" class="w4-img">
+				<img data-src="images/a28.png" width="203" height="85" alt="" class="w4-more l50p">
+				<img data-src="images/a08.png" width="50" height="50" alt="" class="closebtn">
+			</div>
+		</div>
+		<div id="loading">
+			<div class="l-icon">
+				<img src="images/z01.png" alt="" class="l-note">
+				<i class="l-tline1 l-tline"></i>
+				<i class="l-tline2 l-tline"></i>
+				<i class="l-tline3 l-tline"></i>
+				<img src="images/z03.png" alt="" class="l-shadow">
+				<img src="images/z02.png" alt="" class="l-pencil">
+			</div>
+			<p id="l-process">100%</p>
+		</div>
+		<div id="sndctrl"></div>
+	</div>
+<script>
+var stageW,stageH,stageT,stageB,spaceH,stageRate;
+var stageMaxH=1600;
+stageW=750;
+stageRate=window.innerWidth/stageW;
+
+// stageB=stageMaxH-spaceH;
+var wrap=document.getElementById("wrap");
+
+function resizeFunc(){
+	stageH=window.innerHeight*stageW/window.innerWidth;
+	spaceH=(stageMaxH-stageH)/2;
+	stageT=-spaceH;
+	wrap.style.height=stageH+"px";
+	wrap.style.webkitTransform="scale3d("+stageRate+","+stageRate+",1)";
+	wrap.style.transform="scale3d("+stageRate+","+stageRate+",1)";
+}
+resizeFunc();
+window.addEventListener("resize",resizeFunc);
+// var canvas = document.getElementById("canvas");
+// var stageOffsetY=(stageH-stageMaxH)/2;
+// canvas.style.marginTop=stageOffsetY+"px";
+</script>
+<script src="./js/jquery-3.0.0.min.js"></script>
+<!-- <script src="./js/fastclick.js?v2"></script> -->
+<script src="./js/swiper.min.js"></script>
+<script src="./js/question.js?ver=2356"></script>
+<script src="./js/select2.min.js"></script>
+<audio src="./media/right.mp3" preload id="sndright"></audio>
+<audio src="./media/wrong.mp3" preload id="sndwrong"></audio>
+<audio src="./media/bgm.mp3?v2" preload autoplay id="bgm"></audio>
+<script id="template-slide" type="text/template">
+<div class="swiper-slide {{SwiperClass}}">
+	<div class="qaarea l50p">
+		<img src="images/a12.png" alt="" class="qabg ">
+		<p class="qnum">{{Qid}}</p>
+		<img src="images/b{{Qsrc}}.png" alt="{{Qtxt}}" alt="" class="question">
+		<p class="qtype">（{{QTypeCn}}选题）</p>
+		<ul class="options {{OptionClass}}">
+			{{OptionDom}}
+		</ul>
+		<div class="role"></div>
+		<img src="images/a13.png" width="137" height="154" alt="" class="pencil">
+	</div>
+	<img src="images/a{{BtnSrc}}.png" alt="" width="297" height="106" class="nextbtn l50p transparent">
+	<img src="images/a01.png" width="155"	height="43" alt="" class="logo">
+</div>
+</script>
+<script id="template-li" type="text/template">
+	<li{{LiClass}} data-item="{{LiId}}">
+		<i>{{Letter}}</i><span>{{Opttxt}}</span>
+	</li>
+</script>
+<script id="template-pjt" type="text/template">
+<a href="{{url}}" target="_blank">
+	<img src="./images/projects/{{enaddr}}_{{idx}}.png?ver={{ver}}" width="371" height="98" alt="{{altname}}">
+</a>
+</script>
+<script>
+
+var bgm=document.getElementById("bgm");
+
+function  audioAutoPlay(id){
+  var audio = document.getElementById(id);
+  if (window.WeixinJSBridge) {
+    WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+      audio.play();
+    }, false);
+  } else {
+    document.addEventListener("WeixinJSBridgeReady", function () {
+      WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+        audio.play();
+      });
+    }, false);
+  }
+  audio.play();
+  return false;
+}
+audioAutoPlay("bgm");
+
+var exam = getQueryString('exam');
+exam=exam==null?0:parseInt(exam);
+$.fn.extend({
+  mctap:function(func){
+    var _this=this;
+    this.on('touchstart',function(e){
+      tiptimer=new Date();
+    }).on('touchend',function(e){
+      if(new Date()-tiptimer<150) {func.bind(this,e)();}
+    })
+  }
+})
+$(function(){
+	var selectdata=[];
+	var projectdata;
+	var addrsel;
+	var addrsel2;
+	$.get("./js/projects.json?"+Math.random(),{},function(data){
+		projectdata=data
+		var _data=data.data;
+		var _id=0;
+		for (var i=0;i<_data.length;i++){
+			var item={"text":_data[i].province,children:[]};
+			var _citys=_data[i].city;
+			for(var j=0;j<_citys.length;j++){
+				item.children.push({id:_citys[j].name, text:_citys[j].name});
+			}
+			selectdata.push(item);
+		}
+		addrsel=$('#useraddr').select2({
+			placeholder : '请选择城市',
+			data:selectdata,
+			minimumResultsForSearch:Infinity
+		});
+		// $('#useraddr').on("change",function(e){
+		// 	alert('change')
+		// })
+		addrsel2=$("#cityselect2").select2({
+			data:selectdata,
+			minimumResultsForSearch:Infinity,
+			selectOnClose:true
+		})
+		$("#cityselect2").on("change",function(e){
+			generateProject(addrsel2.val(),projectdata);
+		})
+		//var res = $("#useraddr").select2("data");
+		console.log(selectdata)
+	},"json")
+
+
+	var ver=1.5;
+	var loadingImages=["./images/a01.jpg"+"?v="+ver];
+	for(var i=1;i<=37;i++){
+	  loadingImages.push("./images/a"+(i<10?"0"+i:i)+".png"+"?v="+ver);
+	}
+	loadResources(loadingImages,function (n, i, img) {
+    $("#l-process").html(Math.round(i * 100 / n) + "%");
+    if (n != i) return;
+    // $("#loading").remove();
+    setTimeout(function(){
+    	$("#loading").hide();
+    	$("#mainfw").show();
+    },1000)
+    // $("#loading").hide();
+    // $("#mainfw").show();
+    $("img").each(function(){
+      var dsrc=$(this).data('src')
+      if(dsrc){
+        $(this).attr('src', dsrc+"?v="+ver)
+      }
+    })
+  })
+  var sndright=document.getElementById("sndright");
+  var sndwrong=document.getElementById("sndwrong");
+
+	//$(".swiper-container").height(stageH);
+	var mySwiper = new Swiper ('.swiper-container', {
+		direction: 'vertical', 
+		allowTouchMove: false,
+		observer:true,
+	})
+	var mySwiper1 = new Swiper('.swiper-container-1', {
+    slidesPerView: 2,
+    slidesPerColumn: 2,
+    slidesPerColumnFill:"row",
+    direction: "vertical",
+    spaceBetween: 15,
+    observer:true,
+    observeParents:true,
+    autoplay: {
+    	delay: 3000,
+    	disableOnInteraction: false
+    }
+  });
+  var rdmquestion=[];
+  var rdmans=[];
+  for(var i=0; i<5; i++){
+  	var rdmid=Math.floor(Math.random()*5);
+  	rdmquestion.push(questions[i][rdmid]);
+  	rdmans.push(ans[i][rdmid]);
+  }
+
+	for (var i=0;i<rdmquestion.length;i++){
+		var e=new Exam(i,rdmquestion[i],rdmans[i],Qtplt,Otplt,mySwiper,showResult)
+		e.init();
+	}
+	mySwiper.updateSlides();	
+
+	var pricetxt=["樊登读书会VIP卡","保洁代金券","精锐体验课","谢谢参与","美奥口腔vip联名卡","酸奶代金券","硬笔书法课","谢谢参与"];
+
+	var luckers =[
+	// <?php 
+	// 	foreach($result_j as $k=>$v){
+	// 	echo '{tel:"'.substr($v["tel"],7,4).'",luckid:'.$v["luckid"].'},';
+	// 	}
+	// ?>	
+		
+	];
+	// 案例展示用--生成临时数据
+	for(var i=0;i<12;i++){
+		luckers.push({tel: '13'+String(Math.round(999999999*Math.random())).padStart(9,'0'), luckid: Math.floor(Math.random() * pricetxt.length)})
+	}
+	console.log(luckers)
+	// 案例展示用
+
+
+
+	var luckerlisthtml=""
+	for(var i=0; i<luckers.length; i++){
+		luckerlisthtml+='<div class="swiper-slide">尾号'+ luckers[i].tel +'的用户获得'+pricetxt[luckers[i].luckid-1]+'</div>';
+	}
+
+	$(".swiper-container-1 .swiper-wrapper").html(luckerlisthtml);
+
+	function showResult(){
+		var score=$(".correct").length;
+		console.log(score)
+		if(score!=5){
+			$(".rst-failed").show();
+		}else{
+			$(".rst-seccess").show();
+			mySwiper1.init();
+		}
+	}
+
+	$(".p0-rtbtn").click(function(){
+		$(".pops,.w1").show();
+	})
+	$(".p0-enter").click(function(){
+		$(".pops,.w2").show();
+	})
+	$(".closebtn").click(function(){
+		$(".pops,.pop").hide();
+	}) 
+
+	var usermsg;
+	$("#usermsg").submit(function(e){
+		e.preventDefault();
+		usermsg={
+			name:$("#username").val(),
+			tel:$("#usertel").val(),
+			addr:addrsel.val()
+		}
+		if(!usermsg.name.replace(/\s+/g,"")){
+			alert("姓名不能为空！")
+			$("#username").val("").focus();
+		}else if(!/^[1]([3-9])[0-9]{9}$/.test(usermsg.tel)){
+			alert("请填写正确的手机号码！")
+		}else if(usermsg.addr==""){
+			alert("请选择城市！")
+		}else{
+			console.log(JSON.stringify(usermsg))
+			$("#usermsg").addClass("disabled");
+			$(".closebtn").click();
+			setTimeout(function(){
+				mySwiper.slideNext();
+			},150)
+			
+			generateProject(usermsg.addr,projectdata);
+			$("#cityselect2").val(usermsg.addr);
+			// $.post("queryinfo.php",usermsg,function(data){
+			// 	console.log(data)
+			// },"json")
+		}
+		return false;
+	})
+	$("#w2-submit").click(function(){
+		$("#usermsg").submit();
+	})
+	$(".btnmore").click(function(){
+		mySwiper.slideNext();
+	})
+	$(".w4-more").click(function(){
+		$(".pops,.pop").hide();
+		mySwiper.slideNext();
+	})
+	var notclick=true;
+	$(".startbtn").click(function(){
+		if(notclick){
+			$(this).addClass("doudong disabled");
+			/*
+			// 案例展示注销
+			$.post("queryluck.php", usermsg, function(data){
+				console.log(data);
+				if(1 == data.result){
+					var _luckid=data.luckid;
+					if(0 != _luckid && -1 != _luckid){
+						startluck(_luckid);
+					}else if(-1 ==_luckid){
+						startluck(4);
+						console.log("已经中过奖了，不能再抽");
+						//alert("您已经中过奖了，把机会让给别人吧！")
+					}else{
+						startluck(8);
+						console.log("今天没机会了，明天再试");
+						//alert("您今天已经抽过奖啦，明天再来试试吧！")
+					}
+				}else{
+					alert(data.result);
+				}
+			},"json");
+			*/
+
+			// 案例展示用
+			var	_luckid=Math.floor(Math.random()* pricetxt.length);
+			startluck(_luckid); 
+			// 案例展示用 End
+			notclick = false;
+		}else{
+			alert("您今日已经参与抽奖，明天再来吧")
+		}
+	});
+
+	function generateProject(val,data){
+		var pjttpt=document.getElementById("template-pjt").innerHTML;
+		var _d=data.data;
+		var _html="";
+		$("#cityname").text(val.slice(0,-1));
+		for(var i=0;i<_d.length;i++){
+			var _city=_d[i].city;
+			for(var j=0; j<_city.length; j++){
+				if(_city[j].name==val){
+					var _project=_city[j].projects;
+					for(var e=0;e<_project.length;e++){
+						_html+=Exam.replaceTemp(pjttpt,{
+							url:_project[e].url,
+							enaddr:_city[j].en,
+							idx:(e+1)<10?("0"+(e+1)):(e+1),
+							ver:ver,
+							altname:_project[e].name
+						})
+					}
+					break;
+				}
+			}
+		}
+		if("北京市"==val){
+			_html += '<p class="tip">（排名顺序无先后）</p>';
+		}
+		$("#proboxarea").scrollTop(0).html(_html);
+	}
+	function startluck($luckid){
+		var _luckid=$luckid
+		var gap=slow=300;
+		var normal=120;
+		var fast=50;
+		var num=0;
+		var round=5;
+		var slownum=5;
+		var normnum=10;
+		var maxnum=round*8+_luckid;
+		var activeid=1;
+		var timer;
+		function activeFun(){
+			++num;
+			if((num<=slownum)||(num>maxnum-slownum&&num<=maxnum)){
+				gap=slow;
+			}else if((num>slownum&&num<=normnum)||(num>maxnum-normnum&&num<=maxnum-slownum)){
+				gap=normal;
+			}else if(num>normnum&&num<=maxnum-normnum){
+				gap=fast;
+			}
+			$("#luck-item-"+activeid).addClass("active").siblings().removeClass("active");
+		}
+		function run(){
+			timer=setTimeout(function(){
+				if(++activeid>8){
+					activeid=1;
+				};
+				activeFun();
+				if(num==maxnum){
+					if(_luckid!=4&&_luckid!=8){
+						$(".w4-img").attr("src","./images/c0"+_luckid+".jpg?ver="+ver);
+					}
+					clearTimeout(timer);
+					setTimeout(function(){
+						//$(".pops,.w3").show();
+						if(_luckid!=4&&_luckid!=8){
+							$(".pops,.w4").show();
+						}else{
+							console.log("抱歉，您未中奖");
+						}
+						$(".startbtn").removeClass("disabled");
+					},700);
+					return;
+				}
+				run();
+			}, gap);
+		}
+		activeFun();
+		run();
+	}
+	//startluck()
+
+	bgm.addEventListener("ended",function(){
+    bgm.play();
+  })
+  $("#sndctrl").click(function(){
+    if(bgm.paused){
+      $("#sndctrl").removeClass("muted");
+      bgm.play();
+    }else{
+      $("#sndctrl").addClass("muted");
+      bgm.pause();
+    }
+  })
+
+	$('input,textarea').on('blur',function(){
+	  window.scroll(0,0);
+  });
+  $('select').on('change',function(){
+    window.scroll(0,0);
+  });
+})
+
+var myans=[[],[],[],[],[]];
+var Qtplt=document.getElementById("template-slide").innerHTML;
+var Otplt=document.getElementById("template-li").innerHTML;
+var Letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+function Exam(n, data, rans, Qtemplate, Otemplate, swiper, showRstFunc, QuesLen){
+	//n序号，data数据，Qtemplate问题模板， Otemplate答案模板
+	extend(this,data);
+	this.n=n;
+	this.qtype=this.radio?"radio":"checkbox";
+	this.rans=rans;
+	this.Qtemp=Qtemplate;
+	this.Otemp=Otemplate;
+	this.QuesLen=QuesLen?QuesLen:5;
+	this.swiper=swiper;
+	this.showRstFunc=showRstFunc;
+	this.lihtmltxt=null;
+	this.domhtmltxt=null;
+	this.dom=null;
+	this.jqdom=null;
+}
+Exam.prototype={
+	init: function(){
+		this.generatedom();
+		this.liClickFunc();
+	},
+	generatedom: function() {
+		var _option=this.option;
+		var _lihtmltxt="";
+		var _len=_option.length
+		for(var i=0,_len=_option.length;i<_len;i++){
+			var _liclass=_option[i].spec==null?'':' class="'+_option[i].spec+'"';
+			_lihtmltxt += Exam.replaceTemp(this.Otemp,{
+				LiId:i,
+				Letter:Letters[i],
+				Opttxt:_option[i].txt,
+				LiClass:_liclass
+			})
+		}
+		this.lihtmltxt=_lihtmltxt;
+
+		var _domhtmltxt="";
+		var _OptionClass=_len<=3? ("opts"+_len) :"";
+		_OptionClass= this.spec?(_OptionClass+" "+this.spec):_OptionClass;
+		var _setnid=(this.sets+1)+"_"+(this.id+1);
+		_domhtmltxt= Exam.replaceTemp(this.Qtemp,{
+			SwiperClass: "p"+_setnid+" "+this.qtype,
+			Qid: this.n+1,
+			Qsrc: _setnid,
+			Qtxt: this.qtxt,
+			QTypeCn: this.radio?"\u5355":"\u591a",
+			OptionClass: _OptionClass,
+			OptionDom: _lihtmltxt,
+			BtnSrc: this.n!=this.QuesLen-1?18:19
+		})
+
+		this.domhtmltxt=_domhtmltxt;
+		this.jqdom = $(_domhtmltxt);
+		this.dom = $(_domhtmltxt)[0];
+		this.dom.exam = this;
+		$(".result").before(this.jqdom);
+		return this.jqdom;
+	},
+	radioLiFunc:function(){
+		var _this=this;
+		var _nidx=this.n;
+		var _id=this.id;
+		var _sets=this.sets;
+		var _rans=this.rans;
+		var _jqdom=this.jqdom;
+		var _nextbtn=_jqdom.find(".nextbtn");
+		var _li=this.jqdom.find(".options li");
+		_li.click(function(e){
+			var n=$(this).data("item");
+			$(this).addClass("active").siblings("li").removeClass("active");
+			myans[_nidx]=[n];
+
+			_nextbtn.removeClass("transparent");
+		})
+		_nextbtn.mctap(function(e){
+			var rid=_rans[0]; //ans[_sets][_id][0];
+			$(this).addClass("disabled");
+			_li.eq(rid).addClass("T").siblings().addClass("F");
+
+			if(rid==_jqdom.find(".active").data("item")){
+				_this.jqdom.addClass("correct");
+				Exam.playRightSnd();
+			}else{
+				Exam.playWrongSnd();
+			}
+
+			_this.nextbtnFunc();
+		})
+	},
+	checkboxLiFunc: function(){
+		var _this=this;
+		var _nidx=this.n;
+		var _id=this.id;
+		var _sets=this.sets;
+		var _rans=this.rans;
+		var _jqdom=this.jqdom;
+		var _nextbtn=_jqdom.find(".nextbtn");
+		var _li=this.jqdom.find(".options li");
+		_li.click(function(e){
+			var n=$(this).data("item");
+			$(this).toggleClass("active");
+			Exam.pushAns(n, myans, _nidx);
+
+			_nextbtn.removeClass("transparent");
+		})
+		_nextbtn.mctap(function(e){
+			var _rightansarr=_rans; //ans[_sets][_id];
+			$(this).addClass("disabled");
+			for(var i=0; i<_rightansarr.length; i++){
+				_li.filter(function(){
+					return $(this).data("item")==_rightansarr[i];
+				}).addClass("T");
+			}
+			_li.filter(function(e){
+				var _item=$(this).data("item");
+				return _rightansarr.indexOf(_item)==-1;
+			}).addClass("F");
+
+			if(myans[_nidx].sort().join(',')==_rightansarr.sort().join(',')){
+				_this.jqdom.addClass("correct");
+				Exam.playRightSnd();
+			}else{
+				Exam.playWrongSnd();
+			}
+			_this.nextbtnFunc();
+		})
+	},
+	liClickFunc: function(){
+		if(this.radio){
+			this.radioLiFunc();
+		}else{
+			this.checkboxLiFunc();
+		}
+	},
+	nextbtnFunc:function(){
+		setTimeout(function(){
+			if(this.n==this.QuesLen-1){
+				this.showRstFunc();
+			}
+			this.swiper.slideNext();
+		}.bind(this),500)
+		
+	}
+}
+Exam.pushAns=function(id,AnsArr,n){
+	if(!Array.isArray(AnsArr[n])){
+		AnsArr[n]=[];
+	}
+	_thisAns=AnsArr[n];
+	var _idx=_thisAns.indexOf(id)
+	if(_idx==-1){
+		_thisAns.push(id);
+	}else{
+		_thisAns.splice(_idx,1);
+	}
+}
+Exam.replaceTemp=function(template,dataObj){
+	var _template=template;
+	for (var key in dataObj){
+		_template=_template.replace(new RegExp("{{"+key+"}}","g"),dataObj[key])
+	}
+	return _template
+}
+Exam.playRightSnd=function(){
+	document.getElementById("sndright").currentTime=0;
+	document.getElementById("sndright").play();
+}
+Exam.playWrongSnd=function(){
+	document.getElementById("sndwrong").currentTime=0;
+	document.getElementById("sndwrong").play();
+}
+window.extend = function(destination, source) {
+	for (var property in source) {
+    	destination[property] = source[property];
+	}
+	//return destination;
+}
+function loadResources(urls, progress) {
+ var loadedCount = 0;
+ var loaded = function () {
+   ++loadedCount;
+   if (progress) progress(urls.length, loadedCount, this);
+ };
+ for (var i = 0; i < urls.length; ++i) {
+   if (!urls[i]) {
+     loaded();
+     return;
+   }
+   var img = new Image();
+   img.onload = loaded;
+   img.onabort = loaded;
+   img.onerror = loaded;
+   img.src =  urls[i];//+ "?ver=" + j_version;
+ }
+} 
+function getQueryString(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+  var r = window.location.search.substr(1).match(reg);
+  if (r != null) return unescape(r[2]); return null;
+};
+</script>
+
+</body>
+</html>

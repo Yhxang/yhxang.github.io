@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>勿忘初心 与你同行</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link href="css/style.css?ver=1.01" rel="stylesheet">
+</head>
+<body>
+<img src="img/icon.jpg" alt="" class="shareicon">
+<div id="loading">
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+  <p>loading...</p>
+</div>
+<div class="wrapholder">
+<div id="wrap" class="wrap">
+  <div id="stage3D" class="stage3D">
+      <div class="bg">
+        <img data-src="img/a01.jpg" width="640" height="1136" class="p1-bg">
+        <img data-src="img/a02.jpg" width="640" height="1136" class="p2-bg">
+        <img data-src="img/a03.jpg" width="640" height="1136" class="p3-bg">
+        <div class="p4-bg">
+          <img data-src="img/a04.jpg" width="640" height="1136" alt="" >
+        </div>
+        <div class="p5-bg">
+          <img data-src="img/a05.jpg" width="640" height="1136" alt="">
+        </div>
+        <img data-src="img/a06.jpg" width="640" height="1136" alt="" class="p6-bg">
+        <img data-src="img/a07.jpg" width="640" height="1136" alt="" class="p7-bg">
+      </div>
+
+      <div class="p-water1 ">
+        <img data-src="img/a17.png" width="709" height="599" alt="">
+      </div>
+      <div class="p-water2">
+        <img data-src="img/a18.png" width="740" height="672" alt="">
+      </div>
+      <img data-src="img/a01.png" width="640" height="1002" class="p1-black" alt="">
+        
+      <div class="p1-yellow">
+        <img data-src="img/a03.png" width="640" height="438" alt="">
+
+      </div>
+      
+  
+      <div class="trans3D" id="trans3D">
+        <div class="p1">
+          <div class="p1-glass">
+            <img data-src="img/a02.png" width="640" height="461" alt="">
+          </div>
+          <div class="p1-tit p-tit">
+            <img data-src="img/a05.png" width="172" height="129" alt="">
+          </div>
+          <div class="p1-sub p-sub">
+            <img data-src="img/a04.png" width="467" height="141" alt="" >
+          </div>
+
+          <img data-src="img/a07.png" width="631" height="140" class="p1-box" alt="">
+          <img data-src="img/a08.png" width="332" height="590" class="p1-book" alt="">
+        </div>
+        <div class="p2">
+          <div class="p1-glass">
+            <img data-src="img/a02.png" width="640" height="461" alt="">
+          </div>
+          <div class="p2-tit p-tit">
+            <img data-src="img/a10.png" width="161" height="147" alt="">
+          </div>
+          <div class="p2-sub p-sub">
+            <img data-src="img/a09.png" width="446" height="141" alt="" >
+          </div>
+          
+          <img data-src="img/a12.png" width="409" height="622" alt="" class="p2-role">
+        </div>
+        <div class="p3">
+          <div class="p1-glass">
+            <img data-src="img/a02.png" width="640" height="461" alt="">
+          </div>
+          <div class="p3-tit p-tit">
+            <img data-src="img/a14.png" width="163" height="145" alt="">
+          </div>
+          <div class="p3-sub p-sub">
+            <img data-src="img/a13.png" width="460" height="137" alt="" >
+          </div>
+          <img data-src="img/a16.png" width="640" height="601" alt="" class="p3-role">
+        </div>
+
+        <div class="p4">
+          <div class="strokeholder">
+            <div class="stroke1 stroke">
+              <img data-src="img/a20.png" alt="">
+            </div>
+            <div class="stroke2 stroke">
+              <img data-src="img/a19.png" alt="">
+            </div>
+            <div class="stroke3 stroke">
+              <img data-src="img/a22.png" alt="">
+            </div>
+            <div class="stroke4 stroke">
+              <img data-src="img/a21.png" alt="">
+            </div>
+          </div>
+          
+          <div class="p4-tit">
+            <img data-src="img/a45.png" width="388" height="186" alt="">
+          </div>
+        </div>
+        
+        <div class="p5">
+          
+          <img data-src="img/a25.png" width="640" height="358" alt="" class="p5-black">
+          <div class="p5-role">
+            <img data-src="img/a26.png" width="640" height="764" alt="">
+          </div>
+          <img data-src="img/a40.png" width="557" height="125" alt="" class="p5-pop">
+
+          <img data-src="img/a42.png" width="102" height="104" alt="" class="p5-water1">
+          <img data-src="img/a43.png" width="107" height="105" alt="" class="p5-water2">
+    
+          <div class="p5-title">
+            <img data-src="img/a28.png" width="504" height="95" alt="" class="p567-tit p5-tit">
+            <div class="p-subblack p5-subblack">
+              <img data-src="img/a29.png" width="224" height="99" alt="" class="p5-subblackbg">
+              <img data-src="img/a30.png" width="120" height="34" alt="" class="p5-subtxt">
+            </div>
+          </div>
+        </div> 
+        
+        <div class="p6">
+          <div class="p6-hand">
+            <img data-src="img/a31.png" width="754" height="320" alt="">
+          </div>
+          <div class="p6-stroke1">
+            <img data-src="img/a32.png" width="45" height="111" alt="">
+          </div>
+          <div class="p6-stroke2">
+            <img data-src="img/a33.png" width="62" height="112" alt="">
+          </div>
+          
+          <div class="p6-title">
+            <img data-src="img/a34.png" width="402" height="94" alt="" class="p567-tit p6-tit">
+            <div class="p-subblack p6-subblack">
+              <img data-src="img/a35.png" width="237" height="59" alt="" class="p6-subblackbg">
+              <img data-src="img/a36.png" width="123" height="34" alt="" class="p6-subtxt">
+            </div>
+          </div>
+        </div>
+        
+        <div class="p7">
+          <img data-src="img/a27.png" width="278" height="167" alt="" class="p7-pop">
+          <div class="p7-title">
+            <img data-src="img/a37.png" width="301" height="88" alt="" class="p567-tit p7-tit">
+            <div class="p-subblack p7-subblack">
+              <img data-src="img/a39.png" width="326" height="92" alt="" class="p7-subblackbg">
+              <img data-src="img/a38.png" width="178" height="33" alt="" class="p7-subtxt">
+            </div>
+          </div>
+        </div>
+
+        <div class="p8 p8_wrap">
+          <img data-src="img/a46.png" alt="" class="p8_wrapbg" width="640" height="1136">
+          <div class="p8_wind"><img data-src="img/a25.png" alt="" width="640" height="298"></div>
+          <div class="p8_content">
+            <img data-src="img/a44.png" alt="" class="p8_tit1" width="347" height="41">
+            <div class="p8_tit2">
+              <img data-src="img/a24.png" alt="" heigth="250" width="378" />
+            </div>
+            <img data-src="img/a47.png" alt="" class="p8_line" width="433" height="18">
+            <div class="p8_info">
+              <img data-src="img/a48.png" alt="" width="322" height="28"><br>
+              <img data-src="img/a49.png" alt="" width="312" height="33">  
+            </div>
+          </div>
+        </div>
+
+        <div class="p100">
+          <img data-src="img/pic/1.png" alt="" class="img1 diamond" width="28" height="28" />
+          <div  class="img2 diamond" ><img data-src="img/pic/2.png" alt=""width="298" height="192" /></div>
+          <img data-src="img/pic/3.png" alt="" class="img3 diamond" width="42" height="21" />
+          <img data-src="img/pic/4.png" alt="" class="img4 diamond" width="295" height="165" />
+          <img data-src="img/pic/5.png" alt="" class="img5 diamond" width="302" height="174" />
+          <div class="img6 diamond"><img data-src="img/pic/6.png" alt="" width="220" height="222" /></div>
+          <div class="img7 diamond"><img data-src="img/pic/7.png" alt=""  width="207" height="221" /></div>
+          <div class="img8 diamond"><img data-src="img/pic/8.png" alt=""  width="550" height="274" /></div>
+          <div class="img9 diamond"><img data-src="img/pic/9.png" alt="" width="220" height="110" /></div>
+          <div class="img10 diamond"><img data-src="img/pic/10.png" alt=""  width="220" height="219" /></div>
+          <div class="img11 diamond"><img data-src="img/pic/11.png" alt=""  width="358" height="365" /></div>
+          <img data-src="img/pic/12.png" alt="" class="img12 diamond" width="300" height="308" />
+          <div class="img13 diamond"><img data-src="img/pic/13.png" alt="" width="217" height="218" /></div>
+          <div class="img14 diamond"><img data-src="img/pic/14.png" alt=""  width="294" height="150" /></div>
+          <div class="img15 diamond"><img data-src="img/pic/15.png" alt=""  width="225" height="113" /></div>
+          <div class="img16 diamond"><img data-src="img/pic/16.png" alt=""  width="219" height="223" /></div>
+          <img data-src="img/pic/17.png" alt="" class="img17 diamond" width="423" height="360" />
+          <img data-src="img/pic/18.png" alt="" class="img18 diamond" width="252" height="212" />              
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+<script src="js/zepto.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/easing/EasePack.min.js"></script>
+<script src="js/common.js?ver=1.07"></script> 
+</body>
+</html>

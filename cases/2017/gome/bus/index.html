@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>4.28国美率性低价，惹火五一</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<style>
+html,body{margin:0;padding:0; background-color: #5563A7; }
+.shareicon{position: absolute; left: -9999px; top: -9999px; display: block; width: 0; height: 0;}
+.wrapOuter{position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden;}
+.wrap{position: absolute; left: 0; top: 0; width: 640px; height: 1134px; }
+.bus{width: 4768px; height: 1134px; overflow: hidden; -webkit-transform: translate3d(-4122px, 0, 0); transform: translate3d(-4122px, 0, 0); -webkit-transition: all .5s ease-in-out; transition: all .5s ease-in-out;}
+.last{/*-webkit-transition: all 1s ease-in-out; transition: all 1s ease-in-out;*/}
+.bus-slide{position: relative; float: right; height: 1134px;}
+.hengfu1{position: absolute; right:366px; top:674px; }
+.hengfu2{position: absolute; left:714px; top:666px;}
+.caihong{position: absolute; left: 2413px; top: 361px;}
+.gulu{position: absolute; top: 940px; -webkit-animation: roll 1s linear infinite; animation: roll 1s linear infinite;}
+.gulu1{left: 1500px;}
+.gulu2{left: 2140px;}
+.gulu3{left: 2780px;}
+.gulu4{left: 3410px;}
+.shadow{position: absolute; left:650px; top: 1038px; -webkit-animation: shadow .2s alternate infinite; animation: shadow .2s alternate infinite; }
+.frontbg,.backbg{position: absolute; left: 0; top: 0;width: 5116px;height: 1134px; background: url(img/y08.png) 0 0 repeat-x; -webkit-animation: bground 8s linear infinite; animation: bground 8s linear infinite;}
+.backbg{background-image: url(img/y09.png); -webkit-animation: bground 20s linear infinite; animation: bground 20s linear infinite;}
+.ground{position: absolute; left: 0; bottom:0; width: 100%; height: 182px; background-color: #a395a0;}
+.prt{display: none; position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; -webkit-overflow-scrolling:touch;}
+.prtimg{/*display: block;*/}
+.closebtn{position: fixed; right: 0; top: 0; padding: 23px 15px; }
+.closebtn2{display: none;}
+.style2 .closebtn{display: none;}
+.style2 .closebtn2{display: block;}
+.bmask{position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; background-color: rgba(0,0,0,.7); display: none;}
+.bmaskimg{position: absolute; left: 50%; top: 46%; margin-left: -270px; margin-top: -395px;}
+@-webkit-keyframes bground {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: translate3d(-2558px, 0, 0); transform: translate3d(-2558px, 0, 0); }
+}
+@keyframes bground {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: translate3d(-2558px, 0, 0); transform: translate3d(-2558px, 0, 0); }
+}
+@-webkit-keyframes roll {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: rotateZ(360deg); transform: rotateZ(360deg); }
+}
+@keyframes roll {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: rotateZ(360deg); transform: rotateZ(360deg); }
+}
+@-webkit-keyframes shadow {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: translate3d(0,2px,0) scale3d(1,.95,1); transform: translate3d(0,2px,0) scale3d(1,.95,1); }
+}
+@keyframes shadow {
+	from { -webkit-transform: none; transform: none; }
+	to { -webkit-transform: translate3d(0,2px,0) scale3d(1,.95,1); transform: translate3d(0,2px,0) scale3d(1,.95,1); }
+}
+</style>
+</head>
+<body>
+<img src="img/icon.jpg" alt="" class="shareicon">
+<div id="wrapOuter" class="wrapOuter">
+	<div id="wrap" class="wrap">
+		<div class="backbg"></div>
+		<div class="frontbg"></div>
+		<div class="ground"></div>
+
+		<div class="bus" id="bus">
+			<img src="img/y04.png" alt="" class="shadow">
+
+			<img src="img/y03.png" alt="" class="gulu gulu1">
+			<img src="img/y03.png" alt="" class="gulu gulu2">
+			<img src="img/y03.png" alt="" class="gulu gulu3">
+			<img src="img/y03.png" alt="" class="gulu gulu4">
+
+			<img src="img/y02.png" alt="" class="caihong">
+
+			<div class="bus-slide" id="d1" style="width:639px">
+				<canvas id="b1" width="639" height="1134"></canvas>
+			</div>
+			<div class="bus-slide" id="d2" style="width:640px">
+				<canvas id="b2" width="640" height="1134"></canvas>
+			</div>
+			<div class="bus-slide" id="d3" style="width:641px">
+				<canvas id="b3" width="641" height="1134"></canvas>
+			</div>
+			<div class="bus-slide" id="d4" style="width:641px">
+				<canvas id="b4" width="641" height="1134"></canvas>
+			</div>
+			<div class="bus-slide" id="d5" style="width:640px">
+				<canvas id="b5" width="640" height="1134"></canvas>
+			</div>
+			<div class="bus-slide" id="d6" style="width:641px">
+				<canvas id="b6" width="641" height="1134"></canvas>
+			</div>
+			<div class="bus-slide" id="d7" style="width:926px">
+				<canvas id="b7" width="926" height="1134"></canvas>
+			</div>
+
+			<img src="img/y01.png" alt="" class="hengfu1">
+			<img src="img/y01.png" alt="" class="hengfu2">
+		</div>
+	</div>
+	<div class="prt" id="prt">
+		<img src="img/y05.png" alt="" id="closebtn" class="closebtn">
+		<img src="img/y06.png" alt="" id="closebtn2" class="closebtn closebtn2">
+		<img src="" alt="" id="prtimg" class="prtimg">
+	</div>
+	<div id="bmask" class="bmask">
+		<img src="img/y07.png" alt="" class="bmaskimg">
+	</div>
+</div>
+<audio id="bgm" src="./media/bgm.mp3" loop="loop" autoplay="autoplay"></audio>
+<audio id="snd1" src="./media/snd1.mp3" autoplay="autoplay"></audio>
+<script src="./js/createjs-2015.11.26.min.js"></script> 
+<script src="./js/hammer.min.js"></script>
+<script src="./b1.js?ver=1.0"></script> 
+<script src="./b2.js?ver=1.0"></script> 
+<script src="./b3.js?ver=1.0"></script> 
+<script src="./b4.js?ver=1.0"></script> 
+<script src="./b5.js?ver=1.0"></script> 
+<script src="./b6.js?ver=1.0"></script> 
+<script src="./b7.js?ver=1.0"></script> 
+<script>
+var showIndex=1;
+var $$=function(id){return document.getElementById(id);}
+var max=7;
+function init(_id) {
+	window["canvas"+_id] = document.getElementById("b"+_id);
+	images = images||{};
+	ss = ss||{};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", createhandleComplete(_id));
+	loader.loadManifest(window["lib"+_id].properties.manifest);
+}
+function handleFileLoad(evt) {	
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }	
+}
+function createhandleComplete(_id){
+	var exportRoot=window["exportRoot"+_id];
+	var handleComplete=function (evt) {
+		var queue = evt.target;
+		var ssMetadata = window["lib"+_id].ssMetadata;
+		for(i=0; i<ssMetadata.length; i++) {
+			ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+		}
+		
+		window["exportRoot"+_id] = new window["lib"+_id]["b"+_id]();
+		window["stage"+_id] = new createjs.Stage(window["canvas"+_id]);
+		//window["stage"+_id].addChild(window["exportRoot"+_id]);	
+		//Registers the "tick" event listener.
+		//createjs.Ticker.setFPS(window["lib"+_id].properties.fps);
+		createjs.Ticker.setFPS(20);
+		//createjs.Ticker.addEventListener("tick", window["stage"+_id]);	    
+		//Code to support hidpi screens and responsive scaling.
+		(function(isResp, respDim, isScale, scaleType) {		
+			var lastW, lastH, lastS=1;		
+			window.addEventListener('resize', resizeCanvas);		
+			resizeCanvas();		
+			function resizeCanvas() {			
+				var w = window["lib"+_id].properties.width, h = window["lib"+_id].properties.height;			
+				var iw = window.innerWidth, ih=window.innerHeight;			
+				var pRatio = window.devicePixelRatio, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+				if(isResp) {                
+					if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+						sRatio = lastS;                
+					}				
+					else if(!isScale) {					
+						if(iw<w || ih<h)						
+							sRatio = Math.min(xRatio, yRatio);				
+					}				
+					else if(scaleType==1) {					
+						sRatio = Math.min(xRatio, yRatio);				
+					}				
+					else if(scaleType==2) {					
+						sRatio = Math.max(xRatio, yRatio);				
+					}			
+				}			
+				window["canvas"+_id].width =parseInt($$("d"+_id).style.width); //640;//w*pRatio*sRatio;			
+				window["canvas"+_id].height = 1134;//h*pRatio*sRatio;
+				window["canvas"+_id].style.width = $$("d"+_id).style.width;//w*sRatio+'px';			
+				window["canvas"+_id].style.height = "1134px";//h*sRatio+'px';
+				window["stage"+_id].scaleX = 1;//pRatio*sRatio;			
+				window["stage"+_id].scaleY = 1;//pRatio*sRatio;			
+				lastW = iw; lastH = ih; lastS = sRatio;		
+			}
+		})(false,'both',false,1);	
+
+	}
+	return handleComplete;
+}
+
+var canvas1,stage1,exportRoot1;
+var canvas2,stage2,exportRoot2;
+var canvas3,stage3,exportRoot3;
+var canvas4,stage4,exportRoot4;
+var canvas5,stage5,exportRoot5;
+var canvas6,stage6,exportRoot6;
+var canvas7,stage7,exportRoot7;
+
+window.onload=function(){
+	for(var i=1;i<=7;i++){
+		init(i);
+	}
+	addStage(1);
+	addStage(2);
+
+	$$("wrapOuter").style.height=window.innerHeight+"px";
+	$$("wrap").style.top=(window.innerHeight-1134)/2+"px";
+	var mc=new Hammer($$("wrap"));
+	mc.on('swipeleft',function(ev){
+		if(--showIndex>=1){
+			showStage(showIndex);
+			moveslide(showIndex);
+		}else{
+			showIndex=1;
+		}
+	})
+	mc.on('swiperight',function(ev){
+		if(++showIndex<=max+1){
+			if(showIndex<=max){
+				showStage(showIndex);
+				moveslide(showIndex);
+			}else{
+				moveslide(showIndex);
+			}
+		}else{
+			showIndex=max+1;
+		}
+	})
+	autoPlayAudio2();
+	$$('bgm').volume=.4;
+
+	$$("closebtn").addEventListener("click",function(){
+		$$("prtimg").src="";
+		$$("prtimg").height=0;
+		$$("prtimg").style.height=0;
+		$$("prt").style.backgroundColor="transparent";
+		$$("prt").style.display="none";
+	})
+	$$("closebtn2").addEventListener("click",function(){
+		$$("prtimg").src="";
+		$$("prtimg").height=0;
+		$$("prtimg").style.height=0;
+		$$("prt").style.backgroundColor="transparent";
+		$$("prt").style.display="none";
+	})
+	$$("bmask").addEventListener("click",function(){
+		$$("bmask").style.display="none";
+	})
+}
+
+
+function moveslide(_id){
+	var lwidth=0;
+	for(var i=_id;i<=max;i++){
+		lwidth+=parseInt($$("b"+i).style.width);
+	}
+	if(_id!=max+1){
+		$$("bus").style.webkitTransform=$$("bus").style.Transform="translate3d("+(640-lwidth)+"px,0,0)";
+		$$("bus").className="bus";
+	}else{
+		$$("bus").style.webkitTransform=$$("bus").style.Transform="translate3d("+ 0 +"px,0,0)";
+		$$("bus").className="bus last";
+	}
+}
+var visStat=[1,1,0,0,0,0,0];
+function showStage(_id){
+	//console.log(visStat)
+	for(var i=1;i<=max;i++){
+		if((i>=_id-1)&&(i<=_id+1)){
+			if(visStat[i-1]==0){
+				addStage(i);
+				//console.log("add  "+(i))
+			}
+		}else{
+			if(visStat[i-1]==1){
+				removeStage(i);
+				//console.log("remove  "+(i))
+			}
+		}
+	}
+	visStat=[0,0,0,0,0,0,0];
+	if(_id-2>=0) {
+		visStat[_id-2]=1;
+	}
+	visStat[_id-1]=1;
+	if(_id<=max-1) {
+		visStat[_id]=1;
+	}
+
+	for(var i=1;i<=max;i++){
+		if(i!=_id){
+			createjs.Ticker.removeEventListener("tick", window["stage"+i]);
+		}else{
+			createjs.Ticker.addEventListener("tick", window["stage"+i]);
+		}
+	}
+	if(_id==1){
+		$$("snd1").currentTime=0;
+		$$("snd1").play();
+	}else{
+		$$("snd1").pause();
+	}
+}
+function addStage(_id){
+	var __id=_id;
+	if(window["stage"+_id]){
+		$$("b"+_id).style.display="block";
+		window["stage"+_id].addChild(window["exportRoot"+_id]);
+		createjs.Ticker.addEventListener("tick", window["stage"+_id]);
+	}else{
+		setTimeout(function(){
+			addStage(__id);
+		},10);
+	}
+}
+function removeStage(_id){
+	var __id=_id;
+	if(window["stage"+_id]){
+		createjs.Ticker.removeEventListener("tick", window["stage"+_id]);
+		window["stage"+_id].removeChild(window["exportRoot"+_id]);
+		$$("b"+_id).style.display="none";
+	}else{
+		setTimeout(function(){
+			removeStage(__id);
+		},10);
+	}
+}
+function autoPlayAudio2() {
+  //alert(typeof WeixinJSBridge);
+  if(typeof WeixinJSBridge!="undefined"){
+    WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
+      // 在这里拿到 e.err_msg, 这里面就包含了所有的网络类型
+      //alert(e.err_msg);
+      document.getElementById('snd1').play();
+      document.getElementById('bgm').play();
+    });
+  }else{
+    document.addEventListener("WeixinJSBridgeReady", function() {
+      if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+        f()
+      } else {
+        var e = document.addEventListener
+        , d = document.attachEvent;
+        if (e) {
+          e("WeixinJSBridgeReady", f, false)
+        } else {
+          if (d) {
+            d("WeixinJSBridgeReady", f);
+            d("onWeixinJSBridgeReady", f)
+          }
+        }
+      }
+    })
+  }
+  function f(){
+    document.getElementById('snd1').play();
+    document.getElementById('bgm').play();
+    $$('bgm').volume=.4;
+  }
+}
+var ver="?v=4.0";
+function b1btn1(e){
+	
+}
+function b2btn1(e){
+	$$("prt").scrollTop=0;
+	$$("prt").style.display="block";
+	$$("prt").style.backgroundColor="rgba(240,82,81,.85)";
+	$$("prtimg").width=640;
+	$$("prtimg").height=8239;
+	$$("prtimg").style.height=8239+"px";
+	$$("prtimg").src="img/p2_1.png"+ver;
+	$$("prt").className="prt";
+}
+function b3btn1(e){
+	$$("prt").scrollTop=0;
+	$$("prt").style.display="block";
+	$$("prt").style.backgroundColor="rgba(149,224,215,.85)";
+	$$("prtimg").width=640;
+	$$("prtimg").height=3885;
+	$$("prtimg").style.height=3885+"px";
+	$$("prtimg").src="img/p3_1.png"+ver;
+	$$("prt").className="prt";
+}
+function b4btn1(e){
+	$$("prt").scrollTop=0;
+	$$("prt").style.display="block";
+	$$("prt").style.backgroundColor="rgba(59,69,140,.85)";
+	$$("prtimg").width=640;
+	$$("prtimg").height=4120;
+	$$("prtimg").style.height=4120+"px";
+	$$("prtimg").src="img/p4_1.png"+ver;
+	$$("prt").className="prt";
+}
+function b4btn2(e){
+	$$("prt").scrollTop=0;
+	$$("prt").style.display="block";
+	$$("prt").style.backgroundColor="rgba(137,202,200,.85)";
+	$$("prtimg").width=640;
+	$$("prtimg").height=3639;
+	$$("prtimg").style.height=3639+"px";
+	$$("prtimg").src="img/p4_2.png"+ver;
+	$$("prt").className="prt";
+}
+function b5btn1(e){
+	$$("prt").scrollTop=0;
+	$$("prt").style.display="block";
+	$$("prt").style.backgroundColor="rgba(139,167,178,.85)";
+	$$("prtimg").width=640;
+	$$("prtimg").height=2173;
+	$$("prtimg").style.height=2173+"px";
+	$$("prtimg").src="img/p5_1.png"+ver;
+	$$("prt").className="prt";
+}
+function b5btn2(e){
+	$$("prt").scrollTop=0;
+	$$("prt").style.display="block";
+	$$("prt").style.backgroundColor="rgba(53,142,197,.85)";
+	$$("prtimg").width=640;
+	$$("prtimg").height=4480;
+	$$("prtimg").style.height=4480+"px";
+	$$("prtimg").src="img/p5_2.png"+ver;
+	$$("prt").className="prt";
+}
+function b5btn3(e){
+	$$("prt").scrollTop=0;
+	$$("prt").style.display="block";
+	$$("prt").style.backgroundColor="rgba(254,220,181,.85)";
+	$$("prtimg").width=640;
+	$$("prtimg").height=7114;
+	$$("prtimg").style.height=7114+"px";
+	$$("prtimg").src="img/p5_3.png"+ver;
+	$$("prt").className="prt style2";
+}
+function b5btn4(e){
+	$$("prt").scrollTop=0;
+	$$("prt").style.display="block";
+	$$("prt").style.backgroundColor="rgba(148,144,158,.85)";
+	$$("prtimg").width=640;
+	$$("prtimg").height=3431;
+	$$("prtimg").style.height=3431+"px";
+	$$("prtimg").src="img/p5_4.png"+ver;
+	$$("prt").className="prt";
+}
+function b6btn1(e){
+	$$("prt").scrollTop=0;
+	$$("prt").style.display="block";
+	$$("prt").style.backgroundColor="rgba(233,219,193,.85)";
+	$$("prtimg").width=640;
+	$$("prtimg").height=3934;
+	$$("prtimg").style.height=3934+"px";
+	$$("prtimg").src="img/p6_1.png"+ver;
+	$$("prt").className="prt style2";
+}
+function b6btn2(e){
+	$$("prt").scrollTop=0;
+	$$("prt").style.display="block";
+	$$("prt").style.backgroundColor="rgba(136,105,87,.85)";
+	$$("prtimg").width=640;
+	$$("prtimg").height=4672;
+	$$("prtimg").style.height=4672+"px";
+	$$("prtimg").src="img/p6_2.png"+ver;
+	$$("prt").className="prt";
+}
+function b6btn3(e){
+	$$("prt").scrollTop=0;
+	$$("prt").style.display="block";
+	$$("prt").style.backgroundColor="rgba(129,223,177,.85)";
+	$$("prtimg").width=640;
+	$$("prtimg").height=7529;
+	$$("prtimg").style.height=7529+"px";
+	$$("prtimg").src="img/p6_3.png"+ver;
+	$$("prt").className="prt";
+}
+function b7btn1(e){
+	$$("prt").scrollTop=0;
+	$$("prt").style.display="block";
+	$$("prt").style.backgroundColor="rgba(176,41,41,.85)";
+	$$("prtimg").width=640;
+	$$("prtimg").height=6360;
+	$$("prtimg").style.height=6360+"px";
+	$$("prtimg").src="img/p7_1.png"+ver;
+	$$("prt").className="prt";
+}
+function b7btn2(e){
+	window.location.href="http://shouji.gomeplus.com/kd/PP025.html";
+}
+</script>
+</body>
+</html>

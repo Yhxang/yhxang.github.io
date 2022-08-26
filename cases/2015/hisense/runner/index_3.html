@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>旋瀑洗滚筒洗衣机</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+      var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body class="subbody">
+<div id="loading">
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+  <p>loading...</p>
+</div> 
+<div id="wrap" class="wrap index3">
+  <section class="sp1">
+    <img src="img/pdt3/a01.png" class="sp1-title">
+    <p class="sp1-sub">海信旋瀑洗滚筒洗衣机</p>
+    <img src="img/pdt3/a02.png" class="sp1-pic">
+  </section>
+
+  <section class="sp2">
+    <div class="sp2-txtbox sptxtbox">
+      <img src="img/pdt3/a03.png" class="sp2-title1">
+      <img src="img/pdt3/a04.png?ver=2" class="sp2-title2">
+      <i></i>
+    </div>
+    <img src="img/pdt3/a05.png" class="sp2-pic">
+  </section>
+
+  <section class="sp3">
+    <p class="sp3-sub">洗衣全程配合强劲瀑布水流冲洗,告别普通洗衣机进水时才能喷淋的弊端,衣物洁净更彻底</p>
+    <img src="img/pdt3/a06.png" class="sp3-pic">
+  </section>
+
+  <section class="sp4">
+    <div class="sp4-txtbox sptxtbox">
+      <img src="img/pdt3/a07.png" class="sp4-title1">
+      <img src="img/pdt3/a08.png" class="sp4-title2">
+      <i></i>
+    </div>
+    <img class="sp4-pic" src="img/pdt3/a09.png">
+  </section>
+
+  <section class="sp5">
+    <p class="sp5-sub">经专业检测,金黄色葡萄球菌和大肠埃希氏菌杀灭效果高达99.99%,超国家除菌标准要求</p>
+    <img src="img/pdt3/a10.png" class="sp5-pic">
+  </section>
+
+  <section class="sp6">
+    <div class="sp6-txtbox sptxtbox">
+      <img src="img/pdt3/a11.png" class="sp6-title1">
+      <img src="img/pdt3/a12.png" class="sp6-title2">
+      <i></i>
+    </div>
+    <img src="img/pdt3/a13.png" class="sp6-pic">
+  </section>
+
+  <section class="sp7">
+    <p class="sp7-sub">使用行业最先进的BLDC变频技术,效率是普通电机的2倍以上，洗涤高效节能</p>
+    <img src="img/pdt3/a14.png" class="sp7-pic">
+    <img src="img/pdt3/a15.png" class="sp7-cir1">
+    <img src="img/pdt3/a16.png" class="sp7-arrow">
+    <img src="img/pdt3/a17.png" class="sp7-cir2">
+  </section>
+
+  <section class="sp8">
+    <div class="sp8-txtbox sptxtbox">
+      <img src="img/pdt3/a18.png" class="sp8-title">
+      <i></i>
+    </div>
+    <img src="img/pdt3/a13.png" class="sp8-pic">
+  </section>
+
+  <section class="sp9">
+    <p class="sp9-sub">内置高精度智慧眼检测系统,自动感知衣物洗净状态，做到一净即停，节水省电</p>
+    <img src="img/pdt3/a19.png" class="sp9-pic">
+  </section>
+
+</div> 
+<script src="js/zepto.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/easing/EasePack.min.js"></script> 
+<script>
+  $(function(){
+
+    var stageH=$(window).height();
+    var resourceDir="img/pdt3/";
+    var loadingImages=[];
+    $("#wrap,section").height(stageH);
+    for(var i=1;i<=10;i++){
+      loadingImages.push("a"+(i<10?"0"+i:i)+".png");
+    }
+    var mc=new Hammer(document.body,{
+      touchAction: 'pan-x pan-y',
+      recognizers: [
+        [Hammer.Tap],
+        [Hammer.Pan]
+      ]
+    })
+    loadResources(loadingImages,function (n, i, img) {
+      $("#loading p").html("loading&nbsp;" + Math.round(i * 100 / n) + "%");
+      if (n != i) return;
+      $("#loading").remove();
+      $("#wrap").show();
+      init();
+      setTimeout(function(){
+        $("#wrap").css("visibility","visible");
+      },100)
+      
+    })
+    var tl=new TimelineMax();
+    function init(){
+      tl.delay(.3)
+      .fromTo(".sp1-title",1,{alpha:0,y:40},{alpha:1,y:0})
+      .to(".sp1-sub",.6,{alpha:1})
+      .fromTo(".sp1-pic",1.5,{scale:0,x:450,y:150},{scale:1,x:0,y:0},"-=1.3")
+      .addPause()
+
+      .to(".sp1-pic",1,{alpha:0,x:"-=30"})
+      .from(".sp2-pic",.4,{alpha:0,y:"+=50"},"-=.5")
+      .to(".sp1-sub",.5,{alpha:0,y:"-=30"},"-=.2")
+      .to(".sp1-title",.8,{alpha:0,y:"-=50"},"-=.5")
+      .from(".sp2-title1",.5,{alpha:0,y:"+=30"},"-=.55")
+      .from(".sp2-title2",.5,{alpha:0,y:"+=20"},"-=.35")
+      .addPause()
+
+      .to(".sp2-txtbox",1,{y:"-=55"})
+      .from(".sp2-txtbox i",.3,{scaleX:0},"-=.3")
+      .from(".sp3-sub",.5,{y:"+=30",alpha:0},"-=.3")
+      .from(".sp3-pic",.5,{alpha:0})
+      .to(".sp2-pic",.8,{alpha:0},"-=.4")
+      .addPause()
+
+      .to(".sp2-txtbox",.3,{alpha:0,y:"-=20"})
+      .to(".sp3-sub",.3,{alpha:0,y:"-=20"},"-=.1")
+      .from(".sp4-title1",.5,{alpha:0,y:"+=30"})
+      .from(".sp4-title2",.5,{alpha:0,y:"+=30"},"-=.35")
+      .from(".sp4-pic",.7,{alpha:0,y:"+=40"},"-=.1")
+      .to(".sp3-pic",.5,{scale:0,alpha:0},"-=.2")
+      .addPause()
+
+      .to(".sp4-txtbox",1,{y:"-=55"})
+      .from(".sp4-txtbox i",.2,{scaleX:0},"-=.3")
+      .from(".sp5-sub",.4,{alpha:0,y:"+=30"},"-=.3")
+      .from(".sp5-pic",.7,{alpha:0,scale:.5},"-=.3")
+      .to(".sp4-pic",.5,{alpha:0,scale:0},"-=.3")
+      .addPause()
+
+      .to(".sp4-txtbox",.5,{alpha:0,y:"-=20"})
+      .to(".sp5-sub",.3,{alpha:0,y:"-=20"},"-=.1")
+      .from(".sp6-title1",.5,{alpha:0,y:"+=30"},"-=.4")
+      .from(".sp6-title2",.5,{alpha:0,y:"+=30"},"-=.3")
+      .from(".sp6-pic",.7,{alpha:0,y:"+=40"},"-=.1")
+      .to(".sp5-pic",.5,{alpha:0,scale:.8},"-=.3")
+      .addPause()
+
+      //.to(".sp6-txtbox",.3,{alpha:0,y:"-=20"})
+      .from(".sp6-txtbox i",.2,{scaleX:0})
+      .to(".sp6-sub",.3,{alpha:0,y:"-=20"},"-=.1")
+
+      
+      .from(".sp7-sub",.4,{alpha:0,y:"+=20"},"-=.3")
+      .to(".sp6-pic",.5,{alpha:0,scale:.8},"-=.3")
+      .from(".sp7-pic",1.5,{alpha:0,scale:.5,x:"+=450",y:"+=60"},"-=.4")
+      .from(".sp7-cir1",.6,{scale:0})
+      .from(".sp7-arrow",.3,{alpha:0,rotate:-90},"-=.25")
+      .from(".sp7-cir2",.6,{scale:0},"-=.2")
+      .addPause()
+
+      .call(function(){
+        $(window.parent.document).find(".nexttip").removeClass("show");
+      })
+      .to(".sp6-txtbox",.5,{alpha:0,y:"-=20"})
+      .to(".sp7-sub",.3,{alpha:0,y:"-=20"},"-=.1")
+      .from(".sp8-title",.5,{alpha:0,y:"+=30"},"-=.3")
+      .to(".sp7-cir1",.3,{scale:0})
+      .to(".sp7-arrow",.3,{alpha:0},"-=.25")
+      .to(".sp7-cir2",.3,{scale:0},"-=.2")
+      .to(".sp7-pic",.6,{alpha:0,x:"+=30"},"-=.1")
+      .from(".sp8-pic",1,{scale:.6,alpha:0,x:200},"-=.2")
+      //.addPause()
+
+      .from(".sp8-txtbox i",.2,{scaleX:0})
+      .from(".sp9-sub",.6,{alpha:0,y:"+=20"},"-=.1")
+      .from(".sp9-pic",.4,{alpha:0,x:"+=10"})
+      .to(".sp9-pic",.4,{x:"+=10",scale:.98})
+      .to(".sp9-pic",.4,{x:0,scale:1})
+      .call(function(){
+        $(window.parent.document).find(".menu-switch-on").addClass("pulse");
+      })
+    }
+    mc.on("pan",function(){
+      tl.play();
+    })
+    function loadResources(urls, progress) {
+      var loadedCount = 0;
+      var loaded = function () {
+        ++loadedCount;
+        if (progress) progress(urls.length, loadedCount, this);
+      };
+      for (var i = 0; i < urls.length; ++i) {
+        if (!urls[i]) {
+          loaded();
+          return;
+        }
+        var img = new Image();
+        img.onload = loaded;
+        img.onabort = loaded;
+        img.onerror = loaded;
+        img.src = resourceDir + urls[i];//+ "?ver=" + j_version;
+      }
+    }
+  })
+</script> 
+</body>
+</html>

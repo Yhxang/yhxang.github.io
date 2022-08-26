@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>你的心，跟你一起回家了吗？</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+	var version = parseFloat(RegExp.$1);
+	if(version>2.3){
+		document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+	}else{
+		document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+	}
+} else {
+	document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link rel="stylesheet" href="css/animation.css">
+
+<link rel="stylesheet" href="css/idangerous.swiper.css">
+<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+<img src="img/icon.jpg" alt="" class="shareicon">
+<div id="loading">
+	<div class="p1_btm loading">
+		<img src="img/a11.png">
+		<div class="p1_clock">
+			<img class="clock" src="img/a12.png">
+			<img class="minute" src="img/a14.png">
+			<img class="hour" src="img/a13.png">
+		</div>
+	</div>
+	<p>loading...</p>
+</div>
+<div class="wrap" id="wrap">
+	<div class="arrow"><img src="img/a07.png"></div>
+	<div class="sct1 section">
+		<div class="p1_bg_a"></div>
+		<div class="p1_bg_b"></div>
+		<div class="p1_tt p1_t1"><img src="img/a08.png"></div>
+		<div class="p1_tt p1_t2"><img src="img/a09.png"></div>
+		<div class="p1_tt p1_t3"><img src="img/a10.png"></div>
+		<div class="p1_btm">
+			<img src="img/a11.png">
+			<div class="p1_clock">
+				<img class="clock" src="img/a12.png">
+				<img class="minute" src="img/a14.png">
+				<img class="hour" src="img/a13.png">
+			</div>
+		</div>
+		<div class="p2_t1 p2_tt"><img src="img/a15.png"></div>
+		<div class="p3_t1 p3_tt"><img src="img/a23.png"></div>
+		<div class="p4_t1 p4_tt"><img src="img/a26.png"></div>
+		<div class="p5_t1 p5_tt"><img src="img/a28.png"></div>
+		<div class="p6_t1 p6_tt"><img src="img/a43.png"></div>
+		<div class="p7_t1 p7_tt"><img src="img/a44.png"></div>
+		<div class="p8_t1 p8_tt"><img src="img/a45.png"></div>
+		<div class="p9_t1 p9_tt"><img src="img/a63.png"></div>
+		<div class="p9_t2 p9_tt"><img src="img/a64.png"></div>
+		<div class="p10_t1 p10_tt"><img src="img/a65.png"></div>
+		<div class="p11_t1 p11_tt"><img src="img/a70.png"></div>
+		<div class="p12_t1 p12_tt"><img src="img/a71.png"></div>
+		<div class="p12_t2 p12_tt"><img src="img/a72.png"></div>
+	</div>
+	<div class="camera11">
+		<img src="img/a74.png">
+		<div class="picbord11">
+			<img class="pic11" src="img/a73.png">
+		</div>
+	</div>
+	<div class="daytop">
+		<div class="p2_dt_bg">
+			<div class="p2_d_1">剩</div> 
+			<div class="p2_d_2">天</div>
+		</div>
+		<div class="p2_d_num">
+			<div class="nums">
+				<p>4</p>
+				<p>3</p>
+				<p>2</p>
+				<p>1</p>
+			</div>
+		</div>
+	</div>
+
+	<div id="page-flip" class="">
+		<div id="r1">
+			<div id="p1">
+				<div>  
+					<img class="boxbg" src="img/a03.png">
+					<img class="act2_layer2" src="img/a21.png">
+					<img class="act2_layer1" src="img/a22.png">
+				</div>
+			</div>
+		</div>
+		<div id="r2">
+			<div id="p2">
+				<div>
+					<img class="boxbg" src="img/a03.png">
+					<div class="act1_bg">
+						<div class="act1_bg_d1">
+							<img class="act1_bg_r1 act1_avt" src="img/a04.png">
+							<img class="act1_bg_m1 act1_msg" src="img/a16.png">
+						</div>
+						<div class="act1_bg_d2">
+							<img class="act1_bg_r2 act1_avt" src="img/a05.png">
+							<img class="act1_bg_m2 act1_msg" src="img/a17.png">
+						</div>
+						<div class="act1_bg_d3">
+							<img class="act1_bg_r3 act1_avt" src="img/a04.png">
+							<img class="act1_bg_m3 act1_msg" src="img/a18.png">
+						</div>
+						<div class="act1_bg_d4">
+							<img class="act1_bg_r4 act1_avt" src="img/a06.png">
+							<img class="act1_bg_m4 act1_msg" src="img/a19.png">
+						</div>
+					</div>
+					<div class="act1_shadow"></div>
+					<img class="act1_role" src="img/a20.png">
+				</div>
+			</div>
+		</div>
+		<div id="r3">
+			<div id="p3">
+				 <div>
+				 	<img class="boxbg" src="img/a03.png">
+				 </div>
+			</div>
+		</div>
+	</div>
+
+	<div class="swiper-container">
+	  <div class="swiper-wrapper">
+	      <div class="swiper-slide"> 
+	        <img src="img/a75.png" class="logo1">
+	        <div class="dlarea1">
+	        	<img src="img/a76.png" class="denglong1">
+	        	<img src="img/a78.png" class="dltxt1">
+	        </div>
+	        <div class="finger1">
+	       		<img src="img/b01.jpg" class="touchgray1">
+	        	<div class="touchcolor1">
+	        		<img src="img/b02.jpg">
+	        	</div>
+	        </div>
+	        <div class="redbgtxt1">
+	        	<img src="img/a81.png">
+
+	        	<div class="redarea1">
+	        		<p class="tongji">您是第<span>999999</span>位参与者</p>
+	        		<!-- <img src="img/a89.png" class="invent"> -->
+	        		<img src="img/a79.png">
+	        	</div>
+	        </div>
+	      </div>
+	      <div class="swiper-slide">
+	      	<img src="img/a82.png" class="logo2">
+			<div class="redarea2">
+				<img src="img/a83.png" class="redtxt2_1">
+				<img src="img/a84.png" class="redtxt2_2">
+				<img src="img/a85.png" class="redbtm2">
+			</div>
+			<img src="img/a86.png" class="pop2">
+			<p class="lasttxt2">购冰箱、彩电、洗衣机、空调   单品<br>满2000元降400元再送100积分<br>（详情见店内海报）</p>
+			<div class="qrarea">
+				<div class="qr">	
+					<p>扫一扫<br>欢迎国美在线购物<br>更多优惠选择</p>
+					<img src="img/b04.jpg" class="qrimg">
+				</div>
+				<a href="coupon.php" target="_self" class="coupon">
+					<img src="img/a87.png">
+				</a>
+	      	</div>
+	  		</div>
+		</div>
+	</div>
+	<div id="sndctrl">
+		<img src="img/a88.png">
+		<i class="sndline"></i>
+	</div>
+	<!-- <div class="shareMask">
+		<img src="img/a90.png">
+	</div> -->
+</div>
+
+<audio id="bgmusic" preload="preload" autoplay="autoplay"><source src="snd/music.mp3" type="audio/mpeg"></audio>
+<div id="doms" class="doms"> 
+	<div id="dom1">
+		<img class="boxbg" src="img/a03.png">
+		<div class="act1_bg">
+			<div class="act1_bg_d1">
+				<img class="act1_bg_r1 act1_avt" src="img/a04.png">
+				<img class="act1_bg_m1 act1_msg" src="img/a16.png">
+			</div>
+			<div class="act1_bg_d2">
+				<img class="act1_bg_r2 act1_avt" src="img/a05.png">
+				<img class="act1_bg_m2 act1_msg" src="img/a17.png">
+			</div>
+			<div class="act1_bg_d3">
+				<img class="act1_bg_r3 act1_avt" src="img/a04.png">
+				<img class="act1_bg_m3 act1_msg" src="img/a18.png">
+			</div>
+			<div class="act1_bg_d4">
+				<img class="act1_bg_r4 act1_avt" src="img/a06.png">
+				<img class="act1_bg_m4 act1_msg" src="img/a19.png">
+			</div>
+		</div>
+		<div class="act1_shadow"></div>
+		<img class="act1_role" src="img/a20.png">
+	</div>
+	<div id="dom2">
+		<img class="boxbg" src="img/a03.png">
+		<img class="act2_layer2" src="img/a21.png">
+		<img class="act2_layer1" src="img/a22.png">
+	</div>
+	<div id="dom3">
+		<img class="boxbg" src="img/a24.png">
+		<img class="act3_layer1" src="img/a25.png">
+		
+		<div class="act3_layer2">
+			<img src="img/a27.png">
+			<img src="img/a91.png" class="act3_layer2_1">
+			<img src="img/a92.png" class="act3_layer2_2">
+		</div>
+	</div>
+	<div id="dom4">
+		<img class="boxbg" src="img/a24.png">
+		<img class="act4_layer1" src="img/a33.png">
+		<img class="act4_leaf1" src="img/a29.png">
+		<img class="act4_leaf2" src="img/a30.png">
+		<img class="act4_leaf3" src="img/a30.png">
+		<img class="act4_layer2" src="img/a31.png">
+		<img class="act4_layer3" src="img/a32.png">
+	</div>
+	<div id="dom5">
+		<img class="boxbg" src="img/a42.png">
+		<img class="act5_layer1" src="img/a34.png">
+		<img class="act5_layer2 act5_layers" src="img/a35.png">
+		<img class="act5_layer3 act5_layers" src="img/a36.png">
+		<img class="act5_layer4 act5_layers" src="img/a37.png">
+		<img class="act5_layer5 act5_layers" src="img/a38.png">
+		<img class="act5_layer6 act5_layers" src="img/a39.png">
+		<img class="act5_layer7 act5_layers" src="img/a40.png">
+		<img class="act5_layer8 act5_layers" src="img/a41.png">
+		<div class="mouth5 on"></div>
+		<img class="mouth5" src="img/b05.jpg">
+	</div>
+	<div id="dom6">
+		<img class="boxbg" src="img/a42.png">		
+		<div class="act6_layer1">
+			<img src="img/a49.png" class="act6_layer1_1">
+			<img src="img/a50.png" class="act6_layer1_2">
+			<img src="img/a51.png" class="act6_layer1_3">
+			<img src="img/a52.png" class="act6_layer1_4">
+			<img src="img/a53.png" class="act6_layer1_5">
+			<img src="img/a54.png" class="act6_layer1_6">
+			<img src="img/a55.png" class="act6_layer1_7">
+			<img src="img/a56.png" class="act6_layer1_8">
+
+			<img src="img/a57.png" class="act6_layer1_9">
+			<img src="img/a58.png" class="act6_layer1_10">
+		</div>
+		<div class="act6_layer2">
+			<img src="img/a46.png">
+			<img class="act6_layer2_1" src="img/a48.png">
+			<img class="act6_layer2_2" src="img/a47.png">
+		</div>
+		
+	</div>
+	<div id="dom7">
+		<img src="img/a59.png" class="boxbg">
+		<div class="act7_layer1">
+			<img src="img/a60.png">
+			<img src="img/a93.png" class="act7_layer1_1">
+			<img src="img/a94.png" class="act7_layer1_2">
+		</div>
+		
+	</div>
+	<div id="dom8">
+		<img src="img/a59.png" class="boxbg">
+		<img src="img/a61.png" class="act8_layer1">
+		<img src="img/a62.png" class="act8_layer2">
+	</div>
+	<div id="dom9">
+		<img src="img/a66.png" class="boxbg">
+		<img src="img/a67.png" class="act9_layer1">
+	</div>
+	<div id="dom10">
+		<img src="img/a68.png" class="boxbg">
+		<img src="img/a69.png" class="act10_layer1">
+	</div>
+	<div id="dom11"></div>
+</div>
+
+<script src="js/zepto.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/idangerous.swiper.min.js"></script>
+<script src="js/common.js"></script>
+
+<!--Mock start-->
+<script src="../../../libs/mock.js"></script>
+<script>
+	Mock.mock('usersubmit.php', {
+		result: 'success'
+	})
+	Mock.mock('usersearch.php', {
+		result: 'success',
+		usernum: '23333'
+	})
+</script>
+<!--Mock end-->
+</body>
+</html>

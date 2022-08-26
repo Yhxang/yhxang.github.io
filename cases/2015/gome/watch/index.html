@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>防走失智能手表，让爱随身陪伴。</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link href="css/swiper.min.css" rel="stylesheet">
+<link href="css/animation.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <img src="img/icon.jpg" class="shareicon">
+  <div id="loading">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+    <p>loading...</p>
+  </div>
+  <div id="wrap" class="wrap">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide p1">
+          <div class="p1-center">
+            <div class="p1-adorn1"></div>
+            <div class="p1-adorn2"></div>
+            <div class="p1-adorn3"></div>
+            <div class="p1-title">
+              <img data-src="img/a08.png" width="518" height="159">
+            </div>
+            <div class="p1-subtit">
+              <img data-src="img/a07.png" width="538" height="219">
+            </div>
+            <div class="p1-circle">
+              <div class="p1-watch">
+                <img data-src="img/a06.png" width="447" height="359">
+              </div>
+              <p class="p1-watchname"><span>—————— </span>儿童智能手表<span>——————</span></p>
+            </div>
+          </div>
+          <div class="p1-bottom">
+            <div class="p1-mountain">
+              <img data-src="img/a03.png" width="499" height="133" >
+            </div>
+            <img data-src="img/a02.png" alt="" class="p1-ground">
+            <div class="p1-btmgrass"></div>
+            <div class="p1-btmground"></div>
+            <div class="p1-windmill">
+              <img data-src="img/a01.png" width="137" height="137">
+            </div>
+            <div class="p1-man">
+              <img data-src="img/a10.png" width="106" height="130" class="p1-manbody">
+              <img data-src="img/a11.png" width="89" height="115" class="p1-manhead">
+            </div>
+            <div class="p1-child">
+              <img data-src="img/a12.png" width="95" height="102">
+              <img data-src="img/a13.png" width="33" height="36" class="p1-childhand">
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide p2">
+          <div class="p2-map p-map">
+            <img data-src="img/a03.jpg" width="640" height="554" class="p2-mapimg p-mapimg">
+
+            <div class="p2-baby">
+              <div class="p-babyshadow p2-bshdw"></div>
+              <div class="p2-babyscale">
+                <div class="baby"></div>
+              </div>
+              <div class="p2-mark1">
+                <div class="p2-mark-blue">
+                  <img data-src="img/a31.png" width="60" height="81" >
+                </div>
+                <p>GPS</p>
+              </div>
+            </div>
+          </div>
+          <div class="p2-txtarea p-txtarea">
+            <div class="p2-txtbg">
+              <img data-src="img/a37.png" width="640" height="605" alt="">
+            </div>
+            <img data-src="img/a66.png" width="640" height="32" class="p2-txttop">
+            <div class="p2-title">
+              <img data-src="img/a34.png" width="326" height="84" class="p-title1">
+              <img data-src="img/a35.png" width="412" height="72" class="p-title2">
+            </div>
+            <div class="p2-pdiv p-pdiv">
+              <p>室内室外双重精准定位技术，</p>
+              <p>无论宝宝在哪，都能找得到。</p>
+            </div>
+          </div>
+          
+          <div class="p-circlepos p2-circlepos">
+            <div class="p-circle">
+              <div class="p-handlephonepos">
+                <div class="p-handlephone">
+                  <img data-src="img/a32.png" width="115" height="209" class="p2-phone">
+                  <div class="p-screen">
+                    <section class="p2-gpsmask">
+                      <div class="p2-gpsmappos">
+                        <img data-src="img/a03.jpg" width="640" height="554" class="p2-gpsmap">
+                      </div>
+                    </section>
+                    <div class="p2-mark">
+                      <img data-src="img/a31.png" width="60" height="81" src="img/a31.png">
+                    </div>
+                  </div>
+                  <img data-src="img/a47.png" width="156" height="140" class="p2-hand">
+                </div>
+              </div>
+            </div>
+            <div class="taptip">
+              <img src="img/a71.png" width="61" height="42" >
+            </div>
+          </div>
+        </div>
+        
+        <div class="swiper-slide p3">
+          <div class="p3-map p-map">
+            <img data-src="img/a02.jpg" width="640" height="559" class="p3-mapimg p-mapimg">
+
+            <div class="p3-cardpos1">
+              <div class="p3-wordscard">
+                <div class="p3-circle">
+                  <div class="p1-man">
+                    <img data-src="img/a10.png" width="106" height="130" class="p1-manbody">
+                    <img data-src="img/a11.png" width="89" height="115" class="p1-manhead">
+                  </div>
+                </div>
+                <p class="p3-pertilte">爸爸</p>
+                <p class="p3-status">正在通话</p>
+              </div>
+            </div>
+
+            <div class="p3-childpos">
+              <div class="p1-child">
+                <img data-src="img/a12.png" width="95" height="102">
+                <img data-src="img/a13.png" width="33" height="36" class="p1-childhand">
+              </div>
+            </div>
+            <div class="p3-watchpos">
+              <div class="p3-watch">
+                <img src="img/a40.png" width="169" height="219" >
+                <img src="img/a33.png" width="37" height="39" class="p3-calling">
+              </div>
+            </div>
+
+            <div class="p3-cardpos2">
+              <div class="p3-wordscard">
+                <div class="p3-circle">
+                  <div class="p1-child">
+                    <img data-src="img/a12.png" width="95" height="102">
+                    <img data-src="img/a13.png" width="33" height="36" class="p1-childhand">
+                  </div>
+                </div>
+                <p class="p3-pertilte">宝宝</p>
+                <p class="p3-status">正在通话</p>
+              </div>
+            </div>
+            <div class="p3-manpos">
+              <div class="p1-man">
+                <img data-src="img/a10.png" width="106" height="130" class="p1-manbody">
+                <img data-src="img/a11.png" width="89" height="115" class="p1-manhead">
+              </div>
+            </div>
+            <div class="p3-phonepos">
+              <div class="p3-phone">
+                <img src="img/a32.png" width="115" height="209" >
+                <img src="img/a33.png" width="37" height="39" class="p3-calling">
+              </div>
+            </div>
+            <div class="p3-arrow1">
+              <div class="p3-arrowclip">
+                <img data-src="img/a25.png" width="311" height="17">
+              </div>
+            </div>
+            <div class="p3-arrow2">
+              <div class="p3-arrowclip">
+                <img data-src="img/a25.png" width="311" height="17">
+              </div>
+            </div>
+          </div>
+          <div class="p3-txtarea p-txtarea">
+            <div class="p3-txtbg">
+              <div class="star1-1"><i></i></div>
+              <div class="star1-2"><i></i></div>
+              <div class="star1-3"><i></i></div>
+              <div class="star2-1"><i></i></div>
+              <div class="star2-2"><i></i></div>
+              <div class="star2-3"><i></i></div>
+              <div class="star2-4"><i></i></div>
+              <div class="star2-5"><i></i></div>
+            </div>
+            <img data-src="img/a67.png" width="640" height="32" class="p3-txttop">
+            <div class="p3-title">
+              <img data-src="img/a29.png" width="326" height="84" class="p-title1">
+              <img data-src="img/a30.png" width="412" height="72" class="p-title2">
+            </div>
+            <div class="p3-pdiv p-pdiv">
+              <p>通过设置亲情号码，随时随地与宝宝通话，</p>
+              <p>陌生电话无法呼入，</p>
+              <p>避免宝宝受到骚扰、行骗。</p>
+            </div>
+          </div>
+
+          <div class="p-circlepos p3-circlepos">
+            <div class="p-circle">
+              <div class="p3-handlephonepos">
+                <div class="p3-handlephone">
+                  <img data-src="img/a40.png" width="169" height="219" src="img/a40.png">
+                  <div class="p3-calling1">
+                    <img src="img/a33.png" width="37" height="39" >
+                  </div>
+                  <p>正在通话</p>
+                </div>
+              </div>
+            </div>
+            <div class="taptip">
+              <img src="img/a71.png" width="61" height="42" >
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide p4">
+          <div class="p4-map p-map">
+            <img data-src="img/a01.jpg" width="640" height="559"  class="p4-mapimg p-mapimg">
+            <img data-src="img/a15.png" width="62" heihgt="52" class="p4-car1">
+            <img data-src="img/a16.png" width="70" heihgt="51" class="p4-car2">
+            <img data-src="img/a17.png" width="38" height="76" class="p4-housemask">
+            <div class="p4-safearea">
+              <img data-src="img/a20.png" width="416" height="331">
+            </div>
+            <div class="p4-childpos">
+              <div class="p4-childscale">
+                <div class="baby"></div>
+              </div>
+            </div>
+          </div> 
+          <div class="p4-txtarea p-txtarea">
+            <div class="p4-fence"></div>
+            <div class="p4-title">
+              <img data-src="img/a22.png" width="326" height="84" class="p-title1">
+              <img data-src="img/a23.png" width="412" height="72" class="p-title2">
+              <div class="p4-pop1"></div>
+              <div class="p4-pop2"></div>
+            </div>
+            <div class="p4-pdiv p-pdiv">
+              <p>一旦宝宝走出范围，</p>
+              <p>立刻自动向您发出警报，防患于未然。</p>
+            </div>
+          </div>
+
+          <div class="p-circlepos p4-circlepos">
+            <div class="p-circle">
+              <div class="p-handlephonepos">
+                <div class="p-handlephone">
+                  <img data-src="img/a32.png" width="115" height="209" class="p2-phone">
+                  <div class="p-screen">
+                    <p>走出范围试试</p>
+                    <div class="p6-warningpos">
+                      <div class="p6-warning">
+                        <img data-src="img/a26.png" width="98" height="96" >
+                        <div class="p6-shine">
+                          <div class="p6-yellow"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <img data-src="img/a47.png" width="156" height="140" class="p2-hand">
+                </div>
+              </div>
+            </div>
+            <div class="taptip">
+              <img src="img/a71.png" width="61" height="42" >
+            </div>
+          </div>
+
+        </div>
+
+        <div class="swiper-slide p5">
+          <div class="p5-map p-map">
+            <img data-src="img/a04.jpg" width="640" height="520" class="p5-mapimg p-mapimg">
+            <div class="p5-baby">
+              <div class="p5-cir3"></div>
+              <div class="p5-cir2"></div>
+              <div class="p5-cir1"></div>
+              <div class="p-babyshadow"></div>
+              <div class="baby"></div>
+              <div class="p5-words">$&%@#</div>
+            </div>
+
+          </div>
+          <div class="p5-txtarea p-txtarea">
+            <img data-src="img/a68.png" width="640" height="36" class="p5-txttop">
+
+            <div class="p5-title">
+              <img data-src="img/a38.png" width="326" height="84" class="p-title1">
+              <img data-src="img/a39.png" width="412" height="72" class="p-title2">
+            </div>
+            <div class="p5-pdiv p-pdiv">
+              <p>通过手机app发出指令，</p>
+              <p>家长随时可以监听到宝宝那端的世界。</p>
+            </div>
+          </div>
+          
+          <div class="p-circlepos p5-circlepos">
+            <div class="p-circle">
+              <div class="p5-handlephonepos">
+                <div class="p-handlephone">
+                  <img data-src="img/a32.png" width="115" height="209" class="p2-phone">
+                  <div class="p-screen"></div>
+                  <img data-src="img/a47.png" width="156" height="140" class="p2-hand">
+                  <div class="p5-screentxt">
+                    <div class="p5-circle4"></div>
+                    <div class="p5-circle3"></div>
+                    <div class="p5-circle2"></div>
+                    <p class="p5-scntxt">监听</p>
+                  </div>
+                  <div class="p5-horn1">
+                    <div class="p5-horn"></div>
+                  </div>
+                  <div class="p5-horn2">
+                    <div class="p5-horn"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="taptip">
+              <img src="img/a71.png" width="61" height="42" >
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide p6">
+          <div class="p6-map p-map">
+            <img data-src="img/a05.jpg" width="640" height="553" class="p6-mapimg p-mapimg">
+            <div class="p6-badguy">
+              <img src="img/a19.png" width="101" height="126" >
+            </div>
+            <div class="p6-babypos">
+              <div class="baby"></div>
+            </div>
+            <div class="p6-manpos">
+              <div class="p1-man">
+                <img data-src="img/a10.png" width="106" height="130" class="p1-manbody">
+                <img data-src="img/a11.png" width="89" height="115" class="p1-manhead">
+              </div>
+            </div>
+            <div class="p-handlephonepos p6-hpp">
+              <div class="p-handlephone">
+                <img data-src="img/a32.png" width="115" height="209" class="p2-phone">
+                <div class="p-screen">
+                  <div class="p6-warningpos">
+                    <!-- <img data-src="img/a45.png" width="131" height="115" class="p6-warning"> -->
+                    <div class="p6-warning">
+                      <img data-src="img/a26.png" width="98" height="96" >
+                      <div class="p6-shine">
+                        <div class="p6-yellow"></div>
+                      </div>
+                    </div>
+                    <img data-src="img/a46.png" width="133" height="109" class="p6-flash">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p6-txtarea p-txtarea">
+            <div class="p6-txtbg">
+              <div class="p6-star1"><i></i></div>
+              <div class="p6-star2"><i></i></div>
+              <div class="p6-star3"><i></i></div>
+              <div class="p6-star4"><i></i></div>
+              <div class="p6-star5"><i></i></div>
+              <div class="p6-star6"><i></i></div>
+              <div class="p6-star7"><i></i></div>
+            </div>
+            <img data-src="img/a69.png" width="640" height="24" class="p6-txttop">
+            <div class="p6-title">
+              <img data-src="img/a42.png" width="326" height="84" class="p-title1"><br>
+              <img data-src="img/a43.png" width="286" height="55" class="p-title2">
+            </div>
+            <div class="p6-pdiv p-pdiv">
+              <p>紧急时刻，宝宝长按3秒“sos”键，</p>
+              <p>手表向所设定的亲情号轮番拨打电话，</p>
+              <p>直至接通。</p>
+            </div>
+          </div>
+          <!-- <div class="p6-warningpos">
+            <div class="p6-warningrotate">
+              <img data-src="img/a45.png" width="131" height="115" class="p6-warning">
+              <img data-src="img/a46.png" width="133" height="109" class="p6-flash">
+            </div>
+          </div> -->
+          <div class="p-circlepos p6-circlepos">
+            <div class="p-circle">
+              <div class="p6-watchpos">
+                <div class="p6-watch">
+                  <img data-src="img/a40.png" width="169" height="219" >
+                  <img data-src="img/a70.png" width="54" height="53" class="p6-plus">
+                  <img data-src="img/a41.png" width="68" height="45" class="p6-sos">
+                </div>
+              </div>
+            </div>
+            <div class="taptip">
+              <img src="img/a71.png" width="61" height="42" >
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide p7">
+          <div class="p7-map p-map">
+            <img data-src="img/a06.jpg" width="640" height="528" class="p7-mapimg p-mapimg">
+            <div class="p7-baby1">
+              <div class="p-babyshadow"></div>
+              <div class="baby"></div>
+              <div class="p7-tip">
+                <img data-src="img/a49.png" width="73" height="74" >
+                <img data-src="img/a50.png" width="51" height="37" class="p7-icon">
+                <i class="p7-no"></i>
+              </div>
+            </div>
+            <div class="p7-baby2">
+              <div class="p-babyshadow"></div>
+              <div class="baby"></div>
+              <div class="p7-tip">
+                <img data-src="img/a49.png" width="73" height="74" >
+                <img data-src="img/a51.png" width="33" height="44" class="p7-icon">
+                <i class="p7-no"></i>
+              </div>
+            </div>
+            <div class="p7-baby3">
+              <div class="p-babyshadow"></div>
+              <div class="baby"></div>
+              <div class="p7-tip">
+                <img data-src="img/a49.png" width="73" height="74" >
+                <img data-src="img/a52.png" width="45" height="45" class="p7-icon">
+                <i class="p7-no"></i>
+              </div>
+            </div>
+          </div>
+          <div class="p7-txtarea p-txtarea">
+            <div class="p7-colorline"></div>
+            <div class="p7-title">
+              <img data-src="img/a48.png" width="330" height="85" class="p-title1">
+            </div>
+            <div class="p7-pdiv p-pdiv">
+              <p class="p7-h1">防脱落报警</p>
+              <p>当手表脱落时，光感器会及时向app端报警。</p>
+              <p class="p7-h1">防碰撞报警</p>
+              <p>当宝宝运动过于猛烈，手表受到强烈撞击时，<br>app端将收到警示。</p>
+              <p class="p7-h1">电子驱蚊</p>
+              <p>具备超声波防蚊功能。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide p8">
+          <div class="p8-list">
+            <img data-src="img/a53.png" width="471" height="93" class="p8-title">
+            <div class="p8-cont">
+              <img data-src="img/a54.png" width="517" height="282" >
+            </div>
+          </div>
+          <div class="p8-list">
+            <div class="p8-cont">
+              <img data-src="img/a55.png" width="610" height="310" >
+            </div>
+          </div>
+          <div class="p8-list">
+            <div class="p8-cont">
+              <img data-src="img/a56.png" width="589" height="270" >
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide p9">
+          <div class="p9-sun">
+            <div class="p9-suncir"></div>
+            <div class="p9-shine"></div>
+          </div>
+          <div class="p9-bg">
+            <div class="p9-cloud1"><i></i></div>
+            <div class="p9-cloud2"><i></i></div>
+            <div class="p9-cloud3"><i></i></div>
+            <div class="p9-cloud4"><i></i></div>
+            <div class="p9-cloud5"><i></i></div>
+            <div class="p9-cloud6"><i></i></div>
+            <div class="p9-cloud7"><i></i></div>
+            <div class="p9-cloud8"><i></i></div>
+          </div>
+          <div class="p9-up">
+            <div class="p9-title1">
+              <img data-src="img/a57.png" width="408" height="146" >
+            </div>
+            <div class="p9-title2">
+              <div class="p9-heart p9-hrt1"><img data-src="img/a60.png" width="104" height="82"></div>
+              <div class="p9-heart p9-hrt2"><img data-src="img/a60.png" width="104" height="82"></div>
+              <div class="p9-heart p9-hrt3"><img data-src="img/a60.png" width="104" height="82"></div>
+              <div class="p9-qrcode">
+                <img data-src="img/a09.jpg" width="150" height="149" >
+                <p>扫码关注更多优惠</p>
+              </div>
+              <img data-src="img/a61.png" width="301" height="213" class="p9-line">
+              <img data-src="img/a58.png" width="417" height="136">
+            </div>
+          </div>
+          <div class="p9-down">
+            <img data-src="img/a64.png" width="606" height="427">
+            <div class="p1-man">
+              <img data-src="img/a10.png" width="106" height="130" class="p1-manbody">
+              <img data-src="img/a11.png" width="89" height="115" class="p1-manhead">
+            </div>
+            <img data-src="img/a36.png" width="65" height="69" class="p9-girl">
+          </div>
+          <img class="p9-gome" data-src="img/a72.png" width="78" height="67">
+          <img class="p9-logo" data-src="img/a63.png" width="134" height="63">
+        </div>
+      </div>
+    </div>
+    <div class="nexttip">
+      <img src="img/a05.png" width="52" height="26" >
+      <p>向上滑动</p>
+    </div>
+    <div class="sndctrl">
+      <img src="img/sndicon.png"><i></i>
+    </div>
+  </div>  
+<script src="js/zepto.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script>
+document.body.addEventListener('touchmove', function(e) {
+  e.stopPropagation();
+  e.preventDefault();
+});
+$(function(){
+  if(/android/i.test(navigator.userAgent)){
+    $("body").addClass("android");
+  }
+  var stageH=$(window).height();
+
+  $("#wrap").height(stageH);
+  $(window).resize(function(){
+    stageH=$(window).height();
+    $("#wrap").height(stageH)
+    $(".p2-txtarea").height(stageH-554);
+    $(".p3-txtarea,.p4-txtarea").height(stageH-559);
+    $(".p5-txtarea").height(stageH-520);
+    $(".p6-txtarea").height(stageH-553);
+    $(".p7-txtarea").height(stageH-528);
+  }).trigger("resize");
+  var mySwiper;
+  var manifest=[];
+  for(var i=1;i<=14;i++){
+    var _i=i<10?("0"+i):i;
+    manifest.push("img/a"+_i+".png");
+    if(i<=3){
+      manifest.push("img/a"+_i+".jpg");
+    }
+  }
+  loadResources(manifest,function (n, i, img) {
+    $("#loading p").html("loading&nbsp;" + Math.round(i * 100 / n) + "%");
+    if (n != i) return;
+    $("#loading").remove();
+    $("#wrap").show();
+    $("img").each(function(){
+      $(this).attr("src",$(this).data("src"));
+    })
+    initBgm();
+    $(".sndctrl").tap(function(){
+      if(bgm.paused){
+        isMute=false;
+        bgm.play();
+        $(this).find("i").hide();
+      }else{
+        isMute=true;
+        bgm.pause();
+        $(this).find("i").show();
+      }
+    })
+    init();
+  })
+  function init(){
+    mySwiper=new Swiper ('.swiper-container', {
+      direction: 'vertical',
+      slideActiveClass:'curslide',
+      threshold:100,
+      onTouchStart:function(){
+        $(".nexttip").addClass("nexttipdown");
+      },
+      onTouchEnd:function(cmd){
+        $(".nexttip").removeClass().addClass("nexttip c"+(cmd.activeIndex+1));
+      },
+      onSlideChangeEnd:function(cmd){
+        $(".animIn").removeClass("animIn");
+        $(".nexttip").removeClass().addClass("nexttip c"+(cmd.activeIndex+1));
+      }
+    });
+
+    $(".p-circlepos").tap(function(){
+      $(this).parent(".swiper-slide").addClass("animIn");
+    })
+  }
+})
+var bgm,isMute=false;
+function initBgm(){
+  bgm=new Audio();
+  bgm.autoplay=true;
+  bgm.preload=true;
+  bgm.loop=true;
+  bgm.src='media/bgm.mp3';
+  bgm.play();
+}
+function loadResources(urls, progress) {
+  var loadedCount = 0;
+  var loaded = function () {
+    ++loadedCount;
+    if (progress) progress(urls.length, loadedCount, this);
+  };
+  for (var i = 0; i < urls.length; ++i) {
+    if (!urls[i]) {
+      loaded();
+      return;
+    }
+    var img = new Image();
+    img.onload = loaded;
+    img.onabort = loaded;
+    img.onerror = loaded;
+    img.src =  urls[i];
+  }
+}
+function easyLoad(urls,func){
+  loadResources(manifest,function (n, i, img) {
+    $("#loading p").html("loading&nbsp;" + Math.round(i * 100 / n) + "%");
+    if (n != i) return;
+    if(func){
+      func();
+    }
+  })
+}
+</script>
+</body>
+</html>

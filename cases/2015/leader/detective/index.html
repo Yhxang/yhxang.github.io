@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>“谜样凶手”密室事件</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+
+<link href="css/common.css" rel="stylesheet">
+</head>
+<body>
+<img src="img/icon.jpg" class="shareicon">
+<div class="wrapholder">
+  <div id="loading">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+    <p>loading...</p>
+  </div>
+  <div id="wrap">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide p0">
+          <div class="p2">
+            <img data-src="img/a01.jpg" >
+            <div class="p2-black"></div>
+            <img data-src="img/a13.png" class="p2-ghost">
+            <img data-src="img/a14.png" class="p2-tit">
+            <img data-src="img/a15.png" class="p2-blood">
+          </div>
+
+          <div class="p3">
+            <img data-src="img/a02.jpg" class="p3-bg">
+            <img data-src="img/a17.png" class="p3-police">
+            <img data-src="img/a16.png" class="p3-tit">
+            <img data-src="img/a18.png" class="p3-txt">
+            <img data-src="img/a15.png" class="p3-blood">
+            <div class="p3-btn btn">我来破案</div>
+          </div>
+
+          <div class="p1">
+            <img data-src="img/a07.png" width="640" height="1136" class="p1-bg">
+            <div class="p1-ltdoor-c">
+              <img data-src="img/a08.png" class="p1-ltdoor">
+            </div>
+            <div class="p1-rtdoor-c">
+              <img data-src="img/a09.png" class="p1-rtdoor">
+            </div>
+            <div class="p1-lbdoor-c">
+              <img data-src="img/a10.png" class="p1-lbdoor">
+            </div>
+            <div class="p1-rbdoor-c">
+              <img data-src="img/a11.png" class="p1-rbdoor">
+            </div>
+            <div class="p1-snow">
+              <i class="sn1"></i>
+              <i class="sn2"></i>
+              <i class="sn3"></i>
+              <i class="sn4"></i>
+              <i class="sn5"></i>
+              <i class="sn6"></i>
+              <!-- i -->
+              <i class="sn7"></i>
+              <i class="sn8"></i>
+              <i class="sn9"></i>
+              <i class="sn10"></i>
+              <i class="sn11"></i>
+              <i class="sn12"></i>
+              <i class="sn13"></i>
+              <i class="sn14"></i>
+              <!-- i -->
+            </div>
+            <div class="p1-figure">
+              <img data-src="img/a05.png" class="p1-fgbg">
+              <div class="p1-fgshbox">
+                <img data-src="img/a04.png" class="p1-figureshadow">
+                <img data-src="img/a12.png" class="p1-glow">
+              </div>
+              <i class="sn15"></i>
+            </div>
+            
+            <div class="p1-tit1">
+              <p class="t1-1"></p>
+              <p class="t1-2"></p>
+              <p class="t1-3"></p>
+              <p class="t1-4"></p>
+              <p class="t1-5"></p>
+              <p class="t1-6"></p>
+            </div>
+            <div class="p1-tit2">
+              <p class="t2-1"></p>
+              <p class="t2-2"></p>
+              <p class="t2-3"></p>
+              <p class="t2-4"></p>
+            </div>
+            <img data-src="img/a03.png" class="p1-zoomglass">
+            <p class="p1-txt">开锁“十”字<i class="p1-space">&nbsp;</i>揭秘真相&nbsp;&nbsp;&nbsp;</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide p4">
+          <img data-src="img/a03.jpg" >
+          <ul class="p4-sel">
+            <li class="l1"><img data-src="img/a19.png" class="label"><div class="asw"></div><img class="rightasw" src="img/a23.png"></li>
+            <li class="l2"><img data-src="img/a20.png" class="label"><div class="asw"></div></li>
+            <li class="l3"><img data-src="img/a21.png" class="label"><div class="asw"></div><img class="rightasw" src="img/a23.png"></li>
+          </ul>
+          <div class="p4-btn btn"><img data-src="img/a24.png" ></div>
+        </div>
+
+        <div class="swiper-slide p5">
+          <img data-src="img/a04.jpg" >
+          <p class="p5-topbtn">华生死亡，真相只有一个！</p>
+          <div class="p5-btn btn"><img data-src="img/a25.png" ></div>
+        </div>
+
+        <div class="swiper-slide p6">
+          <img data-src="img/a05.jpg" >
+          <ul class="p6-sel">
+            <li><img data-src="img/a19.png" class="label"><div class="asw"></div><img class="rightasw" src="img/a29.png"></li>
+            <li><img data-src="img/a20.png" class="label"><div class="asw"></div><img class="rightasw" src="img/a29.png"></li>
+            <li><img data-src="img/a21.png" class="label"><div class="asw"></div></li>
+          </ul>
+
+          <img data-src="img/a26.png" class="p6-sel1">
+          <img data-src="img/a27.png" class="p6-sel2">
+          <img data-src="img/a28.png" class="p6-sel3">
+          <div class="p6-btn btn"><img data-src="img/a24.png" ></div>
+        </div>
+
+        <div class="swiper-slide p7">
+          <img data-src="img/a06.jpg" >
+          <ul class="p7-sel">
+            <li><img data-src="img/a19.png" class="label"><div class="asw"></div><img class="rightasw" src="img/a31.png"></li>
+            <li><img data-src="img/a20.png" class="label"><div class="asw"></div><img class="rightasw" src="img/a31.png"></li>
+            <li><img data-src="img/a21.png" class="label"><div class="asw"></div></li>
+          </ul>
+          <div class="p7-btn btn"><img data-src="img/a33.png" ></div>
+        </div>
+
+        <div class="swiper-slide p8">
+          <img data-src="img/a07.jpg" >
+          <img data-src="img/a35.png" class="p8-tit">
+          <img data-src="img/a36.png" class="p8-sub">
+          <img data-src="img/a39.png" class="p8-arrow">
+          <img data-src="img/a38.png" class="p8-btxt">
+          <div class="p8-bird">
+            <img data-src="img/a37.png" class="p8-brid-img">
+          </div>
+          <div class="p8-btn btn"><img data-src="img/a34.png" ></div>
+        </div>
+
+        <div class="swiper-slide p9">
+          <img data-src="img/a08.jpg" >
+          <img data-src="img/a44.png" class="p9-arrow">
+          <img data-src="img/a43.png" class="p9-role">
+          <img data-src="img/a41.png" class="p9-tit1">
+          <img data-src="img/a42.png" class="p9-tit2">
+          <div class="p9-btn btn"><img data-src="img/a40.png" ></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- <div class="sndctrl">
+    <img src="img/a54.png"><i></i>
+  </div> -->
+  <div class="black-mask"><img class="sharearrow" data-src="img/a53.png?ver=0" >
+    <img class="sharetxt" data-src="img/a55.png" >
+  </div> 
+</div>
+<!-- <audio id="snd" src="music.mp3" autoplay></audio> -->
+<script src="js/zepto.min.js"></script>   
+<script src="js/swiper.min.js"></script>
+<!-- <script src="js/preloadjs.min.js"></script> -->
+<script src="js/common.js?ver=1.11"></script>
+</body>
+</html>

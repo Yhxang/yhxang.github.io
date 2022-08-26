@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>壮士杨2016运动详报</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<style>
+body,ul,li,p,h1,h2,h3,h4,h5,h6,span,tr,th,td,input{margin: 0;padding: 0; font-family: 'Helvetica Neue', Helvetica, STHeiTi, 'Microsoft YaHei', sans-serif; }
+body{width:100%; overflow: hidden; color: #000; font-size: 24px;} 
+a{color: #000; text-decoration: none;}
+ul,li{list-style: none;}
+img{ border: none;}
+.shareicon{ position: absolute; left: -9999px; top: -9999px; display: block; width: 0; height: 0;}
+#main{position: absolute; left:0; top: 0; width: 100%; height:70%; min-height:500px;}
+#info{ position: relative; }
+#info p{padding:10px; }
+#info span{color:#9e0000;}
+#info img{vertical-align: bottom; padding-right: 10px;}
+#wrapper{position: absolute; left:0; top: 0; width: 100%; height: 100%; overflow: auto; -webkit-overflow-scrolling:touch;}
+.author{float:right; margin: 20px;}
+.walk{background-color: rgba(0,213,90,.2);}
+.run{background-color: rgba(246,96,244,.2);}
+.cycle{background-color: rgba(0,205,236,.2);}
+.trans{background-color: rgba(53,147,190,.2);}
+.plane{background-color: rgba(132,132,132,.2);}
+.author{font-size: 18px; color: rgb(132,132,132); text-align: right}
+</style>
+</head>
+<body>
+<img src="../../../../icon.jpg" width="350" height="350" alt="shareicon" class="shareicon">
+<div id="wrapper">
+<div id="main"></div>
+<div id="info">
+	<h3>2016年运动总计：</h3>
+	<p class="walk"><img src="img/e1.png">步行约<span id="walkstep"></span>步，用时<span id="walkdur"></span>小时，总计<span id="walkdis"></span>公里，相当于徒步完北京到广州的直线距离；</p>
+	<p class="run"><img src="img/e2.png">跑了约<span id="runstep"></span>步，用时<span id="rundur"></span>小时，总计<span id="rundis"></span>公里，相当于跑完了北京二环三环四环长度总和；</p>
+	<p class="cycle"><img src="img/e3.png">骑行约<span id="cycledis"></span>公里，用时<span id="cycledur"></span>小时，相当于骑完了平原版川藏线，恭喜自己完成了一次净化心灵之旅，没毛病。</p>
+	<p class="trans"><img src="img/e4.png">另外，地面交通工具（汽车火车等）总共乘坐<span id="transdur"></span>小时，不少于<span id="transdis"></span>公里，相当于北京到南美洲厄瓜多尔的最短航线距离。<br></p>
+	<p class="plane"><img src="img/e5.png">乘坐飞机<span id="flydur"></span>小时，飞行<span id="flydis"></span>公里，比中国领土最长点对点距离长一些。</p>
+	<p class='author'>这玩意儿是个人数据，不能测你自己的，你只能望杨兴叹<br>壮士杨</p>
+</div>
+
+</div>
+<script src="jquery-3.0.0.min.js"></script>
+<script src="echarts.min.js"></script>
+<script>
+var myChart = echarts.init(document.getElementById('main'));
+var dates=[];
+var walksteps=[];
+var walkdur=[];
+var walkdis=[];
+var runsteps=[];
+var rundis=[];
+var rundur=[]
+var cycledis=[];
+var cycledur=[];
+var flydis=[];
+var flydur=[];
+var transportdis=[];
+var transportdur=[];
+var colors=['#00d55a','#f660f4','#00cdec','#3593be']
+myChart.showLoading();
+$(function(){
+	$("#info").css({"margin-top":$("#main").height()+15})
+	$.get("summary_2016.json",{},function(data){
+		myChart.hideLoading();
+		for(var i=0;i<data.length;i++){
+			var _date=parseInt(data[i].date.substr(4,2))+"/"+parseInt(data[i].date.substr(6,2));
+			dates.push(_date);
+
+			var summary=data[i].summary;
+			if(summary!=null){
+				var hasRun=hasCycle=hasTrans=hasFly=false;
+				for(var j=0;j<summary.length;j++){
+
+					if(summary[j].activity=='walking'){
+						walksteps.push(summary[j].steps);
+						walkdur.push(summary[j].duration);
+						walkdis.push(summary[j].distance);
+					}
+
+					if(summary[j].activity=='running'){
+						runsteps.push(summary[j].steps);
+						rundur.push(summary[j].duration)
+						rundis.push(summary[j].distance);
+						hasRun=true;
+					}
+					if(j==summary.length-1&&!hasRun){
+						runsteps.push(0);
+						rundur.push(0);
+						rundis.push(0);
+					}
+
+					if(summary[j].activity=='cycling'){
+						cycledis.push(summary[j].distance/1000);
+						cycledur.push(summary[j].duration)
+						hasCycle=true;
+					}
+					if(j==summary.length-1&&!hasCycle){
+						cycledis.push(0);
+						cycledur.push(0);
+					}
+
+					if(summary[j].activity=='transport'){
+						transportdis.push(summary[j].distance/1000);
+						transportdur.push(summary[j].duration);
+						hasTrans=true;
+					}
+					if(j==summary.length-1&&!hasTrans){
+						transportdis.push(0);
+						transportdur.push(0);
+					}
+
+
+					if(summary[j].activity=='airplane'){
+						flydis.push(summary[j].distance/1000);
+						flydur.push(summary[j].duration);
+						hasFly=true;
+					}
+					if(j==summary.length-1&&!hasFly){
+						flydis.push(0);
+						flydur.push(0);
+					}
+				}
+			}else{
+				var _dataarrs=[walksteps,walkdur,walkdis,runsteps,rundur,rundis,cycledis,cycledur,transportdis,transportdur,flydis,flydur]
+				for(var b=0;b<_dataarrs.length;b++){
+					_dataarrs[b].push(0);
+				}
+			}
+		}
+		var option={
+			title:{
+				text:'2016壮士杨运动数据统计',
+				subtext:'json数据导出自APP moves的每天记录，准确度较高，本人全年开启，但有少数因手机关机漏记的数据',
+				x:'center'
+			},
+			tooltip:{
+				trigger: 'axis',
+        axisPointer: {
+          animation: false
+        }
+			},
+			legend:{
+				x:'center',
+				top:'58%',
+				data:['行走步数','跑步步数','骑行距离','公交距离'],
+				selected: {
+          '公交距离': false
+        }
+			},
+			toolbox: {
+        feature: {
+            dataZoom: {
+                yAxisIndex: 'none'
+            },
+            restore: {},
+            saveAsImage: {}
+        }
+    	},
+    	dataZoom: [
+        {
+          show: true,
+          realtime: true,
+          start: 0,
+          end: 40,
+          xAxisIndex: [0, 1]
+        },
+        {
+          type: 'inside',
+          realtime: true,
+          start: 0,
+          end: 40,
+          xAxisIndex: [0, 1]
+        }
+    	],
+			grid: [{
+        left: 50,
+        right: 50,
+        top:'10%',
+        height: '45%'
+    	}, {
+        left: 50,
+        right: 50,
+        top: '65%',
+        height: '25%'
+    	}],
+    	xAxis : [
+        {
+        	gridIndex: 0,
+          type : 'category',
+          boundaryGap : false,
+          axisLine: {onZero: true},
+          data: dates
+        },
+        {
+          gridIndex: 1,
+          type : 'category',
+          boundaryGap : false,
+          axisLine: {onZero: true},
+          data: dates,
+          position: 'top'
+        }
+    	],
+			yAxis : [
+        {
+        	gridIndex: 0,
+          name : '行走数(步)',
+          axisLine: {
+            lineStyle: {
+              color: colors[0]
+            }
+          },
+          type : 'value'
+        },
+        {
+        	gridIndex: 0,
+          name : '跑步数(步)',
+          type : 'value',
+          axisLine: {
+            lineStyle: {
+              color: colors[1]
+            }
+          }
+        },
+        {
+          gridIndex: 1,
+          name : '骑行距离',
+          type : 'value',
+          axisLabel: {
+            formatter: '{value} km'
+          },
+          axisLine: {
+            lineStyle: {
+              color: colors[2]
+            }
+          },
+          inverse: true
+        },
+        {
+          gridIndex: 1,
+          name : '公交距离',
+          type : 'value',
+          axisLabel: {
+            formatter: '{value} km'
+          },
+          axisLine: {
+            lineStyle: {
+              color: colors[3]
+            }
+          },
+          inverse: true
+        }
+    	],
+			series:[
+				{
+					name:'行走步数',
+					type:'line',
+          symbolSize: 8,
+          itemStyle: {
+            normal: {
+              color: colors[0]
+            }
+          },
+          areaStyle: {normal: {}},
+          hoverAnimation: false,
+					data:walksteps
+				},
+				{
+					name:'跑步步数',
+					type:'bar',
+					itemStyle: {
+            normal: {
+              color: colors[1]
+            }
+          },
+					xAxisIndex: 0,
+          yAxisIndex: 1,
+          symbolSize: 8,
+          hoverAnimation: false,
+					data:runsteps
+				},
+				{
+					name:'骑行距离',
+					type:'line',
+					itemStyle: {
+            normal: {
+              color: colors[2]
+            }
+          },
+          areaStyle: {normal: {}},
+					xAxisIndex: 1,
+          yAxisIndex: 2,
+					data:cycledis
+				},
+				{
+					name:'公交距离',
+					type:'bar',
+					itemStyle: {
+            normal: {
+              color: colors[3]
+            }
+          },
+          //areaStyle: {normal: {}},
+					xAxisIndex: 1,
+          yAxisIndex: 3,
+					data:transportdis
+				}
+			]
+		}
+		myChart.setOption(option);
+
+		$("#walkstep").text(eval(walksteps.join("+")));
+		$("#walkdur").text((eval(walkdur.join("+"))/60/60).toFixed(2));
+		$("#walkdis").text((eval(walkdis.join("+"))/1000).toFixed(2));
+		$("#runstep").text(eval(runsteps.join("+")));
+		$("#rundur").text((eval(rundur.join("+"))/60/60).toFixed(2));
+		$("#rundis").text((eval(rundis.join("+"))/1000).toFixed(2));
+		$("#cycledis").text((eval(cycledis.join("+"))).toFixed(2));
+		$("#cycledur").text((eval(cycledur.join("+"))/60/60).toFixed(2));
+		$("#transdis").text((eval(transportdis.join("+"))).toFixed(2));
+		$("#transdur").text((eval(transportdur.join("+"))/60/60).toFixed(2));
+		$("#flydis").text((eval(flydis.join("+"))).toFixed(2));
+		$("#flydur").text((eval(flydur.join("+"))/60/60).toFixed(2));
+	},'json');
+})
+window.onresize=function(){
+	myChart.resize();
+	$("#info").css({"margin-top":$("#main").height()+15});
+}
+</script>
+</body>
+</html>

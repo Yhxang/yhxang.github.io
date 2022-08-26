@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>抢先尝夏，这里给你360度的选择</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<style>
+html,body{margin:0; padding:0;}
+.shareicon{position: absolute; left: -99999px; top: -99999px; width: 350px; height: 350px;}
+#wrap{width: 100%; height: 100%; overflow: hidden; position: absolute; left: 0; top: 0;}
+#test{position: absolute; left: 0; top: 0; z-index: 999; color: #000;}
+.hide{display: none;}
+.role2-2frames,.role3-2frames,.dm-leg,.atm-role,.kl-head{ -webkit-animation: framerole2 .2s step-start infinite; animation: framerole2 .2s step-start infinite; }
+.caronset{-webkit-animation: cardou .12s alternate infinite; animation: cardou .12s alternate infinite;}
+.caronset2{-webkit-transform-origin: 50% 85%; transform-origin: 50% 85%; -webkit-animation: cardou2 .15s ease-in-out alternate infinite; animation: cardou2 .15s ease-in-out alternate infinite;}
+.atm-text{position: absolute; left: 0; top: 0;}
+.atm-bodyarea{position: absolute; left: 35px; top: 150px; width: 334px; height: 236px; overflow: hidden; -webkit-animation: doudong .6s linear infinite; animation: doudong .6s linear infinite;}
+.atm-glow{}
+.atm-role{}
+.atm-shadow{position: absolute; left: 65px; top: 454px;}
+.kl-body{margin-left: 188px; margin-top: 0px;}
+.kl-headarea{position: absolute; left: 0px; top: 79px; width: 342px; height: 262px; overflow: hidden;}
+.kl-head{-webkit-animation-duration: .45s; animation-duration: .45s;}
+.kl-heart{position: absolute; left: 430px; top: 33px; -webkit-animation: scalepuzzle .2s alternate infinite; animation: scalepuzzle .2s alternate infinite;}
+.damalegarea{position: absolute; left: 12px; top: 166px; width: 77px; height: 73px; overflow: hidden;}
+.dm-leg{}
+.dm-os{position: absolute; left: -100px; top: -170px; -webkit-transform-origin: 142px 244px; transform-origin: 142px 244px; -webkit-animation: yao .25s ease-in-out alternate infinite; animation: yao .25s ease-in-out alternate infinite;}
+.ktglow{position: absolute;  -webkit-animation: doudong .3s linear infinite; animation: doudong .3s linear infinite;}
+.frtA-gomeglow{position: absolute; -webkit-animation: fadeFlash .2s ease-in-out alternate infinite; animation: fadeFlash .2s ease-in-out alternate infinite;}
+.frtA-kt1glow{left: -50px; top: -31px;}
+.frtA-kt2glow{ left: -42px; top: -28px;}
+.frtA-kt3glow{ left: -43px; top: -47px;}
+.frtA-gomebuilding{position: relative; z-index: 1;}
+.frtA-gomeglow{left: -28px; top: -29px;}
+.frtA-gometip{position: absolute; left: 110px; top: -50px; -webkit-animation: updown .2s alternate infinite; animation: updown .2s alternate infinite;}
+.frtA-kt1body,.frtA-kt2body,.frtA-kt3body{position: relative;z-index: 1;}
+.frt-role1{position: absolute;}
+.role1-body{position: absolute; left: 0; top: 0;}
+.role1-hand{position: absolute; left: 0; top: 100px; -webkit-transform-origin: 45px 23px; transform-origin: 45px 23px; -webkit-animation: handroll 1s alternate infinite; animation: handroll 1s  infinite;}
+.role1-foot{position: absolute; left: 218px; top: 194px; -webkit-transform-origin: 13px 30px; transform-origin: 13px 30px; -webkit-animation: handroll 1s -.5s alternate infinite; animation: handroll 1s -.5s  infinite;}
+.role1-os{position: absolute; left: -141px; top: 130px; width: 190px; height: 113px; -webkit-transform-origin: 190px 113px; transform-origin: 190px 113px; -webkit-animation: yao .2s ease-in-out alternate infinite; animation: yao .2s ease-in-out alternate infinite;}
+.frt-role2eara{width: 291px; height: 162px; overflow: hidden;}
+.role2-os{position: absolute; left: -152px; top: -110px; -webkit-transform-origin: 147px 136px; transform-origin: 147px 136px; -webkit-animation: yao .18s ease-in-out alternate infinite; animation: yao .18s ease-in-out alternate infinite;}
+.role3-shadow{position: absolute; left: 8px; top: 58px;}
+.role3-2frames{-webkit-animation-duration: .4s; animation-duration: .4s;}
+.frt-role3eara{width: 247px; height: 129px; overflow: hidden; -webkit-transform: translateZ(0); transform: translateZ(0);}
+.role3-os{position: absolute; left: 258px; top: -5px;}
+.frt-pop{display: none; position: absolute; left: -20px; top: -194px; -webkit-transform-origin: 87px 193px; transform-origin: 87px 193px; -webkit-transform: scale3d(0, 0, 1); transform: scale3d(0, 0, 1); -webkit-animation: popIn .5s ease-out forwards; animation: popIn .5s ease-out forwards;}
+.frtA-tip{position: absolute; left: 117px; top: -75px; -webkit-animation: updown .3s alternate infinite; animation: updown .3s alternate infinite;}
+.frtA-pop{display: none; position: absolute; left: 325px; top: -180px; -webkit-transform-origin: 69px 179px; transform-origin: 69px 179px; -webkit-transform: scale3d(0, 0, 1); transform: scale3d(0, 0, 1); -webkit-animation: popIn .4s ease-out forwards; animation: popIn .4s ease-out forwards;}
+.frtA-gatetip{position: absolute; left: 148px; top: -136px; -webkit-animation: updown .2s alternate infinite; animation: updown .2s alternate infinite;}
+.frtA-tip2{left: 38px; top: -80px;}
+.frtA-tip3{left: 158px; top: -80px;}
+.blackMask{display: none;position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; z-index: 9999; -webkit-overflow-scrolling:touch;}
+.popwin{display: none; position: absolute; left: 50%; top: 50%;}
+.popwin1{width: 560px;height: 743px; margin-left: -280px; margin-top: -371px;}
+.popwin2{width: 560px;height: 521px; margin-left: -280px; margin-top: -260px;}
+.popwin3{width: 560px;height: 521px; margin-left: -280px; margin-top: -260px;}
+.popwin4{position: relative; left: auto; top: auto; width: 590px; height: 1116px; margin: 20px auto; }
+.popcont{}
+.closebtn{position: absolute; right:33px; top:27px; width: 60px; height: 70px;}
+.clickBounce{-webkit-animation: scaleBounce .5s; animation: scaleBounce .5s;}
+.animIn{display: block;}
+.sndctrl{ position: absolute; z-index: 9999; right:15px; top:20px;}
+.sndctrl i{ display: none; position: absolute; left:-7px; top:16px; background-color: #fff; width: 45px; height: 2px; -webkit-transform: rotate(45deg); transform: rotate(45deg);}
+@-webkit-keyframes fadeFlash {
+    from { opacity: 1 }
+    to { opacity: .6 }
+}
+@keyframes fadeFlash {
+    from { opacity: 1 }
+    to { opacity: .6 }
+}
+@-webkit-keyframes scaleBounce {
+    0%,100% { -webkit-transform: none; transform: none; }
+    20% { -webkit-transform: scale3d(1.1, 1.1, 1); transform: scale3d(1.1, 1.1, 1); }
+    40% { -webkit-transform: scale3d(.95, .95, 1); transform: scale3d(.95, .95, 1); }
+    60% { -webkit-transform: scale3d(1.05, 1.05, 1); transform: scale3d(1.05, 1.05, 1); }
+    80% { -webkit-transform: scale3d(.98, .98, 1); transform: scale3d(.98, .98, 1); }
+}
+@keyframes scaleBounce {
+    0%,100% { -webkit-transform: none; transform: none; }
+    20% { -webkit-transform: scale3d(1.1, 1.1, 1); transform: scale3d(1.1, 1.1, 1); }
+    40% { -webkit-transform: scale3d(.95, .95, 1); transform: scale3d(.95, .95, 1); }
+    60% { -webkit-transform: scale3d(1.05, 1.05, 1); transform: scale3d(1.05, 1.05, 1); }
+    80% { -webkit-transform: scale3d(.98, .98, 1); transform: scale3d(.98, .98, 1); }
+}
+@-webkit-keyframes scalepuzzle {
+    from { -webkit-transform: none; transform: none; }
+    to { -webkit-transform: scale3d(.7, .7, 1); transform: scale3d(.7, .7, 1); }
+}
+@keyframes scalepuzzle {
+    from { -webkit-transform: none; transform: none; }
+    to { -webkit-transform: scale3d(.7, .7, 1); transform: scale3d(.7, .7, 1); }
+}
+@-webkit-keyframes cardou {
+    from { -webkit-transform: none; transform: none; }
+    to { -webkit-transform: translate3d(0, -2px, 0); transform: translate3d(0, -2px, 0); }
+}
+@keyframes cardou {
+    from { -webkit-transform: none; transform: none; }
+    to { -webkit-transform: translate3d(0, -2px, 0); transform: translate3d(0, -2px, 0); }
+}
+@-webkit-keyframes cardou2 {
+    from { -webkit-transform: none; transform: none; }
+    to { -webkit-transform: skewX(-5deg); transform: skewX(-5deg); }
+}
+@keyframes cardou2 {
+    from { -webkit-transform: none; transform: none; }
+    to { -webkit-transform: skewX(-5deg); transform: skewX(-5deg); }
+}
+@-webkit-keyframes updown {
+    from { -webkit-transform:translate3d(0, 0, 0) scale3d(1,1,1); transform: translate3d(0, 0, 0) scale3d(1,1,1); }
+    to { -webkit-transform: translate3d(0, -6px, 0) scale3d(.92,.92,1); transform: translate3d(0, -6px, 0) translate3d(0, -6px, 0) scale3d(.92,.92,1); }
+}
+@keyframes updown {
+    from { -webkit-transform:translate3d(0, 0, 0) scale3d(1,1,1); transform: translate3d(0, 0, 0) scale3d(1,1,1); }
+    to { -webkit-transform: translate3d(0, -6px, 0) scale3d(.92,.92,1); transform: translate3d(0, -6px, 0) translate3d(0, -6px, 0) scale3d(.92,.92,1); }
+}
+@-webkit-keyframes handroll {
+    0%,25%,50%,100% { -webkit-transform: rotateZ(0); transform: rotateZ(0); }
+    12.5%,37.5% { -webkit-transform: rotateZ(-25deg); transform: rotateZ(-25deg); }
+}
+@keyframes handroll {
+    0%,25%,50%,100% { -webkit-transform: rotateZ(0); transform: rotateZ(0); }
+    12.5%,37.5% { -webkit-transform: rotateZ(-25deg); transform: rotateZ(-25deg); }
+}
+@-webkit-keyframes yao {
+    from { -webkit-transform: none; transform: none;}
+    to { -webkit-transform: rotateZ(-5deg) scale3d(1.05,1.05,1); transform: rotateZ(-5deg) scale3d(1.05,1.05,1); }
+}
+@keyframes yao {
+    from { -webkit-transform: none; transform: none;}
+    to { -webkit-transform: rotateZ(-5deg) scale3d(1.05,1.05,1); transform: rotateZ(-5deg) scale3d(1.05,1.05,1); }
+}
+@-webkit-keyframes framerole2 {
+    0%,50% { -webkit-transform: none; transform: none; }
+    100% { -webkit-transform: translate3d(0, -50%, 0); transform: translate3d(0, -50%, 0); }
+}
+@keyframes framerole2 {
+    0%,50% { -webkit-transform: none; transform: none; }
+    100% { -webkit-transform: translate3d(0, -50%, 0); transform: translate3d(0, -50%, 0); }
+}
+@-webkit-keyframes popIn {
+    0% { -webkit-transform: scale3d(0,0,1); transform: scale3d(0,0,1); }
+    100% { -webkit-transform: none; transform: none; }
+}
+@keyframes popIn {
+    0% { -webkit-transform: scale3d(0,0,1); transform: scale3d(0,0,1); }
+    100% { -webkit-transform: none; transform: none; }
+}
+@-webkit-keyframes doudong {
+    0%,100% { -webkit-transform: none; transform: none; }
+    10%{-webkit-transform: translate3d(-1px, -3px, 0); transform: translate3d(-1px, -3px, 0);}
+    20%{-webkit-transform: translate3d(1px, -2px, 0); transform: translate3d(1px, -2px, 0);} 
+    30%{-webkit-transform: translate3d(3px, 1px, 0); transform: translate3d(3px, 1px, 0);} 
+    40%{-webkit-transform: translate3d(0px, 2px, 0); transform: translate3d(0px, 2px, 0);} 
+    50%{-webkit-transform: translate3d(-2px, 1px, 0); transform: translate3d(-2px, 1px, 0);} 
+    60%{-webkit-transform: translate3d(1px, -2px, 0); transform: translate3d(1px, -2px, 0);} 
+    70%{-webkit-transform: translate3d(3px, 1px, 0); transform: translate3d(3px, 1px, 0);} 
+    80%{-webkit-transform: translate3d(-1px, 0px, 0); transform: translate3d(-1px, 0px, 0);} 
+    90%{-webkit-transform: translate3d(2px, -2px, 0); transform: translate3d(2px, -2px, 0);} 
+}
+@keyframes doudong {
+    0%,100% { -webkit-transform: none; transform: none; }
+    10%{-webkit-transform: translate3d(-1px, -3px, 0); transform: translate3d(-1px, -3px, 0);}
+    20%{-webkit-transform: translate3d(1px, -2px, 0); transform: translate3d(1px, -2px, 0);} 
+    30%{-webkit-transform: translate3d(3px, 1px, 0); transform: translate3d(3px, 1px, 0);} 
+    40%{-webkit-transform: translate3d(0px, 2px, 0); transform: translate3d(0px, 2px, 0);} 
+    50%{-webkit-transform: translate3d(-2px, 1px, 0); transform: translate3d(-2px, 1px, 0);} 
+    60%{-webkit-transform: translate3d(1px, -2px, 0); transform: translate3d(1px, -2px, 0);} 
+    70%{-webkit-transform: translate3d(3px, 1px, 0); transform: translate3d(3px, 1px, 0);} 
+    80%{-webkit-transform: translate3d(-1px, 0px, 0); transform: translate3d(-1px, 0px, 0);} 
+    90%{-webkit-transform: translate3d(2px, -2px, 0); transform: translate3d(2px, -2px, 0);} 
+}
+</style>
+
+</head>
+<body>
+<img src="share350.jpg" width="350" height="350" alt="" class="shareicon">
+<div id="test"></div>
+<div id="wrap"></div>
+<div class="sndctrl">
+    <img src="img/sndicon.png"><i></i>
+</div>
+<div class="hide">
+    <img src="img/c01.png" alt="" id="mid-car1" class="caronset">
+    <img src="img/c02.png" alt="" id="mid-car2" class="caronset">
+    <img src="img/c03.png" alt="" id="mid-car3" class="caronset">
+    <div id="mid-aoteman">
+        <img src="img/c04.png" alt="" class="atm-text">
+        <img src="img/c07.png" alt="" class="atm-shadow">
+        <div class="atm-bodyarea">
+            <img src="img/c06.png" alt="" class="atm-role">
+        </div>
+    </div>
+    <div id="mid-konglong">
+        <img src="img/c08.png" alt="" class="kl-body">
+        <div class="kl-headarea">
+            <img src="img/c05.png" alt="" class="kl-head">
+        </div>
+        <img src="img/c32.png" alt="" class="kl-heart">
+    </div>
+    <div id="mid-dama">
+        <img src="img/c30.png" alt="">
+        <div class="damalegarea">
+            <img src="img/c31.png" alt="" class="dm-leg">
+        </div>
+        <img src="img/c29.png" alt="" class="dm-os">
+    </div>
+    
+    <div id="frtA-kt1">
+        <img src="img/c39.png" alt="" class="frtA-kt1glow ktglow">
+        <img src="img/c21.png" alt="" class="frtA-kt1body">
+        <img src="img/c22.png" alt="" class="frtA-tip">
+    </div>
+    <div id="frtA-gome1">
+        <img src="img/c23.png" alt="" class="frtA-pop">
+        <img src="img/c43.png" alt="" class="frtA-gometip">
+        <img src="img/c42.png" alt="" class="frtA-gomeglow">
+        <img src="img/c24.png" alt="" class="frtA-gomebuilding">
+    </div>
+    <div id="frtA-gome2">
+        <img src="img/c23.png" alt="" class="frtA-pop">
+        <img src="img/c43.png" alt="" class="frtA-gometip">
+        <img src="img/c42.png" alt="" class="frtA-gomeglow">
+        <img src="img/c24.png" alt="" class="frtA-gomebuilding">
+    </div>
+    <div id="frtA-gate">
+        <img src="img/c25.png" alt="" class="frtA-gatebody">
+        <img src="img/c26.png" alt="" class="frtA-gatetip">
+    </div>
+    <div id="frtA-kt2">
+        <img src="img/c40.png" alt="" class="frtA-kt2glow ktglow">
+        <img src="img/c27.png" alt="" class="frtA-kt2body">
+        <img src="img/c22.png" alt="" class="frtA-tip frtA-tip2">
+    </div>
+    <div id="frtA-kt3">
+        <img src="img/c41.png" alt="" class="frtA-kt3glow ktglow">
+        <img src="img/c28.png" alt="" class="frtA-kt3body">
+        <img src="img/c22.png" alt="" class="frtA-tip frtA-tip3">
+    </div>
+    <img src="img/c38.png" alt="" id="frtA-qr">
+
+    <div id="frt-car1">
+        <img src="img/c20.png" alt="" class="frt-pop">
+        <img src="img/c16.png" alt="" class="caronset2">
+    </div>
+    <div id="frt-role1">
+        <img src="img/c11.png" alt="" class="role1-body">
+        <img src="img/c12.png" alt="" class="role1-hand">
+        <img src="img/c13.png" alt="" class="role1-foot">
+        <img src="img/c10.png" alt="" class="role1-os">
+    </div>
+    <div id="frt-role2">
+        <div class="frt-role2eara">
+            <img src="img/c14.png" alt="" class="role2-2frames">
+        </div>
+        <img src="img/c15.png" alt="" class="role2-os">
+    </div>
+    <img src="img/c09.png" alt="" id="frt-car2" class="frt-car2body caronset">
+    <img src="img/c09.png" alt="" id="frt-car4" class="frt-car4body caronset">
+    <div id="frt-role3">
+        <img src="img/c19.png" alt="" class="role3-shadow">
+        <div class="frt-role3eara">
+            <img src="img/c17.png" alt="" class="role3-2frames">
+        </div>
+        <img src="img/c18.png" alt="" class="role3-os">
+    </div>
+    <div id="frt-car3">
+        <img src="img/c20.png" alt="" class="frt-pop">
+        <img src="img/c16.png" alt="" class="caronset2">
+    </div>
+    <img src="img/c37.png" alt="" id="frt-logo">
+</div>
+
+<div class="blackMask">
+    <div class="popwin1 popwin">
+        <img data-src="img/c33.png?ver=1.1" alt="" class="popcont">
+        <div class="closebtn"></div>
+    </div>
+    <div class="popwin2 popwin">
+        <img data-src="img/c34.png?ver=1.1" alt="" class="popcont">
+        <div class="closebtn"></div>
+    </div>
+    <div class="popwin3 popwin">
+        <img data-src="img/c35.png?ver=1.1" alt="" class="popcont">
+        <div class="closebtn"></div>
+    </div>
+    <div class="popwin4 popwin">
+        <img data-src="img/c36.png?ver=1.1" alt="" class="popcont">
+        <div class="closebtn"></div>
+    </div>
+</div>
+<audio src="media/c32b66f5.mp3" autoplay loop preload id="bgm"></audio>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/css3d.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/orienter.min.js"></script>
+<script>
+var $$=function(id){return document.getElementById(id);}
+var bgm=$$("bgm");
+autoPlayAudio2();
+function autoPlayAudio2() {
+    window.onload = function() {
+        //alert(typeof WeixinJSBridge);
+        if(typeof WeixinJSBridge!="undefined"){
+            WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
+                // 在这里拿到 e.err_msg, 这里面就包含了所有的网络类型
+                //alert(e.err_msg);
+                document.getElementById('bgm').play();
+            });
+        }else{
+            $(document).on("WeixinJSBridgeReady", function() {
+                if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+                    f()
+                } else {
+                    var e = document.addEventListener
+                      , d = document.attachEvent;
+                    if (e) {
+                        e("WeixinJSBridgeReady", f, false)
+                    } else {
+                        if (d) {
+                            d("WeixinJSBridgeReady", f);
+                            d("onWeixinJSBridgeReady", f)
+                        }
+                    }
+                }
+            })
+        }
+        function f(){
+            document.getElementById('bgm').play();
+        }
+    };
+}
+var spAngle=5;//倾斜角
+var cylinderAngle=-31-spAngle;
+var s = new C3D.Stage();
+s.size(window.innerWidth, window.innerHeight).material({
+    color: "#000"
+}).update();
+s.camera.fov=45;
+$$("wrap").appendChild(s.el);
+
+var parentSp= new C3D.Sprite();
+parentSp.position(0, 0, -500).visibility({alpha:0}).update();
+s.addChild(parentSp);
+function cylinder(){
+    this.w=0;
+    this.h=0;
+    this.max=0;
+    this.imgindex=0;
+    this.r=0;
+    this.sp=null;
+    this.file="";
+    this.sptype=1;
+}
+cylinder.prototype.init=function(w,h,max,imgindex,file){
+    this.sptype=1;
+    this.w=w;
+    this.h=h;
+    this.max=max;
+    this.imgindex=imgindex;
+    this.r=r=w/2/Math.tan(Math.PI/max)-3;
+    this.file=file?".png":".jpg";
+    this.sp = new C3D.Sprite();
+    this.sp.position(0, 0, 0).rotation(0,cylinderAngle,0).update();
+    for (var i = 0; i < this.max; i++) {
+        var p = new C3D.Plane(),
+        angle=-360*i/this.max,
+        n=angle/180*Math.PI,
+        imgi=i+1;
+        imgi=imgi<10?("0"+imgi):imgi;
+        p.size(this.w,this.h).position(Math.sin(n)*this.r,0,Math.cos(n)*this.r).rotation(0,angle+180,0).visibility({
+            alpha:1
+        }).material({
+            image:"img/"+this.imgindex+"_"+imgi+this.file,
+            repeat:"no-repeat",
+            bothsides:false
+        }).update();
+        this.sp.addChild(p);
+    }
+    return this.sp;
+}
+cylinder.prototype.initsole=function(r){
+    this.sptype=2;
+    this.r=r;
+    this.sp = new C3D.Sprite();
+    this.sp.position(0, 0, 0).rotation(0,cylinderAngle,0).update();
+    parentSp.addChild(this.sp);
+    return this.sp;
+}
+cylinder.prototype.addEle=function(angle,y,w,h,node,onlychild){
+
+    var p = new C3D.Plane();
+    var n=angle*Math.PI/180;
+    p.size(w,h).position(Math.sin(n)*this.r,y,Math.cos(n)*this.r).rotation(0,angle+180,0).visibility({alpha:1}).update();
+    if(node) {
+        if(onlychild){
+            p.el.innerHTML=node.innerHTML;
+        }else{
+            p.el.appendChild(node);
+        }
+    }
+    this.sp.addChild(p);
+    return p;
+}
+
+var cylinderOuter=new cylinder();
+var BG=cylinderOuter.init(329,1283,20,"a");//周长6580 r1035.61
+parentSp.addChild(BG);
+
+var cylindeMid=new cylinder();
+var spmid=cylindeMid.initsole(855);//周长5369.4 r855   
+
+cylindeMid.addEle(235,75,216,101,$$("mid-car1"));
+cylindeMid.addEle(285,150,228,102,$$("mid-car2"));
+cylindeMid.addEle(195,70,181,113,$$("mid-car3"));
+cylindeMid.addEle(213,-100,486,526,$$("mid-aoteman"),true);
+cylindeMid.addEle(170,-120,609,538,$$("mid-konglong"),true);
+cylindeMid.addEle(77,15,157,259,$$("mid-dama"),true);
+
+var cylinderInner=new cylinder();
+var sp2=cylinderInner.init(250,975,20,"b",1);//周长5000 r786.22
+parentSp.addChild(sp2);
+
+var cylinderInnerAct=new cylinder();
+var spIAct=cylinderInnerAct.initsole(745);//周长4679 r745
+cylinderInnerAct.addEle(354,-160,277,96,$$("frtA-kt1"),true);
+cylinderInnerAct.addEle(336,195,437,231,$$("frtA-gome1"),true);
+cylinderInnerAct.addEle(211,158,388,302,$$("frtA-gate"),true);
+cylinderInnerAct.addEle(162,195,437,231,$$("frtA-gome2"),true);
+cylinderInnerAct.addEle(189,70,130,456,$$("frtA-kt2"),true);
+cylinderInnerAct.addEle(90,228,362,107,$$("frtA-kt3"),true);
+cylinderInnerAct.addEle(25,-200,115,207,$$("frtA-qr"));
+
+var cylindeFront=new cylinder();
+var spFrt=cylindeFront.initsole(550);//周长3454 r550
+cylindeFront.addEle(345,250,164,103,$$("frt-car1"));
+cylindeFront.addEle(300,170,279,272,$$("frt-role1"),true);
+cylindeFront.addEle(235,260,178,82,$$("frt-car2"));
+cylindeFront.addEle(245,280,291,162,$$("frt-role2"),true);
+cylindeFront.addEle(180,280,247,129,$$("frt-role3"),true);
+cylindeFront.addEle(117,330,164,103,$$("frt-car3"));
+cylindeFront.addEle(50,260,178,82,$$("frt-car4"));
+cylindeFront.addEle(211,-185,266,322,$$("frt-logo"));
+
+
+var topCap = new C3D.Plane();
+var btmCap = new C3D.Plane();
+topCap.size(2*cylinderOuter.r+10,2*cylinderOuter.r+10).position(0,-cylinderOuter.h/2).rotation(90,0,0).visibility({alpha:1}).material({color: "#7dd6ff"}).update();
+btmCap.size(2*cylinderOuter.r+10,2*cylinderOuter.r+10).position(0,cylinderOuter.h/2).rotation(90,0,0).visibility({alpha:1}).material({color: "#2c415e"}).update();
+BG.addChild(topCap).addChild(btmCap);
+
+$(".hide").remove();
+$("#frt-car3 .caronset2,#frt-car1 .caronset2").click(function(){
+    $(this).siblings(".frt-pop").addClass("animIn");
+    $(this).addClass("clickBounce");
+    var _this=$(this);
+    setTimeout(function(){_this.removeClass("clickBounce")},550);
+})
+$(".frtA-gomebuilding").click(function(){
+    $(this).siblings(".frtA-pop").addClass("animIn");
+    $(this).siblings(".frtA-gometip").hide();
+    $(this).addClass("clickBounce");
+    var _this=$(this);
+    setTimeout(function(){_this.removeClass("clickBounce")},550);
+})
+
+$(".frt-pop,.frtA-pop").click(function(){
+    $(this).siblings(".frtA-gometip").show();
+    $(this).removeClass("animIn");
+    $(this).addClass("clickBounce");
+    var _this=$(this);
+    setTimeout(function(){_this.removeClass("clickBounce")},550);
+})
+for(var i=1;i<=3;i++){
+    (function(idx){
+        $(".frtA-kt"+idx+"body").click(function(){
+            var sibcont=$(".popwin"+idx).find(".popcont");
+            if(!sibcont.attr("src")){
+                sibcont.attr("src",sibcont.data("src"));
+            }
+            $(".popwin"+idx+",.blackMask").show();
+            $(this).addClass("clickBounce");
+            var _this=$(this);
+            setTimeout(function(){_this.removeClass("clickBounce")},550);
+        })
+    })(i)
+}
+$(".frtA-gatebody").click(function(){
+    var sibcont=$(".popwin4 .popcont");
+    if(!sibcont.attr("src")){
+        sibcont.attr("src",sibcont.data("src"));
+    }
+    $(".popwin4,.blackMask").show();
+    $(this).addClass("clickBounce");
+    var _this=$(this);
+    setTimeout(function(){_this.removeClass("clickBounce")},550);
+})
+$(".closebtn").click(function(){
+    $(".popwin,.blackMask").hide();
+})
+$(".sndctrl").click(function(){
+  if(bgm.paused){
+    bgm.play();
+    $(this).find("i").hide();
+  }else{
+    bgm.pause();
+    $(this).find("i").show();
+  }
+})
+
+var device={
+    lat:0,
+    lon:0
+}
+var device2={
+    lat:0,
+    lon:cylinderAngle
+}
+
+var mc=new Hammer.Manager($$("wrap"));
+var pan=new Hammer.Pan;
+pan.set({
+    threshold: 0,
+    pointers: 0
+})
+
+mc.add(pan);
+var rX=0,rY=0;
+mc.on("pan",function(e){
+    var targetY=rY-(.1*e.deltaX);
+    var targetX=rX+(.1*e.deltaY);
+    var maxvangle=15;
+    targetX=targetX>maxvangle?maxvangle:(targetX<-maxvangle?-maxvangle:targetX);
+    device2.lon=(device2.lon-3*e.velocityX)%360;
+    device2.lat = Math.max(-90, Math.min(90, device2.lat + 3 * e.velocityY));
+})
+
+var o=new Orienter();
+o.onOrient=function(obj){
+    device.lon=-obj.lon;
+    device.lat=obj.lat;
+}
+JT.fromTo(parentSp,4,{
+    z:-10000,
+    rotationY:-800
+},{
+    z:-400,
+    rotationY:spAngle,
+    ease:JT.Quad.Out,
+    delay:.5,
+    onUpdate:function(){
+        parentSp.updateT();
+    },
+    onStart:function(){
+        parentSp.visibility({alpha:1}).updateV();
+    },
+    onEnd:function(){
+        //console.log("ok");
+        setTimeout(function(){
+            o.init();
+            cylinderInertieAnimation();
+        },500);
+        
+        //$("#test").text(JSON.stringify(device) + JSON.stringify(device2))
+    }
+})
+
+function cylinderInertieAnimation(){
+    var G=(device.lon+device2.lon)%360;
+    var H=.35*(device.lat+device2.lat);
+    var B=0;
+    B=updateSpritePosition(BG,G,H,.06);
+    updateSpritePosition(sp2,G,H,.1);
+    updateSpritePosition(spIAct,G,H,.1);
+    updateSpritePosition(spmid,G,H,.08);
+    updateSpritePosition(spFrt,G,H,.15);
+    var q=-350-20*Math.abs(B);
+    if(q<-500) q=-500;
+    parentSp.z+=.1*(q-parentSp.z);
+    //parentSp.z
+    parentSp.update();
+    requestAnimationFrame(cylinderInertieAnimation);
+}
+
+function updateSpritePosition(obj,lon,lat,ease){
+    ease=ease||.35;
+    if(lon-obj.rotationY>180){
+        obj.rotationY+=360;
+    }
+    if(lon-obj.rotationY<-180){
+        obj.rotationY-=360;
+    }
+
+    lat=Math.max(-20,Math.min(lat,20));
+
+    var B=lon-obj.rotationY,
+    G=lat-obj.rotationX;
+    
+    if(Math.abs(B)<.1){
+        obj.rotationY=lon;
+    }else{
+        obj.rotationY+=B*ease;
+    }
+    if(Math.abs(G)<.1){
+        obj.rotationX=lat;
+    }else{
+        obj.rotationX+=G*ease;
+    }
+    obj.updateT();
+    return B;
+}
+function resize() {
+    s.size(window.innerWidth, window.innerHeight).update();
+}
+window.onresize = function () {
+    resize();
+};
+resize();
+
+</script>
+</body>
+</html>

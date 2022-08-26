@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>11.11来了，现金红包也来了！</title>
+<script>
+var phoneWidth =  parseInt(window.screen.width);
+var phoneScale = phoneWidth/640;
+var ua = navigator.userAgent;
+if (/Android (\d+\.\d+)/.test(ua)){
+  var version = parseFloat(RegExp.$1);
+  if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+  }else{
+    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+  }
+} else {
+  document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+<link href="css/style-1.css" rel="stylesheet">
+</head>
+<body>
+<div class="loadingarea">
+	<img src="images/loading.gif" alt="">
+	<p id="lnum">0%</p>
+</div>
+<div id="wrapper" class="wrap">
+	<canvas id="canvas" width="640" height="1136"></canvas>
+	<div class="bmask">
+		<div class="pop1 pop">
+			<img data-src="images/a25.png" alt="" class="pop1head">
+			<img data-src="images/a26.png" alt="" class="pop1bg">
+			<input type="tel" id="phone" class="phone" placeholder="请输入手机号" maxlength="11">
+			<button id="msgbtn"><img data-src="images/a27.png" alt=""></button>
+		</div>
+		<div class="pop2 pop">
+			<div class="line"></div>
+			<div class="line r"></div>
+
+			<img data-src="images/a29.png" alt="" class="pop2head">
+			<img data-src="images/a30.png" alt="" class="pop2bg">
+			<h2 class="pop2tit">恭喜您！<br>获得100元现金券</h2>
+			<p class="pop2tipred">请截屏保存图片至手机 凭电子版券到门店兑换</p>
+			<p class="pop2tipred pop2tipred2">全国门店通用</p>
+			<p class="pop2date">有效期：2016.11.04- 2016.11.13</p>
+			<em class="pop2arrow"></em>
+			<a href="javascript:void(0);" class="pop2link">代金券使用说明</a>
+			<!-- <img data-src="images/a31.png" alt="" class="popclose pop2close"> -->
+
+			<a href="javascript:void(0);" class="pop2surprise">
+				<img data-src="images/a32.png" alt="">
+				<p class="pop2surtxt">点我有惊喜</p>
+				<div class="pop2arr"><img data-src="images/a33.png" alt=""></div>
+				<div class="pop2arr mirror"><img data-src="images/a33.png" alt=""></div>
+			</a>
+		</div>
+
+		<div class="pop3 pop">
+			<img data-src="images/a34.png" alt="" class="pop3bg">
+			<h2>优惠券使用说明</h2>
+			<ul class="intro">
+				<li>消费者进店即可获赠100元购物券， 凭此券可在购买家电时直接抵现使用</li>
+				<li>购物券每件商品仅限使用一张，不可累计使用</li>
+				<li>此券不可兑换现金、不找零、不可与店内其他同类优惠活动同时使用</li>
+				<li>彩电、冰箱、洗衣机、空调、厨卫、小家电、电脑、数码500元以上商品抵扣100元</li>
+				<li>手机商品1000元以上抵扣100元</li>
+				<li>特价机、工程机、合约机、批发、团购、配件不参与活动</li>
+				<li>有效期：2016年11月4日-11月13日</li>
+				<li>全国门店通用</li>
+			</ul>
+			<div class="p3hr">
+				<p>如有疑问请洽询门店</p>
+			</div>
+			<p class="p3phone">客服电话：4008113333</p>
+			<img data-src="images/a31.png" alt="" class="popclose pop3close">
+		</div>
+
+		<div class="pop4 pop">
+			<div class="line"></div>
+			<div class="line r"></div>
+			<img data-src="images/a36.png" alt="" class="pop4head">
+			<img data-src="images/a35.png" alt="" class="pop4bg">
+			<h2>太贪心啦！</h2>
+			<p>每人只能领<span>5</span>次哟~</p>
+			<img data-src="images/a31.png" alt="" class="popclose pop4close">
+
+			<a href="javascript:void(0);" class="pop2surprise">
+				<img data-src="images/a32.png" alt="">
+				<p class="pop2surtxt">点我有惊喜</p>
+				<div class="pop2arr"><img data-src="images/a33.png" alt=""></div>
+				<div class="pop2arr mirror"><img data-src="images/a33.png" alt=""></div>
+			</a>
+		</div>
+
+		<div class="sharetip">
+			<img data-src="images/a37.png" alt="" class="sharetxt">
+			<img data-src="images/a38.png" alt="" class="sharearr">
+		</div>
+	</div>
+	<div class="youhuiquan">
+		<img data-src="images/a36.jpg" alt="">
+		<div class="yhq-link-holder">
+			<div class="yhq-arr yhq-arr-l">
+				<img data-src="images/a40.png" alt="" class="arr1">
+				<img data-src="images/a40.png" alt="" class="arr2">
+			</div>
+			<img data-src="images/a39.png" alt="" class="yhq-link">
+			<div class="yhq-arr">
+				<img data-src="images/a40.png" alt="" class="arr1">
+				<img data-src="images/a40.png" alt="" class="arr2">
+			</div>
+		</div>
+	</div>
+  <img data-src="images/a01_1.png" alt="" class="logol">
+  <img data-src="images/a01.png" alt="" class="logol hasborder">
+  <img data-src="images/a02.png" alt="" class="logor">
+</div>
+<div id="orientLayer" class="mod-orient-layer">
+  <div class="mod-orient-layer__content">
+    <i class="icon mod-orient-layer__icon-orient"></i>
+    <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+  </div>
+</div>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/createjs-2015.11.26.min.js"></script>
+<script src="js/conts-spritesheet.js?ver=1.0"></script>
+<script src="js/common-spritesheet-1.js?ver=1.0"></script>
+</body>
+</html>

@@ -1,0 +1,1339 @@
+{
+  "data": [
+    {
+      "province": "北京市",
+      "city": [
+        {
+          "name": "北京市",
+          "en": "beijing",
+          "projects": [
+            {
+              "name": "和棠瑞著",
+              "url": "https://bj.fang.anjuke.com/loupan/437464.html?from=AF_RANK_9"
+            },
+            {
+              "name": "中海首钢·长安云锦",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=454128&housetype_id=0&type=in_pc&pano_id=6820543&from=pc_lpxc_view&panoSource=salesOffice"
+            },
+            {
+              "name": "华樾北京",
+              "url": "https://bj.fang.anjuke.com/loupan/458965.html?from=loupan_index_crumb"
+            },
+            {
+              "name": "金悦府",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=437350&housetype_id=0&pano_id=7137867&panoSource=salesOffice&type=in_pc&from=pc_ldqj_view"
+            },
+            {
+              "name": "禧悦学府",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=457162&housetype_id=465982"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "山西省",
+      "city": [
+        {
+          "name": "太原市",
+          "en": "taiyuan",
+          "projects": [
+            {
+              "name": "保利茉莉公馆",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=417506&housetype_id=268851&seeHouseBtn=0&consultant_id=94605&pano_id=7100163"
+            },
+            {
+              "name": "恒大金碧天下",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=452915&housetype_id=0&seeHouseBtn=0&consultant_id=412127&pano_id=6816725&panoSource=salesOffice"
+            },
+            {
+              "name": "金科博翠天宸",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=453571&housetype_id=457486&seeHouseBtn=0&consultant_id=124353&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "富力金禧城",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=416589&housetype_id=384928&seeHouseBtn=0&consultant_id=417595"
+            },
+            {
+              "name": "旭辉江山",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=459624&housetype_id=0&seeHouseBtn=0&consultant_id=411812&pano_id=6816161&panoSource=salesOffice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "河北省",
+      "city": [
+        {
+          "name": "保定市",
+          "en": "baoding",
+          "projects": [
+            {
+              "name": "碧桂园清苑新城",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=444513&housetype_id=0&seeHouseBtn=0&consultant_id=363361&pano_id=6825145&panoSource=salesOffice&from=a-ajk&pm=copylink【安居客】"
+            },
+            {
+              "name": "翡翠华府",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=447904&housetype_id=413497&seeHouseBtn=0&consultant_id=116514&pano_id=1945626&from=a-ajk&pm=copylink【安居客】"
+            },
+            {
+              "name": "观璟臺",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=454082&housetype_id=0&seeHouseBtn=0&consultant_id=288503&pano_id=6860628&panoSource=salesOffice"
+            },
+            {
+              "name": "荣盛国际中心",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=435722&housetype_id=368428&seeHouseBtn=0&consultant_id=499154&pano_id=7159298"
+            },
+            {
+              "name": "天业悦山湖",
+              "url": "https://m.anjuke.com/bd/loupan/438659/quanjing/huxing/411300/?frompm=sinawb&from=a-ajk&pm=copylink【安居客】"
+            }
+          ]
+        },
+        {
+          "name": "秦皇岛市",
+          "en": "qinhuangdao",
+          "projects": [
+            {
+              "name": "中冶德贤公馆",
+              "url": "https://qhd.fang.anjuke.com/loupan/436237.html?from=AF_RANK_12"
+            },
+            {
+              "name": "中冶德贤华府",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=460819&housetype_id=0&type=in_pc&pano_id=6822467&from=pc_lpxc_view&panoSource=salesOffice"
+            }
+          ]
+        },
+        {
+          "name": "石家庄市",
+          "en": "shijiazhuang",
+          "projects": [
+            {
+              "name": "永威枫林上院",
+              "url": "https://sjz.fang.anjuke.com/loupan/460113.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "恒大十里温塘",
+              "url": "https://sjz.fang.anjuke.com/loupan/446357.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "恒大御景半岛",
+              "url": "https://sjz.fang.anjuke.com/loupan/257512.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "荣盛御府",
+              "url": "https://sjz.fang.anjuke.com/loupan/436933.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "盛邦大都会",
+              "url": "https://sjz.fang.anjuke.com/loupan/461731.html?from=loupanlist_sslx"
+            }
+          ]
+        },
+        {
+          "name": "唐山市",
+          "en": "tangshan",
+          "projects": [
+            {
+              "name": "碧桂园凤凰星宸",
+              "url": "https://ts.fang.anjuke.com/loupan/467771.html?from=AF_RANK_10"
+            },
+            {
+              "name": "荣盛碧桂园玖玺台",
+              "url": "https://ts.fang.anjuke.com/loupan/465352.html?from=AF_RANK_2"
+            },
+            {
+              "name": "碧桂园玖中堂",
+              "url": "https://ts.fang.anjuke.com/loupan/468940.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "唐山碧桂园珑悦东方",
+              "url": "https://ts.fang.anjuke.com/loupan/455907.html?from=AF_RANK_1"
+            },
+            {
+              "name": "遵化碧桂园雍华府",
+              "url": "https://ts.fang.anjuke.com/loupan/457995.html?from=AF_RANK_4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "内蒙古自治区",
+      "city": [
+        {
+          "name": "呼和浩特市",
+          "en": "huhehaote",
+          "projects": [
+            {
+              "name": "碧桂园",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=458412&housetype_id=0&seeHouseBtn=0&consultant_id=304242&pano_id=6745331&panoSource=salesOffice"
+            },
+            {
+              "name": "华润置地润府",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=458412&housetype_id=0&seeHouseBtn=0&consultant_id=304242&pano_id=6745331&panoSource=salesOffice"
+            },
+            {
+              "name": "金地江山风华",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=460420&housetype_id=0&seeHouseBtn=0&consultant_id=79689&pano_id=6805257&panoSource=salesOffice"
+            },
+            {
+              "name": "金地名京",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=457826&housetype_id=0&seeHouseBtn=0&consultant_id=79690&pano_id=6805334&panoSource=salesOffice"
+            },
+            {
+              "name": "巨华融城百汇",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=465197&housetype_id=0&seeHouseBtn=0&consultant_id=525728&pano_id=6821911&panoSource=salesOffice"
+            }
+          ]
+        },
+        {
+          "name": "包头市",
+          "en": "baotou",
+          "projects": [
+            {
+              "name": "富力城",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=394296&housetype_id=0&type=in_pc&pano_id=6926174&from=pc_lpxc_view&panoSource=salesOffice"
+            },
+            {
+              "name": "富力山",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=458663&housetype_id=0&pano_id=6925761&panoSource=salesOffice&type=in_pc&from=pc_ldqj_view"
+            },
+            {
+              "name": "富力尚悦居",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=463416&housetype_id=516783&type=in_pc&from=pc_lpxc_view"
+            },
+            {
+              "name": "富力熙悦居",
+              "url": "https://m.anjuke.com/bt/loupan/462600/quanjing/huxing/0/?type=in_pc&pano_id=6926329&from=pc_lpxc_view"
+            },
+            {
+              "name": "富力院士廷",
+              "url": "https://m.anjuke.com/bt/loupan/435127/quanjing/huxing/318496/?type=in_pc&from=pc_lpxc_view"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "山东省",
+      "city": [
+        {
+          "name": "青岛市",
+          "en": "qingdao",
+          "projects": [
+            {
+              "name": "保利红岛湾",
+              "url": "https://m.anjuke.com/sh/loupan/445591/?from=mobile&app=i-ajk&cv=12.26.4#30"
+            },
+            {
+              "name": "海尔产城创白云山花园",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=457511&housetype_id=0&seeHouseBtn=0&consultant_id=136047&pano_id=7128294&panoSource=salesOffice"
+            },
+            {
+              "name": "海尔产城创东方学府",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=459053&housetype_id=491616&seeHouseBtn=0&consultant_id=546942&pano_id=6885533"
+            },
+            {
+              "name": "天一仁和珑樾海",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=452393&housetype_id=451997&seeHouseBtn=0&consultant_id=480771&pano_id=2739051"
+            },
+            {
+              "name": "鑫江花漾里",
+              "url": "https://m.anjuke.com/sh/loupan/463509/?from=mobile&app=i-ajk&cv=12.26.4#30"
+            }
+          ]
+        },
+        {
+          "name": "济南市",
+          "en": "jinan",
+          "projects": [
+            {
+              "name": "华润置地昆仑御",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=436049&housetype_id=407572&type=in_pc&from=pc_lpxc_view"
+            },
+            {
+              "name": "加州启城",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=410329&housetype_id=176683&type=in_pc&from=pc_lpxc_view    加州启城"
+            },
+            {
+              "name": "金科城",
+              "url": " https://m.anjuke.com/sh/loupan/249513/?from=mobile&app=i-ajk&cv=12.26.3#23"
+            },
+            {
+              "name": "历山永祥里",
+              "url": "https://jn.fang.anjuke.com/loupan/444507.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "荣盛国际高尔夫温泉小镇",
+              "url": "https://jn.fang.anjuke.com/loupan/435239.html?from=AF_RANK_1"
+            }
+          ]
+        },
+        {
+          "name": "临沂市",
+          "en": "linyi",
+          "projects": [
+            {
+              "name": "碧桂园滨江学府",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=460810&housetype_id=507777&type=in_pc&from=pc_lpxc_view"
+            },
+            {
+              "name": "鲁商万科新都会",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=458604&housetype_id=539312&type=in_pc&from=pc_lpxc_view"
+            },
+            {
+              "name": "致远翡翠传奇",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=390513&housetype_id=508191&type=in_pc&from=pc_lpxc_view"
+            },
+            {
+              "name": "致远天宸府",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=451781&housetype_id=486262&type=in_pc&from=pc_lpxc_view"
+            },
+            {
+              "name": "中南林樾",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=462844&housetype_id=507765&type=in_pc&from=pc_lpxc_view"
+            }
+          ]
+        },
+        {
+          "name": "淄博市",
+          "en": "zibo",
+          "projects": [
+            {
+              "name": "鸿泰花漾城",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=261408&housetype_id=317340&seeHouseBtn=0&consultant_id=329210&pano_id=2926365&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "林溪郡",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=436981&housetype_id=0&seeHouseBtn=0&consultant_id=327860&pano_id=6752233&panoSource=salesOffice&from=a-ajk&pm=copylink【安居客】"
+            },
+            {
+              "name": "名悦豪庭",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=440890&housetype_id=372675&seeHouseBtn=0&consultant_id=254407&pano_id=7114332&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "福园",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=419086&housetype_id=434173&seeHouseBtn=0&consultant_id=448753&pano_id=2216024&from=a-ajk&pm=copylink【安居客】"
+            }
+          ]
+        },
+        {
+          "name": "日照市",
+          "en": "rizhao",
+          "projects": [
+            {
+              "name": "碧桂园江山域",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=456793&housetype_id=478845&seeHouseBtn=0&consultant_id=370405"
+            },
+            {
+              "name": "日百岚山新玛特佳园",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=463417&housetype_id=0&seeHouseBtn=0&consultant_id=300580&pano_id=7050612&panoSource=salesOffice"
+            },
+            {
+              "name": "日百市北依河园",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=396446&housetype_id=233199&seeHouseBtn=0&consultant_id=144632&pano_id=872043"
+            },
+            {
+              "name": "裕升大唐华府",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=396488&housetype_id=447745&seeHouseBtn=0&consultant_id=143547&from=a-ajk&pm=copylink【安居客】"
+            },
+            {
+              "name": "裕升华庭二期",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=396489&housetype_id=368786&seeHouseBtn=0&consultant_id=226199&from=a-ajk&pm=copylink"
+            }
+          ]
+        },
+        {
+          "name": "东营市",
+          "en": "dongying",
+          "projects": [
+            {
+              "name": "德润幸福里",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=447531&housetype_id=0&seeHouseBtn=0&consultant_id=385547&pano_id=7106384&panoSource=salesOffice"
+            },
+            {
+              "name": "东亚清风小镇",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=255666&housetype_id=456944&seeHouseBtn=0&consultant_id=335345&pano_id=4571590"
+            },
+            {
+              "name": "方圆碧桂园云顶",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=457872&housetype_id=543708&seeHouseBtn=0&consultant_id=381021&pano_id=7166727"
+            },
+            {
+              "name": "富力·铂悦府",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=446143&housetype_id=430800&seeHouseBtn=0&consultant_id=253015&pano_id=1267447"
+            },
+            {
+              "name": "海通蔚蓝郡",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=447530&housetype_id=450380&seeHouseBtn=0&consultant_id=265890&pano_id=5445899"
+            }
+          ]
+        },
+        {
+          "name": "潍坊市",
+          "en": "weifang",
+          "projects": [
+            {
+              "name": "和润·尚公馆",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=414006&housetype_id=488158&seeHouseBtn=0&consultant_id=424213&pano_id=4169265"
+            },
+            {
+              "name": "美国小镇",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=414968&housetype_id=0&seeHouseBtn=0&consultant_id=199459&pano_id=6820715&panoSource=salesOffice"
+            },
+            {
+              "name": "欣泰世纪城",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=261084&housetype_id=545129&seeHouseBtn=0&consultant_id=570236&pano_id=7187709"
+            },
+            {
+              "name": "阳光100喜马拉雅",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=445631&housetype_id=0&seeHouseBtn=0&consultant_id=189267&pano_id=6937323&panoSource=salesOffice"
+            },
+            {
+              "name": "中南珑悦",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=463975&housetype_id=544852&seeHouseBtn=0&consultant_id=510987&pano_id=7177859"
+            }
+          ]
+        },
+        {
+          "name": "滨州市",
+          "en": "binzhou",
+          "projects": [
+            {
+              "name": "东湖宝瑞",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=437349&housetype_id=506921&seeHouseBtn=0&consultant_id=145360"
+            },
+            {
+              "name": "国强金御园二期",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=454235&housetype_id=0&seeHouseBtn=0&consultant_id=555488&pano_id=7132074&panoSource=salesOffice"
+            },
+            {
+              "name": "恒大悦珑湾",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=460743&housetype_id=501122&seeHouseBtn=0&consultant_id=283823"
+            },
+            {
+              "name": "丽景国际",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=435793&housetype_id=346336&seeHouseBtn=0&consultant_id=552997"
+            },
+            {
+              "name": "石榴玉兰湾",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=447798&housetype_id=0&seeHouseBtn=0&consultant_id=539700&pano_id=7047079&panoSource=salesOffice"
+            }
+          ]
+        },
+        {
+          "name": "烟台市",
+          "en": "yantai",
+          "projects": [
+            {
+              "name": "大商烟台城市乐园",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=450830&housetype_id=0&pano_id=6801267&panoSource=salesOffice"
+            },
+            {
+              "name": "恒大御澜庭",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=263287&housetype_id=0&pano_id=6805985&panoSource=salesOffice&type=in_pc&from=pc_ldqj_view"
+            },
+            {
+              "name": "金地浅山艺境玺湖",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=450655&housetype_id=470977&type=in_pc&from=pc_ldqj_view"
+            },
+            {
+              "name": "龙湖春江悦茗",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=461751&housetype_id=516683&type=in_pc&from=pc_ldqj_view"
+            },
+            {
+              "name": "泰鸿听澜湾",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=444870&housetype_id=399135&type=in_pc&from=pc_ldqj_view"
+            }
+          ]
+        },
+        {
+          "name": "威海市",
+          "en": "weihai",
+          "projects": [
+            {
+              "name": "财信保利名著",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=434658&housetype_id=0&seeHouseBtn=0&consultant_id=143458&pano_id=7118210&panoSource=salesOffice&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "恒大御湖庄园",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=454574&housetype_id=500363&type=in_pc&from=pc_lpxc_view"
+            },
+            {
+              "name": "威高七彩城春风里",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=416663&housetype_id=502519&type=in_pc&from=pc_lpxc_view"
+            },
+            {
+              "name": "威海万达广场",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=460072&housetype_id=0&seeHouseBtn=0&consultant_id=228134&pano_id=7050205&panoSource=salesOffice&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "五渚河生态城新悦春晖",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=455412&housetype_id=451932&seeHouseBtn=0&consultant_id=357928&from=a-ajk&pm=copylink"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "天津市",
+      "city": [
+        {
+          "name": "天津市",
+          "en": "tianjin",
+          "projects": [
+            {
+              "name": "格调松间",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=409139&housetype_id=0&seeHouseBtn=0&consultant_id=265625&pano_id=7230149&panoSource=salesOffice"
+            },
+            {
+              "name": "恒大悦府",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=415913&housetype_id=286935&seeHouseBtn=0&consultant_id=519429&pano_id=5502831"
+            },
+            {
+              "name": "恒大悦湖公馆",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=461559&housetype_id=493159&seeHouseBtn=0&consultant_id=504967&pano_id=5502929"
+            },
+            {
+              "name": "世茂国风雅颂",
+              "url": "https://m.anjuke.com/tj/loupan/438599/quanjing/huxing/349158/?frompm=copylink"
+            },
+            {
+              "name": "雍鑫·雍祥园",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=415940&housetype_id=482205&seeHouseBtn=0&consultant_id=595521&pano_id=5748882"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "广东省",
+      "city": [
+        {
+          "name": "东莞市",
+          "en": "dongguan",
+          "projects": [
+            {
+              "name": "霖峰壹山境",
+              "url": "https://dg.fang.anjuke.com/loupan/400904.html?from=loupanlist_sslx"
+            }
+          ]
+        },
+        {
+          "name": "广州市",
+          "en": "guangzhou",
+          "projects": [
+            {
+              "name": "广州融创文旅城",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=272830&housetype_id=483536&seeHouseBtn=0&consultant_id=546440&pano_id=6590205"
+            },
+            {
+              "name": "珠江花城",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=432762&housetype_id=427994"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "海南省",
+      "city": [
+        {
+          "name": "三亚市",
+          "en": "sanya",
+          "projects": [
+            {
+              "name": "景园城",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=443978&housetype_id=387502&seeHouseBtn=0&consultant_id=487235&pano_id=1056448"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "福建省",
+      "city": [
+        {
+          "name": "福州市",
+          "en": "fuzhou",
+          "projects": [
+            {
+              "name": "蓝光星珀1期蓝光里",
+              "url": "https://m.anjuke.com/fz/loupan/468145/?from=home_loupan_recomm&v=3&rank=13"
+            },
+            {
+              "name": "远洋·山水",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=466632&housetype_id=0&type=in_pc&pano_id=7261203&from=pc_lpxc_view&panoSource=salesOffice"
+            },
+            {
+              "name": "滨海首府",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=463020&housetype_id=0&pano_id=7044302&panoSource=salesOffice&type=in_pc&from=pc_ldqj_view"
+            },
+            {
+              "name": "旭辉公元大观",
+              "url": "https://fz.fang.anjuke.com/loupan/462754.html?from=loupanlist_sslx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "广西壮族自治区",
+      "city": [
+        {
+          "name": "南宁市",
+          "en": "nanning",
+          "projects": [
+            {
+              "name": "霖峰壹號",
+              "url": "https://nn.fang.anjuke.com/loupan/404074.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "银河龙湖江与城",
+              "url": "https://nn.fang.anjuke.com/loupan/465564.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "金科天籁城",
+              "url": "https://nn.fang.anjuke.com/loupan/466368.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "锦上城",
+              "url": "https://nn.fang.anjuke.com/loupan/468707.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "盛世金悦",
+              "url": "https://nn.fang.anjuke.com/loupan/467854.html?from=loupanlist_sslx"
+            }
+          ]
+        },
+        {
+          "name": "北海市",
+          "en": "beihai",
+          "projects": [
+            {
+              "name": "东投银滩海玥台",
+              "url": "https://bh.fang.anjuke.com/loupan/462937.html?from=AF_RANK_1"
+            },
+            {
+              "name": "碧桂园海上时光",
+              "url": "https://m.anjuke.com/bh/loupan/465680/huxing/521376/?from=mobile&app=i-ajk&cv=12.26.2"
+            },
+            {
+              "name": "兖矿中垠悦城",
+              "url": "https://m.anjuke.com/bh/loupan/445246/huxing/412281/?from=mobile&app=i-ajk&cv=12.26.2"
+            },
+            {
+              "name": "雅居乐金海湾",
+              "url": "https://m.anjuke.com/bh/loupan/457627/huxing/466108/?from=mobile&app=i-ajk&cv=12.26.2"
+            },
+            {
+              "name": "碧桂园四季假日",
+              "url": "https://m.anjuke.com/bh/loupan/460924/huxing/501915/?from=mobile&app=i-ajk&cv=12.26.2"
+            }
+          ]
+        },
+        {
+          "name": "柳州市",
+          "en": "liuzhou",
+          "projects": [
+            {
+              "name": "香颂·蔚澜半岛",
+              "url": "https://lzh.fang.anjuke.com/loupan/457473.html?from=loupan_tab"
+            },
+            {
+              "name": "中海天钻",
+              "url": "https://lzh.fang.anjuke.com/loupan/449412.html?from=loupan_tab"
+            },
+            {
+              "name": "揽山庭",
+              "url": "https://lzh.fang.anjuke.com/loupan/468290.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "碧桂园星悦湾",
+              "url": "https://lzh.fang.anjuke.com/loupan/468451.html?from=loupan_tab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "辽宁省",
+      "city": [
+        {
+          "name": "大连市",
+          "en": "dalian",
+          "projects": [
+            {
+              "name": "万科未来之光",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=459430&housetype_id=488086&seeHouseBtn=0&consultant_id=295851&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "新希望锦麟玖玺",
+              "url": "https://dl.fang.anjuke.com/loupan/463585.html?from=loupan_tab"
+            },
+            {
+              "name": "秀月麒林万花府",
+              "url": "https://dl.fang.anjuke.com/loupan/414497.html?from=loupan_tab"
+            },
+            {
+              "name": "远洋保利悦和山海",
+              "url": "https://dl.fang.anjuke.com/loupan/465640.html?from=loupan_tab"
+            },
+            {
+              "name": "招商1872",
+              "url": "https://m.anjuke.com/dl/loupan/454202/quanjing/huxing/453958/?type=in_pc&from=pc_lpxc_view"
+            }
+          ]
+        },
+        {
+          "name": "沈阳市",
+          "en": "shenyang",
+          "projects": [
+            {
+              "name": "保利中粮堂悦",
+              "url": "https://shen.fang.anjuke.com/loupan/438588.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "格林玫瑰湾",
+              "url": "https://shen.fang.anjuke.com/loupan/400985.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "美的东堂",
+              "url": "https://shen.fang.anjuke.com/loupan/461915.html?from=AF_RANK_1"
+            },
+            {
+              "name": "美的盛堂",
+              "url": "https://shen.fang.anjuke.com/loupan/437172.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "万科中德国际社区",
+              "url": "https://shen.fang.anjuke.com/loupan/465034.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "中房上东花墅7.3期",
+              "url": "https://shen.fang.anjuke.com/loupan/253563.html?from=loupanlist_sslx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "黑龙江省",
+      "city": [
+        {
+          "name": "哈尔滨市",
+          "en": "haerbin",
+          "projects": [
+            {
+              "name": "黑龙江宝宇天邑房地产开发有限责任公司",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=450579&housetype_id=0&seeHouseBtn=0&consultant_id=150023&pano_id=7114346&panoSource=salesOffice"
+            },
+            {
+              "name": "哈尔滨富力城房地产开发有限公司",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=412075&housetype_id=510200&seeHouseBtn=0&consultant_id=15339&pano_id=7141989&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "哈尔滨宝钜房地产有限公司",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=460689&housetype_id=494293&seeHouseBtn=0&consultant_id=600319&pano_id=5045897"
+            },
+            {
+              "name": "哈南万达广场投资有限公司",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=253948&housetype_id=456129&seeHouseBtn=0&consultant_id=74175"
+            },
+            {
+              "name": "东北林大科技园发展有限公司",
+              "url": "https://m.anjuke.com/sh/loupan/463701/?from=mobile&app=i-ajk&cv=12.26.4#48"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "吉林省",
+      "city": [
+        {
+          "name": "长春市",
+          "en": "changchun",
+          "projects": [
+            {
+              "name": "澳海富春山居",
+              "url": "https://cc.fang.anjuke.com/loupan/436634.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "车城万达广场·Y+公寓",
+              "url": "https://cc.fang.anjuke.com/loupan/256297.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "国信净月府",
+              "url": "https://cc.fang.anjuke.com/loupan/447580.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "红星观棠源筑",
+              "url": "https://cc.fang.anjuke.com/loupan/456704.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "中海盛世城",
+              "url": "https://cc.fang.anjuke.com/loupan/435453.html?from=loupanlist_sslx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "河南省",
+      "city": [
+        {
+          "name": "郑州市",
+          "en": "zhengzhou",
+          "projects": [
+            {
+              "name": "碧桂园名门时代城",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=458160&housetype_id=470002&seeHouseBtn=0&consultant_id=82451&pano_id=5202062"
+            },
+            {
+              "name": "朗悦公园府",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=415011&housetype_id=0&seeHouseBtn=0&consultant_id=274370&pano_id=6737668&panoSource=salesOffice&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "西郡原著",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=252979&housetype_id=0&seeHouseBtn=0&consultant_id=121635&pano_id=7238648&panoSource=salesOffice"
+            },
+            {
+              "name": "鑫苑金水观城",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=441312&housetype_id=501270&type=in_pc&from=pc_ldqj_view"
+            }
+          ]
+        },
+        {
+          "name": "洛阳市",
+          "en": "luoyang",
+          "projects": [
+            {
+              "name": "碧桂园玖锦台",
+              "url": "https://m.anjuke.com/sh/loupan/462062/?from=mobile&app=a-ajk&cv=12.26.4#60&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "君河湾",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=259410&housetype_id=522039&seeHouseBtn=0&consultant_id=130999&pano_id=7111889&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "宜阳君河湾",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=462163&housetype_id=0&seeHouseBtn=0&consultant_id=461781&pano_id=6932085&panoSource=salesOffice&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "洛阳中南广场",
+              "url": "https://m.anjuke.com/sh/loupan/259436/?from=mobile&app=a-ajk&cv=12.26.2#60&from=a-ajk&pm=copylink"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "湖南省",
+      "city": [
+        {
+          "name": "株洲市",
+          "en": "zhuzhou",
+          "projects": [
+            {
+              "name": "荣盛华府",
+              "url": "https://zhu.fang.anjuke.com/loupan/445187.html"
+            }
+          ]
+        },
+        {
+          "name": "长沙市",
+          "en": "changsha",
+          "projects": [
+            {
+              "name": "梅溪湖玺悦",
+              "url": "https://cs.fang.anjuke.com/loupan/453352.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "华远华时代",
+              "url": "https://cs.fang.anjuke.com/loupan/435577.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "湘林熙水豪庭",
+              "url": "https://cs.fang.anjuke.com/loupan/461074.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "中欣楚天御府",
+              "url": "https://cs.fang.anjuke.com/loupan/458600.html?from=loupanlist_sslx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "江西省",
+      "city": [
+        {
+          "name": "南昌市",
+          "en": "nanchang",
+          "projects": [
+            {
+              "name": "南昌富力华庭",
+              "url": "https://m.anjuke.com/sh/loupan/467879/?from=mobile&app=a-ajk&cv=12.27.2#41&from=a-ajk&pm=copylink【安居客】"
+            },
+            {
+              "name": "红星中奥广场",
+              "url": "https://m.anjuke.com/sh/loupan/446410/?from=mobile&app=a-ajk&cv=12.26.4#41&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "红星中奥九龙都会",
+              "url": "https://m.anjuke.com/sh/loupan/449794/?from=mobile&app=a-ajk&cv=12.26.4#41&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "远洋天著",
+              "url": "https://m.anjuke.com/sh/loupan/437355/?from=mobile&app=a-ajk&cv=12.26.4#41&from=a-ajk&pm=copylink"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "宁夏回族自治区",
+      "city": [
+        {
+          "name": "银川市",
+          "en": "yinchuan",
+          "projects": [
+            {
+              "name": "天山国府壹號",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=453798&housetype_id=509733&seeHouseBtn=0&consultant_id=551465&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "万科翡翠公园",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=447375&housetype_id=410059&seeHouseBtn=0&consultant_id=293733&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "中海铂悦公馆",
+              "url": "https://m.anjuke.com/sh/loupan/450554/?from=mobile&app=a-ajk&cv=12.26.2#74&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "中冶幸福宸",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=456455&housetype_id=519006&seeHouseBtn=0&consultant_id=542204&from=a-ajk&pm=copylink"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "湖北省",
+      "city": [
+        {
+          "name": "武汉市",
+          "en": "wuhan",
+          "projects": [
+            {
+              "name": "华宇旭辉星空",
+              "url": "https://m.anjuke.com/sh/loupan/441309/?from=mobile&app=a-ajk&cv=12.27.2#22&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "钰龙旭辉半岛",
+              "url": "https://m.anjuke.com/sh/loupan/410227/?from=mobile&app=a-ajk&cv=12.27.2#22&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "保利大都会",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=447879&housetype_id=464591&type=in_pc&from=pc_ldqj_view"
+            },
+            {
+              "name": "华发阳逻金茂逸墅",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=444161&housetype_id=394470&seeHouseBtn=0&consultant_id=450675&pano_id=573669&from=a-ajk&pm=copylink"
+            },
+            {
+              "name": "招商一江璟城",
+              "url": "https://wh.fang.anjuke.com/loupan/417417.html?from=loupanlist_sslx"
+            }
+          ]
+        },
+        {
+          "name": "荆州市",
+          "en": "jingzhou",
+          "projects": [
+            {
+              "name": "联投国际城",
+              "url": "https://m.anjuke.com/jzh/loupan/444280/quanjing/huxing/389402/?type=in_pc&from=pc_ldqj_view"
+            }
+          ]
+        },
+        {
+          "name": "襄阳市",
+          "en": "xiangyang",
+          "projects": [
+            {
+              "name": "金科观天下",
+              "url": "https://xy.fang.anjuke.com/loupan/465301.html?from=loupanlist_sslx"
+            }
+          ]
+        },
+        {
+          "name": "宜昌市",
+          "en": "yichang",
+          "projects": [
+            {
+              "name": "恒大林溪郡",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=437200&housetype_id=0&type=in_pc&pano_id=7035609&from=pc_lpxc_view&panoSource=salesOffice"
+            },
+            {
+              "name": "恒大名都",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=430727&housetype_id=0&type=in_pc&pano_id=6939729&from=pc_lpxc_view&panoSource=salesOffice"
+            }
+          ]
+        },
+        {
+          "name": "随州市",
+          "en": "suizhou",
+          "projects": [
+            {
+              "name": "交投金科府",
+              "url": "https://m.anjuke.com/xinfang/fuwu/vr/?loupan_id=464146&housetype_id=516553&type=in_pc&from=pc_ldqj_view"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "四川省",
+      "city": [
+        {
+          "name": "成都市",
+          "en": "chengdu",
+          "projects": [
+            {
+              "name": "融创翰林学府",
+              "url": "https://cd.fang.anjuke.com/loupan/459042.html?from=loupan_tab"
+            },
+            {
+              "name": "电建地产洺悦御府",
+              "url": "https://cd.fang.anjuke.com/loupan/441290.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "滨江翡翠城",
+              "url": "https://ms.fang.anjuke.com/loupan/423673.html?from=AF_RANK_1"
+            },
+            {
+              "name": "炎华置信花千集",
+              "url": "https://cd.fang.anjuke.com/loupan/435586.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "佳兆业天悦",
+              "url": "https://cd.fang.anjuke.com/loupan/452981.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "远洋朗基香汇",
+              "url": "https://cd.fang.anjuke.com/loupan/455056.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "领地东原阅城",
+              "url": "https://my.fang.anjuke.com/loupan/465990.html"
+            },
+            {
+              "name": "中旅名门府",
+              "url": "https://cd.fang.anjuke.com/loupan/453753.html?from=AF_RANK_1"
+            },
+            {
+              "name": "武侯金茂府",
+              "url": "https://cd.fang.anjuke.com/loupan/432847.html?from=AF_RANK_2"
+            },
+            {
+              "name": "金科博翠天宸",
+              "url": "https://cd.fang.anjuke.com/loupan/431088.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "花样年花郡",
+              "url": "https://zi.fang.anjuke.com/loupan/439844.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "红星城市广场玫瑰天街",
+              "url": "https://cd.fang.anjuke.com/loupan/457679.html?from=loupanlist_sslx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "贵州省",
+      "city": [
+        {
+          "name": "贵阳市",
+          "en": "guiyang",
+          "projects": [
+            {
+              "name": "中铁悦龙东郡",
+              "url": "https://gy.fang.anjuke.com/loupan/451229.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "中建华府",
+              "url": "https://gy.fang.anjuke.com/loupan/258387.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "恒大都会广场",
+              "url": "https://gy.fang.anjuke.com/loupan/427227.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "万科麓山",
+              "url": "https://gy.fang.anjuke.com/loupan/451017.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "贵阳融创城",
+              "url": "https://gy.fang.anjuke.com/loupan/459184.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "贵阳远洋风景",
+              "url": "https://gy.fang.anjuke.com/loupan/455601.html?from=loupanlist_sslx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "云南省",
+      "city": [
+        {
+          "name": "昆明市",
+          "en": "kunming",
+          "projects": [
+            {
+              "name": "世茂璀璨倾城",
+              "url": "https://km.fang.anjuke.com/loupan/459867.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "璀璨臻樾",
+              "url": "https://km.fang.anjuke.com/loupan/459873.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "金地云海一号",
+              "url": "https://km.fang.anjuke.com/loupan/458168.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "融创雁来湖小镇",
+              "url": "https://km.fang.anjuke.com/loupan/464292.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "北大资源紫境府",
+              "url": "https://km.fang.anjuke.com/loupan/461088.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "蓝光新城碧桂园古滇水云城",
+              "url": "https://km.fang.anjuke.com/loupan/459723.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "中南十二集",
+              "url": "https://km.fang.anjuke.com/loupan/463477.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "招商翰林大观",
+              "url": "https://km.fang.anjuke.com/loupan/445038.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "浩创半山云府",
+              "url": "https://km.fang.anjuke.com/loupan/456937.html?from=loupan_tab"
+            },
+            {
+              "name": "蓝光德商天域",
+              "url": "https://km.fang.anjuke.com/loupan/canshu-462724.html?from=loupan_tab"
+            },
+            {
+              "name": "远洋新干线",
+              "url": "https://km.fang.anjuke.com/loupan/440241.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "实地昆明花鹤翎",
+              "url": "https://km.fang.anjuke.com/loupan/440845.html?from=loupan_tab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "安徽省",
+      "city": [
+        {
+          "name": "合肥市",
+          "en": "hefei",
+          "projects": [
+            {
+              "name": "信达溪岸观邸",
+              "url": "https://hf.fang.anjuke.com/loupan/448090.html?from=loupan_tab"
+            },
+            {
+              "name": "华润万橡府",
+              "url": "https://hf.fang.anjuke.com/loupan/428873.html?from=loupanlist_sslx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "甘肃省",
+      "city": [
+        {
+          "name": "兰州市",
+          "en": "lanzhou",
+          "projects": [
+            {
+              "name": "荣光崴廉国际",
+              "url": "https://lz.fang.anjuke.com/loupan/463316.html?from=loupan_tab"
+            },
+            {
+              "name": "银河世茂璀璨天宸",
+              "url": "https://lz.fang.anjuke.com/loupan/411925.html?from=loupan_tab"
+            },
+            {
+              "name": "兰州金城中心",
+              "url": "https://lz.fang.anjuke.com/loupan/414977.html?from=loupan_tab"
+            },
+            {
+              "name": "天庆苹果小镇",
+              "url": "https://tian.fang.anjuke.com/loupan/463364.html?from=AF_RANK_1"
+            },
+            {
+              "name": "兰州万达城",
+              "url": "https://lz.fang.anjuke.com/loupan/460021.html?from=AF_RANK_1"
+            },
+            {
+              "name": "华润置地未来城市",
+              "url": "https://lz.fang.anjuke.com/loupan/463251.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "鸿嘉国际广场",
+              "url": "https://lz.fang.anjuke.com/loupan/460212.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "保利领秀山",
+              "url": "https://lz.fang.anjuke.com/loupan/256548.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "兰石豪布斯卡",
+              "url": "https://lz.fang.anjuke.com/loupan/412061.html?from=AF_RANK_2"
+            },
+            {
+              "name": "中海铂悦花园",
+              "url": "https://lz.fang.anjuke.com/loupan/467308.html?from=AF_RANK_2"
+            },
+            {
+              "name": "兴隆和畅苑",
+              "url": "https://lz.fang.anjuke.com/loupan/461722.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "金融府",
+              "url": "https://lz.fang.anjuke.com/loupan/462279.html?from=loupanlist_sslx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "重庆市",
+      "city": [
+        {
+          "name": "重庆市",
+          "en": "chongqing",
+          "projects": [
+            {
+              "name": "中建滨江星城",
+              "url": "https://cq.fang.anjuke.com/loupan/441237.html?from=AF_RANK_5"
+            },
+            {
+              "name": "中建御湖壹号",
+              "url": "https://cq.fang.anjuke.com/loupan/438756.html?from=AF_RANK_4"
+            },
+            {
+              "name": "桃源居Tone",
+              "url": "https://m.anjuke.com/sh/loupan/246159/?from=mobile&app=i-ajk&cv=12.26.2#20"
+            },
+            {
+              "name": "保利大国璟",
+              "url": "https://cq.fang.anjuke.com/loupan/446475.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "万科金开悦府",
+              "url": "https://cq.fang.anjuke.com/loupan/436861.html?from=AF_RANK_1"
+            },
+            {
+              "name": "富力院士廷",
+              "url": "https://cq.fang.anjuke.com/loupan/440294.html?from=AF_RANK_8"
+            },
+            {
+              "name": "礼悦江山",
+              "url": "https://cq.fang.anjuke.com/loupan/436286.html?from=loupan_index_crumb"
+            },
+            {
+              "name": "万科四季花城",
+              "url": "https://cq.fang.anjuke.com/loupan/454321.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "重庆融创文旅城",
+              "url": "https://cq.fang.anjuke.com/loupan/413851.html?from=loupan_tab"
+            },
+            {
+              "name": "华侨城嘉陵江天",
+              "url": "https://cq.fang.anjuke.com/loupan/435725.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "西阅星辰",
+              "url": "https://cq.fang.anjuke.com/loupan/462601.html?from=AF_RANK_1"
+            },
+            {
+              "name": "洺悦国际",
+              "url": "https://cq.fang.anjuke.com/loupan/454354.html?from=AF_RANK_1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province": "陕西省",
+      "city": [
+        {
+          "name": "咸阳市",
+          "en": "xianyang",
+          "projects": [
+            {
+              "name": "天地源珺樾坊",
+              "url": "https://xiany.fang.anjuke.com/loupan/453213.html?from=AF_RANK_6"
+            },
+            {
+              "name": "荣基雲锦",
+              "url": "https://xiany.fang.anjuke.com/loupan/460566.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "宇宏健康花城",
+              "url": "https://xiany.fang.anjuke.com/loupan/450690.html?from=loupanlist_sslx"
+            }
+          ]
+        },
+        {
+          "name": "西安市",
+          "en": "xian",
+          "projects": [
+            {
+              "name": "悦尚锦云",
+              "url": "https://xa.fang.anjuke.com/loupan/459516.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "时间城仕学府",
+              "url": "https://xa.fang.anjuke.com/loupan/435314.html"
+            },
+            {
+              "name": "滨江翡翠城",
+              "url": "https://xa.fang.anjuke.com/loupan/434157.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "中海曲江大城",
+              "url": "https://xa.fang.anjuke.com/loupan/435273.html?from=loupanlist_sslx"
+            },
+            {
+              "name": "阳光城翡丽曲江",
+              "url": "https://xa.fang.anjuke.com/loupan/251729.html?from=loupanlist_sslx"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
