@@ -345,9 +345,9 @@ $(function(){
 	}
 
 	$(".constell li").click(function(e){
-		WeixinApi.ready(function(Api) {
-			Api.showOptionMenu();
-		});
+		// WeixinApi.ready(function(Api) {
+		// 	Api.showOptionMenu();
+		// });
 		$(".mask").show();
 		starindex=$(this).index();
 		$(".rstname").css({"background-position":"0 "+(-100*starindex)+"px"});

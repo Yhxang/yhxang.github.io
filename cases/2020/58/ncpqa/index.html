@@ -20,7 +20,7 @@ if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
   //alert(navigator.userAgent);  
   //window.location.href ="iPhone.html";
 } else {
-  window.location.href ="pc.html";
+  //window.location.href ="pc.html";
 }
 </script>
 <link rel="stylesheet" href="./css/swiper.min.css">
@@ -31,9 +31,7 @@ if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
   document.write(str); 
 </script>
 
-<?php
- include_once("weixin11.php");
-?>
+
 </head>
 <body> 
 	<div id="wrap">
@@ -240,9 +238,9 @@ exam=exam==null?0:parseInt(exam);
 $.fn.extend({
   mctap:function(func){
     var _this=this;
-    this.on('touchstart',function(e){
+    this.on('touchstart mousedown',function(e){
       tiptimer=new Date();
-    }).on('touchend',function(e){
+    }).on('touchend mouseup',function(e){
       if(new Date()-tiptimer<150) {func.bind(this,e)();}
     })
   }

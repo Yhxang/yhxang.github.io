@@ -1,9 +1,9 @@
 $.fn.extend({
   mctap:function(func){
     var _this=this;
-    this.on('touchstart',function(e){
+    this.on('touchstart mousedown',function(e){
       tiptimer=new Date();
-    }).on('touchend',function(e){
+    }).on('touchend mouseup',function(e){
       if(new Date()-tiptimer<150) {func.bind(this,e)();}
     })
   }
