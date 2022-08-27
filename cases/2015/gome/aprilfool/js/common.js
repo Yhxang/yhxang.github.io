@@ -35,7 +35,7 @@ $(function(){
 			sndplay=true;
 			audio.play();
 		},false)
-		$(".sndctrl").tap(function(){
+		$(".sndctrl").click(function(){
 			if(sndplay){
 				audio.pause();
 				$(this).find("i").show();

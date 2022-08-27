@@ -76,7 +76,7 @@ function init(){
   audio.addEventListener("ended",function(e){
     audio.play();
   },false);
-  $(".sndCtrl").tap(function(){
+  $(".sndCtrl").click(function(){
     if(sndplay){
       audio.pause();
       $(".sndCtrl").addClass("muted");

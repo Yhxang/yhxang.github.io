@@ -114,13 +114,13 @@ $(function(){
       $(".p6-ct-t1").text(gamedata.creatername);
       $(".p6-ct-t2 span").text(100-Math.floor(100*ScrocePct));
 
-      $(".p7-btn1").unbind("tap").tap(function(){
+      $(".p7-btn1").unbind("tap").click(function(){
         initp1();
         $(".p-chip").removeClass("c2 c3");
         $(".p7").removeClass("s1 s1-1 s2 s2-1 s3").hide();
         $(".p1-btn").triggerHandler("tap");
       })
-      $(".p7-btn3").unbind("tap").tap(function(){
+      $(".p7-btn3").unbind("tap").click(function(){
         status="Self_First";
         changeToSelf=true;
         $(".p-chip").removeClass("c2 c3");
@@ -137,7 +137,7 @@ $(function(){
       $(".p-chip").removeClass("c2").addClass("c3");
       $(".pn-battery").addClass("green");
 
-      $(".p7-btn3").unbind("tap").tap(function(){
+      $(".p7-btn3").unbind("tap").click(function(){
         status="Self_First";
         changeToSelf=true;
         $(".p-chip").removeClass("c2 c3");
@@ -215,13 +215,13 @@ function initp1(){
       }
     }
   });
-  $(".p1-gift").unbind("tap").tap(function(){
+  $(".p1-gift").unbind("tap").click(function(){
     $(".p-chip").addClass("c3");
     mySwiper.slideTo(0,function(){
       mySwiper.unlockSwipeToNext();
     })
   })
-  $(".p1-btn").unbind("tap").tap(function(){
+  $(".p1-btn").unbind("tap").click(function(){
     $(".p2").show()
     $(".p0").hide()
     $(".p-chip").removeClass("c2 c3").hide();
@@ -324,7 +324,7 @@ function initp2(){
     flowTo(0,"",0);
   },200)//碎片
 
-  $(".p2-checkbty").unbind("tap").tap(function(){
+  $(".p2-checkbty").unbind("tap").click(function(){
     if(!replay){
       resetp2();
       $(".p2").hide();
@@ -335,7 +335,7 @@ function initp2(){
       replay=false;
     }
   })
-  $(".p3-btn").unbind("tap").tap(function(){
+  $(".p3-btn").unbind("tap").click(function(){
     resetp2();
     $(".p-chip").removeClass("c1 c2");
     $(".p2,.p7,.p3container,.pm").hide();
@@ -371,7 +371,7 @@ function initp7(){
     $(".p6-phone").addClass("p7-phone");
     $(".p6-phone .pn-phonepct").hide();
 
-    $(".p7-btn3").unbind("tap").tap(function(){
+    $(".p7-btn3").unbind("tap").click(function(){
       status="Self_First";
       changeToSelf=true;
       $(".p6-phone").removeClass("p7-phone");
@@ -408,7 +408,7 @@ function initp7(){
   }
 
   $(".p-chip").removeClass("c2").addClass("c3");
-  $(".p7-btn-1").unbind("tap").tap(function(){
+  $(".p7-btn-1").unbind("tap").click(function(){
     if(numposted){
       $(".p4container,.p-chip,.pm").show();
     }else{
@@ -416,7 +416,7 @@ function initp7(){
       $(".p-chip").removeClass("c3").addClass("c2").hide();
     }
   })
-  $(".p5-btn").unbind("tap").tap(function(){
+  $(".p5-btn").unbind("tap").click(function(){
     if(checkMobile()){
       $(".p5-posting").show();
       $(".p5-btn").hide();
@@ -442,7 +442,7 @@ function initp7(){
       })
     }
   })
-  $(".p4container").unbind("tap").tap(function(){
+  $(".p4container").unbind("tap").click(function(){
     $(".p4container,.pm,.p5-posting").hide();
     $(".p6-link,.p5-btn").show();
     location.href="//"+location.hostname+location.pathname+"?userid=404";//自己服务器演示用

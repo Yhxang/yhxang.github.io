@@ -311,15 +311,15 @@ $(function(){
     }else{
       init();
     }
-    $(".redmoney").tap(function(){
+    $(".redmoney").click(function(){
       $(".product").show();
     })
-    $(".product").tap(function(){
+    $(".product").click(function(){
       $(".product").hide();
     })
 
     initBgm();
-    $(".sndctrl").tap(function(){
+    $(".sndctrl").click(function(){
       if(bgm.paused){
         bgm.play();
         $(this).find("i").hide();
@@ -339,11 +339,11 @@ function showFinshed(){
   $(".p1").hide();
   isShared=true;
   var imgurl;
-  $(".like").tap(function(){
+  $(".like").click(function(){
     $(".likerst").show();
     $(".dislikerst").hide();
   })
-  $(".dislike").tap(function(){
+  $(".dislike").click(function(){
     $(".dislikerst").show();
     $(".likerst").hide();
   })
@@ -371,7 +371,7 @@ function showFinshed(){
       $(".p2,.p2-btnstep2,.pnext,.redmoney").show();
       $(".editregards,.p2-btnstep1").hide();
       $(".regardtxt").text(regard);
-      $(".pnext").tap(function(){
+      $(".pnext").click(function(){
         cltype=userid=null;
         isShared=false;
         regard=originRegard;
@@ -404,7 +404,7 @@ function init(){
   regard=originRegard;
   $(".regardtxt").empty().text(regard);
 
-  $(".editregards").tap(function(e){
+  $(".editregards").click(function(e){
     if(!$(this).hasClass("readyEdit")){
       //显示'编辑'按钮
       $(this).addClass("readyEdit")
@@ -423,18 +423,18 @@ function init(){
     }
   })
 
-  $(".p2-yep").tap(function(){
+  $(".p2-yep").click(function(){
     chooseOver=true;
     $(".ptip,.redmoney,.p2-btnstep2").show();
     $(".p2-btnstep1").hide();
     initEditCanvas(cltype);
   })
-  $(".p2-nope").tap(function(){
+  $(".p2-nope").click(function(){
     $(".p2").hide();
     $(".p1").show();
   })
 
-  $(".imgok").tap(function(){
+  $(".imgok").click(function(){
     $(".pshare").addClass("animIn");
     $(".regardtxt").addClass("smaller");
     $(".editregards").show();
@@ -447,7 +447,7 @@ function init(){
     //console.log(shareObj.link)
     // sharewx();
   })
-  $(".pshare").tap(function(){
+  $(".pshare").click(function(){
     $(".pmask").show();
   })
 }

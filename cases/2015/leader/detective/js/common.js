@@ -59,14 +59,14 @@ $(function(){
       direction: 'vertical',
       onlyExternal : true
     });
-    $(".p1-figure").tap(function(){
+    $(".p1-figure").click(function(){
       $(".p1-snow,.p1-figure").addClass("drop")
       $(".p1-tit1,.p1-tit2").addClass("fly")
       $(".p1-zoomglass").addClass("zoomglassout")
       $(".p1-txt").hide()
       $(".p1,.p2").addClass("open");
       setTimeout(function(){
-        $(window).tap(function(){
+        $(window).click(function(){
           $(".p3").addClass("show");
           $(window).unbind("tap");
         })
@@ -74,10 +74,10 @@ $(function(){
       $(".p1-figure").unbind("tap");
     })
 
-    $(".p3-btn").tap(function(){
+    $(".p3-btn").click(function(){
       mySwiper.slideTo(1);
     })
-    $(".p4-sel li").tap(function(n){
+    $(".p4-sel li").click(function(n){
       $(".p4-btn").show();
       var _n=$(this).index();
       if(_n!=1){
@@ -89,13 +89,13 @@ $(function(){
       storeResult(0,1);
       $(".p4-btn").triggerHandler("tap");
     })
-    $(".p4-btn").tap(function(){
+    $(".p4-btn").click(function(){
       mySwiper.slideTo(2);
     })
-    $(".p5-btn").tap(function(){
+    $(".p5-btn").click(function(){
       mySwiper.slideTo(3);
     })
-    $(".p6-sel li").tap(function(n){
+    $(".p6-sel li").click(function(n){
       $(".p6-btn").show();
       var _n=$(this).index();
       if(_n!=2){
@@ -107,11 +107,11 @@ $(function(){
       storeResult(1,1);
       $(".p6-btn").triggerHandler("tap");
     })
-    $(".p6-btn").tap(function(){
+    $(".p6-btn").click(function(){
       mySwiper.slideTo(4);
     })
 
-    $(".p7-sel li").tap(function(n){
+    $(".p7-sel li").click(function(n){
       $(".p7-btn").show();
       var _n=$(this).index();
       if(_n!=2){
@@ -123,7 +123,7 @@ $(function(){
       storeResult(2,1);
       $(".p7-btn").triggerHandler("tap");
     })
-    $(".p7-btn").tap(function(){
+    $(".p7-btn").click(function(){
       mySwiper.slideTo(5);
       var _res=userasw[0]+userasw[1]+userasw[2];
       _res=_res<=1?1:_res;
@@ -134,14 +134,14 @@ $(function(){
         shareInit();
       }
     })
-    $(".p8-btn").tap(function(){
+    $(".p8-btn").click(function(){
       mySwiper.slideTo(6);
     })
 
-    $(".p9-btn").tap(function(){
+    $(".p9-btn").click(function(){
       $(".black-mask").show();
     })
-    $(".black-mask").tap(function(){
+    $(".black-mask").click(function(){
       $(this).hide();
     })
   }
@@ -156,7 +156,7 @@ $(function(){
   //   audio.play();
   // },false);
 
-  // $(".sndctrl").tap(function(){
+  // $(".sndctrl").click(function(){
   //   if(sndplay){
   //     audio.pause();
   //     $(this).find("i").show();

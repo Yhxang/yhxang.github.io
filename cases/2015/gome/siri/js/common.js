@@ -68,7 +68,7 @@ function handleComplete(evt){
     mc1.reset().playTo(4);
     playSnd("start");
   },500);
-  $(".p-menubtn").tap(function(){
+  $(".p-menubtn").click(function(){
     if(menuClose){
     $(".p-menu").addClass("menuOpen");
       mc2.playTo(3,function(){
@@ -77,7 +77,7 @@ function handleComplete(evt){
     }
     menuClose=false;
   })
-  $(".p-icons,.p-menuholder").tap(function(){
+  $(".p-icons,.p-menuholder").click(function(){
     if(!menuClose){
       mc2.playTo(0,function(){
         $(".p-menu").removeClass("menuOpen");
@@ -86,7 +86,7 @@ function handleComplete(evt){
     }
     menuClose=true;
   })
-  $(".siritrigger").tap(function(){
+  $(".siritrigger").click(function(){
     if(!menuClose){
       //btnEnabled=false;
       makeSiriEnabled(false);
@@ -103,7 +103,7 @@ function handleComplete(evt){
   })
   var wordsOrder=1;
  
-  $(".microphonebtn").tap(function(){
+  $(".microphonebtn").click(function(){
     if(!btnEnabled) return;
     playSnd(0);
     if(wordsOrder==1){
@@ -191,19 +191,19 @@ function handleComplete(evt){
     }
   });
 
-  $(".p2-2btn1").tap(function(){
+  $(".p2-2btn1").click(function(){
     mySwiper.slideTo(1);
   })
-  $(".p2-2btn2").tap(function(){
+  $(".p2-2btn2").click(function(){
     mySwiper.slideTo(2);
   })
-  $("#smtbtn1").tap(function(){
+  $("#smtbtn1").click(function(){
     mySwiper.slideTo(3,function(){
       mySwiper.unlockSwipeToPrev();
     });
   })
   var smtbtnEnabled=true;
-  $("#smtbtn2").tap(function(e){
+  $("#smtbtn2").click(function(e){
     e.preventDefault();
     if(!smtbtnEnabled) return;
     if($("#username").val().replace(/\s+/,"")==""){

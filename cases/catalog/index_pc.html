@@ -103,6 +103,15 @@ if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
   background: #c8c9cc;
   border-radius: 50%;
   vertical-align: middle;
+  animation: breath .3s alternate infinite;
+}
+@keyframes breath {
+  from {
+    opacity: 1;
+  }
+  to{
+    opacity: .6;
+  }
 }
 
 #mobilePreview{

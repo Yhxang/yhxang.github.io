@@ -49,7 +49,7 @@ $(function(){
 	},false);
 
 	var isMuted=false;
-	$("#sndctrl").tap(function(){
+	$("#sndctrl").click(function(){
 		if(isMuted){
 			audio.play();
 			$(this).removeClass("muted");
@@ -359,10 +359,10 @@ $(function(){
 				$(".redarea2").css({
 					'background-image':'url(img/a80.png)'
 				});
-				// $(".invent").tap(function(){
+				// $(".invent").click(function(){
 				// 	$(".shareMask").show();
 				// })
-				// $(".shareMask").tap(function(){
+				// $(".shareMask").click(function(){
 				// 	$(".shareMask").hide();
 				// })
 			}

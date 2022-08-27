@@ -30,7 +30,7 @@ $(function(){
       $(this).attr("src",$(this).data("src"));
     })
     initBgm();
-    // $(".sndctrl").tap(function(){
+    // $(".sndctrl").click(function(){
     //   if(bgm.paused){
     //     isMute=false;
     //     bgm.play();

@@ -565,7 +565,7 @@ $(function(){
     sndplay=true;
   },false);
   var sndplay=false;
-  $(".sndctrl").tap(function(){
+  $(".sndctrl").click(function(){
     if(!sndplay){
       audio.play();
       $(this).find("i").hide();

@@ -38,7 +38,7 @@ $(function(){
       onlyExternal: true
     });
   })
-  $(".sndctrl").tap(function(){
+  $(".sndctrl").click(function(){
     if(!snd)return;
     if(!isMuted){
       snd.pause();
@@ -50,7 +50,7 @@ $(function(){
       isMuted=false;
     }
   })
-  $(".alertbtn").tap(function(e){
+  $(".alertbtn").click(function(e){
     $(".blankmask").addClass("animOut");
     playSnd("tida");
     setTimeout(function(){
@@ -92,7 +92,7 @@ $(function(){
     }
     return false;
   })
-  $(".p2-warningmsg").tap(function(){
+  $(".p2-warningmsg").click(function(){
     $(this).removeClass("show");
     snd.pause();
     mySwiper.slideTo(0);
@@ -108,10 +108,10 @@ $(function(){
       "transform":"translate3d(0,0,0)"
     })
   })
-  $(".p-move").tap(function(){
+  $(".p-move").click(function(){
     $(".lastmask").show();
   })
-  $(".lastmask").tap(function(){
+  $(".lastmask").click(function(){
     $(this).hide();
   })
   $(".sharelt,.sndctrl").css({

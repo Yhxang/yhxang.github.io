@@ -389,7 +389,7 @@ $(function(){
 						redraw(cav,ctx,img,0,0,cav.width,cav.height);
 					}
 					playp3();
-					$(".p3next").tap(function(){
+					$(".p3next").click(function(){
 						isShared=false;
 						regard=originRegard;
 						$(".p3hp,.p3dl,.p3shadow,.p3role").removeClass("animIn");
@@ -450,13 +450,13 @@ $(function(){
 	function p3init(){
     	$(".regardtxt").empty().text(regard);
 
-	    $(".p3ok").tap(function(){
+	    $(".p3ok").click(function(){
 	    	$(".p3tip").show()
 	    	$(".p3ok,.p3chagain").hide();
 	    	$(".regardarea").show();
 	    })
 
-	    $(".p3chagain").tap(function(){
+	    $(".p3chagain").click(function(){
 	    	$(".p3shadow").removeClass("animIn");
 	    	$(".p3role").removeClass("animIn");
 	    	$(".p3dl").removeClass("animIn");
@@ -468,7 +468,7 @@ $(function(){
 	    
 	    userid=uuid(16,16);
 
-	    $(".editregards").tap(function(e){
+	    $(".editregards").click(function(e){
 	    	if(!$(this).hasClass("readyEdit")){
 	    		//显示'编辑'按钮
 	    		$(this).addClass("readyEdit")
@@ -487,10 +487,10 @@ $(function(){
 	    	}
 	    })
 		
-		$(".p3imgok").tap(function(){
+		$(".p3imgok").click(function(){
 			$(".p3imgconfrim").hide();
 			$(".p3share").show().addClass("animIn");
-			$(".p3share").tap(function(e){
+			$(".p3share").click(function(e){
 				$(".sharemask").show();
 			});
 			mc.off('pan pinch panend pinchend');

@@ -146,14 +146,14 @@ $(function(){
       direction: 'vertical',
       onlyExternal:true
     }) 
-    $(".menu-switch-on").tap(function(){
+    $(".menu-switch-on").click(function(){
       $(".menu-switch-on").addClass("hide").removeClass("pulse");
       $(".whitemask,#closebtn").addClass("show");
       $(".menu").addClass("on");
       $(".swiper-container").addClass("blur");
       $("#nexttip").removeClass("show");
     })
-    $("#closebtn").tap(function(){
+    $("#closebtn").click(function(){
       $(".menu-switch-on").removeClass("hide")
       $(".whitemask,#closebtn").removeClass("show");
       $(".menu").removeClass("on");
@@ -161,19 +161,19 @@ $(function(){
       $("#nexttip").addClass("show");
     })
     $(".menuarea li").each(function(n){
-      $(this).tap(function(){
+      $(this).click(function(){
         ifrTo(n+1);
       })
     })
     $(".idx1-menu .idx-bb").each(function(n){
-      $(this).tap(function(){
+      $(this).click(function(){
         ifrTo(n+1);
       })
     })
-    $(".menuarea h1").tap(function(){
+    $(".menuarea h1").click(function(){
       ifrTo(0);
     })
-    $(".prolink").tap(function(){
+    $(".prolink").click(function(){
       ifrTo(5);
     })
   }

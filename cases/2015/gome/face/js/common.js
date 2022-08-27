@@ -74,7 +74,7 @@ $(function(){
       audio.play();
     },false);
 
-    $(".sndctrl").tap(function(){
+    $(".sndctrl").click(function(){
       if(sndplay){
         audio.pause();
         $(this).find("i").show();
@@ -94,7 +94,7 @@ $(function(){
     setTimeout(function(){$(".p2").show()},250);
     setTimeout(function(){$(".p1").hide().removeClass("animOut").remove()},2500);
   })
-  $(".p2-btn1").tap(function(){
+  $(".p2-btn1").click(function(){
     if(isP3){return;}
     $('#pic_file').trigger('click');
   })
@@ -134,7 +134,7 @@ $(function(){
     })
   })
 
-  $(".p2-btn2").tap(function(){
+  $(".p2-btn2").click(function(){
     $(".p2-glowblueOuter").show();
     $("#pic_file").hide();
     setTimeout(p2btnclick,1500);
@@ -241,7 +241,7 @@ $(function(){
   }).on("touchend",function(e){
     $(this).removeClass("btndown");
   })
-  $(".p3-btn").tap(function(e){
+  $(".p3-btn").click(function(e){
     awardAfterShare=true;
     showP5();
 
@@ -262,7 +262,7 @@ $(function(){
       $(".hundred img").css({"-webkit-transform":"translate3d(0,55px,0)","transform":"translate3d(0,55px,0)"});
     }
   })
-  $(".p4-detail").tap(function(){
+  $(".p4-detail").click(function(){
     $(".p4-detail").toggleClass("show");
   })
 })

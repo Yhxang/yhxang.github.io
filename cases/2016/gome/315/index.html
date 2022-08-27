@@ -444,7 +444,7 @@ $(function(){
     })
     init();
     initBgm();
-    $(".sndctrl").tap(function(){
+    $(".sndctrl").click(function(){
       if(bgm.paused){
         bgm.play();
         $(this).find("i").hide();

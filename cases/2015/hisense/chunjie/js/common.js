@@ -72,7 +72,7 @@ $(function(){
 			}else{
 				$(".btn-nhzf").show();
 
-				$(".btn-nhzf").tap(function(){
+				$(".btn-nhzf").click(function(){
 					$(".sct3").hide();
 					$(".sct1,.sct2").show();
 					enableHammer();
@@ -177,11 +177,11 @@ $(function(){
 	function telectrlinit(){
 		if(click1)return;
 
-		$(".rule2").tap(function(){
+		$(".rule2").click(function(){
 			TweenMax.to($(".slider").eq(0),1.2,{y:-stageH,ease:Power3.easeInOut})
 			TweenMax.to($(".slider").eq(1),1.2,{y:-stageH,ease:Power3.easeInOut})
 		})
-		$(".closebtn").tap(function(){
+		$(".closebtn").click(function(){
 			TweenMax.to($(".slider").eq(0),1.2,{y:0,ease:Power3.easeInOut})
 			TweenMax.to($(".slider").eq(1),1.2,{y:0,ease:Power3.easeInOut})
 		})
@@ -213,7 +213,7 @@ $(function(){
 			if(tl.paused()){
 				$(".hb2").css({"background-image":"url(img/a05.jpg)"})
 				$(".picbigarea").show().find(".picbig").width(stageW).height(stageH);
-				$(".hb2").tap(function(){
+				$(".hb2").click(function(){
 					$(".picbigarea").hide();
 					tl.play();
 				})
@@ -246,7 +246,7 @@ $(function(){
 	}
 
 	function bagfunc(){
-		$(".bag").tap(function(){
+		$(".bag").click(function(){
 			$(".fingertip").hide();
 
 			$.post("hisense_luck2.php",{
@@ -277,7 +277,7 @@ $(function(){
 					TweenMax.from($(".resultlucky"),.4,{scale:0,ease:Back.easeOut})
 					$(".resultlucky span").text("￥"+luckIndex+".00");
 
-					$(".inviteBtn").tap(function(){
+					$(".inviteBtn").click(function(){
 						TweenMax.to($(".resultlucky"),.2,{scale:0,onComplete:function(){
 							$(".resultMask").hide();
 							tl.play();
@@ -294,7 +294,7 @@ $(function(){
 	}
 	var ThisUserID;
 	function phonesmt(){
-		$("#smt").tap(function(e){
+		$("#smt").click(function(e){
 			e.preventDefault();
 			var telqualified=true;
 			var telqualified=checkMobile();

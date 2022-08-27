@@ -182,7 +182,7 @@
 				sndhome.play();
 			}
 		})
-		$(".box1").tap(function(){
+		$(".box1").click(function(){
 			
 			$(".nexttip").addClass("animIn_s")
 
@@ -363,7 +363,7 @@
 		stopFrame(PO_10);
 		stopFrame(PO_11);
 	}
-	$(".sndbtn").tap(function(){
+	$(".sndbtn").click(function(){
 		if(isMuted){
 			sndCtrl("noMute")
 		}else{

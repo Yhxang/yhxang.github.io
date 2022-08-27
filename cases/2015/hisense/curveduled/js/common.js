@@ -51,7 +51,7 @@ $(function(){
       sndplay=true;
       audio.play();
     },false);
-    $(".sndctrl").tap(function(){
+    $(".sndctrl").click(function(){
       if(sndplay){
         audio.pause();
         $(this).find("i").show();
@@ -62,7 +62,7 @@ $(function(){
       sndplay=!sndplay;
     })
 
-    $("#smt").tap(function(e){
+    $("#smt").click(function(e){
       e.preventDefault();
       if($("#province").val()==0){
         alert("请选择所在省份");
@@ -91,12 +91,12 @@ $(function(){
            
             $(".whitetiparea h1").text("提交成功！");
             $("#subsec-mask").addClass("subsec");
-            $(".subsec-1").tap(function(){
+            $(".subsec-1").click(function(){
               e.preventDefault();
               window.location.href="http://c.haojv.com/gz/hisense/20150408a/index.html";
             });
 
-            $(".subsec-2").tap(function(){
+            $(".subsec-2").click(function(){
               e.preventDefault();
               $("#subsec-mask").addClass("share");
               setTimeout(function(){
@@ -104,14 +104,14 @@ $(function(){
               },50)
             });
 
-            $("#subsec-mask").tap(function(e){
+            $("#subsec-mask").click(function(e){
               if(isShare){
                 $("#subsec-mask").removeClass("share");
               }
               isShare=false;
             });
 
-            $(".subsec-3").tap(function(){
+            $(".subsec-3").click(function(){
               e.preventDefault();
               mySwiper.slideTo(0,0);
               $(".subsec-mask").removeClass("show");

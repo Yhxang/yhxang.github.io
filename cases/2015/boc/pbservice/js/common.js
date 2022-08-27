@@ -18,24 +18,24 @@ $(function() {
                 g && 1 == g.activeIndex && $(".page4 li").hide()
             }
         }),
-        $(".v-more-1").tap(function() {
+        $(".v-more-1").click(function() {
             window.location.hash = "0"
         }),
-        $(".backbtn2").tap(function() {
+        $(".backbtn2").click(function() {
             window.location.hash = "1"
         }),
-        $(".backbtn").tap(function() {
+        $(".backbtn").click(function() {
             window.location.hash = "1"
         }),
         $(".v-pics4").each(function(a) {
-            $(this).find("li").tap(function() {
+            $(this).find("li").click(function() {
                 var b = 2 * a + $(this).index() + 1;
                 if (window.location.hash = "2-" + b, "" == d[b - 1]) {
                     d[b - 1] = e[b - 1]
                 }
             })
         }),
-        $(".tagbtn li").tap(function() {
+        $(".tagbtn li").click(function() {
             var a = $(this).index();
             $(this).addClass("on").siblings("li").removeClass("on"),
             $(".holder li").removeClass("on").eq(a).addClass("on")

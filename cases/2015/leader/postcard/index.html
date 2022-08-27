@@ -359,14 +359,14 @@ $(function(){
 			$(".postmark img").attr("src",$(".postmarks li").eq(postmark).find("img").attr("src"));
 			$(".postmark").addClass("coverSpec");
 			$(".msg").addClass("msgSpec");
-			$(".laiyizhang").tap(function(){
+			$(".laiyizhang").click(function(){
 				$(".page3,.btnSpec,.sharetip,.txtSpec,.titleSpec").hide();
 				$(".postmarkarea,.editself").show();
 				$(".postmark").removeClass("coverSpec");
 				$(".msg").removeClass("msgSpec");
 				page1_animate();
 			})
-			$(".xuanyao").tap(function(){
+			$(".xuanyao").click(function(){
 				$(".sharetip").show();
 			})
 		}else{
@@ -431,13 +431,13 @@ $(function(){
 		.from(".contholder",.9,{y:350,ease:Power2.easeOut},"-=.2") 
 	}
 	function initP1Nextbtn(){
-		$(".p1_d_nextbtn_container img").tap(function(){
+		$(".p1_d_nextbtn_container img").click(function(){
 			t2.kill();
 			page2_animate();
 		})
 	}
 
-	$(".opts li").tap(function(){
+	$(".opts li").click(function(){
 		selId=$(this).index();
 		$(this).addClass("active").siblings().removeClass("active");
 		$(".choose").addClass("enable")//show();
@@ -493,13 +493,13 @@ $(function(){
 		}
 	}
 
-	$(".editself,.editagain").tap(function(){
+	$(".editself,.editagain").click(function(){
 		$(".txt").hide();
 		$(".txtarea").html(toText($(".txt").html())).css("display","block").focus();
 		$(this).hide();
 		$(".complete").css("display","block");
 	})
-	$(".complete").tap(function(){
+	$(".complete").click(function(){
 		var inputcont=$(".txtarea").val();
 		if(inputcont.replace(/\s+/img,"")==""){
 			alert("请输入内容");
@@ -519,7 +519,7 @@ $(function(){
 		}
 	})
 	//已选择盖章动作
-	$(".postmarks li").tap(function(){
+	$(".postmarks li").click(function(){
 		$(".complete").trigger("tap");
 		if($(".txtarea").val().replace(/\s+/img,"")==""){
 			return;

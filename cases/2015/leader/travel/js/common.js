@@ -130,15 +130,15 @@ $(function(){
   		window.clearTimeout(intervalid);
   	})
 
-  	$(".p5-go").tap(function(){
+  	$(".p5-go").click(function(){
   		$(this).addClass("out");
   		$(".p5-blackmask").addClass("show");
   		mySwiper2.destroy();
   	})
-  	$(".p5-btn").tap(function(){
+  	$(".p5-btn").click(function(){
   		$(".blankmask").addClass("show");
   	})
-  	$(".blankmask").tap(function(){
+  	$(".blankmask").click(function(){
   		$(this).removeClass("show");
   	})
 
@@ -153,7 +153,7 @@ $(function(){
       audio.play();
     },false);
 
-    $(".sndctrl").tap(function(){
+    $(".sndctrl").click(function(){
       if(sndplay){
         audio.pause();
         $(this).find("i").show();
