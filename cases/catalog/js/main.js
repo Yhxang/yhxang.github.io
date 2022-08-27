@@ -1,5 +1,5 @@
 var mycase=[
-    {tit:"风氢扬官网",href:"http://g-powertech.com.cn/",date:20210101,star:5,type:'PC'},
+    {tit:"风氢扬官网",href:"https://g-powertech.com.cn/",date:20210101,star:5,type:'PC'},
     {tit:"打响防疫知识战",href:"./2020/58/ncpqa",date:20200321,star:3},
     {tit:"答案星球",href:"./2019/jdbook/answerplanet",date:20190419,star:5},
     {tit:"2019汽车产业会议",href:"./2019/autohome/meeting_v1",date:20190724,star:4},
