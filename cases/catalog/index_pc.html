@@ -169,6 +169,7 @@ if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
         links.forEach(function(link){
           
           link.addEventListener('click', e => {
+            if(e.target.dataset['type'] == 'PC') return;
             e.preventDefault();
             const w = e.target.dataset['width']
             ifr.classList.forEach(cls => {
@@ -181,7 +182,6 @@ if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
             ifr.setAttribute('src', e.target.getAttribute('href'));
             MobilePreview.classList.add('show')
             mask.classList.add('show')            
-            console.log(e.target)
           })
         })
       })

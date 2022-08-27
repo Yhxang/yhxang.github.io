@@ -97,6 +97,9 @@ var mycase=[
       
       a.setAttribute('data-date',mycase[i].date);
       a.setAttribute('data-star',mycase[i].star);
+      if(mycase[i].type){
+        a.setAttribute('data-type', mycase[i].type)
+      }
       if(mycase[i].w){
         a.setAttribute('data-width', mycase[i].w)
       }
