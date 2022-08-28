@@ -55,6 +55,11 @@ var mycase=[
     {tit:"Pandora占星小巫揭秘2015星座运势！",href:"./2014/gome/xingzuo/",date:20141229,star:1,w:640},
     {tit:"12.12 十万红信封温暖传递",href:"./2014/hisense/1212mail/",date:20141212,star:3,w:640}
   ]
+  var Len = mycase.length;
+  mycase.forEach((el, index) => {
+    el.uid = Len - index
+  })
+  console.log(mycase)
   var ua= navigator.userAgent;
   var customers={other:"其他",hisense:"海信",gome:"国美",boc:"中国银行",leader:"统帅电器",letv:"乐视",haier:"海尔",mediav:"聚胜万合",iqiyi:"爱奇艺",mazda:"马自达",aliwenxue:"阿里文学",jdbook:"京东图书",autohome:"汽车之家",58:"58同城"}
   var search=window.location.search;
@@ -98,6 +103,7 @@ var mycase=[
       
       a.setAttribute('data-date',mycase[i].date);
       a.setAttribute('data-star',mycase[i].star);
+      a.setAttribute('id', 'c' + mycase[i].uid)
       if(mycase[i].type){
         a.setAttribute('data-type', mycase[i].type)
       }

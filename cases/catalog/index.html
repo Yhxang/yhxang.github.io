@@ -13,11 +13,19 @@ document.write('<meta name="viewport" content="width=640, user-scalable=no, init
 </script>
 <script>
 if (!/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
-  window.location.href ="index_pc.html" + window.location.search;
+  window.location.href ="index_pc.html" + window.location.search + window.location.hash;
 }
 </script>
 <link rel="stylesheet" href="./css/style.css">
 <script src="./js/main.js"></script>
+<script>
+  const linkid = location.hash.replace('#', '')
+  if(linkid){
+    document.addEventListener("DOMContentLoaded", () => {
+      location.href = document.querySelector(`#${linkid}`).getAttribute('href')
+    })
+  }
+</script>
 </head>
 <body>
 </body>

@@ -4,7 +4,7 @@
 <meta name="description" content="邮箱：yhxang@163.com" />
 <script>
 if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
-  window.location.href ="index.html" + window.location.search;
+  window.location.href ="index.html" + window.location.search + window.location.hash;
 } 
 </script>
 <style type="text/css">
@@ -184,6 +184,11 @@ if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
             mask.classList.add('show')            
           })
         })
+        const linkid = location.hash.replace('#', '')
+        console.log(linkid)
+        if(linkid){
+          document.querySelector(`#${linkid}`).dispatchEvent(new Event('click'));
+        }
       })
       document.querySelector('.mobile_preview_footer_icon').addEventListener('click', e => {
         ifr.classList.forEach(cls => {
@@ -192,7 +197,10 @@ if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
         ifr.setAttribute('src', '');
         MobilePreview.classList.remove('show')
         mask.classList.remove('show') 
+        location.hash = ''
       })
+      
+      
     </script>
 </body>
 <html>
