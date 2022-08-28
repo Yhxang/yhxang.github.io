@@ -7,7 +7,7 @@ var mycase=[
     {tit:"突破次元壁，找到二次元中的你",href:"./2018/aliwenxue/acg",date:20180809,star:3,shref:"https://aliwenxue.maimang.net.cn/731/"},
     {tit:"海信世界杯球迷广场",href:"./2018/hisense/worldcup",date:20180612,star:5},
     {tit:"寻人启事 重返汶川",href:"./2018/aliwenxue/512",date:20180512,star:5,shref:"https://aliwenxue.maimang.net.cn/512/",},
-    {tit:"这是一条充满爱的朋友圈",href:"./2018/aliwenxue/moments/",date:20180410,star:5,shref:"https://aliwenxue.maimang.net.cn/"},
+    {tit:"这是一条充满爱的朋友圈",href:"./2018/aliwenxue/moments/",date:20180410,star:5,shref:"https://aliwenxue.maimang.net.cn/",w:640},
     {tit:"马自达3",href:"./2018/mazda/panorama/",date:20180212,star:4},
     {tit:"故宫：寻找遗失的穿越密码",href:"./2017/iqiyi/palace/",date:20170823,star:5},
     {tit:"HIGH购家装季",href:"./2017/gome/526/",date:20170526,star:4,shref:"http://2017.gome.com.cn/526/h5/",w:640},
