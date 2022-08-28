@@ -13,7 +13,7 @@ document.write('<meta name="viewport" content="width=640, user-scalable=no, init
 </script>
 <script>
 if (!/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
-  window.location.href ="index_pc.html";
+  window.location.href ="index_pc.html" + window.location.search;
 }
 </script>
 <link rel="stylesheet" href="./css/style.css">

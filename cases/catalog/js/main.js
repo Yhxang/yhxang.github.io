@@ -59,14 +59,15 @@ var mycase=[
   var customers={other:"其他",hisense:"海信",gome:"国美",boc:"中国银行",leader:"统帅电器",letv:"乐视",haier:"海尔",mediav:"聚胜万合",iqiyi:"爱奇艺",mazda:"马自达",aliwenxue:"阿里文学",jdbook:"京东图书",autohome:"汽车之家",58:"58同城"}
   var search=window.location.search;
   var isIOSwx = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X.+MicroMessenger/)
-  if(search.indexOf('star')!=-1){
+  if(search.indexOf('major')!=-1){
     mycase.sort(function(a,b){
       return b.star-a.star?(b.star-a.star):(b.date-a.date);
     })
   }
-  if(search.indexOf('major')!=-1){
+  if(search.indexOf('star')!=-1){
     var threshold=3;
-    if(getQueryString('major')) threshold=Number(getQueryString('major'));
+    if(getQueryString('star')) threshold=Number(getQueryString('star'));
+
     var i=mycase.length-1;
     while(i>=0){
       if(mycase[i].star<threshold) mycase.splice(i,1);
